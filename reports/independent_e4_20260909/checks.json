@@ -1,0 +1,231 @@
+{
+  "unit_tests": [
+    {
+      "name": "test_config_wellformed",
+      "result": "PASS"
+    },
+    {
+      "name": "test_seeds_wellformed",
+      "result": "PASS"
+    },
+    {
+      "name": "test_fleet_expansion_counts",
+      "result": "FAIL",
+      "error": "AssertionError()",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\reports\\independent_e4_20260909\\check_design.py\", line 40, in <module>\n    func(**({'tmp_path':td} if 'tmp_path' in inspect.signature(func).parameters else {}))\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\tests\\test_experiment4_acceptance.py\", line 100, in test_fleet_expansion_counts\n    assert len(exp[\"extra_failures\"]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "name": "test_fleet_expansion_deterministic_and_seed_sensitive",
+      "result": "PASS"
+    },
+    {
+      "name": "test_runner_construction_and_arm_state",
+      "result": "PASS"
+    },
+    {
+      "name": "test_run_config_fields",
+      "result": "PASS"
+    },
+    {
+      "name": "test_4b_deferral",
+      "result": "PASS"
+    },
+    {
+      "name": "test_redundancy_oscillation_metrics",
+      "result": "PASS"
+    }
+  ],
+  "probes": {
+    "fleet_mix": [
+      {
+        "n": 5,
+        "synthetic": 1,
+        "extra_failure_count": 0,
+        "synthetic_busy_roles": {},
+        "all_idle_roles": {
+          "medical_uav": 2,
+          "passenger_evtol": 1
+        }
+      },
+      {
+        "n": 10,
+        "synthetic": 6,
+        "extra_failure_count": 1,
+        "synthetic_busy_roles": {
+          "logistics_uav": 3
+        },
+        "all_idle_roles": {
+          "medical_uav": 3,
+          "inspection_uav": 1,
+          "passenger_evtol": 1
+        }
+      },
+      {
+        "n": 20,
+        "synthetic": 16,
+        "extra_failure_count": 1,
+        "synthetic_busy_roles": {
+          "logistics_uav": 8
+        },
+        "all_idle_roles": {
+          "medical_uav": 5,
+          "inspection_uav": 3,
+          "passenger_evtol": 2
+        }
+      },
+      {
+        "n": 30,
+        "synthetic": 26,
+        "extra_failure_count": 1,
+        "synthetic_busy_roles": {
+          "logistics_uav": 13
+        },
+        "all_idle_roles": {
+          "medical_uav": 7,
+          "inspection_uav": 5,
+          "passenger_evtol": 3
+        }
+      },
+      {
+        "n": 50,
+        "synthetic": 46,
+        "extra_failure_count": 1,
+        "synthetic_busy_roles": {
+          "logistics_uav": 23
+        },
+        "all_idle_roles": {
+          "medical_uav": 11,
+          "inspection_uav": 9,
+          "passenger_evtol": 5
+        }
+      }
+    ],
+    "secondary_waiting_trigger": {
+      "E4": false,
+      "E3_v2": true
+    },
+    "frequency_arms_success_path": {
+      "EV": {
+        "extra_periodic_calls": 0,
+        "event_calls": 2
+      },
+      "P10": {
+        "extra_periodic_calls": 0,
+        "event_calls": 2
+      },
+      "P30": {
+        "extra_periodic_calls": 0,
+        "event_calls": 2
+      },
+      "P60": {
+        "extra_periodic_calls": 0,
+        "event_calls": 2
+      },
+      "P120": {
+        "extra_periodic_calls": 0,
+        "event_calls": 2
+      }
+    },
+    "delay_step_order": [
+      [
+        "scheduled_events",
+        359
+      ],
+      [
+        "pending_execution",
+        360
+      ]
+    ],
+    "duplicate_ground_command": {
+      "first_completion_t": 542,
+      "second_live_check": {
+        "valid": true,
+        "violations": []
+      },
+      "second_completion_t": 572
+    },
+    "constant_difference_effect_size": {
+      "a": [
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+        110
+      ],
+      "b": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "reported_cohens_d": 0.0
+    },
+    "paired_all_zero": [
+      0.0,
+      "NaN"
+    ]
+  },
+  "scope": "offline unit tests and mock-state probes only",
+  "e3_version_inventory": {
+    "A": {
+      "runs": 960,
+      "versions": {
+        "2": 960
+      }
+    },
+    "B": {
+      "runs": 960,
+      "versions": {
+        "2": 960
+      }
+    },
+    "C": {
+      "runs": 960,
+      "versions": {
+        "2": 960
+      }
+    }
+  },
+  "e4_existing_metrics": 0,
+  "source_sha256": {
+    "docs\\EXPERIMENT4_DESIGN.md": "c6cad50bc03e41359c39eb80711af5a3aa181101159ed5f32f320e3dec00e570",
+    "config\\experiment4_matrix.yaml": "bb882aac7b9245b14de972558ba18348db796cb5b0c49dbafa72260fad0e91ab",
+    "config\\experiment4_seeds.yaml": "298071adea860fc1ffe3884426257fdca29e0d606150d16f14a5bedeaa72bee8",
+    "orchestrator\\experiment4_runner.py": "730b65b4ec8068275b812d5d08fbd8e025718710bd5c57fa4990baeb80b4706a",
+    "orchestrator\\experiment4_fleet.py": "d3a0decce3e27e0e544056f193b52052177dec6feab0735ec4d0e43f2f017b59",
+    "tools\\run_experiment4.py": "fe91eff5c0e240f7cabe8a442459cf3ceb87db9b5fd62dcf9ac69f10559ebaaa",
+    "tools\\analyze_experiment4.py": "680ffc37ea144a2e9d974afd840560c483369bce32666093a8d5ee6925e5106b",
+    "tests\\test_experiment4_acceptance.py": "dbbcc1b1e8945cc86721d177d4ee1d9998b45c2d2cfcf07656b4c444b9002b8c"
+  }
+}

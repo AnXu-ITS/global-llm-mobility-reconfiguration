@@ -1,0 +1,3769 @@
+{
+  "hospitals": [
+    {
+      "type": "node",
+      "id": 13083683959,
+      "lat": 31.3108006,
+      "lon": 120.6035449,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "苏州慈济门诊部",
+        "toilets": "yes"
+      }
+    }
+  ],
+  "bridges_way": [
+    {
+      "type": "way",
+      "id": 44660559,
+      "center": {
+        "lat": 31.3068199,
+        "lon": 120.6047611
+      },
+      "nodes": [
+        566834118,
+        265588154
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 44660562,
+      "center": {
+        "lat": 31.2925468,
+        "lon": 120.6089566
+      },
+      "nodes": [
+        566834135,
+        566834129
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lanes": "3",
+        "layer": "1",
+        "name": "新市路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 44660565,
+      "center": {
+        "lat": 31.3109305,
+        "lon": 120.6018454
+      },
+      "nodes": [
+        566834142,
+        566834143
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxweight": "30",
+        "name": "景德路",
+        "sidewalk": "both",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 44669524,
+      "center": {
+        "lat": 31.3079137,
+        "lon": 120.6144393
+      },
+      "nodes": [
+        7812207738,
+        7812207737
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "maxweight": "30",
+        "name": "芮桥",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 69707917,
+      "center": {
+        "lat": 31.3022846,
+        "lon": 120.6062923
+      },
+      "nodes": [
+        566834134,
+        566834132
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "道前街",
+        "name:en": "Daoqian Street",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 69707954,
+      "center": {
+        "lat": 31.3022051,
+        "lon": 120.6063
+      },
+      "nodes": [
+        833667868,
+        833667848
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "道前街",
+        "name:en": "Daoqian Street",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 147991177,
+      "center": {
+        "lat": 31.289969,
+        "lon": 120.5966229
+      },
+      "nodes": [
+        266180805,
+        5866025556,
+        5866025558,
+        5866025559,
+        5866025555,
+        5866025560,
+        4618073420,
+        5866025557,
+        266180804
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "name": "胥江路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 147991183,
+      "center": {
+        "lat": 31.2920825,
+        "lon": 120.6057079
+      },
+      "nodes": [
+        1611019768,
+        1611019766
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lanes": "2",
+        "name": "胥江路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 148377669,
+      "center": {
+        "lat": 31.296406,
+        "lon": 120.5884344
+      },
+      "nodes": [
+        266180794,
+        1614843057
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "name": "桐泾南路",
+        "name:en": "Tongjing South Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 148377674,
+      "center": {
+        "lat": 31.2977593,
+        "lon": 120.5990712
+      },
+      "nodes": [
+        1614843162,
+        7782793167
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155425022,
+      "center": {
+        "lat": 31.3169226,
+        "lon": 120.6001976
+      },
+      "nodes": [
+        566834141,
+        566834140
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lane_markings": "yes",
+        "lanes": "1",
+        "layer": "1",
+        "maxweight": "30",
+        "name": "西中市",
+        "name:zh": "西中市",
+        "name:zh-Hans": "西中市",
+        "name:zh-Hant": "西中市",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155425033,
+      "center": {
+        "lat": 31.3161115,
+        "lon": 120.5954138
+      },
+      "nodes": [
+        1678203854,
+        427665123
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "广济路",
+        "name:zh": "广济路",
+        "name:zh-Hans": "广济路",
+        "name:zh-Hant": "廣濟路",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 328552284,
+      "center": {
+        "lat": 31.300116,
+        "lon": 120.5880037
+      },
+      "nodes": [
+        3353766809,
+        3353766800
+      ],
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "foot": "no",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 328552285,
+      "center": {
+        "lat": 31.30004,
+        "lon": 120.5880227
+      },
+      "nodes": [
+        3353766798,
+        3353766806
+      ],
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "foot": "no",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 419912506,
+      "center": {
+        "lat": 31.2926261,
+        "lon": 120.6089355
+      },
+      "nodes": [
+        4199012319,
+        4199012310
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lanes": "3",
+        "layer": "1",
+        "name": "新市路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 425410875,
+      "center": {
+        "lat": 31.2928954,
+        "lon": 120.5992634
+      },
+      "nodes": [
+        4247361404,
+        7796011154
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "安全村路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449258909,
+      "center": {
+        "lat": 31.316917,
+        "lon": 120.599253
+      },
+      "nodes": [
+        4462309591,
+        1678203863
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "pedestrian",
+        "layer": "1",
+        "name": "北浩弄",
+        "name:en": "Baihao Long",
+        "name:zh": "北浩弄",
+        "name:zh-Hans": "北浩弄",
+        "name:zh-Hant": "北浩弄",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449259570,
+      "center": {
+        "lat": 31.3127337,
+        "lon": 120.601435
+      },
+      "nodes": [
+        4462314047,
+        4462314048
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "lit": "yes",
+        "maxweight": "30",
+        "name": "金门路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265237,
+      "center": {
+        "lat": 31.3021077,
+        "lon": 120.6088126
+      },
+      "nodes": [
+        4462368581,
+        4462368568
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "lanes": "2",
+        "layer": "1",
+        "maxspeed": "30",
+        "name": "吉庆街",
+        "name:en": "Jiqing St"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265243,
+      "center": {
+        "lat": 31.3029017,
+        "lon": 120.6160717
+      },
+      "nodes": [
+        4462368612,
+        4462368618
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "金狮河沿"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265244,
+      "center": {
+        "lat": 31.3023289,
+        "lon": 120.611083
+      },
+      "nodes": [
+        4462368590,
+        4462368586
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "service": "alley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265245,
+      "center": {
+        "lat": 31.3002994,
+        "lon": 120.6070586
+      },
+      "nodes": [
+        4462368505,
+        4462368510
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "motor_vehicle": "no",
+        "name": "万年桥",
+        "tourism": "attraction",
+        "vehicle": "no",
+        "wikidata": "Q10865051",
+        "wikipedia": "zh:万年桥_(苏州)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265248,
+      "center": {
+        "lat": 31.3023808,
+        "lon": 120.6115671
+      },
+      "nodes": [
+        4462368588,
+        4462368594
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "service",
+        "layer": "1",
+        "service": "alley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265258,
+      "center": {
+        "lat": 31.3028421,
+        "lon": 120.6154595
+      },
+      "nodes": [
+        4462368614,
+        4462368611
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "service",
+        "layer": "1",
+        "service": "alley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449265263,
+      "center": {
+        "lat": 31.3026895,
+        "lon": 120.6140391
+      },
+      "nodes": [
+        4462368604,
+        4462368607
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449378260,
+      "center": {
+        "lat": 31.3092416,
+        "lon": 120.6074359
+      },
+      "nodes": [
+        4463418262,
+        4463418261
+      ],
+      "tags": {
+        "bridge": "yes",
+        "est_width": "4",
+        "highway": "residential",
+        "lanes": "1",
+        "layer": "1",
+        "maxspeed:advisory": "5",
+        "maxwidth": "2",
+        "name": "古吴路",
+        "name:zh": "古吴路",
+        "name:zh-Hans": "古吴路",
+        "name:zh-Hant": "古吳路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449491996,
+      "center": {
+        "lat": 31.2957973,
+        "lon": 120.6097237
+      },
+      "nodes": [
+        4464432128,
+        4464432127
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 449492005,
+      "center": {
+        "lat": 31.2930846,
+        "lon": 120.6100492
+      },
+      "nodes": [
+        4464431655,
+        4464431656
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 454323067,
+      "center": {
+        "lat": 31.2892949,
+        "lon": 120.6155794
+      },
+      "nodes": [
+        5868813788,
+        5868813789
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "horse": "no",
+        "motor_vehicle": "no",
+        "name": "东大街",
+        "name:en": "Dongda St",
+        "vehicle": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 454323068,
+      "center": {
+        "lat": 31.2901808,
+        "lon": 120.6154839
+      },
+      "nodes": [
+        4508902056,
+        4403794761
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "东大街",
+        "name:en": "Dongda St"
+      }
+    },
+    {
+      "type": "way",
+      "id": 465393744,
+      "center": {
+        "lat": 31.2977498,
+        "lon": 120.5991752
+      },
+      "nodes": [
+        4603624691,
+        4603624692
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 465393755,
+      "center": {
+        "lat": 31.3161248,
+        "lon": 120.5955027
+      },
+      "nodes": [
+        4603624767,
+        4603624768
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "广济路",
+        "name:zh": "广济路",
+        "name:zh-Hans": "广济路",
+        "name:zh-Hant": "廣濟路",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212782,
+      "center": {
+        "lat": 31.3171518,
+        "lon": 120.587699
+      },
+      "nodes": [
+        7831090072,
+        7831090073
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212894,
+      "center": {
+        "lat": 31.3176383,
+        "lon": 120.5882395
+      },
+      "nodes": [
+        7824876026,
+        4975512542,
+        4975512541,
+        4975512540,
+        4975512539,
+        7824876027
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212899,
+      "center": {
+        "lat": 31.3177137,
+        "lon": 120.5882013
+      },
+      "nodes": [
+        7824876029,
+        4975512551,
+        4975512550,
+        7824876028
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212906,
+      "center": {
+        "lat": 31.3177519,
+        "lon": 120.5879672
+      },
+      "nodes": [
+        7822509535,
+        4975512606,
+        4975512605,
+        4975512604,
+        7822509536
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212908,
+      "center": {
+        "lat": 31.3177901,
+        "lon": 120.5878989
+      },
+      "nodes": [
+        7824774577,
+        7824774576
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508212911,
+      "center": {
+        "lat": 31.3177946,
+        "lon": 120.5878439
+      },
+      "nodes": [
+        7822594951,
+        7822594952
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508434280,
+      "center": {
+        "lat": 31.3133499,
+        "lon": 120.6089072
+      },
+      "nodes": [
+        4977398312,
+        4977398311
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508443514,
+      "center": {
+        "lat": 31.3132871,
+        "lon": 120.6089741
+      },
+      "nodes": [
+        4977501007,
+        4977399667,
+        4977399621,
+        4977501006
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508443517,
+      "center": {
+        "lat": 31.3133109,
+        "lon": 120.6088702
+      },
+      "nodes": [
+        4977398310,
+        4977398309
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508443518,
+      "center": {
+        "lat": 31.3132142,
+        "lon": 120.6089331
+      },
+      "nodes": [
+        4977501103,
+        4977501102,
+        4977501101,
+        4977501100
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508443520,
+      "center": {
+        "lat": 31.3132143,
+        "lon": 120.6090813
+      },
+      "nodes": [
+        4977501077,
+        4977399645
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508557211,
+      "center": {
+        "lat": 31.3152093,
+        "lon": 120.6047723
+      },
+      "nodes": [
+        4978482317,
+        4978482524
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508557244,
+      "center": {
+        "lat": 31.3152007,
+        "lon": 120.6045209
+      },
+      "nodes": [
+        7843170017,
+        7843170018
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508557248,
+      "center": {
+        "lat": 31.3151615,
+        "lon": 120.6045414
+      },
+      "nodes": [
+        7843188316,
+        7843188315
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508557252,
+      "center": {
+        "lat": 31.3151156,
+        "lon": 120.6045361
+      },
+      "nodes": [
+        7852806534,
+        7852806535
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 508557287,
+      "center": {
+        "lat": 31.3152171,
+        "lon": 120.6046032
+      },
+      "nodes": [
+        4978482571,
+        4978483265,
+        4978483266,
+        4978482572
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "name": "度香桥",
+        "name:zh": "度香桥",
+        "name:zh-Hans": "度香桥",
+        "name:zh-Hant": "度香橋"
+      }
+    },
+    {
+      "type": "way",
+      "id": 536568419,
+      "center": {
+        "lat": 31.3067209,
+        "lon": 120.6047988
+      },
+      "nodes": [
+        5197536796,
+        5197536797
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 559744087,
+      "center": {
+        "lat": 31.2899579,
+        "lon": 120.6122774
+      },
+      "nodes": [
+        1468775481,
+        5065816139
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "horse": "no",
+        "layer": "1",
+        "vehicle": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 577686939,
+      "center": {
+        "lat": 31.2964135,
+        "lon": 120.5885128
+      },
+      "nodes": [
+        5537449658,
+        5537449660
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "name": "桐泾南路",
+        "name:en": "Tongjing South Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 608471422,
+      "center": {
+        "lat": 31.2901707,
+        "lon": 120.6118807
+      },
+      "nodes": [
+        5764747269,
+        5764747270
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 608471425,
+      "center": {
+        "lat": 31.2906824,
+        "lon": 120.6124477
+      },
+      "nodes": [
+        5764747274,
+        5764747273
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 608471435,
+      "center": {
+        "lat": 31.2893509,
+        "lon": 120.6119645
+      },
+      "nodes": [
+        5764747319,
+        5764747320
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 608471436,
+      "center": {
+        "lat": 31.2893426,
+        "lon": 120.612085
+      },
+      "nodes": [
+        5764747321,
+        5764747322
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620793331,
+      "center": {
+        "lat": 31.2982092,
+        "lon": 120.6055092
+      },
+      "nodes": [
+        5864974541,
+        4603624757,
+        4603624758,
+        4603624759,
+        5864974539
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "泰让桥",
+        "highway": "secondary",
+        "lanes": "3",
+        "layer": "1",
+        "name": "盘胥路",
+        "name:en": "Panxu Rd",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620793334,
+      "center": {
+        "lat": 31.2982321,
+        "lon": 120.6056265
+      },
+      "nodes": [
+        5864974538,
+        1611019790,
+        1611019792,
+        1611019794,
+        5864974540
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "泰让桥",
+        "highway": "secondary",
+        "lanes": "3",
+        "layer": "1",
+        "name": "盘胥路",
+        "name:en": "Panxu Rd",
+        "oneway": "yes",
+        "source": "GPS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620793337,
+      "center": {
+        "lat": 31.2973727,
+        "lon": 120.602985
+      },
+      "nodes": [
+        5864974557,
+        5864974556
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924435,
+      "center": {
+        "lat": 31.2920164,
+        "lon": 120.6057232
+      },
+      "nodes": [
+        5866025525,
+        5866025524
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lanes": "2",
+        "name": "胥江路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924439,
+      "center": {
+        "lat": 31.2899088,
+        "lon": 120.5966576
+      },
+      "nodes": [
+        5866025527,
+        5866025521,
+        5866025520,
+        5866025519,
+        5866025518,
+        5866025517,
+        5866025516,
+        5866025515,
+        5866025526
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "name": "胥江路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 621120527,
+      "center": {
+        "lat": 31.3005287,
+        "lon": 120.5912407
+      },
+      "nodes": [
+        7764760315,
+        7764760316
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 792592968,
+      "center": {
+        "lat": 31.3076084,
+        "lon": 120.6122956
+      },
+      "nodes": [
+        7786689940,
+        7786689939
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "养育巷",
+        "name:en": "Yangyu Alley",
+        "name:zh": "养育巷",
+        "name:zh-Hans": "养育巷",
+        "name:zh-Hant": "養育巷"
+      }
+    },
+    {
+      "type": "way",
+      "id": 792760185,
+      "center": {
+        "lat": 31.2898263,
+        "lon": 120.5926149
+      },
+      "nodes": [
+        7769399568,
+        7769399569
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "桐泾南路",
+        "name:en": "Tongjing South Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 801546992,
+      "center": {
+        "lat": 31.3024303,
+        "lon": 120.6085913
+      },
+      "nodes": [
+        7497044405,
+        7497044404
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "歌薰桥",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "道前街",
+        "name:en": "Daoqian Street",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 801546994,
+      "center": {
+        "lat": 31.302353,
+        "lon": 120.6086031
+      },
+      "nodes": [
+        7497044406,
+        7497044407
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "歌薰桥",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "道前街",
+        "name:en": "Daoqian Street",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 802089947,
+      "center": {
+        "lat": 31.3078954,
+        "lon": 120.6049673
+      },
+      "nodes": [
+        7502571986,
+        7502571987
+      ],
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "surface": "paved"
+      }
+    },
+    {
+      "type": "way",
+      "id": 802089961,
+      "center": {
+        "lat": 31.2934574,
+        "lon": 120.6090833
+      },
+      "nodes": [
+        7502572111,
+        7502572112,
+        7502572113,
+        7502572114,
+        7502572115,
+        7502572116
+      ],
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "surface": "paved"
+      }
+    },
+    {
+      "type": "way",
+      "id": 831190273,
+      "center": {
+        "lat": 31.3004137,
+        "lon": 120.5912556
+      },
+      "nodes": [
+        7760969047,
+        7760969046
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 831708890,
+      "center": {
+        "lat": 31.2910697,
+        "lon": 120.583893
+      },
+      "nodes": [
+        7764966455,
+        7764966454
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832110232,
+      "center": {
+        "lat": 31.2897896,
+        "lon": 120.5925505
+      },
+      "nodes": [
+        7768839285,
+        7768839286
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "桐泾南路",
+        "name:en": "Tongjing South Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832188846,
+      "center": {
+        "lat": 31.3153518,
+        "lon": 120.5853967
+      },
+      "nodes": [
+        7769615175,
+        7769615174
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "桐泾北路",
+        "name:en": "Tongjing North Road",
+        "name:zh": "桐泾北路",
+        "name:zh-Hans": "桐泾北路",
+        "name:zh-Hant": "桐涇北路",
+        "oneway": "yes",
+        "source": "gps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832199133,
+      "center": {
+        "lat": 31.3153504,
+        "lon": 120.5855085
+      },
+      "nodes": [
+        7769730509,
+        7769730510
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "桐泾北路",
+        "name:en": "Tongjing North Road",
+        "name:zh": "桐泾北路",
+        "name:zh-Hans": "桐泾北路",
+        "name:zh-Hant": "桐涇北路",
+        "oneway": "yes",
+        "source": "gps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832444300,
+      "center": {
+        "lat": 31.3010236,
+        "lon": 120.5960682
+      },
+      "nodes": [
+        7771835845,
+        7771835844
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832473083,
+      "center": {
+        "lat": 31.3042156,
+        "lon": 120.6037971
+      },
+      "nodes": [
+        7381035724,
+        4603624747
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "小日晖桥",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "阊胥路",
+        "oneway": "yes",
+        "source": "GPS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832533949,
+      "center": {
+        "lat": 31.3041997,
+        "lon": 120.603947
+      },
+      "nodes": [
+        7772695959,
+        7499868967
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "小日晖桥",
+        "highway": "secondary",
+        "lanes": "3",
+        "layer": "1",
+        "lit": "yes",
+        "name": "阊胥路",
+        "name:en": "Changxu Rd",
+        "oneway": "yes",
+        "source": "GPS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 832535217,
+      "center": {
+        "lat": 31.3051786,
+        "lon": 120.5874764
+      },
+      "nodes": [
+        7772690664,
+        7772690665
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh-Latn-pinyin": "Gan Jiang Lu",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "source": "GPS",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833401966,
+      "center": {
+        "lat": 31.305304,
+        "lon": 120.5874536
+      },
+      "nodes": [
+        7779837727,
+        7779837726
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh-Latn-pinyin": "Gan Jiang Lu",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "source": "GPS",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833404225,
+      "center": {
+        "lat": 31.3018505,
+        "lon": 120.6022057
+      },
+      "nodes": [
+        833667858,
+        7500048545
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833412157,
+      "center": {
+        "lat": 31.3054453,
+        "lon": 120.5904048
+      },
+      "nodes": [
+        7779924620,
+        7779924621
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh-Latn-pinyin": "Gan Jiang Lu",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "source": "GPS",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833454945,
+      "center": {
+        "lat": 31.3008028,
+        "lon": 120.6024197
+      },
+      "nodes": [
+        7780373254,
+        7780373255
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833471003,
+      "center": {
+        "lat": 31.301955,
+        "lon": 120.6021833
+      },
+      "nodes": [
+        7780502010,
+        833667834
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833471006,
+      "center": {
+        "lat": 31.301168,
+        "lon": 120.5960722
+      },
+      "nodes": [
+        7780502011,
+        7780502012
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "三香路",
+        "name:en": "Sanxiang Road",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833728050,
+      "center": {
+        "lat": 31.2940987,
+        "lon": 120.5921126
+      },
+      "nodes": [
+        7782737522,
+        7782737523
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 833734029,
+      "center": {
+        "lat": 31.2941843,
+        "lon": 120.5921158
+      },
+      "nodes": [
+        7782793169,
+        7782793168
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834089043,
+      "center": {
+        "lat": 31.2911797,
+        "lon": 120.5839077
+      },
+      "nodes": [
+        7786212733,
+        7786212732
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "劳动路",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834097489,
+      "center": {
+        "lat": 31.3055739,
+        "lon": 120.5903766
+      },
+      "nodes": [
+        7786321905,
+        7786321906
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh-Latn-pinyin": "Gan Jiang Lu",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "source": "GPS",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834530221,
+      "center": {
+        "lat": 31.318015,
+        "lon": 120.6062303
+      },
+      "nodes": [
+        5016542619,
+        5016542618
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "lane_markings": "yes",
+        "layer": "1",
+        "maxweight": "30",
+        "name": "西中市",
+        "name:en": "West Zhongshi",
+        "name:zh": "西中市",
+        "name:zh-Hans": "西中市",
+        "name:zh-Hant": "西中市",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834568875,
+      "center": {
+        "lat": 31.2976654,
+        "lon": 120.58867
+      },
+      "nodes": [
+        7790575504,
+        7790575505
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834591829,
+      "center": {
+        "lat": 31.3162315,
+        "lon": 120.596919
+      },
+      "nodes": [
+        7790750376,
+        1678203849
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "上塘街",
+        "name:zh": "上塘街",
+        "name:zh-Hans": "上塘街",
+        "name:zh-Hant": "上塘街",
+        "oneway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834620949,
+      "center": {
+        "lat": 31.2962748,
+        "lon": 120.5868283
+      },
+      "nodes": [
+        7791087730,
+        7791087729
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "双虹路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834632984,
+      "center": {
+        "lat": 31.3105399,
+        "lon": 120.5865772
+      },
+      "nodes": [
+        7791160681,
+        7791160680
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "金门路",
+        "name:en": "Jinmen Rd"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834876446,
+      "center": {
+        "lat": 31.3071366,
+        "lon": 120.6078397
+      },
+      "nodes": [
+        7793203606,
+        7793203607
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh": "干将西路",
+        "name:zh-Hans": "干将西路",
+        "name:zh-Hant": "干將西路",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834941700,
+      "center": {
+        "lat": 31.3068933,
+        "lon": 120.607871
+      },
+      "nodes": [
+        7793795797,
+        7793795796
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:right": "track",
+        "highway": "primary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "干将西路",
+        "name:en": "Ganjiang West Road",
+        "name:zh": "干将西路",
+        "name:zh-Hans": "干将西路",
+        "name:zh-Hant": "干將西路",
+        "oneway": "yes",
+        "sidewalk": "right",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834941912,
+      "center": {
+        "lat": 31.2970298,
+        "lon": 120.5926511
+      },
+      "nodes": [
+        7793777574,
+        7793777573
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834955561,
+      "center": {
+        "lat": 31.2972933,
+        "lon": 120.5948958
+      },
+      "nodes": [
+        7793918633,
+        7793918634
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834960899,
+      "center": {
+        "lat": 31.3025614,
+        "lon": 120.6130249
+      },
+      "nodes": [
+        7793929351,
+        7793929350
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "吉利桥",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "司前街",
+        "name:en": "SiQian St"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835192827,
+      "center": {
+        "lat": 31.2922824,
+        "lon": 120.5838554
+      },
+      "nodes": [
+        7795861741,
+        7795861742
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "双元路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835195887,
+      "center": {
+        "lat": 31.2943213,
+        "lon": 120.5988235
+      },
+      "nodes": [
+        6838715825,
+        6838715826
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "安全村路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835198865,
+      "center": {
+        "lat": 31.3151155,
+        "lon": 120.5858105
+      },
+      "nodes": [
+        4462309170,
+        7795953955
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "枫桥路",
+        "name:zh": "枫桥路",
+        "name:zh-Hans": "枫桥路",
+        "name:zh-Hant": "楓橋路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835238079,
+      "center": {
+        "lat": 31.3065041,
+        "lon": 120.5902046
+      },
+      "nodes": [
+        7796377382,
+        5422166521
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "name": "虹桥路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835972562,
+      "center": {
+        "lat": 31.3061614,
+        "lon": 120.5873285
+      },
+      "nodes": [
+        7802771926,
+        7802771927
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "虹桥路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835972934,
+      "center": {
+        "lat": 31.3076517,
+        "lon": 120.5870586
+      },
+      "nodes": [
+        7802771929,
+        7802771928
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835973678,
+      "center": {
+        "lat": 31.3091324,
+        "lon": 120.5868392
+      },
+      "nodes": [
+        7802777672,
+        7802777673
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "service",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835974272,
+      "center": {
+        "lat": 31.3099392,
+        "lon": 120.5866989
+      },
+      "nodes": [
+        7802766353,
+        7802766354
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835975487,
+      "center": {
+        "lat": 31.3084079,
+        "lon": 120.5888695
+      },
+      "nodes": [
+        4582195198,
+        7802811066
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "彩香路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836037004,
+      "center": {
+        "lat": 31.310101,
+        "lon": 120.5980195
+      },
+      "nodes": [
+        7803324444,
+        7803324445
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "lit": "yes",
+        "name": "爱河桥路",
+        "name:en": "Aiheqiao Rd",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836039735,
+      "center": {
+        "lat": 31.30748,
+        "lon": 120.5994937
+      },
+      "nodes": [
+        7803340471,
+        7803340470
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "爱河桥路",
+        "source": "GPS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836039738,
+      "center": {
+        "lat": 31.3159255,
+        "lon": 120.5917834
+      },
+      "nodes": [
+        7803330136,
+        7803330135
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836049073,
+      "center": {
+        "lat": 31.308632,
+        "lon": 120.591174
+      },
+      "nodes": [
+        7803435197,
+        7803435198
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836265172,
+      "center": {
+        "lat": 31.3177728,
+        "lon": 120.6023501
+      },
+      "nodes": [
+        4400766759,
+        7805314159
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "pedestrian",
+        "lane_markings": "yes",
+        "lanes": "2",
+        "layer": "1",
+        "maxweight": "5",
+        "name": "新马路",
+        "name:zh": "新马路",
+        "name:zh-Hans": "新马路",
+        "name:zh-Hant": "新馬路",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836265575,
+      "center": {
+        "lat": 31.3180798,
+        "lon": 120.6018279
+      },
+      "nodes": [
+        7805351086,
+        7805351087
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "service": "alley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836267095,
+      "center": {
+        "lat": 31.3174705,
+        "lon": 120.6007922
+      },
+      "nodes": [
+        4462309602,
+        7805360204
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "maxweight": "5"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836267903,
+      "center": {
+        "lat": 31.3181767,
+        "lon": 120.5993586
+      },
+      "nodes": [
+        1678203869,
+        13419339394,
+        7805354150
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "pedestrian",
+        "layer": "2",
+        "name": "北浩弄",
+        "name:de": "Baihao Long",
+        "name:en": "Baihao Long",
+        "name:zh": "北浩弄",
+        "name:zh-Hans": "北浩弄",
+        "name:zh-Hant": "北浩弄",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836270649,
+      "center": {
+        "lat": 31.3032885,
+        "lon": 120.599417
+      },
+      "nodes": [
+        7805386098,
+        7805386097
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "三香弄"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836271295,
+      "center": {
+        "lat": 31.2986198,
+        "lon": 120.5965067
+      },
+      "nodes": [
+        5121998398,
+        7805393183
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836273848,
+      "center": {
+        "lat": 31.3180938,
+        "lon": 120.6053218
+      },
+      "nodes": [
+        7805411805,
+        7805411806
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "pedestrian",
+        "layer": "1",
+        "name": "石幢弄",
+        "name:zh": "石幢弄",
+        "name:zh-Hans": "石幢弄",
+        "name:zh-Hant": "石幢弄"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836274094,
+      "center": {
+        "lat": 31.2972314,
+        "lon": 120.6037272
+      },
+      "nodes": [
+        7805424241,
+        7805424240
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836287561,
+      "center": {
+        "lat": 31.2894458,
+        "lon": 120.6059226
+      },
+      "nodes": [
+        7805542326,
+        7805542325
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836288255,
+      "center": {
+        "lat": 31.2895802,
+        "lon": 120.6061436
+      },
+      "nodes": [
+        7805547703,
+        7805547702
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836294123,
+      "center": {
+        "lat": 31.2918258,
+        "lon": 120.6104536
+      },
+      "nodes": [
+        4199012373,
+        7805621130
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name:en": "Xida St"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836295937,
+      "center": {
+        "lat": 31.2900899,
+        "lon": 120.6108753
+      },
+      "nodes": [
+        7805627668,
+        7805627669
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836312930,
+      "center": {
+        "lat": 31.2908475,
+        "lon": 120.6134938
+      },
+      "nodes": [
+        7805797264,
+        7805797265
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836341578,
+      "center": {
+        "lat": 31.2988438,
+        "lon": 120.6092137
+      },
+      "nodes": [
+        7806069465,
+        7806069464
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836664409,
+      "center": {
+        "lat": 31.3041782,
+        "lon": 120.605294
+      },
+      "nodes": [
+        4462368633,
+        7808718061
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836972054,
+      "center": {
+        "lat": 31.3079063,
+        "lon": 120.6050154
+      },
+      "nodes": [
+        5398296600,
+        5398296601,
+        5398296602
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "name": "长船湾"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836974137,
+      "center": {
+        "lat": 31.3035503,
+        "lon": 120.6004234
+      },
+      "nodes": [
+        5481977272,
+        5481977271
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836975491,
+      "center": {
+        "lat": 31.3037695,
+        "lon": 120.6028529
+      },
+      "nodes": [
+        7811459218,
+        7811459217
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836981123,
+      "center": {
+        "lat": 31.3034911,
+        "lon": 120.6018381
+      },
+      "nodes": [
+        5481977231,
+        5481977230
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836983345,
+      "center": {
+        "lat": 31.3036477,
+        "lon": 120.5907189
+      },
+      "nodes": [
+        7811523461,
+        7811523462
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836984991,
+      "center": {
+        "lat": 31.3027006,
+        "lon": 120.5908771
+      },
+      "nodes": [
+        7811574503,
+        7811574502
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836987355,
+      "center": {
+        "lat": 31.2980067,
+        "lon": 120.5915648
+      },
+      "nodes": [
+        7811604347,
+        7811604346
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836998045,
+      "center": {
+        "lat": 31.3045292,
+        "lon": 120.5905609
+      },
+      "nodes": [
+        7811664499,
+        7811664498
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 836998204,
+      "center": {
+        "lat": 31.3027456,
+        "lon": 120.5942614
+      },
+      "nodes": [
+        7811686603,
+        5121615015
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "烽火路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837000193,
+      "center": {
+        "lat": 31.3175576,
+        "lon": 120.6014714
+      },
+      "nodes": [
+        4462309608,
+        7811702151
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "阊门横街",
+        "service": "alley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837002211,
+      "center": {
+        "lat": 31.3038087,
+        "lon": 120.5876943
+      },
+      "nodes": [
+        7811717553,
+        7811717554
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837005651,
+      "center": {
+        "lat": 31.3082111,
+        "lon": 120.5870875
+      },
+      "nodes": [
+        5871282226,
+        7811744469
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837008721,
+      "center": {
+        "lat": 31.3131339,
+        "lon": 120.5861367
+      },
+      "nodes": [
+        7811794572,
+        7811794573
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837008723,
+      "center": {
+        "lat": 31.3125989,
+        "lon": 120.586246
+      },
+      "nodes": [
+        7811794578,
+        7811794577
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837814662,
+      "center": {
+        "lat": 31.3006317,
+        "lon": 120.6089321
+      },
+      "nodes": [
+        7819766625,
+        7819766624
+      ],
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "吉庆桥",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "胥门路"
+      }
+    },
+    {
+      "type": "way",
+      "id": 839224075,
+      "center": {
+        "lat": 31.2943004,
+        "lon": 120.5988004
+      },
+      "nodes": [
+        7831374713,
+        7831374712
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "枣市桥"
+      }
+    },
+    {
+      "type": "way",
+      "id": 840384279,
+      "center": {
+        "lat": 31.2913388,
+        "lon": 120.6119662
+      },
+      "nodes": [
+        7841803564,
+        1468775536
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 840384280,
+      "center": {
+        "lat": 31.2915652,
+        "lon": 120.6118844
+      },
+      "nodes": [
+        7841803565,
+        1468775537
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 840384282,
+      "center": {
+        "lat": 31.2914305,
+        "lon": 120.6130328
+      },
+      "nodes": [
+        6419317951,
+        6419317950,
+        6419317949,
+        6419317948,
+        6419317947,
+        7841803563,
+        5065816153
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 840384284,
+      "center": {
+        "lat": 31.2914188,
+        "lon": 120.6133274
+      },
+      "nodes": [
+        1468797146,
+        7841803566
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 858348269,
+      "center": {
+        "lat": 31.305325,
+        "lon": 120.6080657
+      },
+      "nodes": [
+        8001657661,
+        8001657662
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 858348273,
+      "center": {
+        "lat": 31.3073178,
+        "lon": 120.6099827
+      },
+      "nodes": [
+        8001657668,
+        8001657669
+      ],
+      "tags": {
+        "bridge": "yes",
+        "crossing": "marked",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1181129465,
+      "center": {
+        "lat": 31.3091494,
+        "lon": 120.5942618
+      },
+      "nodes": [
+        10969156764,
+        10969156763
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1303295985,
+      "center": {
+        "lat": 31.3151296,
+        "lon": 120.5835644
+      },
+      "nodes": [
+        12070075564,
+        12070075563
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1303295986,
+      "center": {
+        "lat": 31.3151644,
+        "lon": 120.5839245
+      },
+      "nodes": [
+        12070075566,
+        12070075565
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1308557771,
+      "center": {
+        "lat": 31.3169684,
+        "lon": 120.600156
+      },
+      "nodes": [
+        12118061704,
+        12118061705
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1351852667,
+      "center": {
+        "lat": 31.3153072,
+        "lon": 120.5835376
+      },
+      "nodes": [
+        12507254663,
+        12507254662
+      ],
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      }
+    }
+  ],
+  "industrial": [
+    {
+      "type": "way",
+      "id": 526710305,
+      "center": {
+        "lat": 31.3017661,
+        "lon": 120.6167373
+      },
+      "nodes": [
+        5121496844,
+        5121496843,
+        5121496842,
+        5121496841,
+        5121496839,
+        5121496838,
+        5121496837,
+        5121496822,
+        5121496836,
+        5121496844
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "金狮科技文化产业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 526827996,
+      "center": {
+        "lat": 31.3051133,
+        "lon": 120.6116062
+      },
+      "nodes": [
+        5122351011,
+        5122351010,
+        5122351009,
+        5122351008,
+        5122351007,
+        5122351006,
+        5122351005,
+        5122351004,
+        5122351003,
+        5122351002,
+        5122351001,
+        5122351000,
+        5209936053,
+        5122350999,
+        5122350998,
+        5122351011
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "东弘科技创业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 527047642,
+      "center": {
+        "lat": 31.316668,
+        "lon": 120.6088043
+      },
+      "nodes": [
+        5124429047,
+        5124429046,
+        5124429045,
+        5124429044,
+        5124429043,
+        5124429042,
+        5124429041,
+        5124429038,
+        5124429039,
+        5124429040,
+        5124429047
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "苏州市创新科技创业园中街路分园",
+        "name:zh": "苏州市创新科技创业园中街路分园",
+        "name:zh-Hans": "苏州市创新科技创业园中街路分园",
+        "name:zh-Hant": "蘇州市創新科技創業園中街路分園"
+      }
+    },
+    {
+      "type": "way",
+      "id": 527047643,
+      "center": {
+        "lat": 31.3157651,
+        "lon": 120.6098314
+      },
+      "nodes": [
+        5124429055,
+        5124429054,
+        5124429053,
+        5124429052,
+        5124429051,
+        5124429050,
+        5124429049,
+        5124429048,
+        5124429055
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "创元科技创业园",
+        "name:zh": "创元科技创业园",
+        "name:zh-Hans": "创元科技创业园",
+        "name:zh-Hant": "創元科技創業園"
+      }
+    },
+    {
+      "type": "way",
+      "id": 527047647,
+      "center": {
+        "lat": 31.3117159,
+        "lon": 120.6106001
+      },
+      "nodes": [
+        5124429093,
+        5124429092,
+        5124429091,
+        5124429090,
+        5124429066,
+        5124429089,
+        5124429088,
+        5124429087,
+        5124429086,
+        5124429085,
+        5124429084,
+        5124429083,
+        5124429082,
+        5124429093
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "苏州婚庆创意产业园",
+        "name:zh": "苏州婚庆创意产业园",
+        "name:zh-Hans": "苏州婚庆创意产业园",
+        "name:zh-Hant": "蘇州婚慶創意產業園"
+      }
+    },
+    {
+      "type": "way",
+      "id": 541039211,
+      "center": {
+        "lat": 31.3171656,
+        "lon": 120.5857779
+      },
+      "nodes": [
+        5232696862,
+        5232696856,
+        5233066328,
+        5233066329,
+        5233066330,
+        5233066331,
+        5232696855,
+        5232696854,
+        5232696863,
+        13857094366,
+        5232696862
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 541249942,
+      "center": {
+        "lat": 31.3079664,
+        "lon": 120.6103979
+      },
+      "nodes": [
+        5209936077,
+        5209936076,
+        5209936075,
+        5234105993,
+        5234105995,
+        5209936077
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 561176570,
+      "center": {
+        "lat": 31.3081767,
+        "lon": 120.5999265
+      },
+      "nodes": [
+        5411654948,
+        5411654946,
+        5411654945,
+        5411654944,
+        5411654943,
+        5411654942,
+        5411654941,
+        5411654940,
+        5411654951,
+        5411654950,
+        5411654949,
+        5411654948
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "石路创业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 562439389,
+      "center": {
+        "lat": 31.3070635,
+        "lon": 120.5883207
+      },
+      "nodes": [
+        5422166457,
+        5422166455,
+        5422166454,
+        5422166453,
+        5422166452,
+        5422166461,
+        5422166462,
+        5422166463,
+        5422166464,
+        5422166465,
+        5422166466,
+        5422166467,
+        5422166456,
+        5422166457
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 562649768,
+      "center": {
+        "lat": 31.3020824,
+        "lon": 120.598973
+      },
+      "nodes": [
+        5423934150,
+        5423934149,
+        5423934148,
+        5423934124,
+        5423934147,
+        5423934146,
+        5423934145,
+        5423934144,
+        5423934157,
+        5423934150
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 562649828,
+      "center": {
+        "lat": 31.3042287,
+        "lon": 120.5996186
+      },
+      "nodes": [
+        5423934538,
+        5423934537,
+        5423934536,
+        5423934535,
+        5423934534,
+        5423934533,
+        5423934532,
+        5423934531,
+        5423934530,
+        5423934529,
+        5423934528,
+        5423934527,
+        5423934542,
+        5423934538
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "苏州市瑞龙钛金有限公司"
+      }
+    },
+    {
+      "type": "way",
+      "id": 570178287,
+      "center": {
+        "lat": 31.2966529,
+        "lon": 120.5957115
+      },
+      "nodes": [
+        5482015879,
+        5482015878,
+        5482015885,
+        5482015886,
+        5482015879
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 584516286,
+      "center": {
+        "lat": 31.2938982,
+        "lon": 120.5941866
+      },
+      "nodes": [
+        5587411613,
+        5587411612,
+        11773514627,
+        5587411601,
+        5587411611,
+        5587411610,
+        11773514628,
+        5587411609,
+        11773514528,
+        5587411608,
+        5587411613
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 584516290,
+      "center": {
+        "lat": 31.2959005,
+        "lon": 120.5992258
+      },
+      "nodes": [
+        5587412151,
+        5587412152,
+        5587412155,
+        5587412145,
+        5587412146,
+        5587412147,
+        5587412148,
+        5587412151
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 584516296,
+      "center": {
+        "lat": 31.2984246,
+        "lon": 120.600589
+      },
+      "nodes": [
+        5587412177,
+        5587412178,
+        5587412164,
+        5122032278,
+        5122032279,
+        5122032280,
+        5122032281,
+        5122032282,
+        5587412163,
+        5587412162,
+        5587412161,
+        5587412175,
+        5587412176,
+        5587412177
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "和声影视"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620890879,
+      "center": {
+        "lat": 31.296339,
+        "lon": 120.6047174
+      },
+      "nodes": [
+        5865760116,
+        5865760115,
+        5865760111,
+        5865760110,
+        5865760109,
+        5865760108,
+        5865760107,
+        5865760106,
+        5865760097,
+        5865760096,
+        5865760095,
+        5865760094,
+        5865759965,
+        5865759966,
+        5865760093,
+        5865760092,
+        5865760091,
+        5865760090,
+        5865760089,
+        3680534071,
+        3680536092,
+        3680536090,
+        5865760098,
+        5865760114,
+        3680536084,
+        5865760116
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "姑苏·69阁文化创意产业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924382,
+      "center": {
+        "lat": 31.2892105,
+        "lon": 120.6078095
+      },
+      "nodes": [
+        5866024119,
+        5866024114,
+        5866024124,
+        5866024120,
+        5866024119
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "美饰科技创业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924402,
+      "center": {
+        "lat": 31.2966092,
+        "lon": 120.6065597
+      },
+      "nodes": [
+        5866025260,
+        5866025256,
+        5866025255,
+        5866025254,
+        5866025258,
+        5866025259,
+        5866025260
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924411,
+      "center": {
+        "lat": 31.2895695,
+        "lon": 120.5973476
+      },
+      "nodes": [
+        5866025302,
+        5866025301,
+        5866025295,
+        5866025300,
+        5866025299,
+        5866025298,
+        5866025297,
+        5017749973,
+        5017749969,
+        5017749967,
+        5017749965,
+        5866025586,
+        5866025585,
+        5866025296,
+        5866025303,
+        5866025302
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924419,
+      "center": {
+        "lat": 31.2900705,
+        "lon": 120.60225
+      },
+      "nodes": [
+        5866025318,
+        5866025342,
+        5866025343,
+        5866025345,
+        5866025317,
+        5866025318
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924442,
+      "center": {
+        "lat": 31.2893988,
+        "lon": 120.5960963
+      },
+      "nodes": [
+        5866025593,
+        5866025580,
+        5017749974,
+        5017749970,
+        5017749966,
+        5866025588,
+        7528103404,
+        5866025593
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924460,
+      "center": {
+        "lat": 31.2914273,
+        "lon": 120.5989133
+      },
+      "nodes": [
+        5866025686,
+        5866025484,
+        5866025483,
+        5866025482,
+        5866025481,
+        5866025480,
+        5866025479,
+        5866025478,
+        5866025477,
+        5866025476,
+        5866025686
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "江南文化创意设计产业园"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924461,
+      "center": {
+        "lat": 31.2916207,
+        "lon": 120.5971813
+      },
+      "nodes": [
+        5866025691,
+        5866025690,
+        5866025689,
+        5866025688,
+        5866025687,
+        5866025686,
+        5866025476,
+        5866025685,
+        5005389729,
+        3680536033,
+        5005389732,
+        5005389731,
+        5005389730,
+        5005389734,
+        3680536054,
+        5005389733,
+        5005389735,
+        3680534122,
+        5017749975,
+        5017749976,
+        5866025691
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924470,
+      "center": {
+        "lat": 31.2925695,
+        "lon": 120.605046
+      },
+      "nodes": [
+        5866025742,
+        5866025725,
+        5017750024,
+        5866025746,
+        5866025745,
+        5866025744,
+        5866025743,
+        5866025742
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924516,
+      "center": {
+        "lat": 31.293538,
+        "lon": 120.5988926
+      },
+      "nodes": [
+        5866025813,
+        5866025812,
+        5866025811,
+        5866025810,
+        5866025809,
+        5866025808,
+        5866025807,
+        3680536063,
+        5866025805,
+        5866025806,
+        5866025804,
+        3680534082,
+        5866025751,
+        3680536069,
+        5005389740,
+        5005389741,
+        5005389742,
+        3680536042,
+        5866025813
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 620924518,
+      "center": {
+        "lat": 31.2941324,
+        "lon": 120.599482
+      },
+      "nodes": [
+        5865759968,
+        7795928705,
+        5866025824,
+        5866025823,
+        5866025822,
+        5866025821,
+        5866025820,
+        5866025819,
+        5866025818,
+        5866025817,
+        5865759970,
+        5865759969,
+        5865759968
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 741039434,
+      "center": {
+        "lat": 31.313801,
+        "lon": 120.5830581
+      },
+      "nodes": [
+        6937768355,
+        6937768317,
+        6937768311,
+        6937768312,
+        6937768309,
+        6937768310,
+        6937768353,
+        6937768354,
+        6937768355
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 741039437,
+      "center": {
+        "lat": 31.3113845,
+        "lon": 120.5805937
+      },
+      "nodes": [
+        6937768320,
+        6937768319,
+        6937621242,
+        6937621074,
+        6937621223,
+        6937621241,
+        6937621240,
+        6937621239,
+        6937621238,
+        6937621237,
+        6937621236,
+        6937768342,
+        6937768341,
+        6937768340,
+        6937768339,
+        6937768338,
+        6937621202,
+        6937621203,
+        6937768337,
+        6937768336,
+        6937768335,
+        6937768334,
+        6937768333,
+        6937768332,
+        6937768331,
+        6937768351,
+        6937768352,
+        6937768330,
+        6937768329,
+        6937768328,
+        6937768327,
+        6937768326,
+        6937768286,
+        6937768325,
+        6937768324,
+        6937768323,
+        6937768322,
+        6937768321,
+        6937621190,
+        6937621191,
+        6937621192,
+        6937621193,
+        6945060216,
+        6937621205,
+        6937621094,
+        6937621095,
+        6937768320
+      ],
+      "tags": {
+        "landuse": "industrial",
+        "name": "迅达电梯有限公司"
+      }
+    },
+    {
+      "type": "way",
+      "id": 741252462,
+      "center": {
+        "lat": 31.2925922,
+        "lon": 120.583034
+      },
+      "nodes": [
+        5481976380,
+        6939376975,
+        6939376974,
+        6939376973,
+        6939376972,
+        6939376971,
+        6939376970,
+        6939376969,
+        5481976387,
+        5481976386,
+        5481976385,
+        5481976384,
+        5481976383,
+        5481976382,
+        5481976379,
+        5481976380
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    },
+    {
+      "type": "way",
+      "id": 741252474,
+      "center": {
+        "lat": 31.2958807,
+        "lon": 120.5876405
+      },
+      "nodes": [
+        6939377125,
+        5122031895,
+        5122031894,
+        5122031893,
+        5122031892,
+        5122031891,
+        6939377130,
+        6939377129,
+        6939377128,
+        6939377126,
+        6939377125
+      ],
+      "tags": {
+        "landuse": "industrial"
+      }
+    }
+  ]
+}

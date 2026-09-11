@@ -1,0 +1,26 @@
+{
+  "figures": {
+    "site_b_v2": {
+      "primary_red_px": 1328,
+      "aux_brown_px": 272,
+      "red_over_brown_ratio": 4.88,
+      "band_coverage": [
+        0.2085,
+        0.1831,
+        0.1751
+      ]
+    }
+  },
+  "label_overlaps_n": 0,
+  "site_b_band_coverage_v1": [
+    0.2207,
+    0.1841,
+    0.1755
+  ],
+  "site_b_band_coverage_v2": [
+    0.2085,
+    0.1831,
+    0.1751
+  ],
+  "site_b_lower_bands_improvement": 1.0
+}

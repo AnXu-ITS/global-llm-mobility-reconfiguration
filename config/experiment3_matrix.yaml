@@ -1,0 +1,401 @@
+experiment3:
+  version: 2
+  step_s: 1
+  mission_release_t_s: 300
+  disruption_t_s: 300
+  failure_a_t_s: 360
+  second_emergency_t_s: 300
+  failure_b_t_s: 420
+  failure_c_t_s: 480
+  periodic_decision_s: 30
+  primary_emergency:
+    mission_id: M-CRITICAL-001
+    type: medical_blood
+    priority: CRITICAL
+    origin: V2
+    destination: V1
+    deadline_slack_s: 180
+    ground_fallback: true
+    delay_cost: 60.0
+    cancellation_cost: 600.0
+  second_emergency:
+    mission_id: M-CRITICAL-002
+    type: medical_organ
+    priority: HIGH
+    origin: V3
+    destination: V1
+    deadline_slack_s: 240
+    ground_fallback: true
+    delay_cost: 45.0
+    cancellation_cost: 450.0
+  disruptions:
+    MEDIUM:
+      severity: MEDIUM
+      links:
+      - B1
+  urgencies:
+    CRITICAL:
+      priority: CRITICAL
+      deadline_slack_s: 180
+      delay_cost: 60.0
+      cancellation_cost: 600.0
+    HIGH:
+      priority: HIGH
+      deadline_slack_s: 240
+      delay_cost: 45.0
+      cancellation_cost: 450.0
+  workloads:
+    W0:
+      busy:
+      - - L-UAV-01
+        - M-L-001
+        - logistics
+        - NORMAL
+        - V2
+        - V3
+        - false
+      - - EVTOL-01
+        - M-P-001
+        - passenger_transfer
+        - NORMAL
+        - V2
+        - V1
+        - false
+      idle:
+      - M-UAV-01
+      - M-UAV-02
+    W1:
+      busy:
+      - - L-UAV-01
+        - M-L-001
+        - logistics
+        - NORMAL
+        - V2
+        - V3
+        - false
+      - - EVTOL-01
+        - M-P-001
+        - passenger_transfer
+        - NORMAL
+        - V2
+        - V1
+        - false
+      - - M-UAV-01
+        - M-M-001
+        - medical_transfer
+        - HIGH
+        - V1
+        - V3
+        - false
+      idle:
+      - M-UAV-02
+  scenarios:
+  - id: E3_L1_F1_C2
+    level: L1
+    motif: anchor_single_c2_lost
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F1
+      time_s: 360
+      target: M-UAV-02
+  - id: E3_L1_F5_C2
+    level: L1
+    motif: anchor_single_intrusion
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F5
+      time_s: 360
+      zone:
+        id: ZN-F5-02
+        type: circle
+        lat: 31.304024142602
+        lon: 120.59980924131
+        radius_m: 100
+        active_from_s: 360
+        active_until_s: 480
+      unknown_trajectory:
+        lat0: 31.304
+        lon0: 120.5975
+        heading_deg: 90
+        speed_kts: 25
+        length_m: 2500
+  - id: E3_L2_F1_F1
+    level: L2
+    motif: cascade_double_c2_lost
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F1
+      time_s: 360
+      target: M-UAV-02
+    - family: F1
+      time_s: 420
+      target: M-UAV-01
+  - id: E3_L2_F1_F5
+    level: L2
+    motif: cascade_c2lost_then_intrusion
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F1
+      time_s: 360
+      target: M-UAV-02
+    - family: F5
+      time_s: 420
+      zone:
+        id: ZN-F5-E3-01
+        type: circle
+        radius_m: 250
+        active_from_s: 420
+        active_until_s: 540
+        lat: 31.3087186
+        lon: 120.6033734
+      unknown_trajectory:
+        heading_deg: 90
+        speed_kts: 25
+        length_m: 2500
+        lat0: 31.3087186
+        lon0: 120.6008734
+  - id: E3_L2_F2_F4
+    level: L2
+    motif: cascade_gnss_then_site
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F2
+      time_s: 360
+      zone:
+        id: ZN-F2-E3-01
+        type: circle
+        radius_m: 100
+        active_from_s: 360
+        active_until_s: 900
+        candidate_rule: none
+        lat: 31.3042982
+        lon: 120.5999763
+    - family: F4
+      time_s: 420
+      site: V1
+  - id: E3_L2_F6_F5
+    level: L2
+    motif: cascade_flyaway_then_intrusion
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W0
+    duration_s: 900
+    emergencies:
+    - M-CRITICAL-001
+    failure_schedule:
+    - family: F6
+      time_s: 360
+      target: L-UAV-01
+      envelope:
+        id: ENV-F6-E3-01
+        type: strip
+        half_width_m: 200
+        active_from_s: 360
+        active_until_s: 900
+        lat0: 31.301
+        lon0: 120.597
+        heading_deg: 20
+        length_m: 2000
+      trajectory:
+        speed_kts: 30
+    - family: F5
+      time_s: 420
+      zone:
+        id: ZN-F5-E3-02
+        type: circle
+        radius_m: 200
+        active_from_s: 420
+        active_until_s: 540
+        lat: 31.3087186
+        lon: 120.6033734
+      unknown_trajectory:
+        heading_deg: 90
+        speed_kts: 25
+        length_m: 2500
+        lat0: 31.3087186
+        lon0: 120.6008734
+  - id: E3_L3_COMP_F1
+    level: L3
+    motif: competition_peripheral_c2_lost
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F1
+      time_s: 360
+      target: L-UAV-01
+  - id: E3_L3_COMP_F2
+    level: L3
+    motif: competition_peripheral_gnss
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F2
+      time_s: 360
+      zone:
+        id: ZN-F2-E3-02
+        type: circle
+        radius_m: 300
+        active_from_s: 360
+        active_until_s: 900
+        candidate_rule: none
+        lat: 31.3065604
+        lon: 120.6027607
+  - id: E3_L3_COMP_F4
+    level: L3
+    motif: competition_peripheral_site
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F4
+      time_s: 360
+      site: V2
+  - id: E3_L3_COMP_F5
+    level: L3
+    motif: competition_peripheral_intrusion
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F5
+      time_s: 360
+      zone:
+        id: ZN-F5-E3-03
+        type: circle
+        radius_m: 400
+        active_from_s: 360
+        active_until_s: 480
+        lat: 31.314
+        lon: 120.587
+      unknown_trajectory:
+        heading_deg: 90
+        speed_kts: 25
+        length_m: 2500
+        lat0: 31.314
+        lon0: 120.5845
+  - id: E3_L4_A
+    level: L4
+    motif: full_compound_aircraft_site_competition
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F1
+      time_s: 360
+      target: L-UAV-01
+    - family: F4
+      time_s: 420
+      site: V1
+  - id: E3_L4_B
+    level: L4
+    motif: full_compound_triple_zone
+    disruption: MEDIUM
+    urgency: CRITICAL
+    workload: W1
+    duration_s: 1200
+    emergencies:
+    - M-CRITICAL-001
+    - M-CRITICAL-002
+    failure_schedule:
+    - family: F6
+      time_s: 360
+      target: L-UAV-01
+      envelope:
+        id: ENV-F6-E3-02
+        type: strip
+        half_width_m: 200
+        active_from_s: 360
+        active_until_s: 1200
+        lat0: 31.301
+        lon0: 120.597
+        heading_deg: 20
+        length_m: 2000
+      trajectory:
+        speed_kts: 30
+    - family: F5
+      time_s: 420
+      zone:
+        id: ZN-F5-E3-04
+        type: circle
+        radius_m: 200
+        active_from_s: 420
+        active_until_s: 540
+        lat: 31.3087186
+        lon: 120.6033734
+      unknown_trajectory:
+        heading_deg: 90
+        speed_kts: 25
+        length_m: 2500
+        lat0: 31.3087186
+        lon0: 120.6008734
+    - family: F2
+      time_s: 480
+      zone:
+        id: ZN-F2-E3-03
+        type: circle
+        radius_m: 300
+        active_from_s: 480
+        active_until_s: 1200
+        candidate_rule: none
+        lat: 31.3065604
+        lon: 120.6027607
+  pilots:
+  - scenario: E3_L1_F1_C2
+    label: "PILOT-L1 (anchor regression)"
+  - scenario: E3_L1_F5_C2
+    label: "PILOT-L1 (anchor regression F5)"
+  - scenario: E3_L2_F1_F5
+    label: "PILOT-L2 (cascade)"
+  - scenario: E3_L2_F6_F5
+    label: "PILOT-L2 (cascade zones)"
+  - scenario: E3_L3_COMP_F1
+    label: "PILOT-L3 (competition)"
+  - scenario: E3_L4_B
+    label: "PILOT-L4 (full compound)"

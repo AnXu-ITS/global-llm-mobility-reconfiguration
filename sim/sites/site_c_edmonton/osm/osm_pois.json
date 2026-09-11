@@ -1,0 +1,845 @@
+{
+  "elements": [
+    {
+      "type": "node",
+      "id": 2955340269,
+      "tags": {
+        "amenity": "clinic",
+        "amenity_1": "pharmacy",
+        "name": "Everyday Medical"
+      },
+      "lat": 53.4587001,
+      "lon": -113.4175521
+    },
+    {
+      "type": "node",
+      "id": 4550667454,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "South Side Women's Health Centre"
+      },
+      "lat": 53.4615595,
+      "lon": -113.4325467
+    },
+    {
+      "type": "node",
+      "id": 10139127971,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "4222",
+        "addr:province": "AB",
+        "addr:street": "66 Street NW",
+        "amenity": "dentist",
+        "healthcare": "dentist",
+        "name": "Parhar Dental Group",
+        "phone": "+1 780 450 6200",
+        "website": "https://parhardentalgroup.com/"
+      },
+      "lat": 53.4810925,
+      "lon": -113.4441412
+    },
+    {
+      "type": "node",
+      "id": 13120335111,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "3017",
+        "addr:postcode": "T6k 4B2",
+        "addr:province": "AB",
+        "addr:street": "66 Street NW",
+        "addr:unit": "216",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "vaccination;travel_clinic",
+        "name": "Passport Health Southeast Edmonton Travel Clinic",
+        "operator": "Passport Health",
+        "operator:type": "private",
+        "operator:wikidata": "Q30270336"
+      },
+      "lat": 53.461616,
+      "lon": -113.4331082
+    },
+    {
+      "type": "node",
+      "id": 13684777528,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "7319",
+        "addr:postcode": "T6K 2P1",
+        "addr:province": "AB",
+        "addr:street": "29 Avenue NW",
+        "addr:unit": "207",
+        "amenity": "dentist",
+        "healthcare": "dentist",
+        "name": "Arch Dental"
+      },
+      "lat": 53.4591149,
+      "lon": -113.4442712
+    },
+    {
+      "type": "way",
+      "id": 26128839,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "2850",
+        "addr:postcode": "T6K 4A1",
+        "addr:province": "AB",
+        "addr:street": "Mill Woods Road West NW",
+        "amenity": "school",
+        "check_date": "2025-07-15",
+        "denomination": "catholic",
+        "email": "FrereAntoine@ecsd.net",
+        "name": "École Frère Antoine",
+        "operator": "Edmonton Catholic Schools",
+        "operator:short": "ECSD",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339019",
+        "phone": "+1 780 463 2957",
+        "religion": "christian",
+        "website": "https://frereantoine.ecsd.net/"
+      },
+      "center": {
+        "lat": 53.45978388571428,
+        "lon": -113.44948417857142
+      }
+    },
+    {
+      "type": "way",
+      "id": 54318994,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "1100",
+        "addr:postcode": "T6L 5X8",
+        "addr:province": "AB",
+        "addr:street": "Youville Drive West NW",
+        "building": "hospital",
+        "building:levels": "5",
+        "emergency": "yes",
+        "name": "Grey Nuns Community Hospital",
+        "opening_date": "1988",
+        "operator": "Covenant Health/Alberta Health Services",
+        "website": "https://www.covenanthealth.ca/hospitals-care-centres/grey-nuns-community-hospital/",
+        "wheelchair": "yes",
+        "wikidata": "Q5608215",
+        "wikipedia": "en:Grey Nuns Community Hospital"
+      },
+      "center": {
+        "lat": 53.46187991836735,
+        "lon": -113.42904781020408
+      }
+    },
+    {
+      "type": "way",
+      "id": 98293608,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "7629",
+        "addr:postcode": "T6K 2N2",
+        "addr:province": "AB",
+        "addr:street": "38 Avenue NW",
+        "building": "retail",
+        "fax": "+1 780 461 7072",
+        "name": "Millbourne Market Mall",
+        "opening_hours": "Mo-Fr 10:00-21:00; Sa 10:00-17:30; Su 10:00-17:00",
+        "phone": "+1 780 462 3333",
+        "shop": "mall",
+        "source": "NRCan-CanVec-7.0",
+        "website": "https://www.millbournemall.com/"
+      },
+      "center": {
+        "lat": 53.4719899779661,
+        "lon": -113.45030120338983
+      }
+    },
+    {
+      "type": "way",
+      "id": 136429374,
+      "tags": {
+        "landuse": "retail",
+        "source": "Bing"
+      },
+      "center": {
+        "lat": 53.48136830000001,
+        "lon": -113.41740353333334
+      }
+    },
+    {
+      "type": "way",
+      "id": 136457271,
+      "tags": {
+        "landuse": "retail",
+        "name": "Millbourne Market Mall",
+        "source": "Bing"
+      },
+      "center": {
+        "lat": 53.472342316,
+        "lon": -113.45079663599999
+      }
+    },
+    {
+      "type": "way",
+      "id": 222679705,
+      "tags": {
+        "landuse": "retail",
+        "source": "Bing"
+      },
+      "center": {
+        "lat": 53.482380750000004,
+        "lon": -113.4170547
+      }
+    },
+    {
+      "type": "way",
+      "id": 265359838,
+      "tags": {
+        "building": "industrial"
+      },
+      "center": {
+        "lat": 53.48675560769231,
+        "lon": -113.44881953846154
+      }
+    },
+    {
+      "type": "way",
+      "id": 295699431,
+      "tags": {
+        "landuse": "retail",
+        "name": "66 Street Plaza"
+      },
+      "center": {
+        "lat": 53.48095393333333,
+        "lon": -113.44409879999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 308795601,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.4767006,
+        "lon": -113.41788215
+      }
+    },
+    {
+      "type": "way",
+      "id": 322045201,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "3705",
+        "addr:postcode": "T6L 5X2",
+        "addr:province": "AB",
+        "addr:street": "Mill Woods Road East NW",
+        "amenity": "community_centre",
+        "building": "community_centre",
+        "contact:facebook": "https://www.facebook.com/ridgewoocl.org",
+        "email": "ridgecl@telus.net",
+        "fax": "+1-780-462-5715",
+        "name": "Ridgewood Community League",
+        "phone": "+1-780-450-6338",
+        "website": "https://www.ridgewoodcl.org/"
+      },
+      "center": {
+        "lat": 53.468771238095236,
+        "lon": -113.40787765238095
+      }
+    },
+    {
+      "type": "way",
+      "id": 322087021,
+      "tags": {
+        "addr:housenumber": "980",
+        "addr:street": "Millbourne Road East NW",
+        "amenity": "community_centre",
+        "building": "yes",
+        "layer": "-1",
+        "name": "North Millbourne Community League",
+        "phone": "+1 780 914 3390",
+        "website": "https://nmclinfo.com/"
+      },
+      "center": {
+        "lat": 53.4796354,
+        "lon": -113.44740973333334
+      }
+    },
+    {
+      "type": "way",
+      "id": 322088963,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:province": "AB",
+        "addr:street": "41 Avenue NW",
+        "amenity": "community_centre",
+        "building": "yes",
+        "name": "Burnewood Community League Hall"
+      },
+      "center": {
+        "lat": 53.477743294117644,
+        "lon": -113.40483821764707
+      }
+    },
+    {
+      "type": "way",
+      "id": 322092980,
+      "tags": {
+        "addr:housenumber": "5804",
+        "addr:street": "38 Avenue NW",
+        "amenity": "community_centre",
+        "building": "yes",
+        "name": "Woodvale Community League"
+      },
+      "center": {
+        "lat": 53.47413661666667,
+        "lon": -113.42694973333334
+      }
+    },
+    {
+      "type": "way",
+      "id": 427630969,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "1100",
+        "addr:postcode": "T6L 5X8",
+        "addr:province": "AB",
+        "addr:street": "Youville Drive West NW",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Grey Nuns Community Hospital",
+        "operator": "Alberta Health Services",
+        "operator:short": "AHS",
+        "operator:type": "public",
+        "operator:wikidata": "Q4711650",
+        "website": "https://www.covenanthealth.ca/hospitals-care-centres/grey-nuns-community-hospital/",
+        "wikidata": "Q5608215",
+        "wikipedia": "en:Grey Nuns Community Hospital"
+      },
+      "center": {
+        "lat": 53.46130272083334,
+        "lon": -113.42964183333333
+      }
+    },
+    {
+      "type": "way",
+      "id": 439288845,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "7007",
+        "addr:postcode": "T6K 4A5",
+        "addr:province": "AB",
+        "addr:street": "28 Avenue NW",
+        "amenity": "school",
+        "denomination": "catholic",
+        "grades": "9-12",
+        "name": "Holy Trinity Catholic High School",
+        "operator": "Edmonton Catholic Schools",
+        "operator:short": "ECSD",
+        "operator:type": "religious",
+        "operator:wikidata": "Q5339019",
+        "religion": "christian",
+        "website": "https://www.ecsd.net/8411",
+        "wikidata": "Q14874809",
+        "wikipedia": "en:Holy Trinity Catholic High School (Edmonton)"
+      },
+      "center": {
+        "lat": 53.457177622580645,
+        "lon": -113.44283771612903
+      }
+    },
+    {
+      "type": "way",
+      "id": 439392411,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.457356655,
+        "lon": -113.42638602
+      }
+    },
+    {
+      "type": "way",
+      "id": 458750577,
+      "tags": {
+        "amenity": "school",
+        "email": "minchau@epsb.ca",
+        "fax": "+1 780 461 0837",
+        "name": "Minchau Elementary School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 461 0616",
+        "religion": "none",
+        "website": "https://minchau.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.46818003333333,
+        "lon": -113.40666280833334
+      }
+    },
+    {
+      "type": "way",
+      "id": 533303637,
+      "tags": {
+        "amenity": "school",
+        "email": "hillview@epsb.ca",
+        "fax": "+1 780 462 5222",
+        "name": "Hillview Elementary School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 463 8108",
+        "religion": "none",
+        "website": "https://hillview.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.468778331578946,
+        "lon": -113.42793190526316
+      }
+    },
+    {
+      "type": "way",
+      "id": 533705536,
+      "tags": {
+        "amenity": "school",
+        "name": "Bisset School"
+      },
+      "center": {
+        "lat": 53.460476926666665,
+        "lon": -113.39997984
+      }
+    },
+    {
+      "type": "way",
+      "id": 533705537,
+      "tags": {
+        "amenity": "school",
+        "denomination": "catholic",
+        "name": "Mary Hanley Catholic School",
+        "operator": "Edmonton Catholic Schools",
+        "operator:short": "ECSD",
+        "operator:type": "religious",
+        "operator:wikidata": "Q5339019",
+        "religion": "christian"
+      },
+      "center": {
+        "lat": 53.46219110714286,
+        "lon": -113.40076368571428
+      }
+    },
+    {
+      "type": "way",
+      "id": 535085020,
+      "tags": {
+        "amenity": "school",
+        "name": "Kate Chegwin School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084"
+      },
+      "center": {
+        "lat": 53.4625755,
+        "lon": -113.41499872727273
+      }
+    },
+    {
+      "type": "way",
+      "id": 535085021,
+      "tags": {
+        "amenity": "school",
+        "email": "weinlos@epsb.ca",
+        "fax": "+1 780 461 3136",
+        "name": "Weinlos School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 462 5261",
+        "religion": "none",
+        "website": "https://weinlos.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.46069991875,
+        "lon": -113.4145222125
+      }
+    },
+    {
+      "type": "way",
+      "id": 535090546,
+      "tags": {
+        "amenity": "school",
+        "email": "leeridge@epsb.ca",
+        "fax": "+1 780 461 1074",
+        "grades": "0-6",
+        "name": "Lee Ridge School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 462 3230",
+        "religion": "none",
+        "website": "https://leeridge.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.47071040555555,
+        "lon": -113.44631330555555
+      }
+    },
+    {
+      "type": "way",
+      "id": 535096304,
+      "tags": {
+        "amenity": "school",
+        "email": "greenview@epsb.ca",
+        "fax": "+1 780 468 5260",
+        "name": "Greenview Elementary School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 462 0660",
+        "religion": "none",
+        "website": "https://greenview.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.47529824285714,
+        "lon": -113.4279626142857
+      }
+    },
+    {
+      "type": "way",
+      "id": 535103637,
+      "tags": {
+        "amenity": "school",
+        "name": "St. Kateri Catholic School",
+        "operator": "Edmonton Catholic Schools",
+        "operator:wikidata": "Q5339019"
+      },
+      "center": {
+        "lat": 53.47633495,
+        "lon": -113.401657625
+      }
+    },
+    {
+      "type": "way",
+      "id": 535103639,
+      "tags": {
+        "amenity": "school",
+        "email": "jkiniski@epsb.ca",
+        "fax": "+1 780 440 0925",
+        "name": "Julia Kiniski School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084",
+        "phone": "+1 780 462 4622",
+        "religion": "none",
+        "website": "https://juliakiniski.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.47818476,
+        "lon": -113.40637883999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 535107161,
+      "tags": {
+        "amenity": "school",
+        "name": "Jackson Heights School",
+        "operator": "Edmonton Public Schools",
+        "operator:short": "EPSB",
+        "operator:type": "public",
+        "operator:wikidata": "Q5339084"
+      },
+      "center": {
+        "lat": 53.483393650000004,
+        "lon": -113.40776421999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 537044056,
+      "tags": {
+        "amenity": "school",
+        "denomination": "catholic",
+        "email": "BlessedJohnPaulI@ecsd.net",
+        "name": "John Paul I Catholic School",
+        "operator": "Edmonton Catholic Schools",
+        "operator:short": "ECSD",
+        "operator:wikidata": "Q5339019",
+        "phone": "+1 780 462 6448",
+        "religion": "christian",
+        "website": "https://blessedjohnpauli.ecsd.net/"
+      },
+      "center": {
+        "lat": 53.47118325,
+        "lon": -113.42646961999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 537314063,
+      "tags": {
+        "amenity": "school",
+        "email": "kameyosek@epsb.ca",
+        "fax": "+1 780 462 8755",
+        "name": "Kameyosek Elementary School",
+        "phone": "+1 780 462 8724",
+        "religion": "none",
+        "website": "https://kameyosek.epsb.ca/"
+      },
+      "center": {
+        "lat": 53.460909018181816,
+        "lon": -113.44168005454544
+      }
+    },
+    {
+      "type": "way",
+      "id": 539885824,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.48208661428571,
+        "lon": -113.44424125714285
+      }
+    },
+    {
+      "type": "way",
+      "id": 556835249,
+      "tags": {
+        "landuse": "retail",
+        "name": "Mill Woods Mainstreet Mall"
+      },
+      "center": {
+        "lat": 53.45936445625,
+        "lon": -113.43200619375
+      }
+    },
+    {
+      "type": "way",
+      "id": 556866653,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.46782291428571,
+        "lon": -113.43103959999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 556875401,
+      "tags": {
+        "landuse": "retail",
+        "name": "Aspenwood"
+      },
+      "center": {
+        "lat": 53.467184833333334,
+        "lon": -113.40976616666667
+      }
+    },
+    {
+      "type": "way",
+      "id": 557118001,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.458903125,
+        "lon": -113.417414625
+      }
+    },
+    {
+      "type": "way",
+      "id": 557174673,
+      "tags": {
+        "landuse": "retail",
+        "name": "VKT Plaza",
+        "old_name:en": "Lee Ridge Shopping Centre"
+      },
+      "center": {
+        "lat": 53.467869416666666,
+        "lon": -113.44980538333334
+      }
+    },
+    {
+      "type": "way",
+      "id": 557205350,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Allen Gray Continuing Care Centre"
+      },
+      "center": {
+        "lat": 53.45857952,
+        "lon": -113.42257145
+      }
+    },
+    {
+      "type": "way",
+      "id": 557229186,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.47053572,
+        "lon": -113.42186426
+      }
+    },
+    {
+      "type": "way",
+      "id": 574145086,
+      "tags": {
+        "landuse": "retail",
+        "name": "Kameyosek Shopping Centre"
+      },
+      "center": {
+        "lat": 53.459271928571425,
+        "lon": -113.44721779999999
+      }
+    },
+    {
+      "type": "way",
+      "id": 574557678,
+      "tags": {
+        "brand": "Dodge",
+        "brand:wikidata": "Q27564",
+        "landuse": "retail",
+        "name": "Dodge Southtown Chrysler",
+        "shop": "car"
+      },
+      "center": {
+        "lat": 53.483472657142855,
+        "lon": -113.44388938571429
+      }
+    },
+    {
+      "type": "way",
+      "id": 657802877,
+      "tags": {
+        "landuse": "retail"
+      },
+      "center": {
+        "lat": 53.45949444,
+        "lon": -113.42824918000001
+      }
+    },
+    {
+      "type": "way",
+      "id": 982060711,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "2771",
+        "addr:postcode": "T6L 6N5",
+        "addr:province": "AB",
+        "addr:street": "Hewes Way NW",
+        "building": "retail",
+        "healthcare": "physiotherapist",
+        "name": "East Edmonton Physical Therapy"
+      },
+      "center": {
+        "lat": 53.45856892222222,
+        "lon": -113.4280758
+      }
+    },
+    {
+      "type": "way",
+      "id": 982060712,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "6135",
+        "addr:postcode": "T6L 6N5",
+        "addr:province": "AB",
+        "addr:street": "28 Avenue NW",
+        "building": "retail",
+        "fax": "+1-780-463-1107",
+        "healthcare": "optometrist",
+        "name": "Mainstreet Vision Care",
+        "opening_hours": "Mo-Fr 09:00-17:30; We,Th 09:00-19:30; Sa 09:00-15:00",
+        "operator": "Mainstreet Vision Care",
+        "phone": "+1-780-462-8209",
+        "website": "https://www.mainstreetvisioncare.com/"
+      },
+      "center": {
+        "lat": 53.45856594285714,
+        "lon": -113.42790222857143
+      }
+    },
+    {
+      "type": "way",
+      "id": 1132824131,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "1090",
+        "addr:postcode": "T6L 5X8",
+        "addr:province": "AB",
+        "addr:street": "Youville Drive NW",
+        "building": "hospital",
+        "building:levels": "4",
+        "name": "St. Marguerite Health Services Centre",
+        "operator": "Alberta Health Services",
+        "website": "https://www.albertahealthservices.ca/findhealth/facility.aspx?id=1024252"
+      },
+      "center": {
+        "lat": 53.46123265333333,
+        "lon": -113.42822020666668
+      }
+    },
+    {
+      "type": "way",
+      "id": 1132824137,
+      "tags": {
+        "building": "hospital",
+        "building:levels": "1"
+      },
+      "center": {
+        "lat": 53.46139002307692,
+        "lon": -113.42926726923078
+      }
+    },
+    {
+      "type": "way",
+      "id": 1132824138,
+      "tags": {
+        "building": "hospital",
+        "building:levels": "1"
+      },
+      "center": {
+        "lat": 53.46150947272727,
+        "lon": -113.42836887272728
+      }
+    },
+    {
+      "type": "way",
+      "id": 1133157295,
+      "tags": {
+        "addr:city": "Edmonton",
+        "addr:housenumber": "1100",
+        "addr:postcode": "T6L 5X8",
+        "addr:province": "AB",
+        "addr:street": "Youville Drive West NW",
+        "building": "hospital",
+        "building:levels": "1",
+        "emergency": "yes",
+        "name": "Grey Nuns Community Hospital",
+        "opening_date": "1988",
+        "operator": "Covenant Health/Alberta Health Services",
+        "website": "https://www.covenanthealth.ca/hospitals-care-centres/grey-nuns-community-hospital/",
+        "wheelchair": "yes",
+        "wikidata": "Q5608215",
+        "wikipedia": "en:Grey Nuns Community Hospital"
+      },
+      "center": {
+        "lat": 53.46187505151515,
+        "lon": -113.43058219999999
+      }
+    }
+  ]
+}

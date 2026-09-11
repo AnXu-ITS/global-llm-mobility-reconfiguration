@@ -1,0 +1,1 @@
+{"decision_id":"D001","executed_action":null,"normalized_action":{"aircraft_id":"M-UAV-02","mission_id":"M-CRITICAL-001","route":["V1"],"target_site":"V1","type":"DISPATCH"},"raw_action":{"aircraft_id":"M-UAV-02","mission_id":"M-CRITICAL-001","route":["V1"],"target_site":"V1","type":"DISPATCH"},"result":"DEFERRED","t":300}

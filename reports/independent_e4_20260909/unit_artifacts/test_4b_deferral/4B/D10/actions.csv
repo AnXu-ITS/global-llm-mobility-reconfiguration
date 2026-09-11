@@ -1,0 +1,2 @@
+t,action_type,aircraft_id,mission_id,target_site,route,result,decision_id
+300,DISPATCH,M-UAV-02,M-CRITICAL-001,V1,"[""V1""]",DEFERRED,D001

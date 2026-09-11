@@ -1,0 +1,6 @@
+{"kind":"deck","id":"pr/nrg9v8","name":"Deck"}
+{"kind":"layout","layoutId":"9ef1ef1d-b318-4da6-ab47-543c05fe57ce","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"408b4489-7abb-4c10-83da-2522c5d8cec5","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/k6ae4h","slide":1,"title":"Ground–Low-Altitude Mobility Manager","textShapes":1}
+{"kind":"textbox","id":"sh/7e50zylk","slide":1,"text":"Ground–Low-Altitude Mobility Manager","textPreview":"Ground–Low-Altitude Mobility Manager","textChars":36,"textLines":1,"bbox":[80,80,480,100]}
+{"kind":"notes","id":"nt/k6ae4h","slide":1,"text":""}

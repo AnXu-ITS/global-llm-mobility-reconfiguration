@@ -1,0 +1,86 @@
+# Cross-site Experiment-1 matrix — Site C (Edmonton). FULL SCALE.
+#
+# Mirrors the frozen primary matrix (config/experiment1_final_matrix.yaml)
+# structure 1:1 (same factors, urgencies, workloads, scenario ids with the XC_
+# prefix), with the site's OWN ranked disruption links:
+#   LOW    = [B2]           edge 1427039799,                +22.14 %
+#   MEDIUM = [B1]           edge 471736601#0-AddedOnRampEdge, +34.76 % (ranked critical link)
+#   HIGH   = [B1, B2] + capacity degradation (degrade_detour_factor 0.5)
+# Severity magnitudes are site-specific (Edmonton sparse-network penalty range);
+# the factor STRUCTURE is identical to Site A.
+#
+# Scale: 12 scenarios x 20 frozen seeds x 4 managers = 960 primary runs
+#        + 6 scenarios x 10 seeds B4a ablation = 60 runs.
+experiment1:
+  version: 1
+  duration_s: 900
+  step_s: 1
+  seed: 20240601
+  mission_release_t_s: 300
+  disruption_t_s: 300
+  periodic_decision_s: 30          # event-triggered + 30 s periodic (frozen policy)
+  emergency_mission:
+    mission_id: M-EMERGENCY-001
+    type: medical_blood
+    origin: V2
+    destination: V1
+    ground_fallback: true
+
+  disruptions:
+    LOW:
+      severity: LOW
+      links: [B2]              # +22.14 % (distinct corridor segment)
+    MEDIUM:
+      severity: MEDIUM
+      links: [B1]              # +34.76 % (ranked critical road link)
+    HIGH:
+      severity: HIGH
+      links: [B1, B2]          # combined closure + capacity degradation
+      degrade_detour_factor: 0.5
+
+  urgencies:
+    HIGH:
+      priority: HIGH
+      deadline_slack_s: 300
+      delay_cost: 20.0
+      cancellation_cost: 200.0
+    CRITICAL:
+      priority: CRITICAL
+      deadline_slack_s: 180          # ground 310.1 s (MEDIUM) misses; air ~161 s meets
+      delay_cost: 60.0
+      cancellation_cost: 600.0
+
+  # busy rows: (aircraft, mission_id, mission_type, mission_priority, origin, dest, reassignable)
+  workloads:
+    low:
+      busy:
+        - [L-UAV-01,  M-L-001, logistics,          NORMAL, V2, V3, false]
+        - [EVTOL-01, M-P-001, passenger_transfer, NORMAL, V2, V1, false]
+      idle: [M-UAV-01, M-UAV-02]
+    high:
+      busy:
+        - [L-UAV-01,  M-L-001, logistics,          NORMAL, V2, V3, false]
+        - [EVTOL-01, M-P-001, passenger_transfer, NORMAL, V2, V1, false]
+        - [M-UAV-01, M-M-001, medical_transfer,   HIGH,   V1, V3, false]
+        - [M-UAV-02, M-L-002, logistics,          NORMAL, V2, V1, true]
+      idle: []
+
+  scenarios:
+    - {id: XC_H_C_low,  disruption: HIGH,   urgency: CRITICAL, workload: low,  tradeoff: air_clearly_useful}
+    - {id: XC_H_C_high, disruption: HIGH,   urgency: CRITICAL, workload: high, tradeoff: borderline}
+    - {id: XC_H_H_low,  disruption: HIGH,   urgency: HIGH,     workload: low,  tradeoff: unnecessary_air_or_useful}
+    - {id: XC_H_H_high, disruption: HIGH,   urgency: HIGH,     workload: high, tradeoff: ground_preferable}
+    - {id: XC_M_C_low,  disruption: MEDIUM, urgency: CRITICAL, workload: low,  tradeoff: air_useful}
+    - {id: XC_M_C_high, disruption: MEDIUM, urgency: CRITICAL, workload: high, tradeoff: borderline}
+    - {id: XC_M_H_low,  disruption: MEDIUM, urgency: HIGH,     workload: low,  tradeoff: borderline}
+    - {id: XC_M_H_high, disruption: MEDIUM, urgency: HIGH,     workload: high, tradeoff: ground_preferable}
+    - {id: XC_L_C_low,  disruption: LOW,    urgency: CRITICAL, workload: low,  tradeoff: borderline}
+    - {id: XC_L_C_high, disruption: LOW,    urgency: CRITICAL, workload: high, tradeoff: ground_preferable}
+    - {id: XC_L_H_low,  disruption: LOW,    urgency: HIGH,     workload: low,  tradeoff: unnecessary_air}
+    - {id: XC_L_H_high, disruption: LOW,    urgency: HIGH,     workload: high, tradeoff: ground_preferable}
+
+  # pilot scenarios (spec section 19, Site-C analogs)
+  pilots:
+    - {scenario: XC_H_C_low,  label: PILOT-A (air clearly beneficial)}
+    - {scenario: XC_M_C_high, label: PILOT-B (borderline)}
+    - {scenario: XC_L_H_high, label: PILOT-C (ground / preserving air preferable)}

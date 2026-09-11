@@ -1,0 +1,208 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/global_state_v1.schema.json",
+  "title": "Global State v1",
+  "description": "Deterministic manager-facing snapshot of the ground-air mobility system. One snapshot per manager decision.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "simulation_time",
+    "scenario_id",
+    "scenario_version",
+    "ground",
+    "air",
+    "infrastructure",
+    "missions",
+    "events",
+    "trend"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "simulation_time": { "type": "integer", "minimum": 0 },
+    "scenario_id": { "type": "string" },
+    "scenario_version": { "type": "string" },
+    "seed": { "type": ["integer", "null"] },
+    "ground": { "$ref": "#/definitions/ground" },
+    "air": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/aircraft" }
+    },
+    "infrastructure": { "$ref": "#/definitions/infrastructure" },
+    "missions": { "$ref": "#/definitions/missions" },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/event" }
+    },
+    "trend": { "$ref": "#/definitions/trend" }
+  },
+
+  "definitions": {
+    "ground": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "b1_state",
+        "current_d1_h1_eta_s",
+        "baseline_eta_s",
+        "eta_increase_pct",
+        "accessibility_status",
+        "available_ground_fallback",
+        "ground_fallback_eta_s"
+      ],
+      "properties": {
+        "b1_state": { "enum": ["OPEN", "CLOSED"] },
+        "current_d1_h1_eta_s": { "type": ["number", "null"] },
+        "baseline_eta_s": { "type": ["number", "null"] },
+        "eta_increase_pct": { "type": ["number", "null"] },
+        "accessibility_status": { "enum": ["NOMINAL", "DEGRADED"] },
+        "available_ground_fallback": { "type": "boolean" },
+        "ground_fallback_eta_s": { "type": ["number", "null"] }
+      }
+    },
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lat", "lon", "alt_m"],
+      "properties": {
+        "lat": { "type": ["number", "null"] },
+        "lon": { "type": ["number", "null"] },
+        "alt_m": { "type": ["number", "null"] }
+      }
+    },
+    "aircraft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "type", "status", "position", "current_mission", "mission_priority",
+        "battery_pct", "remaining_endurance_s", "availability", "reassignable",
+        "commandable", "c2_status", "gnss_status", "landing_compatibility"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "status": {
+          "enum": ["AVAILABLE", "BUSY", "RESERVED", "DEGRADED",
+                   "CONTINGENCY", "UNAVAILABLE", "RECOVERED"]
+        },
+        "position": { "$ref": "#/definitions/position" },
+        "current_mission": { "type": ["string", "null"] },
+        "mission_priority": {
+          "enum": ["LOW", "NORMAL", "HIGH", "CRITICAL", null]
+        },
+        "battery_pct": { "type": ["number", "null"] },
+        "remaining_endurance_s": { "type": ["number", "null"] },
+        "availability": {
+          "enum": ["AVAILABLE", "REASSIGNABLE", "BUSY", "UNAVAILABLE"]
+        },
+        "reassignable": { "type": "boolean" },
+        "commandable": { "type": "boolean" },
+        "c2_status": { "type": "string" },
+        "gnss_status": { "type": "string" },
+        "landing_compatibility": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "landing_site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "lat", "lon"],
+      "properties": {
+        "state": { "enum": ["AVAILABLE", "UNAVAILABLE"] },
+        "lat": { "type": ["number", "null"] },
+        "lon": { "type": ["number", "null"] }
+      }
+    },
+    "failure_zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "edge_id", "impact_level", "state"],
+      "properties": {
+        "id": { "type": "string" },
+        "edge_id": { "type": "string" },
+        "impact_level": { "enum": ["low", "medium", "high"] },
+        "state": { "enum": ["OPEN", "CLOSED"] }
+      }
+    },
+    "infrastructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["landing_sites", "utm_state", "failure_zones"],
+      "properties": {
+        "landing_sites": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/landing_site" }
+        },
+        "utm_state": { "type": "string" },
+        "failure_zones": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/failure_zone" }
+        }
+      }
+    },
+    "mission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "type", "priority", "deadline_s", "origin", "destination",
+        "assigned_resource", "mode", "state", "ground_fallback",
+        "delay_cost", "cancellation_cost"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "priority": { "enum": ["LOW", "NORMAL", "HIGH", "CRITICAL"] },
+        "deadline_s": { "type": ["number", "null"] },
+        "origin": { "type": ["string", "null"] },
+        "destination": { "type": ["string", "null"] },
+        "assigned_resource": { "type": ["string", "null"] },
+        "mode": { "enum": ["AIR", "GROUND", null] },
+        "state": {
+          "enum": ["WAITING", "ASSIGNED", "EN_ROUTE", "INTERRUPTED",
+                   "NEEDS_REPLAN", "REASSIGNED", "COMPLETED", "CANCELLED", "FAILED"]
+        },
+        "ground_fallback": { "type": "boolean" },
+        "delay_cost": { "type": ["number", "null"] },
+        "cancellation_cost": { "type": ["number", "null"] }
+      }
+    },
+    "missions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["existing", "new"],
+      "properties": {
+        "existing": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/mission" }
+        },
+        "new": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/mission" }
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["t", "event_id", "event_type"],
+      "properties": {
+        "t": { "type": "integer" },
+        "event_id": { "type": "string" },
+        "event_type": { "type": "string" },
+        "payload": { "type": "object" }
+      }
+    },
+    "trend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["previous_eta_s", "current_eta_s", "eta_trend"],
+      "properties": {
+        "previous_eta_s": { "type": ["number", "null"] },
+        "current_eta_s": { "type": ["number", "null"] },
+        "eta_trend": { "enum": ["INCREASING", "DECREASING", "STABLE", "N/A"] }
+      }
+    }
+  }
+}

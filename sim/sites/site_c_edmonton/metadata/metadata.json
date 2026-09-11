@@ -1,0 +1,36 @@
+{
+  "site": "site_c_edmonton",
+  "city": "Edmonton, Alberta, Canada",
+  "center": {
+    "lat": 53.472,
+    "lon": -113.425
+  },
+  "bbox": {
+    "south": 53.45762380489632,
+    "north": 53.48637619510368,
+    "west": -113.44909539087926,
+    "east": -113.40090460912073
+  },
+  "area_km2": 10.24,
+  "morphology": "sparse_suburban_polycentric",
+  "role": "cross_site_validation",
+  "frozen_exp1": false,
+  "primary_od": "D1->H1",
+  "primary_b1": "471736601#0-AddedOnRampEdge",
+  "auxiliary_ods": [
+    "OD-C1",
+    "OD-C2"
+  ],
+  "auxiliary_facilities": [
+    "C2",
+    "C3",
+    "D2",
+    "H2",
+    "V4",
+    "V5"
+  ],
+  "notes": [
+    "Primary sections identical to legacy config (asserted).",
+    "Auxiliary facilities/ODs are scene-level assets for cross-site validation; NOT used by frozen Experiment 1."
+  ]
+}

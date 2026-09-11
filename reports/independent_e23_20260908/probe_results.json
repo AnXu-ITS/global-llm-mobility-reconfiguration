@@ -1,0 +1,11 @@
+{
+  "independent_statistics_probes_passed": 4,
+  "production_periodic_trigger": {
+    "background_needs_replan_primary_enroute": false,
+    "primary_needs_replan": true
+  },
+  "source_stability": {
+    "shared_files": 13440,
+    "changed_files": []
+  }
+}

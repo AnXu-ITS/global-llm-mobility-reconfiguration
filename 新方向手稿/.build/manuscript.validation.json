@@ -1,0 +1,16 @@
+{
+  "draft": "FIRST_DRAFT_TRANSPORTMETRICA_B.md",
+  "release": "paper_final_20260910",
+  "primary_runs": 10960,
+  "ablation_runs": 180,
+  "word_count": 13177,
+  "figures": 8,
+  "tables": 13,
+  "references": 18,
+  "input_sha256": {
+    "outputs\\paper_final\\results.json": "148e3b87a6ab39318bbb6a064ec31f92fb3ea55223a89003359cc7413a580fda",
+    "outputs\\cross_site\\site_morphology_comparison.csv": "1c2c113b22a57d9a2f68ef0c4252b665ce074f369f94cc1783c864522c950c2e"
+  },
+  "source_inputs_unchanged": true,
+  "unresolved_placeholders": false
+}
