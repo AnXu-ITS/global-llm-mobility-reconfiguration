@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<additional>
-  <poi id="H1" x="2391.558" y="2669.389" color="200,20,20" layer="2" width="6.0" type="hospital"/>
-  <poi id="D1" x="1563.175" y="1167.142" color="20,20,200" layer="2" width="6.0" type="logistics_depot"/>
-  <poi id="V1" x="2391.558" y="2669.389" color="20,180,20" layer="2" width="6.0" type="hospital_landing_site"/>
-  <poi id="V2" x="1563.175" y="1167.142" color="20,180,20" layer="2" width="6.0" type="logistics_hub_landing_site"/>
-  <poi id="V3" x="2264.494" y="2193.348" color="20,120,120" layer="2" width="6.0" type="backup_landing_site"/>
-  <poi id="B1" x="2092.050" y="1524.030" color="200,120,20" layer="2" width="6.0" type="critical_bridge_or_road_link"/>
-</additional>

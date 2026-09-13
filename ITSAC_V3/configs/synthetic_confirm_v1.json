@@ -1,0 +1,45 @@
+{
+  "protocol": "itsac_controlled_interactions_v3",
+  "campaign": "synthetic_confirm_v1",
+  "site": "synthetic",
+  "mode": "probability",
+  "seed_pool": [
+    720, 721, 722, 723, 724, 725, 726, 727, 728, 729,
+    730, 731, 732, 733, 734, 735, 736, 737, 738, 739
+  ],
+  "seed_role": "final_holdout_not_used_for_selection",
+  "demand_scale": 1.0,
+  "demand_end_s": 1000,
+  "perturbation_window": [200, 800],
+  "sumo_timeout_seconds": 180,
+  "policy": {
+    "simulation_end_s": 1600,
+    "minimum_completion_rate": 0.9,
+    "minimum_mean_speed": 2.0,
+    "minimum_late_speed": 2.0,
+    "maximum_remaining_fraction": 0.1,
+    "systemic_spillback_edges": 15,
+    "maximum_single_emergency_braking": 0,
+    "collision_endpoint_policy": "exclude"
+  },
+  "candidate_pairs": [
+    ["A054", "A193"],
+    ["A055", "A191"],
+    ["A055", "A192"],
+    ["A055", "A193"],
+    ["A055", "A194"],
+    ["A056", "A191"],
+    ["A056", "A192"],
+    ["A056", "A193"],
+    ["A056", "A194"],
+    ["A057", "A191"]
+  ],
+  "confirmation": {
+    "p0": 0.02,
+    "alpha": 0.05,
+    "family_size": 10,
+    "min_eligible": 15
+  },
+  "schedule_seed": 20260909,
+  "policy_seed": 20260910
+}

@@ -1,0 +1,50 @@
+{
+  "protocol": "itsac_controlled_interactions_v3",
+  "campaign": "synthetic_diagnostic_v3",
+  "site": "synthetic",
+  "mode": "diagnostic",
+  "seed_pool": [
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710
+  ],
+  "seed_role": "development_diagnostic_not_claimed_unseen",
+  "candidate_pairs": [
+    [
+      "A057",
+      "A192"
+    ],
+    [
+      "A147",
+      "A194"
+    ],
+    [
+      "A106",
+      "A121"
+    ]
+  ],
+  "demand_scale": 1.0,
+  "demand_end_s": 1000,
+  "perturbation_window": [
+    200,
+    800
+  ],
+  "sumo_timeout_seconds": 180,
+  "policy": {
+    "simulation_end_s": 1600,
+    "minimum_completion_rate": 0.9,
+    "minimum_mean_speed": 2.0,
+    "minimum_late_speed": 2.0,
+    "maximum_remaining_fraction": 0.1,
+    "systemic_spillback_edges": 15,
+    "maximum_single_emergency_braking": 0,
+    "collision_endpoint_policy": "exclude"
+  }
+}

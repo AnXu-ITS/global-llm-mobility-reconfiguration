@@ -1,3 +1,0 @@
-od_id,origin,destination,euclidean_distance_m,network_distance_m,travel_time_s,circuity,number_of_turns,bbox_span_x_pct,bbox_span_y_pct,river_dependency,critical_crossing_dependency
-OD-B1,D2,H1,1584.7,2451.1,240.3,1.5467,7,23.96,42.79,2,False
-OD-B2,D1,H2,2525.8,2694.5,255.0,1.0668,6,28.73,64.81,3,False
