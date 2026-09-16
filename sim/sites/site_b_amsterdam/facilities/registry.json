@@ -1,0 +1,113 @@
+{
+  "primary": {
+    "H1": {
+      "type": "hospital",
+      "lat": 52.3585197125,
+      "lon": 4.915687725,
+      "osm_node_id": 26989989,
+      "parent_osm_id": null,
+      "name": "OLVG, locatie Oost",
+      "placement": "real_osm_poi",
+      "campus_centroid_offset_m": null,
+      "sumo_edge": "750108611",
+      "snap_m": 49.918
+    },
+    "D1": {
+      "type": "logistics_depot",
+      "lat": 52.361803224999996,
+      "lon": 4.906470708333333,
+      "osm_node_id": 268998855,
+      "name": "Vergader- en Congrescentrum / Gemeentelijk vastgoed",
+      "depot_kind": "industrial",
+      "placement": "real_osm_poi",
+      "campus_centroid_offset_m": null,
+      "sumo_edge": "-7370207#0",
+      "snap_m": 18.165
+    },
+    "V1": {
+      "type": "hospital_landing_site",
+      "lat": 52.35879372023965,
+      "lon": 4.915107401577134,
+      "sumo_edge": "750108611",
+      "snap_m": 0.0
+    },
+    "V2": {
+      "type": "logistics_hub_landing_site",
+      "lat": 52.36164680724383,
+      "lon": 4.906547192598351,
+      "sumo_edge": "-7370207#0",
+      "snap_m": 0.0
+    },
+    "V3": {
+      "type": "backup_landing_site",
+      "lat": 52.34999776790715,
+      "lon": 4.907566559888403,
+      "sumo_edge": "7369065",
+      "snap_m": 1.157
+    },
+    "B1": {
+      "type": "disruption_link",
+      "lat": 52.36067440019282,
+      "lon": 4.9081875621968525,
+      "impact_level": "high",
+      "is_water_crossing": true,
+      "crossing_kind": "embankment",
+      "water_name": "water",
+      "selection_reason": "water-barrier crossing whose closure maximises D1->H1 ETA increase (88.69%), detour retained",
+      "sumo_edge": "379148751#2",
+      "snap_m": 0.0
+    }
+  },
+  "auxiliary": {
+    "H2": {
+      "type": "secondary_medical_destination",
+      "lat": 52.3405477,
+      "lon": 4.919587,
+      "osm_node_id": 4763328999,
+      "name": "GZC Amstelkwartier",
+      "placement": "real_osm_poi",
+      "sumo_edge": "108120979#4",
+      "snap_m": 17.057
+    },
+    "D2": {
+      "type": "secondary_logistics_origin",
+      "lat": 52.3456297,
+      "lon": 4.9057344,
+      "osm_node_id": 2818225044,
+      "name": "HEMA",
+      "placement": "real_osm_poi",
+      "sumo_edge": "-7369289#0",
+      "snap_m": 14.943
+    },
+    "C2": {
+      "type": "secondary_service_destination",
+      "lat": 52.3589831,
+      "lon": 4.9245091,
+      "osm_node_id": 1260595065,
+      "name": "Medisch Centrum Oost",
+      "placement": "real_osm_poi",
+      "sumo_edge": "7046459#0",
+      "snap_m": 17.93
+    },
+    "V4": {
+      "type": "auxiliary_landing_site",
+      "lat": 52.34062805093875,
+      "lon": 4.919800184389917,
+      "osm_node_id": null,
+      "name": "V4 landing (snapped to H2 access edge)",
+      "placement": "synthetic_experimental",
+      "sumo_edge": "108120979#4",
+      "snap_m": 0.0
+    },
+    "V5": {
+      "type": "auxiliary_landing_site",
+      "lat": 52.34560267991927,
+      "lon": 4.905519578529189,
+      "osm_node_id": null,
+      "name": "V5 landing (snapped to D2 access edge)",
+      "placement": "synthetic_experimental",
+      "sumo_edge": "-7369289#0",
+      "snap_m": 0.0
+    }
+  }
+}

@@ -1,52 +1,180 @@
 # Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions
 
-地面–低空移动系统在中断场景下的全局 LLM 监督重构。
+[English](README.md) · [中文说明](README.zh-CN.md)
 
-## 概览
+An LLM acts as a global supervisor that reconfigures a coupled **ground–low-altitude
+mobility system** (SUMO road network + BlueSky airspace) when a disruption occurs.
+The LLM observes a *global-state snapshot* (ground vehicles + aircraft + missions +
+facilities), emits a structured action (`DISPATCH`, `REASSIGN`, `REROUTE`, …), and a
+manager-agnostic **feasibility checker + executor** grounds the decision in the
+co-simulation. This repository contains the frozen testbed, the experiment framework,
+and the analysis tooling used for the paper.
 
-- **测试床**：`S0_3p2km_v1`（苏州 3.2 km OSM 场景；SUMO 1.27.1 + BlueSky 联合仿真）
-- **基础机队**：`L-UAV-01`、`EVTOL-01`、`M-UAV-01`、`M-UAV-02`
-- **LLM**：`corp-ai/openai/deepseek-v4-pro`（OpenAI 兼容），`base_url = http://192.168.27.4:18888/v1`，`max_tokens = 8192`
-- **实验序列**：
-  - E1 — 基线与方法对比
-  - E2 — 失效感知
-  - E3 — 全局状态
-  - E4 — LLM 运行极限（4A 信息刷新频率 / 4B 推理延迟 / 4C 全局状态规模）
+---
 
-## 目录结构（当前）
+## 1. Overview
 
-| 路径 | 用途 |
-|---|---|
-| `新方向手稿/` | 论文工作区（`overleaf/` 为当前交付稿，含 `reproducibility/` 复现包：config/prompts/派生数据与覆盖层） |
-| `tools/` | 实验调度与后处理脚本（`run_experiment1..4.py`、`analyze_experiment*.py`） |
-| `reports/` | 独立评审与审计报告 |
-| `ITSAC_V3/` | ITSAC V3 交互结果 |
-| `archive/` | 归档（含 `ground_air_framework/` 完整框架与各历史版本；**git 忽略**） |
-| `runs/`、`outputs/` | 运行产物与结果（**git 忽略**） |
+- **Testbed** `S0_3p2km_v1` — a 3.2 km × 3.2 km canonical Suzhou area
+  (center `31.30377, 120.59981`), 1800 s horizon, 1 s step.
+- **Co-simulation** — SUMO 1.27.1 (ground) + BlueSky (air), stepped in lock-step.
+- **Fleet** — `L-UAV-01` (logistics), `EVTOL-01` (passenger transfer),
+  `M-UAV-01`, `M-UAV-02` (medical). A scheduled event closes a ground link and forces
+  the supervisor to re-plan.
+- **LLM** — an OpenAI-compatible chat-completions endpoint
+  (`corp-ai/openai/deepseek-v4-pro` by default); the client is standard-library only
+  (`managers/llm_client.py`), key from `CORP_AI_API_KEY` or `~/.dsh/.credentials.yaml`.
 
-> 完整实验框架与历史版本归档于 `archive/ground_air_framework/`；论文复现所需的最小配置/prompt/派生数据位于 `新方向手稿/overleaf/reproducibility/`。
+### Experiment series
 
-## 环境
+| ID | Question | Arms |
+|---|---|---|
+| E1 | Baseline vs. method comparison (managers) | `B0/B1/B2/B4b` |
+| E2 | Failure awareness | `F1…F6` |
+| E3 | Global-state design | — |
+| **E4** | **LLM operational limits** | `4A` info-update frequency · `4B` inference latency · `4C` global-state scale |
 
-- **解释器**：`C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe`（Python 3.14.7；含 `sumo`/`traci`、`bluesky`、`pyproj`、`scipy`）
-- **SUMO** 1.27.1、**BlueSky**
-- **LLM 密钥**：环境变量 `CORP_AI_API_KEY`，或 `~/.dsh/.credentials.yaml`（由 `managers/llm_client.py::load_api_key` 读取，不纳入仓库）
+**E4 arms**
 
-## 运行实验
+| Sub | Swept parameter | Values |
+|---|---|---|
+| 4A | observation interval (s) | `OBS10, OBS30, OBS60, OBS120, OBS300` |
+| 4B | action latency (s) | `D00, D01, D05, D10, D20, D30, D60` |
+| 4C | fleet size (candidate-table scale) | `N05, N10, N20, N30, N50` |
 
-```powershell
-$py = "C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
-# 调度（按 cohort/sub/arm/manager/seed 拆分，支持 --force 重跑）
-& $py tools/run_experiment4.py --sub 4A --manager all --jobs 8
-# 分析
-& $py tools/analyze_experiment4.py primary
+**Managers** (the only thing that changes between runs)
+
+| ID | Manager | Meaning |
+|---|---|---|
+| `B0` | `NoCrossLayerManager` | ground-only baseline (no air dispatch) |
+| `B1` | `RuleBasedManager` | hand-coded cross-layer rules |
+| `B2` | weighted rule-based | rule-based with tuned weights |
+| `B4b` | `LLMManager` (candidate table) | the LLM supervisor |
+
+---
+
+## 2. Repository layout
+
+```
+├── orchestrator/   experiment runners, SUMO/BlueSky adapters, registry, fleet
+├── managers/       B0/B1/B2/B4b managers + LLM client
+├── safety/         feasibility checker + semantic validator (manager-agnostic gates)
+├── config/         scenario + experiment matrices + LLM (phase3_config.yaml)
+├── tools/          run_experiment{1..4}.py dispatchers + analyze_*.py
+├── sim/            SUMO network/routes + BlueSky scenario inputs
+├── tests/          standalone acceptance tests (plain scripts, no pytest)
+├── docs/           design documents
+├── prompts/        LLM prompt templates
+├── schemas/        JSON schemas for LLM action validation
+├── failures/       failure-injection models (E2)
+├── state/          global-state model
+├── reports/        independent reviews / audits
+├── 新方向手稿/      manuscript workspace (paper + reproducibility package)
+└── archive/        historical versions & old runs  (git-ignored)
 ```
 
-- 运行目录：`runs/experiment4/<cohort>/<sub>/<arm>/<scenario>/seed<seed>/<manager>/`
-- 分析产物：`outputs/experiment4_summary.md` / `.json`
-- 完整框架的调度/分析脚本对应 `archive/ground_air_framework/tools/`
+Runtime outputs (`runs/`, `outputs/`) and `archive/` are **git-ignored** (they are
+large and reproducible on demand).
 
-## 论文
+---
 
-- 读稿/改稿从 `新方向手稿/README.md` 开始，当前交付稿在 `新方向手稿/overleaf/`（`main.tex`、`supplement.tex`）。
-- 复现入口：`新方向手稿/REPRODUCTION_README.md`、`新方向手稿/reproduce_analysis.ps1`。
+## 3. Requirements
+
+- **Python 3.14** (a virtualenv is recommended)
+- **SUMO 1.27.1** — installed automatically via the `eclipse-sumo` pip wheel
+- **BlueSky** — a *source checkout* (not pip); see Setup
+- Python packages — see [`requirements.txt`](requirements.txt)
+
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate   |   POSIX: source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Setup
+
+### 4.1 SUMO
+
+`eclipse-sumo` is in `requirements.txt`. At runtime `orchestrator/sumo_env.py`
+imports `sumo` to locate `SUMO_HOME` and add `traci`/`sumolib` to the path — no
+separate SUMO install is required.
+
+### 4.2 BlueSky
+
+BlueSky is imported **from source** (in-process, `orchestrator/bluesky_adapter.py`).
+
+```bash
+git clone https://github.com/TUDelft-CNS-ATM/bluesky.git
+```
+
+Point the framework at it via the `BLUESKY_REPO` environment variable:
+
+```bash
+# Windows (PowerShell)                    # POSIX
+$env:BLUESKY_REPO = "C:\...\bluesky"      export BLUESKY_REPO=/path/to/bluesky
+```
+
+The historical checkout used for the paper is commit `dfdff5d`.
+
+### 4.3 LLM endpoint
+
+Edit the `llm:` block of [`config/phase3_config.yaml`](config/phase3_config.yaml):
+
+```yaml
+llm:
+  model: corp-ai/openai/deepseek-v4-pro
+  base_url: http://<your-host>:<port>/v1
+  api_key_env: CORP_AI_API_KEY
+  max_tokens: 8192
+```
+
+Then provide the key:
+
+```bash
+# Windows (PowerShell)                    # POSIX
+$env:CORP_AI_API_KEY = "sk-..."           export CORP_AI_API_KEY=sk-...
+```
+
+(`managers/llm_client.py` also falls back to `~/.dsh/.credentials.yaml`.)
+
+---
+
+## 5. Quick start
+
+```bash
+# Single in-process run (E4 4B, arm D10, LLM manager, seed 20240601)
+python tools/run_experiment4.py --sub 4B --arm D10 --manager B4b \
+    --seed 20240601 --scenario E4_ANCHOR --cohort primary --direct
+
+# Full sweep (parallel subprocess workers)
+python tools/run_experiment4.py --sub 4A --manager all --jobs 8
+
+# Analyze results -> outputs/experiment4_summary.md + .json
+python tools/analyze_experiment4.py primary
+```
+
+Runs are written under `runs/experiment4/<cohort>/<sub>/<arm>/<scenario>/seed<seed>/<manager>/`.
+`--force` re-runs existing (current) runs.
+
+### Tests
+
+Tests are standalone scripts (no pytest):
+
+```bash
+python tests/test_experiment4_acceptance.py
+python tests/test_acceptance.py
+```
+
+---
+
+## 6. Reproducing the paper's results
+
+1. Install the environment (Section 3) and configure SUMO / BlueSky / LLM (Section 4).
+2. Run the primary sweep for each experiment (e.g. `tools/run_experiment4.py`).
+3. Analyze (`tools/analyze_experiment4.py`) and compare against
+   `outputs/experiment4_summary.json` / the manuscript's reproducibility package
+   (`新方向手稿/overleaf/reproducibility/`).
+
+The E4 primary results (1360 runs) are summarized in `outputs/experiment4_summary.md`
+and `.json`. The LLM endpoint and BlueSky path are the only machine-specific settings.

@@ -1,0 +1,82 @@
+# Resource Compatibility — which aircraft types may serve which mission types.
+#
+# This matrix is SHARED by the Rule-Based Manager and the LLM Manager and is
+# enforced in the shared Semantic Validator (safety/semantic_validator.py), so
+# compatibility NEVER depends on the manager type.
+#
+# Verdicts:
+#   allowed      -> always permitted
+#   conditional  -> permitted only when the strategic-reserve / capacity
+#                   condition for that aircraft type is satisfied
+#   denied       -> never permitted
+#
+# NOTE: a `conditional` verdict is NOT silently repaired. If the condition is
+# not satisfied the action is rejected with RESOURCE_INCOMPATIBLE.
+
+version: 1
+
+aircraft_types:
+  medical_uav:
+    medical_blood: allowed        # CRITICAL blood transfer
+    medical_organ: allowed        # CRITICAL/HIGH organ transfer (second emergency)
+    medical_transfer: allowed
+    medical_resupply: allowed
+    inspection: denied
+    logistics: conditional        # only when no CRITICAL/HIGH medical mission pending
+    passenger_transfer: denied
+
+  logistics_uav:
+    medical_blood: conditional    # blood/medicine: temp-sensitive cargo, only when no medical UAV available
+    medical_organ: conditional    # organ transfer: only when no medical UAV available
+    medical_transfer: conditional
+    medical_resupply: conditional
+    logistics: allowed
+    inspection: allowed
+    passenger_transfer: denied
+
+  inspection_uav:
+    inspection: allowed
+    logistics: allowed
+    medical_blood: denied
+    medical_organ: denied
+    medical_transfer: denied
+    medical_resupply: denied
+    passenger_transfer: denied
+
+  passenger_evtol:
+    passenger_transfer: allowed
+    logistics: denied
+    inspection: denied
+    medical_blood: conditional    # emergency medical transport only, no medical UAV available
+    medical_organ: conditional    # emergency organ transport only, no medical UAV available
+    medical_transfer: denied
+    medical_resupply: denied
+
+# Strategic reserve: prevent normal logistics from consuming the ONLY medical
+# capability while a life-critical medical mission is still unresolved.
+strategic_reserve:
+  medical_uav:
+    reserve_when:
+      mission_states: [WAITING, NEEDS_REPLAN, INTERRUPTED]
+      min_priority: HIGH
+    reserve_count: 1              # keep >= 1 medical UAV free for medical need
+    opportunity_cost: high
+    note: >-
+      A medical_uav may take a `conditional` mission only while no medical
+      mission with priority >= HIGH is in WAITING/NEEDS_REPLAN/INTERRUPTED.
+
+# Airframe -> aircraft_type mapping (for the semantic validator + prompt).
+aircraft_roles:
+  L-UAV-01: logistics_uav
+  EVTOL-01: passenger_evtol
+  M-UAV-01: medical_uav
+  M-UAV-02: medical_uav
+
+# Mission id prefix -> mission type (for the semantic validator + prompt).
+mission_type_prefixes:
+  M-L: logistics
+  M-M: medical_transfer
+  M-CRITICAL: medical_blood
+  M-SUPPORT: medical_resupply
+  M-I: inspection
+  M-P: passenger_transfer

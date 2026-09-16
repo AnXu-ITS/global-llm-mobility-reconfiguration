@@ -1,0 +1,16 @@
+# Python 3.14 — frozen environment used for the primary (1360-run) results.
+# Install with:  pip install -r requirements.txt
+#
+# SUMO 1.27.1 is provided by the `eclipse-sumo` wheel (import sumo -> traci/sumolib).
+# BlueSky is NOT a pip package: it is a source checkout (see README, "BlueSky").
+
+numpy==2.3.5
+pandas==3.0.5
+scipy==1.18.1
+matplotlib==3.11.1
+PyYAML==6.0.3
+jsonschema==4.26.0
+networkx==3.6.1
+shapely==2.1.2
+Pillow==12.3.0
+eclipse-sumo==1.27.1

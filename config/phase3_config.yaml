@@ -1,0 +1,33 @@
+# Phase 3 configuration — LLM Manager Integration.
+# Kept separate from scenario_config.yaml so the frozen Phase-2 baseline files
+# are never modified to accommodate the LLM.
+
+phase: phase3
+
+llm:
+  model: corp-ai/openai/deepseek-v4-pro
+  base_url: http://192.168.27.4:18888/v1
+  api_key_env: CORP_AI_API_KEY
+  temperature: 0.0
+  max_tokens: 8192       # reasoning model: must exceed reasoning-token budget or content is empty
+  timeout_s: 180
+  max_retries: 1        # one structured retry (recorded as retry_count)
+  json_mode: true       # response_format json_object (structured-output interface)
+
+prompt: prompts/manager_v1.txt
+action_schema: schemas/manager_action_v1.schema.json
+resource_compatibility: config/resource_compatibility.yaml
+
+# Frozen Simulation Decision Mode: real LLM wall-clock latency is recorded but
+# never affects canonical simulation time.
+frozen_simulation_decision_mode: true
+
+offline:
+  min_states: 20
+  output_dir: runs/phase3_offline_decisions
+
+counterfactual:
+  num_pairs: 9
+
+stability:
+  repeats: 10
