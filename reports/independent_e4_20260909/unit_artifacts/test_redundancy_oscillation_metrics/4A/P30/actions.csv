@@ -1,4 +1,0 @@
-t,action_type,aircraft_id,mission_id,target_site,route,result,decision_id
-300,DISPATCH,M-UAV-02,M-CRITICAL-001,V1,,ISSUED,D001
-330,DISPATCH,M-UAV-02,M-CRITICAL-001,V1,,ISSUED,D002
-360,GROUND_FALLBACK,,M-CRITICAL-001,,,ISSUED,D003

@@ -1,54 +1,49 @@
-# Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions
+# A Ground–Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions
 
 [English](README.md) · [中文说明](README.zh-CN.md)
 
-An LLM acts as a global supervisor that reconfigures a coupled **ground–low-altitude
-mobility system** (SUMO road network + BlueSky airspace) when a disruption occurs.
-The LLM observes a *global-state snapshot* (ground vehicles + aircraft + missions +
-facilities), emits a structured action (`DISPATCH`, `REASSIGN`, `REROUTE`, …), and a
-manager-agnostic **feasibility checker + executor** grounds the decision in the
-co-simulation. This repository contains the frozen testbed, the experiment framework,
-and the analysis tooling used for the paper.
+Reference implementation for the paper *"A Ground–Low-Altitude Mobility Manager for
+Service Reconfiguration under Disruptions"*. A **candidate generator** converts joint
+ground–air observations into a shared **executable candidate interface**; replaceable
+**supervisory policies** (heuristic or LLM) select an intervention; an **executor**
+checks and applies it while local aircraft contingencies run independently. Four
+SUMO–BlueSky experiments are evaluated across **three contrasting transport settings**.
 
 ---
 
 ## 1. Overview
 
-- **Testbed** `S0_3p2km_v1` — a 3.2 km × 3.2 km canonical Suzhou area
-  (center `31.30377, 120.59981`), 1800 s horizon, 1 s step.
-- **Co-simulation** — SUMO 1.27.1 (ground) + BlueSky (air), stepped in lock-step.
-- **Fleet** — `L-UAV-01` (logistics), `EVTOL-01` (passenger transfer),
-  `M-UAV-01`, `M-UAV-02` (medical). A scheduled event closes a ground link and forces
-  the supervisor to re-plan.
-- **LLM** — an OpenAI-compatible chat-completions endpoint
-  (`corp-ai/openai/deepseek-v4-pro` by default); the client is standard-library only
+- **Three study sites**, each 3.2 km × 3.2 km from OpenStreetMap:
+  - **A** — Suzhou, China (meshed urban)
+  - **B** — Amsterdam, the Netherlands
+  - **C** — Edmonton, Canada
+- **Co-simulation** — SUMO 1.27.1 (ground) + BlueSky (air), 1 s step, 900 s horizon.
+- **Core fleet** — 2 medical UAVs + 1 logistics UAV + 1 passenger eVTOL (4 aircraft).
+- **LLM** — OpenAI-compatible chat-completions endpoint
+  (`corp-ai/openai/deepseek-v4-pro` by default); stdlib-only client
   (`managers/llm_client.py`), key from `CORP_AI_API_KEY` or `~/.dsh/.credentials.yaml`.
 
-### Experiment series
+### Supervisory policies (the only thing that changes between runs)
 
-| ID | Question | Arms |
+| ID | Policy | Meaning |
 |---|---|---|
-| E1 | Baseline vs. method comparison (managers) | `B0/B1/B2/B4b` |
-| E2 | Failure awareness | `F1…F6` |
-| E3 | Global-state design | — |
-| **E4** | **LLM operational limits** | `4A` info-update frequency · `4B` inference latency · `4C` global-state scale |
+| `B0` | ground-only | baseline: no air dispatch |
+| `B1` | rule-based | hand-coded rules that rank only air candidates |
+| `B2` | fixed-objective heuristic | one-step score trading speed vs. incumbent-service preservation |
+| `B4a` | LLM (no candidate info) | ablation: LLM without the derived candidate section |
+| `B4b` | LLM (candidate info) | main LLM policy with explicit candidate-information support |
 
-**E4 arms**
+### Experiments
 
-| Sub | Swept parameter | Values |
+| ID | Question | Span |
 |---|---|---|
-| 4A | observation interval (s) | `OBS10, OBS30, OBS60, OBS120, OBS300` |
-| 4B | action latency (s) | `D00, D01, D05, D10, D20, D30, D60` |
-| 4C | fleet size (candidate-table scale) | `N05, N10, N20, N30, N50` |
+| E1 | Selective air support (baseline vs. coordinated) | 3 sites |
+| E2 | Air failures (6 fault families F1–F6) | 3 sites |
+| E3 | Compound disturbances (levels L1–L4) | 3 sites |
+| E4 | Observation–execution timing (4A refresh · 4B delay · 4C scale) | site A |
 
-**Managers** (the only thing that changes between runs)
-
-| ID | Manager | Meaning |
-|---|---|---|
-| `B0` | `NoCrossLayerManager` | ground-only baseline (no air dispatch) |
-| `B1` | `RuleBasedManager` | hand-coded cross-layer rules |
-| `B2` | weighted rule-based | rule-based with tuned weights |
-| `B4b` | `LLMManager` (candidate table) | the LLM supervisor |
+**E4 arms** — 4A observation interval `OBS10/30/60/120/300` · 4B execution delay
+`D00/01/05/10/20/30/60` · 4C aircraft-record scale `N05/10/20/30/50` (core fleet fixed at 4).
 
 ---
 
@@ -56,33 +51,46 @@ and the analysis tooling used for the paper.
 
 ```
 ├── orchestrator/   experiment runners, SUMO/BlueSky adapters, registry, fleet
-├── managers/       B0/B1/B2/B4b managers + LLM client
-├── safety/         feasibility checker + semantic validator (manager-agnostic gates)
-├── config/         scenario + experiment matrices + LLM (phase3_config.yaml)
-├── tools/          run_experiment{1..4}.py dispatchers + analyze_*.py
-├── sim/            SUMO network/routes + BlueSky scenario inputs
-├── tests/          standalone acceptance tests (plain scripts, no pytest)
-├── docs/           design documents
-├── prompts/        LLM prompt templates
-├── schemas/        JSON schemas for LLM action validation
-├── failures/       failure-injection models (E2)
+├── managers/       B0/B1/B2/B4a/B4b policies + LLM client
+├── safety/         feasibility checker + semantic validator (policy-agnostic gates)
+├── config/         scenario + experiment matrices (3 sites) + LLM (phase3_config.yaml)
+├── prompts/        LLM prompt templates (manager_v1/v2)
+├── schemas/        JSON schemas for action validation
+├── failures/       E2 fault-injection models (F1–F6)
 ├── state/          global-state model
-├── reports/        independent reviews / audits
-├── 新方向手稿/      manuscript workspace (paper + reproducibility package)
-└── archive/        historical versions & old runs  (git-ignored)
+├── sim/            SUMO network/routes + BlueSky inputs for site_a/b/c
+├── tests/          standalone acceptance tests (no pytest)
+├── tools/          run_experiment{1..4}[_cross_site].py + analyze_*.py
+├── docs/           design documents
+└── manuscript/     paper + reproduction pipeline (see below)
 ```
 
-Runtime outputs (`runs/`, `outputs/`) and `archive/` are **git-ignored** (they are
-large and reproducible on demand).
+`manuscript/` contains the authoritative paper source and its reproduction pipeline:
+
+```
+manuscript/
+├── overleaf/               main.tex, supplement.tex, references.bib, journal class files
+│   ├── figures/            PDF figure assets
+│   ├── editable_figures/   PowerPoint figure decks
+│   └── reproducibility/    frozen paper reproducibility package (configs, prompts,
+│                           schemas, derived data, hashed inventory, queue_fix.py)
+├── source/revision_v3/     analysis scripts + derived data + regression runs
+├── figure1/                Figure 1 builder and assets
+├── reproduce_analysis.ps1  postprocessing/reproduction entry point
+└── REPRODUCTION_README.md  full reproduction instructions (see Section 6)
+```
+
+Runtime artifacts (`runs/`, `outputs/`) and `archive/` are **git-ignored** (large and
+reproducible on demand; `archive/` also holds superseded planning docs and reviews).
 
 ---
 
 ## 3. Requirements
 
-- **Python 3.14** (a virtualenv is recommended)
-- **SUMO 1.27.1** — installed automatically via the `eclipse-sumo` pip wheel
+- **Python 3.14** (virtualenv recommended)
+- **SUMO 1.27.1** — via the `eclipse-sumo` pip wheel (no separate install)
 - **BlueSky** — a *source checkout* (not pip); see Setup
-- Python packages — see [`requirements.txt`](requirements.txt)
+- Python packages — [`requirements.txt`](requirements.txt)
 
 ```bash
 python -m venv .venv
@@ -96,26 +104,23 @@ pip install -r requirements.txt
 
 ### 4.1 SUMO
 
-`eclipse-sumo` is in `requirements.txt`. At runtime `orchestrator/sumo_env.py`
-imports `sumo` to locate `SUMO_HOME` and add `traci`/`sumolib` to the path — no
-separate SUMO install is required.
+`eclipse-sumo` is in `requirements.txt`. At runtime `orchestrator/sumo_env.py` imports
+`sumo` to locate `SUMO_HOME` and add `traci`/`sumolib` to the path.
 
 ### 4.2 BlueSky
 
-BlueSky is imported **from source** (in-process, `orchestrator/bluesky_adapter.py`).
+BlueSky is imported **from source** (`orchestrator/bluesky_adapter.py`):
 
 ```bash
 git clone https://github.com/TUDelft-CNS-ATM/bluesky.git
 ```
 
-Point the framework at it via the `BLUESKY_REPO` environment variable:
+Point the framework at it via `BLUESKY_REPO`:
 
 ```bash
 # Windows (PowerShell)                    # POSIX
 $env:BLUESKY_REPO = "C:\...\bluesky"      export BLUESKY_REPO=/path/to/bluesky
 ```
-
-The historical checkout used for the paper is commit `dfdff5d`.
 
 ### 4.3 LLM endpoint
 
@@ -129,52 +134,43 @@ llm:
   max_tokens: 8192
 ```
 
-Then provide the key:
-
-```bash
-# Windows (PowerShell)                    # POSIX
-$env:CORP_AI_API_KEY = "sk-..."           export CORP_AI_API_KEY=sk-...
-```
-
-(`managers/llm_client.py` also falls back to `~/.dsh/.credentials.yaml`.)
+Then set the key (`CORP_AI_API_KEY`, or `~/.dsh/.credentials.yaml`). See
+[`.env.example`](.env.example) for the environment variables the code reads.
 
 ---
 
 ## 5. Quick start
 
 ```bash
-# Single in-process run (E4 4B, arm D10, LLM manager, seed 20240601)
+# Single in-process run (E4 4B, arm D10, LLM policy, seed 20240601)
 python tools/run_experiment4.py --sub 4B --arm D10 --manager B4b \
     --seed 20240601 --scenario E4_ANCHOR --cohort primary --direct
 
-# Full sweep (parallel subprocess workers)
+# Full E4 sweep (parallel workers)
 python tools/run_experiment4.py --sub 4A --manager all --jobs 8
 
-# Analyze results -> outputs/experiment4_summary.md + .json
+# Cross-site experiments (3 sites A/B/C)
+python tools/run_experiment1_cross_site.py --help
+python tools/run_experiment2_cross_site.py --help
+python tools/run_experiment3_cross_site.py --help
+
+# Analyze
 python tools/analyze_experiment4.py primary
 ```
 
-Runs are written under `runs/experiment4/<cohort>/<sub>/<arm>/<scenario>/seed<seed>/<manager>/`.
-`--force` re-runs existing (current) runs.
-
-### Tests
-
-Tests are standalone scripts (no pytest):
-
-```bash
-python tests/test_experiment4_acceptance.py
-python tests/test_acceptance.py
-```
+Runs are written under `runs/<experiment>/<cohort>/...`; `--force` re-runs current runs.
+`tests/` are standalone scripts (no pytest): `python tests/test_experiment4_acceptance.py`.
 
 ---
 
-## 6. Reproducing the paper's results
+## 6. Reproducing the paper
 
 1. Install the environment (Section 3) and configure SUMO / BlueSky / LLM (Section 4).
-2. Run the primary sweep for each experiment (e.g. `tools/run_experiment4.py`).
-3. Analyze (`tools/analyze_experiment4.py`) and compare against
-   `outputs/experiment4_summary.json` / the manuscript's reproducibility package
-   (`新方向手稿/overleaf/reproducibility/`).
+2. Run the framework sweeps with the `tools/run_*.py` dispatchers (Section 5).
+3. Follow [`manuscript/REPRODUCTION_README.md`](manuscript/REPRODUCTION_README.md) and
+   `manuscript/reproduce_analysis.ps1` to reproduce the numerical analysis and figures
+   from the saved run artifacts and the frozen `manuscript/overleaf/reproducibility/`
+   package. The postprocessing is LLM-free; `-RunRegression` adds the documented
+   deterministic regression runs (requires SUMO/traci).
 
-The E4 primary results (1360 runs) are summarized in `outputs/experiment4_summary.md`
-and `.json`. The LLM endpoint and BlueSky path are the only machine-specific settings.
+The LLM endpoint and BlueSky path are the only machine-specific settings.

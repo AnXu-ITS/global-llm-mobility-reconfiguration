@@ -1,4 +1,0 @@
-site_id,city,area_km2,road_length_km,road_density_km_per_km2,node_count,edge_count,intersection_density,mean_node_degree,dead_end_ratio,mean_shortest_path_length,median_shortest_path_length,mean_od_circuity,facility_network_distance_D1_H1,facility_euclidean_distance_D1_H1,D1_H1_circuity,major_barrier_type,usable_crossing_count,critical_link_eta_increase_pct,detour_exists
-site_a_suzhou,"Suzhou, China",10.240000000000002,200.165,19.547,542,1286,38.77,2.83,0.1845,2.0861,2.0697,1.1969,2.9222,1.7403,1.6791,none,0,37.87,True
-site_b_amsterdam,"Amsterdam, Netherlands",10.240000000000002,239.265,23.366,1877,3514,101.758,2.663,0.1193,1.6935,1.6027,1.1409,1.1192,0.7246,1.5446,water:unnamed,73,88.69,True
-site_c_edmonton,"Edmonton, Canada",10.240000000000002,188.817,18.439,791,1681,40.918,2.42,0.2882,2.2595,2.0904,1.4721,3.4296,2.5285,1.3564,none,0,34.76,True
