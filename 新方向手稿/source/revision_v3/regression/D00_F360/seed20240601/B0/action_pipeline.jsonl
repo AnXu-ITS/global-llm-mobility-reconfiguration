@@ -1,0 +1,1 @@
+{"decision_id":"D001","executed_action":{"ground_eta_s":181.763,"mission_id":"M-CRITICAL-001","type":"GROUND_FALLBACK"},"normalized_action":{"ground_eta_s":181.763,"mission_id":"M-CRITICAL-001","type":"GROUND_FALLBACK"},"raw_action":{"ground_eta_s":181.763,"mission_id":"M-CRITICAL-001","type":"GROUND_FALLBACK"},"result":"ISSUED","t":300}

@@ -1,0 +1,91 @@
+{
+  "action_types": [
+    "GROUND_FALLBACK",
+    "GROUND_FALLBACK"
+  ],
+  "affected_critical": false,
+  "air_availability_after": {
+    "commandable": 3,
+    "compatible": 4,
+    "usable": 3
+  },
+  "air_availability_before": {
+    "commandable": 4,
+    "compatible": 4,
+    "usable": 4
+  },
+  "air_intervention": false,
+  "arm": {
+    "delay_s": 60,
+    "id": "D60"
+  },
+  "arm_id": "D60",
+  "candidate_count_after": 1,
+  "candidate_count_before": 2,
+  "candidate_count_pre_failure_asif": 2,
+  "candidate_set_reduction_delta": 1,
+  "critical_first_valid_replan_time_s": 360,
+  "critical_mission_completion_t": 542,
+  "critical_mission_completion_time_s": 242,
+  "critical_mission_deadline_s": 480,
+  "critical_mission_deadline_violation": true,
+  "critical_mission_final_mode": "GROUND",
+  "critical_mission_final_resource": "GROUND",
+  "critical_mission_final_state": "COMPLETED",
+  "critical_mission_id": "M-CRITICAL-001",
+  "decision_oscillation_count": 0,
+  "deferred_action_count": 1,
+  "delay_s": 60,
+  "disruption": "MEDIUM",
+  "duration_s": 900,
+  "existing_missions_damaged": [],
+  "existing_missions_damaged_count": 0,
+  "experiment": "experiment4",
+  "failed_resource_reselection": 0,
+  "failure_config_hash": "330ba3c61e34b98f9669fe7bd2225a1c35573e74a597afe2baf2243d2bee459f",
+  "failure_family": "F1",
+  "failure_induced_ground_fallback": true,
+  "failure_time": 360,
+  "failure_to_replan_latency_s": 0,
+  "ground_fallback": true,
+  "ground_fallback_rate": true,
+  "impact_context": "C2",
+  "issued_action_types": [
+    "GROUND_FALLBACK"
+  ],
+  "llm_latency_total_s": 0.0,
+  "llm_retry_total": 0,
+  "llm_total_completion_tokens": 0,
+  "llm_total_prompt_tokens": 0,
+  "llm_total_tokens": 0,
+  "manager": "no_cross_layer",
+  "manager_kind": "no_cross_layer",
+  "necessary_ground_fallback": false,
+  "necessary_ground_fallback_correct": false,
+  "num_manager_decisions": 2,
+  "post_failure_issued_types": [
+    "GROUND_FALLBACK"
+  ],
+  "post_failure_proposals": 2,
+  "post_failure_proposed_types": [
+    "GROUND_FALLBACK",
+    "GROUND_FALLBACK"
+  ],
+  "post_failure_rejected": 0,
+  "post_failure_rejected_failure_related": 0,
+  "prompt_size_chars_mean": 6674.0,
+  "reassignment_count": 0,
+  "recovered_completed": false,
+  "recovery_mode": "GROUND",
+  "recovery_success": false,
+  "recovery_time_s": 0,
+  "redundant_decision_count": 0,
+  "scenario_id": "E4_ANCHOR",
+  "seed": 20240603,
+  "stale_rejected_count": 0,
+  "sub_experiment": "4B",
+  "superseded_action_count": 0,
+  "tradeoff_label": null,
+  "urgency": "CRITICAL",
+  "workload": "W0"
+}

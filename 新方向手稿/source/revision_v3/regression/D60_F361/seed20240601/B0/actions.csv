@@ -1,0 +1,3 @@
+t,action_type,aircraft_id,mission_id,target_site,route,result,decision_id
+300,GROUND_FALLBACK,,M-CRITICAL-001,,,DEFERRED,D001
+360,GROUND_FALLBACK,GROUND,M-CRITICAL-001,,,ISSUED,D001

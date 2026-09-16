@@ -1,0 +1,132 @@
+{
+  "aircraft": [
+    {
+      "aircraft_id": "L-UAV-01",
+      "type": "logistics_uav",
+      "status": "BUSY",
+      "mission_id": "M-L-001",
+      "priority": "NORMAL",
+      "lat": 31.302985777483055,
+      "lon": 120.59931207333837,
+      "battery_pct": 85.047,
+      "remaining_endurance_s": 1530.8,
+      "reassignable": false,
+      "landing_site_compatibility": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "c2_status": "NORMAL",
+      "gnss_status": "NORMAL",
+      "utm_status": "NORMAL",
+      "contingency_mode": "NONE"
+    },
+    {
+      "aircraft_id": "EVTOL-01",
+      "type": "passenger_evtol",
+      "status": "BUSY",
+      "mission_id": "M-P-001",
+      "priority": "NORMAL",
+      "lat": 31.31215130062971,
+      "lon": 120.60309665864096,
+      "battery_pct": 91.143,
+      "remaining_endurance_s": 1640.6,
+      "reassignable": false,
+      "landing_site_compatibility": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "c2_status": "NORMAL",
+      "gnss_status": "NORMAL",
+      "utm_status": "NORMAL",
+      "contingency_mode": "NONE"
+    },
+    {
+      "aircraft_id": "M-UAV-01",
+      "type": "medical_uav",
+      "status": "AVAILABLE",
+      "mission_id": null,
+      "priority": "NORMAL",
+      "lat": 31.310876730270234,
+      "lon": 120.60398615409468,
+      "battery_pct": 88.14,
+      "remaining_endurance_s": 1586.5,
+      "reassignable": true,
+      "landing_site_compatibility": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "c2_status": "NORMAL",
+      "gnss_status": "NORMAL",
+      "utm_status": "NORMAL",
+      "contingency_mode": "NONE"
+    },
+    {
+      "aircraft_id": "M-UAV-02",
+      "type": "medical_uav",
+      "status": "CONTINGENCY",
+      "mission_id": null,
+      "priority": "NORMAL",
+      "lat": 31.306268297449833,
+      "lon": 120.60253893923483,
+      "battery_pct": 96.167,
+      "remaining_endurance_s": 1731.0,
+      "reassignable": false,
+      "landing_site_compatibility": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "c2_status": "LOST",
+      "gnss_status": "NORMAL",
+      "utm_status": "NORMAL",
+      "contingency_mode": "RETURN"
+    }
+  ],
+  "missions": [
+    {
+      "mission_id": "M-L-001",
+      "type": "logistics",
+      "priority": "NORMAL",
+      "origin": "V2",
+      "destination": "V3",
+      "deadline_s": 1800,
+      "assigned_resource": "L-UAV-01",
+      "mode": null,
+      "status": "EN_ROUTE",
+      "ground_fallback": true,
+      "delay_cost": 10.0,
+      "cancellation_cost": 100.0
+    },
+    {
+      "mission_id": "M-P-001",
+      "type": "passenger_transfer",
+      "priority": "NORMAL",
+      "origin": "V2",
+      "destination": "V1",
+      "deadline_s": 1800,
+      "assigned_resource": "EVTOL-01",
+      "mode": null,
+      "status": "EN_ROUTE",
+      "ground_fallback": true,
+      "delay_cost": 10.0,
+      "cancellation_cost": 100.0
+    },
+    {
+      "mission_id": "M-CRITICAL-001",
+      "type": "medical_blood",
+      "priority": "CRITICAL",
+      "origin": "V2",
+      "destination": "V1",
+      "deadline_s": 480,
+      "assigned_resource": "GROUND",
+      "mode": "GROUND",
+      "status": "COMPLETED",
+      "ground_fallback": true,
+      "delay_cost": 60.0,
+      "cancellation_cost": 600.0
+    }
+  ]
+}

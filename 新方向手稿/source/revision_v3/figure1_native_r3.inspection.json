@@ -1,0 +1,844 @@
+{
+  "slide": 1,
+  "shapes": 236,
+  "images": 22,
+  "textItems": [
+    {
+      "text": "(a)  Problem context",
+      "width": 331.5,
+      "height": 43.5,
+      "boundWidth": 227.79,
+      "boundHeight": 30.6,
+      "rotation": 0.0,
+      "fontSize": 25.5
+    },
+    {
+      "text": "(b)  Manager architecture",
+      "width": 294.0,
+      "height": 43.5,
+      "boundWidth": 287.87,
+      "boundHeight": 30.6,
+      "rotation": 0.0,
+      "fontSize": 25.5
+    },
+    {
+      "text": "(c)  Experimental program",
+      "width": 353.25,
+      "height": 43.5,
+      "boundWidth": 298.66504,
+      "boundHeight": 30.6,
+      "rotation": 0.0,
+      "fontSize": 25.5
+    },
+    {
+      "text": "(d)  Main findings",
+      "width": 265.5,
+      "height": 43.5,
+      "boundWidth": 202.5,
+      "boundHeight": 30.6,
+      "rotation": 0.0,
+      "fontSize": 25.5
+    },
+    {
+      "text": "N",
+      "width": 25.5,
+      "height": 25.5,
+      "boundWidth": 19.75,
+      "boundHeight": 24.3,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "B1",
+      "width": 34.5,
+      "height": 24.0,
+      "boundWidth": 26.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V",
+      "width": 21.0,
+      "height": 22.5,
+      "boundWidth": 18.25,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V1",
+      "width": 36.0,
+      "height": 23.25,
+      "boundWidth": 27.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V",
+      "width": 21.0,
+      "height": 22.5,
+      "boundWidth": 18.25,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V2",
+      "width": 36.0,
+      "height": 23.25,
+      "boundWidth": 27.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V",
+      "width": 21.0,
+      "height": 22.5,
+      "boundWidth": 18.25,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "V3",
+      "width": 36.0,
+      "height": 23.25,
+      "boundWidth": 27.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Existing\rservice",
+      "width": 97.5,
+      "height": 48.6,
+      "boundWidth": 76.0,
+      "boundHeight": 48.6,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "Emergency\rmission",
+      "width": 105.0,
+      "height": 48.6,
+      "boundWidth": 103.0,
+      "boundHeight": 48.6,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "D1",
+      "width": 40.5,
+      "height": 26.25,
+      "boundWidth": 29.87504,
+      "boundHeight": 24.3,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "H1",
+      "width": 40.5,
+      "height": 26.25,
+      "boundWidth": 31.0,
+      "boundHeight": 24.3,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "Not to scale",
+      "width": 275.25,
+      "height": 31.5,
+      "boundWidth": 105.75,
+      "boundHeight": 25.2,
+      "rotation": 0.0,
+      "fontSize": 21.0
+    },
+    {
+      "text": "Road network",
+      "width": 120.0,
+      "height": 26.25,
+      "boundWidth": 106.0,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Baseline route",
+      "width": 120.0,
+      "height": 26.25,
+      "boundWidth": 108.0,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Detour route",
+      "width": 120.0,
+      "height": 26.25,
+      "boundWidth": 96.0,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Low-altitude route",
+      "width": 120.0,
+      "height": 26.25,
+      "boundWidth": 119.12504,
+      "boundHeight": 18.45504,
+      "rotation": 0.0,
+      "fontSize": 15.38
+    },
+    {
+      "text": "(eVTOL/UAV)",
+      "width": 120.0,
+      "height": 23.25,
+      "boundWidth": 104.32504,
+      "boundHeight": 19.8,
+      "rotation": 0.0,
+      "fontSize": 16.5
+    },
+    {
+      "text": "Disrupted link",
+      "width": 120.0,
+      "height": 26.25,
+      "boundWidth": 108.0,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "D1",
+      "width": 33.0,
+      "height": 24.0,
+      "boundWidth": 27.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Logistics",
+      "width": 87.75,
+      "height": 24.0,
+      "boundWidth": 70.5,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "H1",
+      "width": 33.0,
+      "height": 24.0,
+      "boundWidth": 28.75,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Hospital",
+      "width": 87.75,
+      "height": 24.0,
+      "boundWidth": 65.5,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "V",
+      "width": 21.0,
+      "height": 22.5,
+      "boundWidth": 18.25,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Vertiport",
+      "width": 87.75,
+      "height": 25.5,
+      "boundWidth": 68.50504,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Existing",
+      "width": 87.75,
+      "height": 26.25,
+      "boundWidth": 64.5,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Emergency",
+      "width": 95.25,
+      "height": 26.25,
+      "boundWidth": 86.17504,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Global state",
+      "width": 117.75,
+      "height": 57.75,
+      "boundWidth": 109.87504,
+      "boundHeight": 26.1,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Candidate\rgenerator",
+      "width": 117.75,
+      "height": 57.75,
+      "boundWidth": 93.5,
+      "boundHeight": 52.2,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Candidate interface",
+      "width": 243.75,
+      "height": 23.25,
+      "boundWidth": 163.75,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Mode",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 40.37496,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "ETA s",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 42.30504,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Margin",
+      "width": 58.5,
+      "height": 18.75,
+      "boundWidth": 52.0,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Loss",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 33.0,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Gnd",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 29.62504,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "228.6",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 37.5,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "+71.4",
+      "width": 58.5,
+      "height": 18.75,
+      "boundWidth": 38.5,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "0",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 11.25,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Air",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 23.75,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "212.8",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 37.5,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "+87.2",
+      "width": 58.5,
+      "height": 18.75,
+      "boundWidth": 38.5,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "1",
+      "width": 57.0,
+      "height": 18.75,
+      "boundWidth": 11.25,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Both legal; air preempts M-L-002",
+      "width": 253.5,
+      "height": 19.5,
+      "boundWidth": 192.12495,
+      "boundHeight": 16.655039,
+      "rotation": 0.0,
+      "fontSize": 13.88
+    },
+    {
+      "text": "Supervisor\rpolicy",
+      "width": 117.75,
+      "height": 57.75,
+      "boundWidth": 107.0,
+      "boundHeight": 52.2,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Safety &\rfeasibility",
+      "width": 91.95,
+      "height": 57.75,
+      "boundWidth": 92.25,
+      "boundHeight": 52.2,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Executor",
+      "width": 91.65,
+      "height": 57.75,
+      "boundWidth": 83.87504,
+      "boundHeight": 26.1,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "SUMO + BlueSky",
+      "width": 163.5,
+      "height": 29.25,
+      "boundWidth": 155.0,
+      "boundHeight": 24.3,
+      "rotation": 0.0,
+      "fontSize": 20.25
+    },
+    {
+      "text": "Feedback",
+      "width": 78.0,
+      "height": 24.0,
+      "boundWidth": 67.5,
+      "boundHeight": 19.8,
+      "rotation": 0.0,
+      "fontSize": 16.5
+    },
+    {
+      "text": "B0 Ground    B1 Rule",
+      "width": 180.0,
+      "height": 21.0,
+      "boundWidth": 141.85497,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "B2 Heuristic  B4b LLM",
+      "width": 184.5,
+      "height": 21.0,
+      "boundWidth": 155.25,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "B4a: interface ablation",
+      "width": 188.25,
+      "height": 20.25,
+      "boundWidth": 134.12495,
+      "boundHeight": 17.1,
+      "rotation": 0.0,
+      "fontSize": 14.25
+    },
+    {
+      "text": "Independent local contingency",
+      "width": 259.5,
+      "height": 19.5,
+      "boundWidth": 198.75,
+      "boundHeight": 18.0,
+      "rotation": 0.0,
+      "fontSize": 15.0
+    },
+    {
+      "text": "Scenarios",
+      "width": 189.75,
+      "height": 28.5,
+      "boundWidth": 98.12504,
+      "boundHeight": 27.0,
+      "rotation": 0.0,
+      "fontSize": 22.5
+    },
+    {
+      "text": "E1",
+      "width": 43.5,
+      "height": 31.5,
+      "boundWidth": 30.62504,
+      "boundHeight": 27.0,
+      "rotation": 0.0,
+      "fontSize": 22.5
+    },
+    {
+      "text": "Selective\rair support",
+      "width": 127.5,
+      "height": 59.25,
+      "boundWidth": 85.62504,
+      "boundHeight": 45.0,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "E2",
+      "width": 43.5,
+      "height": 31.5,
+      "boundWidth": 30.62504,
+      "boundHeight": 27.0,
+      "rotation": 0.0,
+      "fontSize": 22.5
+    },
+    {
+      "text": "Air-layer\rreconfiguration",
+      "width": 127.5,
+      "height": 59.25,
+      "boundWidth": 120.62504,
+      "boundHeight": 45.0,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "E3",
+      "width": 43.5,
+      "height": 31.5,
+      "boundWidth": 30.62504,
+      "boundHeight": 27.0,
+      "rotation": 0.0,
+      "fontSize": 22.5
+    },
+    {
+      "text": "Compound\rdisturbance",
+      "width": 127.5,
+      "height": 59.25,
+      "boundWidth": 91.37504,
+      "boundHeight": 45.0,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "E4",
+      "width": 43.5,
+      "height": 31.5,
+      "boundWidth": 30.62504,
+      "boundHeight": 27.0,
+      "rotation": 0.0,
+      "fontSize": 22.5
+    },
+    {
+      "text": "Observation /\rexecution /\rinput burden",
+      "width": 127.5,
+      "height": 59.4,
+      "boundWidth": 93.62504,
+      "boundHeight": 59.4,
+      "rotation": 0.0,
+      "fontSize": 16.5
+    },
+    {
+      "text": "Study sites",
+      "width": 300.0,
+      "height": 32.25,
+      "boundWidth": 112.37504,
+      "boundHeight": 27.9,
+      "rotation": 0.0,
+      "fontSize": 23.25
+    },
+    {
+      "text": "Site A",
+      "width": 113.25,
+      "height": 27.0,
+      "boundWidth": 60.55,
+      "boundHeight": 26.1,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Urban\r(meshed)",
+      "width": 115.5,
+      "height": 48.75,
+      "boundWidth": 77.37504,
+      "boundHeight": 46.8,
+      "rotation": 0.0,
+      "fontSize": 19.5
+    },
+    {
+      "text": "Dense network\rRoute choices",
+      "width": 111.0,
+      "height": 48.0,
+      "boundWidth": 108.37504,
+      "boundHeight": 41.4,
+      "rotation": 0.0,
+      "fontSize": 17.25
+    },
+    {
+      "text": "Site B",
+      "width": 113.25,
+      "height": 27.0,
+      "boundWidth": 60.5,
+      "boundHeight": 26.1,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "River\r(barrier)",
+      "width": 115.5,
+      "height": 48.75,
+      "boundWidth": 69.75,
+      "boundHeight": 46.8,
+      "rotation": 0.0,
+      "fontSize": 19.5
+    },
+    {
+      "text": "River crossing\rLimited links",
+      "width": 111.0,
+      "height": 48.0,
+      "boundWidth": 104.5,
+      "boundHeight": 41.4,
+      "rotation": 0.0,
+      "fontSize": 17.25
+    },
+    {
+      "text": "Site C",
+      "width": 113.25,
+      "height": 27.0,
+      "boundWidth": 61.75,
+      "boundHeight": 26.1,
+      "rotation": 0.0,
+      "fontSize": 21.75
+    },
+    {
+      "text": "Suburban\r(sparse)",
+      "width": 115.5,
+      "height": 48.75,
+      "boundWidth": 79.62496,
+      "boundHeight": 46.8,
+      "rotation": 0.0,
+      "fontSize": 19.5
+    },
+    {
+      "text": "Sparse network\rLonger trips",
+      "width": 111.0,
+      "height": 48.0,
+      "boundWidth": 111.25,
+      "boundHeight": 41.4,
+      "rotation": 0.0,
+      "fontSize": 17.25
+    },
+    {
+      "text": "1",
+      "width": 40.5,
+      "height": 40.5,
+      "boundWidth": 24.25,
+      "boundHeight": 38.7,
+      "rotation": 0.0,
+      "fontSize": 32.25
+    },
+    {
+      "text": "Coordination helps",
+      "width": 210.75,
+      "height": 46.5,
+      "boundWidth": 162.0,
+      "boundHeight": 22.95504,
+      "rotation": 0.0,
+      "fontSize": 19.13
+    },
+    {
+      "text": "2",
+      "width": 40.5,
+      "height": 40.5,
+      "boundWidth": 24.25,
+      "boundHeight": 38.7,
+      "rotation": 0.0,
+      "fontSize": 32.25
+    },
+    {
+      "text": "Timely recovery matters",
+      "width": 210.75,
+      "height": 46.5,
+      "boundWidth": 205.18504,
+      "boundHeight": 22.95504,
+      "rotation": 0.0,
+      "fontSize": 19.13
+    },
+    {
+      "text": "3",
+      "width": 40.5,
+      "height": 40.5,
+      "boundWidth": 24.25,
+      "boundHeight": 38.7,
+      "rotation": 0.0,
+      "fontSize": 32.25
+    },
+    {
+      "text": "Interface shapes choices",
+      "width": 210.75,
+      "height": 46.5,
+      "boundWidth": 201.75,
+      "boundHeight": 22.95504,
+      "rotation": 0.0,
+      "fontSize": 19.13
+    },
+    {
+      "text": "4",
+      "width": 40.5,
+      "height": 40.5,
+      "boundWidth": 24.25,
+      "boundHeight": 38.7,
+      "rotation": 0.0,
+      "fontSize": 32.25
+    },
+    {
+      "text": "Delay changes outcomes",
+      "width": 210.75,
+      "height": 46.5,
+      "boundWidth": 202.87505,
+      "boundHeight": 22.95504,
+      "rotation": 0.0,
+      "fontSize": 19.13
+    },
+    {
+      "text": "Uncoordinated",
+      "width": 118.5,
+      "height": 26.25,
+      "boundWidth": 116.37496,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Coordinated",
+      "width": 112.5,
+      "height": 26.25,
+      "boundWidth": 97.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Deadline",
+      "width": 112.5,
+      "height": 25.5,
+      "boundWidth": 75.62504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Timely",
+      "width": 119.25,
+      "height": 24.75,
+      "boundWidth": 58.46504,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Late",
+      "width": 66.75,
+      "height": 24.0,
+      "boundWidth": 38.25,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    },
+    {
+      "text": "Completion",
+      "width": 114.75,
+      "height": 24.0,
+      "boundWidth": 89.5,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Time",
+      "width": 52.5,
+      "height": 24.0,
+      "boundWidth": 41.86504,
+      "boundHeight": 21.6,
+      "rotation": 0.0,
+      "fontSize": 18.0
+    },
+    {
+      "text": "Air",
+      "width": 96.0,
+      "height": 24.0,
+      "boundWidth": 30.87504,
+      "boundHeight": 23.4,
+      "rotation": 0.0,
+      "fontSize": 19.5
+    },
+    {
+      "text": "Ground",
+      "width": 97.5,
+      "height": 24.0,
+      "boundWidth": 64.5,
+      "boundHeight": 23.4,
+      "rotation": 0.0,
+      "fontSize": 19.5
+    },
+    {
+      "text": "Observation / execution delay",
+      "width": 247.5,
+      "height": 24.0,
+      "boundWidth": 229.87495,
+      "boundHeight": 22.5,
+      "rotation": 0.0,
+      "fontSize": 18.75
+    }
+  ]
+}

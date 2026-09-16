@@ -1,0 +1,24 @@
+experiment: experiment4
+sub_experiment: 4B
+arm_id: D60
+arm:
+  id: D60
+  delay_s: 60
+scenario_id: E4_ANCHOR
+seed: 20240608
+manager: no_cross_layer
+manager_kind: no_cross_layer
+disruption: MEDIUM
+urgency: CRITICAL
+workload: W0
+duration_s: 900
+mission_release_t_s: 300
+disruption_t_s: 300
+failure_t_s: 360
+periodic_decision_s: 30
+obs_interval_s: 0
+llm_model: null
+prompt_version: null
+candidate_table_version: 2.1.0
+matrix_version: 2
+matrix_hash: 3f09e0c7460aa22feb480f8354cfaf2bdb49ddc3cb417520c60bb2224be30e03

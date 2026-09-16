@@ -1,0 +1,635 @@
+\pdfminorversion=7
+\documentclass[]{interact}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\bibpunct[, ]{(}{)}{;}{a}{}{,}
+\renewcommand{\bibfont}{\fontsize{10}{12}\selectfont}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+
+% Revision v2: keep figures proportional and prevent float-page vertical spreading.
+\usepackage{lmodern}
+\usepackage{xurl}
+\usepackage{placeins}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\emergencystretch=2em
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.80}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{5}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+
+\begin{document}
+
+\articletype{ARTICLE}
+
+\title{A Ground--Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions}
+
+\author{
+\name{Author Name\textsuperscript{a}\thanks{CONTACT Author Name. Email: author@example.com}}
+\affil{\textsuperscript{a}Department, University, City, Country}
+}
+
+\maketitle
+
+\begin{abstract}
+Ground disruptions can make urgent services late even when a road alternative remains available. Low-altitude support offers another transport option, but reassigning scarce aircraft can disrupt incumbent services, and the air system can itself fail. This paper proposes a Ground--Low-Altitude Mobility Manager whose shared executable candidate interface connects joint transport states to alternative supervisory policies and common execution constraints. A ground-only reference, an air-first rule, a fixed-objective heuristic and an LLM-candidate policy are evaluated in a coupled SUMO--BlueSky environment. Four experiments comprise 10,960 primary runs and 180 additional interface-ablation runs, with three sites providing contrasting network morphology contexts. Coordination improves transport or priority-weighted service outcomes where useful alternatives survive. At the meshed urban site, aggregate compound-disturbance loss decreases from 240 under ground-only operation to 100 for either deterministic coordinated policy and 102.125 for the LLM policy. Coordinated policies show comparable aggregate performance in several tested panels, alongside different speed--service-preservation trade-offs. Explicit candidate presentation materially changes the tested LLM's choices at the meshed site, with weaker or absent effects elsewhere. Restoring an executable path does not guarantee timely recovery: observation scheduling and execution waiting can exhaust deadline margins or change the command that reaches execution. The results establish a common basis for supervisory policy comparison and identify transport alternatives, service preferences and timing as conditions shaping realized reconfiguration benefit.
+\end{abstract}
+
+\begin{keywords}
+ground--low-altitude mobility; service reconfiguration; disruption management; supervisory control; transport resilience; network morphology.
+\end{keywords}
+
+\section{Introduction}
+
+Transport disruption management concerns whether services can continue as network conditions change. Connectivity alone is insufficient: an urgent task may retain a road route while losing enough time to miss its deadline. Reassigning another vehicle can restore that task at the expense of a service already in progress. A service-based assessment must therefore connect network disruption to completion time, deadline compliance and the consequences for incumbent operations. This perspective follows transport vulnerability and resilience research that relates component failures to changes in system performance. \citep{ref1}
+
+Ground--low-altitude mobility makes these interactions explicit. An aircraft can bypass a road detour, but a small heterogeneous fleet has limited compatible capacity. A useful assignment must account for endurance, commandability, landing infrastructure and the priority of any displaced mission. Moreover, the supporting air system can itself suffer a communication failure, navigation degradation or landing-site closure. The intervention that was appropriate when a mission started may no longer be executable. Managing the service thus requires repeated reconfiguration as tasks, resources and disruptions evolve.
+
+The relevant decision scale is supervisory service management. The manager chooses an intervention such as dispatching an available aircraft, reassigning an eligible occupied resource, changing an ongoing operation or establishing ground fallback. Local aircraft contingency responses continue independently. This division concentrates the supervisory problem on which surviving transport option should serve which task. It also makes the full intervention sequence relevant: a proposal must pass current constraints, reach execution and complete transport within the time that remains.
+
+Dynamic vehicle routing and real-time transit rescheduling already address operational decisions under changing information. \citep{ref4}, \citep{ref5} For heterogeneous ground--air services, a further requirement is a consistent connection between that information and the available interventions. Comparing policies becomes difficult when they receive different derived travel times, different representations of displaced services or different execution rules. The question examined here is how alternative supervisory policies use a shared set of executable transport facts, and when their resulting interventions produce useful service recovery under disruption.
+
+We propose a \textbf{Ground--Low-Altitude Mobility Manager} with seven connected stages: \textbf{Global state $\rightarrow$ Candidate generator $\rightarrow$ Executable interface $\rightarrow$ Supervisor policy $\rightarrow$ Safety \& feasibility $\rightarrow$ Executor $\rightarrow$ SUMO + BlueSky}. The shared executable candidate interface is the central design element. It exposes legality, estimated completion duration and incumbent-service consequences without providing a policy-specific score or recommendation. The supervisor policy is replaceable: B0 supplies a ground-only reference, B1 implements an air-first rule, B2 uses a fixed-objective heuristic and B4b implements an LLM-candidate policy. Here, \emph{global} refers to the joint state within one modeled study area; sites are evaluated separately.
+
+Four experiments establish the benefits and boundaries of this architecture. E1 examines selective air support during ground disruption and the consequences for incumbent services. Its additional B4a--B4b ablation tests explicit candidate presentation within the same LLM implementation. E2 distinguishes path restoration after an air failure from timely task completion. E3 examines priority-weighted service loss under compound disturbances and competing tasks. E4 tests observation scheduling, execution waiting and input burden. The first three experiments use meshed urban, river-barrier and sparse suburban network contexts; E4 uses the meshed urban site. These sites expose contrasting transport alternatives rather than serving as independent estimates of a city-population effect.
+
+The study contributes a common executable interface for supervisory ground--low-altitude service management, comparative evidence about reconfiguration under successive disturbance conditions, and an account of how observation and execution timing shape realized transport benefit. Policy convergence and service trade-offs are both informative outcomes: neither the architecture nor its transportation contribution requires an LLM to dominate other policies. Figure 1 connects the service problem, architecture, experimental program and resulting interpretation before the detailed formulation.
+
+\begin{figure}[!htbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=180mm]{figures/fig01.pdf}}
+\caption{Overview of the Ground-Low-Altitude Mobility Manager. (a) Schematic service network with logistics D1, hospital H1, landing nodes V1--V3, ground and low-altitude routes, and a disrupted link B1. Its scale is illustrative; map B1 is distinct from policy B1. (b) Shared candidate facts connect replaceable supervisory policies to modeled feasibility checks and execution. B0/B1/B2/B4b are primary policies; B4a is an E1 interface ablation. (c) E1 examines air support during ground disruption, E2 air-layer reconfiguration, E3 compound disturbance and E4 observation sensitivity with execution/input studies. E1--E3 use sites A--C; E4 uses A. (d) Conceptual findings express conditional coordination benefit, timely recovery, interface-dependent choices and delay effects. The interface effect is strongest at A. Illustrations are schematic; symbols and bars are qualitative, not measured outcomes.}
+\label{fig:fig01}
+\end{figure}
+
+\FloatBarrier
+\section{Related work}
+
+\subsection{Disruption management across transport services}
+
+Transport vulnerability and resilience research connects component disruptions to changes in system performance. Mattsson and Jenelius distinguish the related concepts, while Jenelius and Mattsson explain how network vulnerability measures can be implemented. \citep{ref1}, \citep{ref2} Cats and Jenelius show why partial capacity degradation also matters for public transport performance. \citep{ref3} These studies motivate evaluating service completion and deadline compliance alongside the existence of an alternative route.
+
+Operational responses can propagate between transport services. Lai and Leung study real-time public transit rescheduling under disruption. \citep{ref5} Yap et al. couple train rescheduling with dynamic passenger assignment to represent disruption propagation into urban tram and bus networks. \citep{ref19} Their framework makes effects outside the initially disrupted layer part of the response assessment. Here, incumbent-service damage provides a narrower service-level account of such consequences, without modeling passenger redistribution across a public transport network.
+
+Jaber et al. formulate Resilience as a Service through resource allocation among buses, taxis and automated vans that can bridge disrupted rail services. \citep{ref20} Their work establishes a close precedent for coordinating heterogeneous replacement services. Our setting adds a failure-prone air layer and tests replaceable supervisory policies through a shared executable candidate interface. The claimed contribution is this specific architecture and its disruption evidence, rather than the general idea of multimodal recovery.
+
+\subsection{Dynamic fleet management and ground--air coordination}
+
+Dynamic vehicle routing addresses assignment and routing decisions as operational information changes. \citep{ref4} Ground--air coordination introduces resource synchronization: the flying sidekick traveling salesman problem jointly plans truck and drone movements for parcel delivery. \citep{ref6} Meng et al. incorporate stochastic truck travel times and soft time windows, using rolling-horizon recourse to update truck waiting times during execution. \citep{ref21} Their work illustrates that timing and synchronization are substantive transport decisions, beyond selecting the nominally fastest mode.
+
+At the network level, Wollenstein-Betech et al. jointly optimize intermodal vehicle routing and rebalancing while accounting for congestion generated by vehicle flows. \citep{ref22} The present model uses a smaller decision object: an intervention for an actionable service, with ground supplied through a shared corridor travel-time proxy. It does not optimize network-wide routing flows or truck--drone launch-and-retrieval tours. Its comparison concerns how policies select, preserve or replace services as modeled feasibility changes. Accordingly, B2 is one fixed-preference structured comparator, not a proxy for the strongest routing or scheduling optimizer.
+
+\subsection{Supervisory selection and constrained execution}
+
+Urban air mobility concepts distinguish vehicle operations, operating locations and supporting management services. \citep{ref7} More generally, control architectures can separate a proposed action from the mechanism permitting execution. Wabersich and Zeilinger's predictive safety filter exemplifies this separation under a specific constrained-control formulation. \citep{ref8} Its formal guarantees do not transfer to the deterministic rule checks used here.
+
+Our candidate generator exposes common feasibility, completion-time and incumbent-service facts before selection. The executor subsequently checks the chosen action against its current state. This distinction supports a transport comparison in which policy preferences can differ while information derivation and execution constraints remain common. It also exposes the interval between an admissible proposal and the intervention that actually reaches execution.
+
+\subsection{Language models and the comparison addressed here}
+
+SayCan connects language-based choices to executable robotic capabilities, while LLMLight applies language-based decisions to traffic signal control. \citep{ref9}, \citep{ref10} These studies motivate an LLM implementation of the supervisor, without determining its value for service reconfiguration. Long-context research also motivates distinguishing available information from information used effectively. \citep{ref11}
+
+The empirical question is how ground-only, air-first, fixed-objective and LLM-candidate policies use a common service-management contract under successive disturbances. B4a--B4b isolates explicit candidate presentation within the tested LLM; it is separate from the primary policy comparison. Across four experiments, the architecture links surviving alternatives, displaced services and intervention timing to realized outcomes. Comparable aggregate performance, policy-specific trade-offs and loss of benefit are all informative results. The comparison does not establish universal superiority of either the interface design or an LLM policy.
+
+\section{Problem formulation}
+
+\subsection{Ground--low-altitude service system}
+
+Let the ground network be a directed graph $G^g=(V^g,E^g)$. The low-altitude layer contains aircraft, operating sites, assignments, routes and active restrictions. Time advances in discrete simulation steps. At time $t$, the combined service state is
+
+\begin{equation*}
+S_t=(G_t,A_t,I_t,M_t,E_t), \tag{1}
+\end{equation*}
+
+where $G_t$ contains ground connectivity and travel-time estimates, $A_t$ contains aircraft states, $I_t$ describes landing infrastructure and operating restrictions, $M_t$ is the mission registry, and $E_t$ records currently represented disturbances and recent events. A mission $m$ has a release time $r_m$, absolute deadline $d_m$, origin, destination, service type, priority $p_m$, state and configured penalties. An aircraft has a role, assignment status, position, remaining endurance, landing compatibility and commandability.
+
+A disruption can alter ground travel time, interrupt a selected air chain, remove an aircraft from supervisory control or eliminate a landing option. The same external event can affect different policies differently because their earlier assignments determine the mission's exposure. Cross-modal reconfiguration changes a task's assigned resource or transport mode, or changes the continuation of an existing operation. It can improve an emergency's outcome while changing the service state of an incumbent mission.
+
+The supervisor receives an observation
+
+\begin{equation*}
+\widehat S_t=\mathcal O_t(S_{0:t}),\qquad \tau(t)\le t, \tag{2}
+\end{equation*}
+
+where $\mathcal O_t$ incorporates snapshot sampling and event ordering and $\tau(t)$ is the snapshot timestamp. The age $t-\tau(t)$ is useful but does not completely describe visibility: an event injected after a snapshot at the same simulation second is absent from that snapshot. This distinction becomes operationally important in the observation-scheduling experiment.
+
+\subsection{Candidate information and feasible alternatives}
+
+A deterministic mapping $\Phi$ constructs the candidate information interface,
+
+\begin{equation*}
+\mathcal I_t=\Phi(\widehat S_t),\qquad
+\mathcal C_{m,t}=\{c\in\mathcal I_{m,t}:\operatorname{legal}(c\mid\widehat S_t)=1\}. \tag{3}
+\end{equation*}
+
+$\mathcal I_{m,t}$ contains the records associated with mission $m$, whereas $\mathcal C_{m,t}$ denotes the subset marked legal. The distinction is necessary because the interface retains rejected resource records and their rejection reasons. A candidate record identifies the mission and resource, transport mode, implied action, estimated remaining completion duration $\widehat\eta_c$, feasibility status, endurance information, destination conditions and any incumbent service that would be displaced.
+
+Air feasibility depends on availability, mission compatibility, commandability, battery/endurance conditions, landing-site compatibility and modeled restrictions. Reassignment of an occupied aircraft requires an explicitly reassignable incumbent mission with strictly lower priority than the target. A ground candidate is available when the mission permits ground fallback and a travel-time estimate is present. These candidates represent the alternatives generated by the implemented service model; they do not enumerate every possible route or future schedule.
+
+The interface contains no B2 objective score, optimizer selection or manager-specific recommended action. Nevertheless, it embodies shared modeling choices, including priority constraints, travel-time approximations and the organization of multi-mission records. Manager-agnostic therefore means that policies share the same generation rules and facts at a given state, rather than that the representation is free of operational assumptions. Once policies take different actions, their subsequent states and candidate sets can legitimately differ.
+
+\subsection{Supervisory actions and execution-time constraints}
+
+At a decision epoch, policy $k$ proposes one structured intervention:
+
+\begin{equation*}
+a_t^{\mathrm{prop}}=\pi_k(\widehat S_t,\mathcal I_t),\qquad
+k\in\{\mathrm{B0,B1,B2,B4b}\}. \tag{4}
+\end{equation*}
+
+The action contract includes assignment and reassignment actions, route or destination changes, ground fallback, and management responses such as delay or no action. A proposal need not correspond to selecting an aircraft. In particular, B0 restricts cross-modal emergency support to the ground alternative.
+
+Let $t_e=t+\delta_{\mathrm{exec}}$ be a proposal's scheduled execution time. Let $Q(a,t_e)$ indicate that the proposal remains the active command version for the relevant task, and let $\Gamma(a,S_{t_e})$ denote the semantic and feasibility check using the current execution state. Abstracting the action-specific normalization performed by the implementation, the executed intervention is
+
+\begin{equation*}
+u_{t_e}=\begin{cases}
+\operatorname{Executor}(a_t^{\mathrm{prop}},S_{t_e}),
+&Q(a_t^{\mathrm{prop}},t_e)=1\land\Gamma(a_t^{\mathrm{prop}},S_{t_e})=1,\\
+\varnothing,&\text{otherwise}.
+\end{cases} \tag{5}
+\end{equation*}
+
+A proposal replaced by a newer command is superseded; a proposal that fails the current checks is rejected. Neither event is equivalent to completed transport. The subsequent state follows
+
+\begin{equation*}
+S_{t+1}=F(S_t,u_t,e_t,\ell_t), \tag{6}
+\end{equation*}
+
+where $e_t$ represents exogenous events and $\ell_t$ represents local contingency responses. This notation describes the implemented supervisory interface and event-driven simulator evolution. It is not a fitted transition model or a proof of closed-loop stability.
+
+\subsection{Service outcomes and temporal feasibility}
+
+For a completed mission, completion duration and deadline violation are
+
+\begin{equation*}
+T_m=c_m-r_m,\qquad V_m=\mathbf1[c_m>d_m], \tag{7}
+\end{equation*}
+
+where $c_m$ is the absolute completion time. Completion exactly at the deadline is on time. A useful diagnostic for a candidate at decision time $t$ is its estimated temporal margin,
+
+\begin{equation*}
+\sigma_m(c,t)=d_m-t-\delta_{\mathrm{exec}}-\widehat\eta_c,\qquad
+\mathcal C^{\mathrm{timely}}_{m,t}=\{c\in\mathcal C_{m,t}:\sigma_m(c,t)\ge0\}. \tag{8}
+\end{equation*}
+
+A nonempty feasible set does not ensure a nonempty set of alternatives predicted to finish on time. Even a nonnegative estimated margin does not guarantee on-time completion, because subsequent failures, queue changes and estimation error can alter the outcome. Equation (8) organizes the interpretation of the experiments; it does not introduce a newly measured candidate-count endpoint or a continuous delay threshold.
+
+We evaluate service resilience through path restoration, deadline compliance, incumbent-service preservation and priority-weighted loss. These outcomes describe complementary aspects of supervisory recovery. They do not measure infrastructure repair or imply that all parts of the transport system have returned to their original operating conditions.
+
+\section{Ground--Low-Altitude Mobility Manager}
+
+\subsection{Global state and closed-loop environment}
+
+The framework couples SUMO for road traffic with BlueSky for aircraft evolution. \citep{ref12}, \citep{ref13} A master orchestrator advances both layers in 1 s steps, maintains the service registry and applies events and accepted interventions. Figure 1(b) places the replaceable policy within this common sequence. Local aircraft contingencies remain independent of supervisory inference.
+
+The snapshot combines road estimates and closures with aircraft assignments, endurance, commandability, landing-site conditions and mission priorities and deadlines. Ground candidates use the shared D1--H1 corridor ETA, including for eligible missions represented in the multi-mission interface. When ground fallback executes, the implementation queries the current SUMO corridor estimate and schedules completion using the rounded duration. Completion is recorded by a mission timer; fallback does not simulate a separate dispatched road vehicle and trajectory for each mission.
+
+Coupling therefore occurs through task status and resource assignment. Ground fallback changes a mission's mode and assigned resource; an air interruption can trigger a replacement service. The registry does not explicitly track payload custody through retrieval, handover and reloading. Access, transfer and egress times are not separately resolved for each replacement task. These choices define the modeled service outcome and are common to the compared policies.
+
+\subsection{Candidate generator and shared executable interface}
+
+The candidate generator maps the observed global state into a shared executable candidate interface. Generation computes the candidate facts; the interface specifies the fields and action semantics available to the policy. Together they make air and ground alternatives comparable without prescribing a selection. Remaining completion estimates use a common duration convention. Air estimates combine the modeled route geometry, role-specific cruise speeds and dispatch overhead. The interface also reports absolute estimated completion time, the remaining deadline margin and structural consequences of preemption. Ground uses the common fallback estimate. These estimates support supervisory choice. Execution refreshes operational quantities from the environment, while deterministic checks apply the modeled constraints.
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Main information groups in the executable candidate interface.}
+\label{tab:table1}
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\toprule
+Group & Information supplied & Supervisory role \\
+\midrule
+Target mission & Identifier, priority, origin, destination, deadline and state & Establish task requirements and urgency \\
+Resource and action & Aircraft or ground identifier, mode, dispatch/reassignment/fallback action & Connect the alternative to the execution contract \\
+Feasibility & Legal flag, rejection reason, compatibility, commandability and destination state & Distinguish available interventions from rejected alternatives \\
+Completion and time & Remaining ETA, estimated absolute completion, deadline comparison & Compare transport duration and remaining margin \\
+Existing service & Preempted mission identifier and priority, interruption indicator & Make the consequence of reassignment visible \\
+Air operating state & Battery/endurance information and failure-related restrictions & Represent the modeled operating conditions \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The generator does not run B2 or receive its preference weights. B1 and B2 calculate their own selections from the shared table, while B4b receives the same table within the prompt. A structural interruption indicator identifies whether reassignment displaces an existing service; it is not a learned welfare estimate or a B2-weighted cost.
+
+The contract develops through additive versions. Version 2.0 supports E1, version 2.1 adds single-failure information for E2 and E4, and version 2.2 supports the multi-mission representation used in E3. Multi-mission entries are organized by priority and deadline. These are common organizational rules rather than optimizer recommendations. The policy comparison is controlled within each experiment and interface version; the full experiment sequence is not represented as having byte-identical inputs.
+
+\subsection{Supervisory policies}
+
+The four primary policies are summarized in Table 2. All use the common action contract and execution constraints. B0 provides a reference for emergency transport without supervisory air support, while B1, B2 and B4b compare alternative coordinated policies. Background air services remain present under B0.
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Supervisory policies and their comparison roles.}
+\label{tab:table2}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Policy & Selection rule & Interpretation \\
+\midrule
+B0: ground-only & Serves the eligible target by ground fallback, without retasking an air asset for cross-modal support & Reference for the total effect of enabling coordination \\
+B1: air-first rule & Chooses the legal air candidate with minimum ETA, using endurance to break ties; considers ground when no legal air option remains & Simple deterministic coordination \\
+B2: fixed-objective heuristic & Selects a target under the frozen priority rule and minimizes a fixed scalar score over legal air and ground candidates & Fixed-preference structured comparator \\
+B4b: LLM-candidate & Reads the shared state and explicit candidate table and returns a structured intervention & Language-based implementation of the policy layer \\
+B4a: interface ablation & Uses the same prompt template and checker as B4b with the explicit candidate section removed & Additional E1 interface ablation only \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+B1's air-first ordering is important: it minimizes ETA among legal air candidates, rather than minimizing travel time over both modes. B2 compares air and ground using the frozen score
+
+\begin{equation*}
+J_t(c)=\widehat\eta_c+10\max(0,t+\widehat\eta_c-d_m)
++\mathbf1_{\mathrm{preempt}}(c)(\kappa_{p(c)}+30)+10\rho_c, \tag{9}
+\end{equation*}
+
+where $\kappa_{\mathrm{LOW,NORMAL,HIGH,CRITICAL}}=(20,40,80,100000)$ and $\rho_c=\mathbf1[b_c<120]+\mathbf1[b_c<60]$ for endurance margin $b_c$ in seconds. Ground candidates incur neither preemption nor endurance penalties. The score uses configured seconds-equivalent trade-offs and contains no separate ground-delay term. Equal- or higher-priority preemption is already excluded by the feasibility rules. B2 is a fixed-preference structured comparator implemented as one-step candidate ranking. Its weights specify one transparent speed--service-preservation trade-off, rather than a calibrated social valuation. It is not the strongest possible optimizer, a full-horizon scheduling method or a model predictive controller. The frozen objective is preserved throughout the comparison.
+
+B4b uses the frozen prompt template with temperature 0, JSON output mode and an output-token budget of 8192. The recorded backend identifier is \nolinkurl{corp-ai/openai/deepseek-v4-pro}; this is the configured service identifier and does not independently certify the provider's underlying model version. B4a is an interface ablation rather than a fifth primary manager: it changes only the explicit candidate section of the same prompt template, while retaining the global snapshot and checker. Its matched comparison with B4b concerns the presentation of candidate facts within this LLM implementation. Neither deterministic decoding settings nor valid JSON guarantee repeatable end-to-end operation, so transport errors and structured retries remain in the analyzed cohort.
+
+\subsection{Deterministic checking}
+
+The validation pipeline checks action structure, identifiers, mission and aircraft status, commandability, compatibility, destination availability, priority restrictions and the relevant modeled operating constraints. The distinction between preselection filtering and action checking is deliberate. Candidate legality describes the observed state; execution checks address whether the selected intervention can be applied to the state that exists when it is due.
+
+Rejected proposals are logged rather than silently converted into a preferred action. An accepted assignment changes the registry and simulator commands through deterministic execution rules. These rules apply to every supervisory implementation. Consequently, a valid LLM proposal cannot be interpreted as evidence that the model itself supplied the safety mechanism, and a high task completion rate does not certify physical safety beyond the modeled constraints.
+
+\subsection{Execution, pending actions and local contingencies}
+
+The executor maintains the distinction between proposal, issue, execution and transport completion. In the execution-delay experiment, accepted proposals enter a pending queue. Task-specific versioning allows a newer command to supersede an earlier pending command, and the execution pipeline revalidates the current action before application. A change in the environment can therefore alter both when a command executes and which command ultimately survives.
+
+Local aircraft contingency behavior continues independently of supervisory decisions. In the modeled command-link-loss case, for example, an affected aircraft becomes unavailable for further supervisory commands and follows its local return procedure. The manager can then select another air resource or ground fallback for the interrupted service. Service recovery thus combines a common local response with a potentially policy-dependent replacement decision.
+
+\subsection{Decision opportunities and observation scheduling}
+
+New or interrupted missions can trigger supervisory decisions. Outside the observation-interval experiment, periodic decisions are also enabled every 30 s while a task is waiting, requires replanning or is interrupted. In E3, the condition covers actionable missions in the registry, including background services. Each accepted intervention is followed by continued simulator evolution and subsequent observations.
+
+E4A replaces this ordinary observation arrangement with controlled snapshot refresh and polling schedules. The policy uses the latest observed snapshot rather than an unrestricted view of current state. E4B instead introduces controlled execution waiting, and E4C adds inert input records around the unchanged core service problem. These experiments isolate different implementation conditions while preserving the respective frozen policy definitions.
+
+\section{Experimental design}
+
+\subsection{Study sites and modeled services}
+
+The three study areas are based on OpenStreetMap road data from Suzhou, China (A), Amsterdam, the Netherlands (B), and Edmonton, Canada (C). OpenStreetMap supplies the geographic network substrate. \citep{ref14} The configured study-area extent is 3.2 km $\times$ 3.2 km at each site. Figure 2 shows the imported road substrates and representative service connections. Network conversion can retain geometry beyond the nominal area, so the figure uses a common projected scale and shows the full imported substrates rather than presenting their outlines as identical nominal-area boundaries.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig02.pdf}
+\caption{Three contrasting network morphology contexts, drawn from archived projected road and facility geometry. Blue indicates the primary ground route and dashed blue the detour; orange denotes low-altitude connections. Thin blue-grey routes show auxiliary ground ODs, and muted orange dashed lines show background air connections where present. D1/H1 mark reference endpoints, V3 a backup landing site, and D2/H2/C2/C3 auxiliary facilities. Co-located landing nodes are not labeled separately. Closure marks the reference disrupted road link. Auxiliary routes describe site context, not additional E1 missions. Maps use a common projected scale and 500 m scale bars. Road and water data: \textcopyright{} OpenStreetMap contributors. Facilities, air operations and disturbances are modeled.}
+\label{fig:fig02}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Network and reference-service descriptors.}
+\label{tab:table3}
+\begin{tabularx}{\textwidth}{@{}Yrrr@{}}
+\toprule
+Descriptor & A: Suzhou & B: Amsterdam & C: Edmonton \\
+\midrule
+Directional road length (km) & 200.165 & 239.265 & 188.817 \\
+Road density (km/km$^2$) & 19.547 & 23.366 & 18.439 \\
+Nodes & 542 & 1877 & 791 \\
+Directional passenger edges & 1286 & 3514 & 1681 \\
+Intersection density (km$^-$$^2$) & 38.770 & 101.758 & 40.918 \\
+Mean node degree & 2.830 & 2.663 & 2.420 \\
+Dead-end ratio & 0.1845 & 0.1193 & 0.2882 \\
+Mean sampled OD circuity & 1.1969 & 1.1409 & 1.4721 \\
+D1--H1 network distance (km) & 2.9222 & 1.1192 & 3.4296 \\
+D1--H1 Euclidean distance (km) & 1.7403 & 0.7246 & 2.5285 \\
+D1--H1 circuity & 1.6791 & 1.5446 & 1.3564 \\
+Reference closure ETA increase (\%) & 37.87 & 88.69 & 34.76 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Source: archived site-morphology comparison. Density denominators use the configured 10.24 km$^2$ study area at each site; route and edge definitions follow the original network audit.
+
+Road length and density sum directional passenger-edge lengths, counting two directions separately. Intersection density counts junctions with at least three distinct neighbors. Mean OD circuity uses the project's fixed sample of 200 OD pairs, whereas D1--H1 circuity describes the particular reference service pair. The reference closure ETA increases are network-validation quantities, not substitutes for the full E1 disturbance matrix.
+
+The sites offer contrasting operating contexts. Site A has a meshed urban network with meaningful choices between continued ground service and occupied air resources. Site B combines the highest road density with water-barrier constraints on the reference ground corridor. Site C has a higher dead-end ratio and mean sampled OD circuity, with a longer reference service distance. These characteristics motivate contextual comparisons; they do not constitute a controlled experiment in which a single morphological variable changes.
+
+Every site uses a four-aircraft core fleet: two medical UAVs, one logistics UAV and one passenger eVTOL. Compatibility restricts which aircraft can serve a given mission. Low medical workload leaves the medical aircraft idle, whereas high workload assigns them to existing services. Facilities, aircraft operations, landing sites and failures are scenario constructs. The experiments do not claim that the modeled low-altitude service systems operate in the three cities.
+
+\subsection{Shared controls and site adaptations}
+
+Policies share mission semantics, the action contract, candidate-generation rules and deterministic execution constraints within an experiment. The prompt and B2 objective remain frozen. Geographic coordinates, road alternatives, aircraft travel distances and failure placement vary across sites. Failure times are adapted to intercept the modeled air operation, rather than applying an identical time that would affect different flight phases. Thus, the cross-site evaluation tests the same supervisory architecture in different network and service contexts.
+
+Two comparisons must be distinguished. B0 versus a coordinated policy measures the total difference associated with allowing cross-modal support, including a difference in available transport modes. B1 versus B2 versus B4b compares supervisory implementations under common information and action constraints. In contrast, B4a versus B4b tests explicit candidate presentation within the same LLM implementation. These comparisons answer different questions and are not combined into one ranking of algorithmic intelligence.
+
+\subsection{Disturbance experiments}
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Experiment design and sample sizes. Each primary scenario--arm--policy cell contains 20 paired seeds.}
+\label{tab:table4}
+\begin{tabularx}{\textwidth}{@{}YYYrr@{}}
+\toprule
+Experiment & Factors & Sites & Primary runs & Additional B4a runs \\
+\midrule
+E1 & 3 ground disruption levels $\times$ 2 urgency levels $\times$ 2 workloads & A, B, C & 2,880 & 180 \\
+E2 & 16 feasible failure-family/context combinations & A, B, C & 3,840 & 0 \\
+E3 v2 & 12 scenarios across four disturbance/task levels & A, B, C & 2,880 & 0 \\
+E4A & Observation intervals of 10, 30, 60, 120, 300 s & A & 400 & 0 \\
+E4B & Execution delays of 0, 1, 5, 10, 20, 30, 60 s & A & 560 & 0 \\
+E4C & Total aircraft records of 5, 10, 20, 30, 50 & A & 400 & 0 \\
+\textbf{Total} &  &  & \textbf{10,960} & \textbf{180} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{E1: ground disruption and selective support.} A new blood-transport mission and a ground disruption occur at 300 s. Ground disruption has three levels, urgency has HIGH and CRITICAL levels, and medical workload is low or high. HIGH urgency has 300 s of deadline slack and CRITICAL urgency has 180 s. The resulting 12 scenarios run for 900 s. Six scenarios per site provide the interface ablation, with ten matched seeds each. The 180 extra runs are B4a runs; their B4b counterparts belong to the primary cohort.
+
+\textbf{E2: individual air-system failures.} The primary CRITICAL mission is released at 300 s and has deadline 480 s. Six failure families model command-and-control link loss, GNSS degradation, UTM degradation/outage, landing-site failure, unknown-aircraft intrusion and flyaway behavior with a moving risk envelope. Context C1 affects a peripheral part of the operation, C2 interrupts the primary service chain while retaining another air option, and C3 removes the relevant air alternatives. F3--C2 and F4--C2 are excluded because the specified mechanisms cannot create the intended combination of interruption and surviving air alternative. The resulting 16 scenarios use fault times of 360, 322 and 383 s at A, B and C, respectively.
+
+\textbf{E3: compound disturbance and competing services.} Twelve scenarios form four levels. L1 comprises two single-failure, single-emergency anchors. L2 comprises four two-failure, single-emergency cascades. L3 comprises four single-failure scenarios with two simultaneous emergency missions and tighter medical-resource availability. L4 comprises two scenarios with multiple emergencies and two or three failures. In the two-emergency scenarios, the second medical mission is released at 300 s with HIGH priority and 240 s of deadline slack. The primary CRITICAL and secondary HIGH missions have delay penalties of 60 and 45 and cancellation penalties of 600 and 450, respectively. Horizons are 900 or 1,200 s. These levels change both disturbance structure and task demand and are not a one-dimensional ladder of difficulty.
+
+\subsection{Observation, execution delay and input burden}
+
+E4 retains Site A's core task and separates three operational changes. E4A varies the snapshot observation interval, with a fault at 371 s. Scheduled polling continues over the observation experiment's horizon, including after some transport decisions have resolved. E4B introduces the same specified decision-to-execution delay for every policy, with a fault at 360 s. E4C enlarges the surrounding input using unavailable, non-commandable aircraft records with zero endurance and incompatible landing capabilities, together with inert facility and completed-mission records.
+
+E4C does not add usable transport capacity. Its core fleet remains four aircraft, and candidate invariance is checked at matched decision stages. The experiment therefore tests input burden and selection quality for a fixed transport decision. It does not test scheduling fifty operational aircraft or serving a proportionally larger set of urgent missions.
+
+\subsection{Outcomes, pairing and statistical interpretation}
+
+The primary seeds are 20240601--20240620. Each controls the SUMO random seed and a common initial-state realization, including progress and endurance perturbations for aircraft. Busy-aircraft progress is sampled along its route, and remaining endurance receives a seed-dependent reduction of up to 15\%. Comparisons pair policies by scenario and seed. Some outcomes are constant within a cell because the perturbations do not change the executed action or resulting completion time.
+
+Emergency completion and deadline violation follow Equation (7). Existing-service damage counts non-primary missions whose horizon state is INTERRUPTED, NEEDS\_REPLAN, CANCELLED or FAILED. It measures final service status rather than cumulative historical interruptions or physical damage. Issued actions identify air intervention; rejected proposals do not count as interventions.
+
+For recovery, let $A_i=1$ if a run's primary air chain is actually affected and $R_i=1$ if an executable replacement service is established. Conditional path restoration is
+
+\begin{equation*}
+\widehat P_{\mathrm{rec}}=\frac{\sum_i A_iR_i}{\sum_i A_i}. \tag{10}
+\end{equation*}
+
+When no run is affected, the result is N/A. Pairwise recovery-time comparisons include only pairs in which both policies are affected. Completion and deadline comparisons retain all matched runs. Failure-to-replan latency uses the first issued mission-specific DISPATCH, REASSIGN, DIVERT, REROUTE or GROUND\_FALLBACK action after the fault, excluding NO\_ACTION. Path restoration and completed transport are separate events.
+
+E3's system weighted loss (SWL) is
+
+\begin{equation*}
+L_H=\sum_{m\in M_H}w_{p_m}\ell_m(H),\qquad
+w_{\mathrm{CRITICAL,HIGH,NORMAL,LOW}}=(4,3,2,1), \tag{11}
+\end{equation*}
+
+with
+
+\begin{equation*}
+\begin{aligned}
+\ell_m(H)&=\begin{cases}
+q_m^{\mathrm{delay}},&m\text{ completed and }c_m>d_m,\\
+q_m^{\mathrm{cancel}},&\operatorname{state}_m(H)\in\mathcal U,\\
+0,&\text{otherwise},
+\end{cases}
+\\[4pt]
+\mathcal U&=\{\mathrm{CANCELLED,FAILED,INTERRUPTED},
+\\&\qquad\mathrm{NEEDS\_REPLAN,WAITING}\}.
+\end{aligned}\tag{12}
+\end{equation*}
+
+Late completion incurs a fixed penalty, not a charge per second late. Normally ongoing EN\_ROUTE and ASSIGNED services incur no horizon penalty. A late primary CRITICAL mission therefore contributes 240 units and a late secondary HIGH mission contributes 135 units. SWL is expressed in configured loss units, not monetary welfare. We also report the CRITICAL+HIGH component when comparing compound-level policies.
+
+For continuous endpoints, the paired difference and its interval are
+
+\begin{equation*}
+D_i=Y_i^{(u)}-Y_i^{(v)},\qquad
+\overline D=\frac1n\sum_iD_i,\qquad
+\mathrm{CI}_{95\%}=\overline D\pm t_{0.975,n-1}\frac{s_D}{\sqrt n}. \tag{13}
+\end{equation*}
+
+The release retains paired t and Wilcoxon signed-rank results, as well as pooled-SD effect sizes. \citep{ref15} Identical pairs receive $p=1$. For a constant nonzero paired difference, the t statistic is undefined and the finite signed-rank result is used for adjustment. Binary comparisons use exact McNemar tests, while absolute proportions use Wilson intervals. \citep{ref16}, \citep{ref17} Paired risk-difference t intervals are descriptive. Holm adjustment applies to the recorded comparison families, with adjusted $p<0.05$ as the significance criterion. \citep{ref18}
+
+E1 ablation families contain three endpoints per site; scenario-specific completion comparisons contain 12 tests per site. E2 uses a 12-endpoint B4b--B2 family per site. E3 uses 12 comparisons per site: two coordinated baselines, three compound levels and two loss endpoints. E4 compares non-anchor arms with OBS30, D00 and N05, using separate per-policy, per-metric families. Supplementary Section S3 records interpretation details. A nonsignificant comparison is not treated as statistical equivalence.
+
+Summaries weight scenario--seed runs equally. E3 therefore has 40, 80, 80 and 40 runs per policy at L1--L4, rather than equal level weights. Intervals describe the tested fixed scenario panels and seed perturbations. The three sites are not a random sample of cities, and the total run count does not establish city-population inference.
+
+\subsection{Provenance and model scope}
+
+The analysis uses the frozen release \nolinkurl{paper_final_20260910}: E1-final, corrected E2, E3-v2 and E4-v2. Original run artifacts remain separate from corrected derived metrics. The release includes metric-input hashes, execution-derived inputs, analysis code and verification records. Its analysis-time environment snapshot is distinct from original run-time provenance.
+
+The shared corridor ETA makes ground and air choices comparable within the implemented task model, but does not supply task-specific ground routes for every handover. Missing retrieval and transfer stages can alter the relative timing of replacement options in physical operations. Consequently, the experiments evaluate supervisory service reconfiguration, not complete door-to-door intermodal delivery. Cross-site differences also combine road morphology with facility placement, air distances and adapted fault times; they do not isolate a morphology effect.
+
+External inference calls do not advance the physical simulation clock. E4A changes what is observed at a decision opportunity; E4B changes the modeled wait between proposal and execution. Recorded backend latency is a wall-clock implementation measurement, not an additional travel-time term in those runs. The evidence therefore characterizes the specified scheduling and queue mechanisms. It does not establish a real-time deployment delay budget. Deterministic feasibility checking enforces the modeled rules without certifying physical aircraft separation or complete operational safety.
+
+\FloatBarrier
+\section{Results}
+
+\subsection{Coordination benefit and service preservation}
+
+Enabling air support improved emergency transport, while coordinated policies imposed different incumbent-service costs (Figure 3). At A, B2 and B4b reduced deadline violations from B0's 33.33\% to 16.67\%. Their mean completion durations were comparable, but B4b incurred 0.133 damaged services per run against B2's 0.058. Supplementary Table S1 retains the complete site--policy summaries and intervals.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig03.pdf}
+\caption{E1 descriptive mean emergency completion, deadline violation and incumbent-service damage, with 240 runs per site and policy. Supplementary Table S1 retains absolute uncertainty intervals. Policy colors in Figures 3--7 are consistent: B0 grey, B1 orange, B2 green and B4b purple. These encode policy identity; route colors in Figures 1, 2 and 8 encode transport mode.}
+\label{fig:fig03}
+\end{figure}
+
+The high-disruption, HIGH-urgency, high-workload scenario at A exposes this trade-off. Ground could meet the 300 s slack, and B2 selected it in all 20 runs. B4b reassigned an occupied aircraft in 12 runs and used ground in eight. Relative to B2, completion decreased by 11.95 s (95\% CI -17.330 to -6.570; Holm-adjusted $p=0.002100$), while damage increased by 0.600 services per run. Both policies met every emergency deadline. The speed gain therefore came with a different service-preservation choice.
+
+At B and C, large gains over ground-only operation coexisted with similar outcomes among coordinated policies. Their deadline-violation rates were respectively 0\% and 10\%, against B0's 50.00\% and 83.33\%. These differences distinguish the benefit of enabling a useful transport mode from the effect of selecting a more complex supervisor.
+
+\subsection{The candidate interface shapes supervisory choices}
+
+At A, explicit candidate presentation changed the tested LLM's behavior (Figure 4; Table 5). B4b reduced completion duration, incumbent-service damage and air intervention relative to B4a. The jointly favorable changes show that faster emergency service did not require more frequent preemption in this ablation.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig04.pdf}
+\caption{E1 interface ablation, B4b minus B4a, with 60 matched runs per site. Negative values indicate lower completion duration, fewer damaged services or less air intervention. Bars show 95\% paired intervals. Table 5 reports the adjusted tests; air-intervention intervals are descriptive and exact McNemar inference is used.}
+\label{fig:fig04}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Paired E1 interface ablation: B4b minus B4a.}
+\label{tab:table5}
+\begin{tabularx}{\textwidth}{@{}lYrYYY@{}}
+\toprule
+Site & Endpoint & Pairs & Difference & 95\% paired interval & Holm p \\
+\midrule
+A & Completion (s) & 60 & -13.567 & [-19.753, -7.380] & 4.79e-05 \\
+A & Damaged services/run & 60 & -0.383 & [-0.510, -0.257] & 3.13e-07 \\
+A & Air intervention (pp) & 60 & -38.333 & [-50.999, -25.668] & 4.77e-07 \\
+B & Completion (s) & 60 & 1.450 & [-1.824, 4.724] & 0.964183 \\
+B & Damaged services/run & 60 & -0.017 & [-0.050, 0.017] & 0.964183 \\
+B & Air intervention (pp) & 60 & -1.667 & [-5.002, 1.668] & 1.000 \\
+C & Completion (s) & 60 & 0.000 & [0.000, 0.000] & 1.000 \\
+C & Damaged services/run & 60 & 0.000 & [0.000, 0.000] & 1.000 \\
+C & Air intervention (pp) & 60 & 0.000 & [0.000, 0.000] & 1.000 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The three endpoints form one adjustment family per site. Air intervention is a paired risk difference in percentage points (pp); its interval is descriptive and its test is exact McNemar.
+
+The effect was site-dependent. B showed no difference passing Holm adjustment, and C had zero observed difference on all three endpoints. The result supports a material interface effect where competing alternatives mattered in this tested LLM implementation. It does not establish a universally optimal representation or replace the primary comparison among B1, B2 and B4b.
+
+\subsection{Restored paths do not guarantee timely recovery}
+
+Every affected coordinated run established an executable replacement path in E2 (Figure 5). Prior assignments changed exposure, so B4b's affected counts differed from B1/B2's; B0's conditional recovery was N/A. Despite complete restoration among affected runs, B4b's all-run deadline-violation rates remained 39.06\%, 37.50\% and 62.81\% at A, B and C. A surviving route could take longer than the remaining deadline margin.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig05.pdf}
+\caption{E2 separates all-run deadline outcomes (320 runs per site and policy) from conditional path-restoration counts. Recovery denominators include only actually affected primary air chains and can depend on prior policy actions. B0 has no such denominator. Supplementary Table S2 retains the full descriptive results and Wilson recovery intervals.}
+\label{fig:fig05}
+\end{figure}
+
+B4b completed later than B2 at A, with an adjusted difference passing the specified test (Table 6). Its conditional recovery-time difference did not pass correction. B and C completion differences were smaller and also did not pass Holm adjustment. These results retain an adverse comparison for the LLM policy while distinguishing all-run transport from conditional replacement latency.
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Selected E2 paired comparisons: B4b minus B2.}
+\label{tab:table6}
+\begin{tabularx}{\textwidth}{@{}lYrYYY@{}}
+\toprule
+Site & Endpoint & Pairs & Difference & 95\% paired interval & Holm p \\
+\midrule
+A & Completion (s) & 320 & 4.525 & [1.917, 7.133] & 0.008678 \\
+A & Recovery time (s) & 191 & 3.927 & [0.733, 7.121] & 0.162454 \\
+B & Completion (s) & 320 & 0.175 & [0.046, 0.304] & 0.093934 \\
+B & Recovery time (s) & 199 & 0.281 & [0.075, 0.488] & 0.093934 \\
+C & Completion (s) & 320 & 0.922 & [-0.162, 2.006] & 1.000 \\
+C & Recovery time (s) & 200 & 0.255 & [-0.122, 0.632] & 1.000 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Adjustment uses the original 12-endpoint family per site. Completion uses all matched runs; recovery time uses jointly affected pairs. Intervals are unadjusted and p-values are multiplicity-adjusted. At C, 201 B4b runs were affected but only 200 pairs were jointly affected. Backend errors and retries remain included; some deterministic replacement decisions occur within the fault's simulation second.
+
+\subsection{Compound service loss depends on surviving options}
+
+Coordination reduced aggregate priority-weighted loss in E3 (Figure 6; Supplementary Tables S3 and S7). At A, SWL fell from 240 under B0 to 100 under B1/B2 and 102.125 under B4b. At B and C, coordinated policies shared aggregate means of 127.5 and 227.5, respectively, against 307.5 under B0.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig06.pdf}
+\caption{E3 priority-weighted service loss across sites and disturbance/task levels. Each policy has 40 runs in L1/L4 and 80 in L2/L3. The common vertical scale preserves cross-site comparisons. Levels vary disturbance structure and demand together, rather than increasing a single severity factor. Exact level means and aggregate intervals are retained in Supplementary Tables S3 and S7.}
+\label{fig:fig06}
+\end{figure}
+
+These averages contained clear limits. At A, all policies retained loss 240 in L2. At C, coordination produced no SWL reduction in L1, L2 or L4; its improvement was confined to L3. Thus, the E1 benefit of air availability did not persist across every combination of failures and service demand.
+
+B4b did not significantly reduce SWL or CRITICAL+HIGH loss relative to B1 or B2 in the recorded compound comparison families. At A, its L3 and L4 SWL differences were +1.6875 (95\% CI -1.671 to 5.046) and +3.375 (-3.452 to 10.202), with adjusted $p=1$. The corresponding compound-level differences at B and C were zero. This supports comparable aggregate performance in these panels without establishing statistical equivalence or identical action sequences.
+
+Primary speed alone also missed service benefits. At A, coordinated policies reduced SWL despite longer mean primary completion than B0. The configured loss depends on which priority-weighted services cross deadlines, not solely on average primary travel time.
+
+\subsection{Contrasting morphology and policy sensitivity}
+
+The sites separate coordination opportunity from sensitivity to policy. A contains decisions where ground remains timely and air reassignment offers a smaller speed gain at an incumbent-service cost. It also shows the strongest interface effect. B combines a dense network with a barrier-constrained reference corridor; C has more dead ends, higher sampled OD circuity and a longer reference trip. Both show large E1 coordination benefits with similar coordinated-policy outcomes.
+
+C's limited E3 gains qualify this pattern: useful alternatives must preserve the relevant deadline to avoid the configured penalty. Across sites, road geometry, facilities, air travel times and fault timing change together. Morphology contextualizes the manager's choices; this comparison does not estimate an independent causal effect of density, circuity or redundancy.
+
+\subsection{Timing conditions and input burden}
+
+\subsubsection{Observation scheduling}
+
+Longer observation intervals could exhaust the available service margin (Figure 7a; Supplementary Table S4). B2/B4b completion increased from 140 s at OBS10 to 482 s at OBS300. Their results coincided at every arm; B1 differed at OBS300, completing in 521 s. All B4b OBS10--OBS60 runs met the deadline, with OBS60 exactly on time, whereas OBS120/OBS300 were all late.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig07.pdf}
+\caption{E4 at Site A, with 20 runs per arm and policy. Observation interval and execution waiting are separate interventions; B2 and B4b overlap in panels (a,b). Panel (c) increases total aircraft input records around a fixed four-aircraft fleet. Lines connect tested arms without implying a continuous threshold. Prompt-token means include retained transport-error calls with zero recorded tokens. Supplementary Tables S4--S6 give the complete values.}
+\label{fig:fig07}
+\end{figure}
+
+The schedule delayed both task discovery and fault observation. The 300 s snapshot preceded the same-second task event; the task first appeared at 310/330/360/360/600 s across the five arms. The 371 s fault appeared at 380/390/420/480/600 s. OBS120 restored the affected path without timely completion. OBS300 had no affected primary air chain, so its conditional recovery was N/A. A timestamp alone did not describe event visibility.
+
+Longer intervals also reduced B4b decisions from 62 to four per run. These counts cover the fixed full-horizon polling protocol, including calls after some services resolved. They do not estimate an adaptive policy that stops polling after completion.
+
+\subsubsection{Execution waiting and command replacement}
+
+Across injected waits of 0--30 s, B1/B2/B4b completion rose from 120 to 150 s and remained timely. At D60, B2/B4b completed in 302 s and B1 in 341 s; all B4b runs were late (Figure 7b; Supplementary Table S5).
+
+The D60 sequence changed the surviving command (Figure 8). An air proposal selected at 300 s waited until 360 s, when the fault and a newer ground decision superseded it. Ground fallback then waited until 420 s and completed at 602 s. This was command replacement, not checker rejection of a stale action. The result belongs to the tested event order and queue rules, rather than a universal delay threshold.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig08.pdf}
+\caption{E4B D60 command sequence for B4b. The pending air dispatch is superseded by a ground-fallback decision at the fault time. Ground executes at 420 s and completes at 602 s, after the 480 s deadline. Orange denotes the air command, blue the ground service and red the fault/deadline. The transition changes the executed mode as well as completion time.}
+\label{fig:fig08}
+\end{figure}
+
+\subsubsection{Input burden with a fixed active fleet}
+
+Increasing total aircraft records from five to fifty raised B4b prompt tokens per logged call from 3,982.1 to 20,593.5 (Figure 7c; Supplementary Table S6). The active fleet remained four aircraft; 640 matched-stage checks retained the same legal candidates. All 100 B4b runs completed on time, with no observed illegal or nonexistent resource selection.
+
+The N05 completion mean was 121.5 s, compared with 120 s in N10--N50, alongside one retained transport error and another decision opportunity. This is not evidence that smaller inputs are inherently harder. E4 records four final transport-error calls and four structured retries overall. These remain included: the result concerns input burden for a fixed service problem, rather than coordination of fifty operational aircraft.
+
+\FloatBarrier
+\section{Discussion}
+
+\subsection{The executable interface as a service-management contract}
+
+The principal contribution is a transport-specific connection between heterogeneous state information and executable service interventions. A resource identifier is useful only when its mission compatibility, completion estimate and incumbent-service consequence are also known. The shared executable candidate interface makes those relationships explicit before policy selection and permits the selected intervention to be traced through checking and execution. This specifies the service decisions being compared within the broader traditions of dynamic fleet management and constrained supervisory control. \citep{ref4}, \citep{ref8}
+
+The Site A ablation shows that this candidate interface materially changes supervisory behavior within the tested LLM implementation. The weaker or absent effects at the other sites limit the generalization: explicit presentation is consequential in some decision settings, but the study does not identify a universally best representation. The candidate generator itself also defines the modeled opportunity set through compatibility, priority restrictions and travel-time approximations. A policy cannot select an omitted alternative, and more elaborate selection cannot correct an inaccurate shared transport estimate. Interface transparency is therefore necessary for interpreting the policy comparison, independently of which implementation performs best.
+
+\subsection{Comparable outcomes and different service preferences}
+
+Several panels exhibit comparable aggregate performance among coordinated policies. In this study, that expression describes observed outcomes rather than statistical equivalence. A small set of useful alternatives can reduce the scope for policies to differ, while the common contract prevents a derived-information advantage from being mistaken for a better selection mechanism. Outcome convergence therefore helps identify the decision conditions under which additional policy complexity yields little observed transport benefit. It does not demonstrate equal capabilities across untested tasks or larger active fleets.
+
+The E1 preemption case exposes a different speed--service-preservation trade-off: speeding up an already timely emergency can interrupt an incumbent service. B2 applies a fixed, explicit valuation of that exchange; B4b sometimes chooses additional speed. Neither result establishes a universally preferable social choice. B2's role is a fixed-preference structured comparator, and B4b's observed choices do not establish controllable preference tuning. Deployment decisions would additionally depend on processing demand and reliability. Retained backend errors and rising input-token demand characterize the evaluated LLM implementation, but the study does not measure complete costs for every policy or identify a cost-optimal manager.
+
+\subsection{Network context, path restoration and timely recovery}
+
+A recovery path does not guarantee timely recovery. The experiments distinguish an alternative that satisfies current constraints, an intervention that establishes replacement service and a task that completes before its deadline. E2 demonstrates that path restoration can succeed while substantial lateness remains. E3 extends that distinction to multiple services and faults: coordinated intervention can reduce priority-weighted loss in some cells and leave it unchanged in others. This complements service-oriented resilience assessment by identifying the operational conditions under which reallocation preserves timely performance, rather than equating connectivity with recovery. \citep{ref1}, \citep{ref3}
+
+Morphology enters this interpretation through available transport alternatives and task geometry. A barrier-induced road detour can create a large air-support opportunity, while a timely ground option can expose a service-preservation choice. Following an air failure, a long ground continuation may restore eventual completion without preventing a late-service penalty. The observed cross-site patterns are consistent with these mechanisms. Because facility geometry, flight duration and fault timing also vary, the study cannot assign the policy differences to morphology alone. The reproducible result is the behavior of the same supervisory architecture in contrasting, site-adapted transport contexts.
+
+\subsection{Timing conditions and the scope of the evidence}
+
+Timing constraints shape realized intervention benefit throughout the closed loop. Observation scheduling determines when new tasks and failures enter the supervisory state. Execution waiting consumes deadline margin and can expose a command to events that replace its intended continuation. The D60 sequence shows this second effect directly: the pending air dispatch is superseded by ground fallback. Evaluating only the validity of the original proposal would miss the change in the transport sequence. Deadline-aware observation and explicit handling of pending commands are consequently relevant design implications, although adaptive polling and alternative queue policies have not been tested here.
+
+The current service abstraction bounds these implications. Ground fallback uses a shared reference-pair ETA proxy, and the coupling abstracts detailed access, egress and physical payload transfer. Faults use simplified state machines; the checker enforces modeled constraints without certifying aircraft safety. SWL uses configured flat penalties and excludes normally ongoing EN\_ROUTE/ASSIGNED services from horizon penalties. Results concern fixed scenario panels with twenty primary seeds per cell, a four-aircraft core fleet and one recorded LLM backend/prompt family. E4C enlarges input records, not active capacity, while external inference does not advance the physical simulation clock. Clearer service-transfer models and actual wall-clock coupling would be needed to extend operational deployment claims; controlled variation of network features would be needed to identify morphology effects. These are extensions of the evidence boundary, not changes to the frozen policies evaluated here.
+
+\section{Conclusions}
+
+This paper proposes a Ground--Low-Altitude Mobility Manager centered on a shared executable candidate interface. The architecture connects joint transport state, deterministic candidate generation, alternative supervisory policies, common constraint checking and execution in a SUMO--BlueSky closed loop. The four primary policies are a ground-only reference, an air-first rule, a fixed-objective heuristic and an LLM-candidate implementation; a separate LLM interface ablation tests explicit candidate presentation.
+
+Across 10,960 primary runs and 180 additional ablation runs, coordination improves service outcomes where useful transport alternatives and sufficient time remain. Coordinated policies often have comparable aggregate performance, while some decisions reveal different speed--service-preservation trade-offs. The candidate interface changes the tested LLM's choices most clearly at the meshed urban site. Path restoration alone does not ensure timely recovery, and observation and execution timing can change both completion and the intervention that is ultimately applied. The architecture provides a reproducible basis for evaluating these conditional benefits and boundaries of supervisory service reconfiguration across contrasting network contexts.
+
+\section*{Data and code availability}
+
+The accompanying research package contains the original run artifacts and the frozen numerical release \nolinkurl{paper_final_20260910}, including the authoritative results JSON, summary CSV, derived execution metrics, source/environment records and input hashes. The present manuscript and PowerPoint figures use that release without changing the raw runs, frozen policies, prompt or B2 weights. No public repository identifier is assigned in this draft. The availability statement refers to the accompanying project files rather than to an already public archive.
+
+\FloatBarrier
+\bibliographystyle{tfcad}
+\bibliography{references}
+\end{document}

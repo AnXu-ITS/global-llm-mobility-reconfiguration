@@ -1,0 +1,20 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+main.pdf
+
+supplement.pdf
+
+*.compile.txt
+
+# Build intermediates; revised PDFs remain versioned
+*_build.txt
+*_build.log
+*.bib.txt
+__pycache__/
+~$*.pptx

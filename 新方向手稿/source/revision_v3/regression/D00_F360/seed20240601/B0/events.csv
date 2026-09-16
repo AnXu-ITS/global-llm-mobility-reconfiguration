@@ -1,0 +1,8 @@
+t,event_id,event_type,payload
+300,GD1,GROUND_DISRUPTION,"{""edges"": [""B1""], ""action"": ""closed"", ""degrade_detour_factor"": null}"
+300,NEW_CRITICAL_MISSION,MISSION,"{""mission"": ""M-CRITICAL-001"", ""priority"": ""CRITICAL"", ""origin"": ""V2"", ""destination"": ""V1""}"
+300,GROUND_FALLBACK_STARTED,MISSION,"{""mission"": ""M-CRITICAL-001"", ""eta_s"": 181.7627789776818, ""complete_t"": 482}"
+360,C2_LOST,C2_LOST,"{""aircraft_id"": ""M-UAV-02"", ""old_status"": ""AVAILABLE"", ""new_status"": ""CONTINGENCY"", ""c2_status"": ""LOST"", ""commandable"": false, ""reassignable"": false, ""mission_id"": null, ""transition"": ""E2-EXT-STATE-1""}"
+360,LOCAL_CONTINGENCY,LOCAL_CONTINGENCY,"{""aircraft_id"": ""M-UAV-02"", ""mode"": ""RETURN"", ""target_site"": ""V3"", ""reason"": ""civil-UAS lost-link return-to-base (local, manager-independent)""}"
+440,CONTINGENCY_LANDED,LOCAL_CONTINGENCY,"{""aircraft"": ""M-UAV-02"", ""site"": ""V3"", ""mode"": ""RETURN""}"
+482,GROUND_FALLBACK_COMPLETED,MISSION,"{""mission"": ""M-CRITICAL-001""}"

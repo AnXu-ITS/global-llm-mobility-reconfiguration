@@ -1,0 +1,32 @@
+{
+  "main_nonfigure_text_unchanged": true,
+  "main.tex": {
+    "tables_unchanged": 6,
+    "citation_commands_unchanged": 23
+  },
+  "supplement.tex": {
+    "tables_unchanged": 12,
+    "citation_commands_unchanged": 0
+  },
+  "figures/fig01.pdf": {
+    "unchanged_sha256": "59026bda7398974c2ef9e3dfb33435592c0b6b3760063971c38bdfb0e4020e51"
+  },
+  "figures/fig05.pdf": {
+    "unchanged_sha256": "e9dd4e8d5095e1ed88e41be6c786abe37e8e189bcb72e27d200cc34b0be5f505"
+  },
+  "figures/fig08.pdf": {
+    "unchanged_sha256": "8200fb4aeafd946919825850fc63317075333fb069f4545d2e0d2b6a1694cf86"
+  },
+  "editable_figures/Figure1_revised.pptx": {
+    "unchanged_sha256": "581de8efe580e19c0c770833a22e847e1d56efaf9baf74444a43137ef77fbf41"
+  },
+  "references_bib_unchanged": true,
+  "main_revised": {
+    "pages": 25,
+    "overfull_or_undefined_warnings": 0
+  },
+  "supplement_revised": {
+    "pages": 13,
+    "overfull_or_undefined_warnings": 0
+  }
+}

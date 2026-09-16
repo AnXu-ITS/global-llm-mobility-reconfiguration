@@ -1,0 +1,2 @@
+{"action":{"aircraft_id":"M-UAV-02","mission_id":"M-CRITICAL-001","route":["V2","V1"],"target_site":"V1","type":"DISPATCH"},"decision_id":"D001","error_types":[],"t":300,"valid":true}
+{"action":{"aircraft_id":"M-UAV-01","mission_id":"M-CRITICAL-001","route":["V2","V1"],"target_site":"V1","type":"DISPATCH"},"decision_id":"D002","error_types":[],"t":360,"valid":true}

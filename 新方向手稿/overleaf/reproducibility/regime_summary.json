@@ -1,0 +1,161 @@
+{
+  "A": {
+    "B1": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 180,
+        "late": 20
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 20,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 40,
+        "air": 40,
+        "late": 40
+      }
+    },
+    "B2": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 120,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 0,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 40,
+        "air": 14,
+        "late": 40
+      }
+    },
+    "B4b": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 120,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 12,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 40,
+        "air": 20,
+        "late": 40
+      }
+    }
+  },
+  "B": {
+    "B1": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 180,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 60,
+        "air": 60,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 0,
+        "air": 0,
+        "late": 0
+      }
+    },
+    "B2": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 180,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 60,
+        "air": 60,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 0,
+        "air": 0,
+        "late": 0
+      }
+    },
+    "B4b": {
+      "A: no timely-ground preemption conflict": {
+        "n": 180,
+        "air": 180,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 60,
+        "air": 57,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 0,
+        "air": 0,
+        "late": 0
+      }
+    }
+  },
+  "C": {
+    "B1": {
+      "A: no timely-ground preemption conflict": {
+        "n": 193,
+        "air": 193,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 20,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 27,
+        "air": 27,
+        "late": 24
+      }
+    },
+    "B2": {
+      "A: no timely-ground preemption conflict": {
+        "n": 193,
+        "air": 193,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 20,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 27,
+        "air": 27,
+        "late": 24
+      }
+    },
+    "B4b": {
+      "A: no timely-ground preemption conflict": {
+        "n": 193,
+        "air": 193,
+        "late": 0
+      },
+      "B: speed/service conflict": {
+        "n": 20,
+        "air": 20,
+        "late": 0
+      },
+      "C: no timely candidate": {
+        "n": 27,
+        "air": 27,
+        "late": 24
+      }
+    }
+  }
+}

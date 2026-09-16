@@ -1,0 +1,17 @@
+# Experiment 3 — independent-seed list (protocol §25/§26).
+#
+# Reuses the frozen Experiment-2 20-seed set (= the frozen Experiment-1 20
+# seeds) to maximise cross-experiment comparability, subject to the Experiment-3
+# seed-independence audit (each seed must produce a genuinely different
+# operational state under the Experiment-3 scenarios).
+#
+# Primary statistical unit = scenario x simulation seed (NOT same-prompt
+# repetition). Seeds may only be excluded for simulator crash / corrupted
+# artifact / explicit protocol violation (recorded in runs/experiment3/excluded_runs.csv).
+
+primary_seeds: [20240601, 20240602, 20240603, 20240604, 20240605,
+                20240606, 20240607, 20240608, 20240609, 20240610,
+                20240611, 20240612, 20240613, 20240614, 20240615,
+                20240616, 20240617, 20240618, 20240619, 20240620]
+
+pilot_seeds: [20240601, 20240602, 20240603]

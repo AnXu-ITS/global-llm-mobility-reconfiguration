@@ -1,0 +1,2 @@
+{"action":{"aircraft_id":"M-UAV-02","mission_id":"M-CRITICAL-001","route":["V2","V1"],"target_site":"V1","type":"DISPATCH"},"decision_id":"D001","t":300,"valid":true,"violations":[]}
+{"action":{"ground_eta_s":181.763,"mission_id":"M-CRITICAL-001","type":"GROUND_FALLBACK"},"decision_id":"D002","t":360,"valid":true,"violations":[]}

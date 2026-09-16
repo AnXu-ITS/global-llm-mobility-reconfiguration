@@ -1,0 +1,49 @@
+{
+  "cache_subsecond_calls": 0,
+  "duration_s": 900,
+  "empty_content_total": 0,
+  "failure_family": "F1",
+  "impact_context": "C2",
+  "llm_calls": 0,
+  "llm_latency_total_s": 0.0,
+  "llm_retry_total": 0,
+  "num_manager_decisions": 2,
+  "seed": 20240601,
+  "seed_realization": {
+    "EVTOL-01": {
+      "battery_pct": 98.23,
+      "position": {
+        "lat": 31.2998726,
+        "lon": 120.5972787
+      },
+      "progress_fraction": 0.197083,
+      "remaining_endurance_s": 1768.1
+    },
+    "L-UAV-01": {
+      "battery_pct": 88.225,
+      "position": {
+        "lat": 31.2995604,
+        "lon": 120.5974461
+      },
+      "progress_fraction": 0.254439,
+      "remaining_endurance_s": 1588.1
+    },
+    "M-UAV-01": {
+      "battery_pct": 87.204,
+      "position": {
+        "lat": 31.3108767,
+        "lon": 120.6039862
+      },
+      "remaining_endurance_s": 1569.7
+    },
+    "M-UAV-02": {
+      "battery_pct": 93.641,
+      "position": {
+        "lat": 31.2971716,
+        "lon": 120.5956323
+      },
+      "remaining_endurance_s": 1685.5
+    }
+  },
+  "wall_seconds": 5.683
+}

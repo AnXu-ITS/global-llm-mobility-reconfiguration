@@ -1,0 +1,66 @@
+{
+  "main": {
+    "source_pages": 25,
+    "source_tex_rebuild_pages": 25,
+    "source_pdf_matches_tex_rebuild_except_compile_date_whitespace": true,
+    "edited_pages": 25,
+    "latex_warnings": [],
+    "source_query_pages": {
+      "Horizons are": [
+        14
+      ],
+      "Identical differences": [
+        16
+      ],
+      "candidate presentation": [
+        13
+      ],
+      "300 s slack": [
+        17
+      ],
+      "242 s": [
+        22
+      ],
+      "900 s horizons": [],
+      "main Figure 6": [],
+      "Main Figure 5": [],
+      "Main Figure 6": [],
+      "342 s": [],
+      "Ground completion": [],
+      "Scope and next steps": [
+        23
+      ]
+    }
+  },
+  "supplement": {
+    "source_pages": 12,
+    "source_tex_rebuild_pages": 12,
+    "source_pdf_matches_tex_rebuild_except_compile_date_whitespace": true,
+    "edited_pages": 12,
+    "latex_warnings": [],
+    "source_query_pages": {
+      "Horizons are": [],
+      "Identical differences": [],
+      "candidate presentation": [],
+      "300 s slack": [],
+      "242 s": [
+        8
+      ],
+      "900 s horizons": [
+        8
+      ],
+      "main Figure 6": [
+        9
+      ],
+      "Main Figure 5": [
+        10
+      ],
+      "Main Figure 6": [],
+      "342 s": [],
+      "Ground completion": [
+        6
+      ],
+      "Scope and next steps": []
+    }
+  }
+}

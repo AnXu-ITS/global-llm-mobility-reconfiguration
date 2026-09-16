@@ -1,0 +1,66 @@
+Nature Figure Rendered Collision Audit
+pdf: 新方向手稿\overleaf\editable_figures\editorial\output\Figure2.pdf
+pages: 1
+visible text boxes: 36
+stroke paths: 7160
+
+[FAIL] page 1 text-stroke: Text is crossed by 6 stroked path(s) — 'D1'
+  text bbox: (52.292701721191406, 133.25230407714844, 63.900482177734375, 142.75230407714844)
+[FAIL] page 1 text-stroke: Text is crossed by 46 stroked path(s) — 'Closure'
+  text bbox: (88.72834777832031, 133.77687072753906, 120.2246322631836, 143.27687072753906)
+[FAIL] page 1 text-stroke: Text is crossed by 37 stroked path(s) — 'V3'
+  text bbox: (99.89114379882812, 106.15331268310547, 111.4989242553711, 115.65331268310547)
+[FAIL] page 1 text-stroke: Text is crossed by 23 stroked path(s) — 'H1'
+  text bbox: (103.87509155273438, 94.15103912353516, 116.0173110961914, 103.65103912353516)
+[FAIL] page 1 text-stroke: Text is crossed by 25 stroked path(s) — 'D1'
+  text bbox: (224.1372528076172, 63.05349349975586, 235.74502563476562, 72.5534896850586)
+[FAIL] page 1 text-stroke: Text is crossed by 38 stroked path(s) — 'D2'
+  text bbox: (248.02667236328125, 127.13353729248047, 259.63446044921875, 136.633544921875)
+[FAIL] page 1 text-stroke: Text is crossed by 27 stroked path(s) — 'V3'
+  text bbox: (251.9939727783203, 111.6927261352539, 263.60174560546875, 121.1927261352539)
+[FAIL] page 1 text-stroke: Text is crossed by 95 stroked path(s) — 'Closure'
+  text bbox: (257.337890625, 68.35375213623047, 288.83416748046875, 77.85375213623047)
+[FAIL] page 1 text-stroke: Text is crossed by 33 stroked path(s) — 'H1'
+  text bbox: (269.28411865234375, 88.5193862915039, 281.42633056640625, 98.0193862915039)
+[FAIL] page 1 text-stroke: Text is crossed by 42 stroked path(s) — 'H2'
+  text bbox: (278.9838562011719, 143.67364501953125, 290.5916442871094, 153.17364501953125)
+[FAIL] page 1 text-stroke: Text is crossed by 35 stroked path(s) — 'C2'
+  text bbox: (287.0960998535156, 78.89546966552734, 298.1899108886719, 88.39546966552734)
+[FAIL] page 1 text-stroke: Text is crossed by 13 stroked path(s) — 'C2'
+  text bbox: (384.37939453125, 151.2909393310547, 395.47320556640625, 160.7909393310547)
+[FAIL] page 1 text-stroke: Text is crossed by 27 stroked path(s) — 'H1'
+  text bbox: (419.3383483886719, 152.1710662841797, 431.4805603027344, 161.6710662841797)
+[FAIL] page 1 text-stroke: Text is crossed by 18 stroked path(s) — 'D1'
+  text bbox: (426.88543701171875, 67.53075408935547, 438.49322509765625, 77.03075408935547)
+[FAIL] page 1 text-stroke: Text is crossed by 34 stroked path(s) — 'V3'
+  text bbox: (434.3817138671875, 99.27840423583984, 445.989501953125, 108.77840423583984)
+[FAIL] page 1 text-stroke: Text is crossed by 22 stroked path(s) — 'H2'
+  text bbox: (447.82952880859375, 156.3319854736328, 459.43731689453125, 165.8319854736328)
+[FAIL] page 1 text-stroke: Text is crossed by 50 stroked path(s) — 'Closure'
+  text bbox: (450.0606994628906, 114.93099212646484, 481.5569763183594, 124.43099212646484)
+[FAIL] page 1 text-stroke: Text is crossed by 18 stroked path(s) — 'C3'
+  text bbox: (465.4325256347656, 127.63863372802734, 476.5263366699219, 137.13864135742188)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 3 filled region(s) — 'D1'
+  text bbox: (52.292701721191406, 133.25230407714844, 63.900482177734375, 142.75230407714844)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 3 filled region(s) — 'Closure'
+  text bbox: (88.72834777832031, 133.77687072753906, 120.2246322631836, 143.27687072753906)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 2 filled region(s) — 'V3'
+  text bbox: (99.89114379882812, 106.15331268310547, 111.4989242553711, 115.65331268310547)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 1 filled region(s) — 'H1'
+  text bbox: (103.87509155273438, 94.15103912353516, 116.0173110961914, 103.65103912353516)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 6 filled region(s) — 'D1'
+  text bbox: (224.1372528076172, 63.05349349975586, 235.74502563476562, 72.5534896850586)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 1 filled region(s) — 'D2'
+  text bbox: (248.02667236328125, 127.13353729248047, 259.63446044921875, 136.633544921875)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 3 filled region(s) — 'V3'
+  text bbox: (251.9939727783203, 111.6927261352539, 263.60174560546875, 121.1927261352539)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 6 filled region(s) — 'Closure'
+  text bbox: (257.337890625, 68.35375213623047, 288.83416748046875, 77.85375213623047)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 7 filled region(s) — 'H2'
+  text bbox: (278.9838562011719, 143.67364501953125, 290.5916442871094, 153.17364501953125)
+[WARN] page 1 text-fill-edge: Text partially overlaps the edge of 1 filled region(s) — 'D1'
+  text bbox: (426.88543701171875, 67.53075408935547, 438.49322509765625, 77.03075408935547)
+
+summary: 18 fail, 10 warn, 24 contained fill overlays, 0 contained image overlays
+verdict: FIX BEFORE DELIVERY
+note: contained overlays can be intentional; WARN findings need final-size visual review

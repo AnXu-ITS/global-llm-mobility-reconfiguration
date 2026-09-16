@@ -1,0 +1,173 @@
+{
+  "affected_resources": {
+    "aircraft": [
+      "M-UAV-02"
+    ],
+    "missions": []
+  },
+  "candidate_best_air_eta_after": 229.098,
+  "candidate_best_air_eta_pre_asif": 114.55,
+  "candidate_count_after": 1,
+  "candidate_count_after_label": "decision_table",
+  "candidate_count_before": 2,
+  "candidate_count_before_label": "t300_decision_table",
+  "candidate_count_pre_failure_asif": 2,
+  "candidate_set_post_hash": "973054e9b2e0aed5d6d1effd47dae4944f395d23d8072900ab9f5afc8788e514",
+  "candidate_set_pre_hash": "d14338bf050c0e217ee991ef0615291917baded3d74d0d35d5c1dcd72c835f65",
+  "critical_mission_state_after": {
+    "assigned_resource": null,
+    "mode": null,
+    "priority": "CRITICAL",
+    "status": "WAITING"
+  },
+  "critical_mission_state_before": {
+    "assigned_resource": null,
+    "mode": null,
+    "priority": "CRITICAL",
+    "status": "WAITING"
+  },
+  "failure_config": {
+    "family": "F1",
+    "target": "M-UAV-02",
+    "time_s": 359
+  },
+  "failure_config_hash": "dffee2ea184b322ab13463c45eca321bffe204be6d5ff4ed4e83cf4a6f4f50ec",
+  "failure_family": "F1",
+  "failure_time": 359,
+  "first_valid_replan_time": 360,
+  "ground_candidate_feasible_post": true,
+  "ground_eta_post": 181.763,
+  "initial_gs_hash": "4bd6e9a98346d5773a1938d77b306598b79fb418142b8dbd4981a193eaa3ae34",
+  "local_contingency": {
+    "aircraft_id": "M-UAV-02",
+    "mode": "RETURN",
+    "reason": "civil-UAS lost-link return-to-base (local, manager-independent)",
+    "target_site": "V3"
+  },
+  "manager_trigger_time": 359,
+  "post_failure_gs_hash": "bb057728ab21545c91a7c3549daf85673492e24bd6bb4f3752f49af2748d3379",
+  "pre_failure_gs_hash": "d013c5ecac9f1bc4b8463f8d91bb319e0e62674b489a12e024bc49963c2b97a4",
+  "state_after": {
+    "air_availability": {
+      "commandable": 3,
+      "compatible": 4,
+      "usable": 3
+    },
+    "aircraft": {
+      "EVTOL-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": "M-P-001",
+        "reassignable": false,
+        "status": "BUSY"
+      },
+      "L-UAV-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": "M-L-001",
+        "reassignable": false,
+        "status": "BUSY"
+      },
+      "M-UAV-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": null,
+        "reassignable": true,
+        "status": "AVAILABLE"
+      },
+      "M-UAV-02": {
+        "c2_status": "LOST",
+        "commandable": false,
+        "gnss_status": "NORMAL",
+        "mission_id": null,
+        "reassignable": false,
+        "status": "CONTINGENCY"
+      }
+    },
+    "missions": {
+      "M-CRITICAL-001": {
+        "assigned_resource": null,
+        "mode": null,
+        "priority": "CRITICAL",
+        "status": "WAITING"
+      },
+      "M-L-001": {
+        "assigned_resource": "L-UAV-01",
+        "mode": null,
+        "priority": "NORMAL",
+        "status": "EN_ROUTE"
+      },
+      "M-P-001": {
+        "assigned_resource": "EVTOL-01",
+        "mode": null,
+        "priority": "NORMAL",
+        "status": "EN_ROUTE"
+      }
+    }
+  },
+  "state_before": {
+    "air_availability": {
+      "commandable": 4,
+      "compatible": 4,
+      "usable": 4
+    },
+    "aircraft": {
+      "EVTOL-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": "M-P-001",
+        "reassignable": false,
+        "status": "BUSY"
+      },
+      "L-UAV-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": "M-L-001",
+        "reassignable": false,
+        "status": "BUSY"
+      },
+      "M-UAV-01": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": null,
+        "reassignable": true,
+        "status": "AVAILABLE"
+      },
+      "M-UAV-02": {
+        "c2_status": "NORMAL",
+        "commandable": true,
+        "gnss_status": "NORMAL",
+        "mission_id": null,
+        "reassignable": true,
+        "status": "AVAILABLE"
+      }
+    },
+    "missions": {
+      "M-CRITICAL-001": {
+        "assigned_resource": null,
+        "mode": null,
+        "priority": "CRITICAL",
+        "status": "WAITING"
+      },
+      "M-L-001": {
+        "assigned_resource": "L-UAV-01",
+        "mode": null,
+        "priority": "NORMAL",
+        "status": "EN_ROUTE"
+      },
+      "M-P-001": {
+        "assigned_resource": "EVTOL-01",
+        "mode": null,
+        "priority": "NORMAL",
+        "status": "EN_ROUTE"
+      }
+    }
+  },
+  "target": "M-UAV-02"
+}

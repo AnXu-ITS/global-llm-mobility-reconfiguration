@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ManagerAction v1",
+  "description": "Structured manager decision output. Shared by the Rule-Based Manager and the LLM Manager; validated before the FeasibilityChecker and Executor.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "DISPATCH",
+        "REASSIGN",
+        "REROUTE",
+        "DELAY",
+        "CANCEL",
+        "RESERVE",
+        "DIVERT",
+        "RETURN",
+        "LAND",
+        "GROUND_FALLBACK",
+        "NO_ACTION",
+        "ESCALATE"
+      ]
+    },
+    "aircraft_id": { "type": ["string", "null"] },
+    "mission_id": { "type": ["string", "null"] },
+    "target_site": { "type": ["string", "null"] },
+    "route": { "type": ["array", "null"], "items": { "type": "string" } },
+    "ground_eta_s": { "type": ["number", "null"] },
+    "reason": { "type": ["string", "null"] }
+  }
+}

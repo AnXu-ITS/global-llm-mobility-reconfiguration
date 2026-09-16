@@ -1,0 +1,55 @@
+{
+  "baseline_commit": "2f59b93ea81b158f80d4d0d30c2c60c05616e3c0",
+  "main_nonfigure_text_unchanged": true,
+  "tables_and_citations_unchanged": true,
+  "supplement_source_unchanged": true,
+  "bibliography_unchanged": true,
+  "source_data_content_unchanged": true,
+  "unchanged_assets_sha256": {
+    "figures/fig01.pdf": "59026bda7398974c2ef9e3dfb33435592c0b6b3760063971c38bdfb0e4020e51",
+    "figures/fig05.pdf": "e9dd4e8d5095e1ed88e41be6c786abe37e8e189bcb72e27d200cc34b0be5f505",
+    "figures/fig08.pdf": "8200fb4aeafd946919825850fc63317075333fb069f4545d2e0d2b6a1694cf86",
+    "editable_figures/Figure1_revised.pptx": "581de8efe580e19c0c770833a22e847e1d56efaf9baf74444a43137ef77fbf41"
+  },
+  "S3_render_identical": true,
+  "main_pages": 25,
+  "supplement_pages": 13,
+  "main_figure_pages": {
+    "2": 12,
+    "3": 17,
+    "4": 18,
+    "5": 20,
+    "6": 21
+  },
+  "font_sizes": {
+    "2": {
+      "old_export_min_pt": 6.8,
+      "new_export_min_pt": 9.5,
+      "manuscript_min_pt": 7.572
+    },
+    "3": {
+      "old_export_min_pt": 6.5,
+      "new_export_min_pt": 9.5,
+      "manuscript_min_pt": 7.572
+    },
+    "4": {
+      "old_export_min_pt": 6.7,
+      "new_export_min_pt": 9.5,
+      "manuscript_min_pt": 7.572
+    },
+    "5": {
+      "old_export_min_pt": 6.8,
+      "new_export_min_pt": 10.0,
+      "manuscript_min_pt": 7.97
+    },
+    "6": {
+      "old_export_min_pt": 6.6,
+      "new_export_min_pt": 9.5,
+      "manuscript_min_pt": 7.572
+    }
+  },
+  "build_logs": {
+    "main_revised.log": "No overfull boxes or unresolved references",
+    "supplement_revised.log": "No overfull boxes or unresolved references"
+  }
+}

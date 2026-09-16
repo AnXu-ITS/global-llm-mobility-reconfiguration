@@ -1,0 +1,12 @@
+# Figures 3–8 design contract
+
+Retain Figures 1–2 and the existing policy colors. Use the supplied research figures as visual references: compact aligned facets, thin axes, shared legends, complementary point shapes, directly readable event times. Rebuild original layouts from the current manuscript data; do not reuse reference pixels or invent data.
+
+Figure 3: selective support improves urgent service at different incumbent costs. Three aligned dot-and-interval panels show all 12 site-policy means with existing 95% seed-block CIs. No endpoint omitted.
+Figure 4: candidate geometry and policy selection reveal decision pressure. Three upper scatter panels show all 720 matched first states once (B2 reference); exact coincident coordinates aggregate with larger markers indicating multiplicity. Three lower matrices show air-selection percentages for all three decision regimes, with row denominators. ETA is predictive.
+Figure 5: complete path restoration can coexist with deadline failures. Three site facets show timely/late all-run composition for all four policies, with separate conditional restoration counts for B1/B2/B4b. Denominators remain distinct.
+Figure 6: surviving options determine service loss across compound scenarios. Upper common-scale annotated heatmaps retain every site/level/policy mean; lower paired B4b−B0 contrasts with seed-block intervals show where enabling coordination yields no benefit. Levels are categorical.
+Figure 7: controlled observation/execution timing and input burden are different quantities. Aligned native charts use symbols and line styles; the 180 s service window is indicated for timing panels. Coincident curves are labelled explicitly. Straight segments connect measured settings only.
+Figure 8: queue replacement changes executed transport. Two aligned mission lanes show corrected B0 and B4b, with dashed pending commands, solid transport, exact event markers and the common deadline.
+
+Delivery: 1280×720 native editable PowerPoint composition, figures at 180 mm in PDF, manuscript at its actual text width. Arial minimum 22 px (about 7.3 pt at 150 mm); thin lines and white background. Data charts, points, intervals, heatmap cells and timeline objects remain editable. Native charts have embedded data workbooks; custom evidence graphics include source data and generation code. Current results and Figure 1/2 hashes are protected. Geometry QA and visual review apply at final exported size.

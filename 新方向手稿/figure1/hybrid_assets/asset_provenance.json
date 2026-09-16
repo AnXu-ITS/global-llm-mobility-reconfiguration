@@ -1,0 +1,475 @@
+[
+  {
+    "name": "state",
+    "path": "state.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 0,
+      "width": 314,
+      "height": 314
+    },
+    "pixels": [
+      246,
+      217
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "generator",
+    "path": "generator.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 314,
+      "top": 0,
+      "width": 313,
+      "height": 314
+    },
+    "pixels": [
+      222,
+      238
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "interface",
+    "path": "interface.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 0,
+      "width": 314,
+      "height": 314
+    },
+    "pixels": [
+      217,
+      208
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "policy",
+    "path": "policy.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 941,
+      "top": 0,
+      "width": 313,
+      "height": 314
+    },
+    "pixels": [
+      242,
+      220
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "safety",
+    "path": "safety.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 314,
+      "width": 314,
+      "height": 313
+    },
+    "pixels": [
+      240,
+      213
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "executor",
+    "path": "executor.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 314,
+      "top": 314,
+      "width": 313,
+      "height": 313
+    },
+    "pixels": [
+      223,
+      247
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "e1",
+    "path": "e1.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 314,
+      "width": 314,
+      "height": 313
+    },
+    "pixels": [
+      277,
+      273
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "e2",
+    "path": "e2.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 941,
+      "top": 314,
+      "width": 313,
+      "height": 313
+    },
+    "pixels": [
+      273,
+      270
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "e3",
+    "path": "e3.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 627,
+      "width": 314,
+      "height": 314
+    },
+    "pixels": [
+      257,
+      271
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "e4",
+    "path": "e4.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 314,
+      "top": 627,
+      "width": 313,
+      "height": 314
+    },
+    "pixels": [
+      268,
+      244
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "site_a",
+    "path": "site_a.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 627,
+      "width": 314,
+      "height": 314
+    },
+    "pixels": [
+      276,
+      272
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "site_b",
+    "path": "site_b.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 941,
+      "top": 627,
+      "width": 313,
+      "height": 314
+    },
+    "pixels": [
+      265,
+      259
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "site_c",
+    "path": "site_c.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 941,
+      "width": 314,
+      "height": 313
+    },
+    "pixels": [
+      259,
+      260
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "balance",
+    "path": "balance.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 314,
+      "top": 941,
+      "width": 313,
+      "height": 313
+    },
+    "pixels": [
+      281,
+      221
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "delay",
+    "path": "delay.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 941,
+      "width": 314,
+      "height": 313
+    },
+    "pixels": [
+      295,
+      135
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "simulators",
+    "path": "simulators.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-bdff5bff-dbec-41fd-960b-a121d26884bd.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 941,
+      "top": 941,
+      "width": 313,
+      "height": 313
+    },
+    "pixels": [
+      254,
+      225
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "existing_air",
+    "path": "existing_air.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-04ce22b1-3023-4547-bfe9-76599ad7270a.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 0,
+      "width": 627,
+      "height": 627
+    },
+    "pixels": [
+      414,
+      341
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "emergency_air",
+    "path": "emergency_air.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-04ce22b1-3023-4547-bfe9-76599ad7270a.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 0,
+      "width": 627,
+      "height": 627
+    },
+    "pixels": [
+      414,
+      342
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "logistics",
+    "path": "logistics.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-04ce22b1-3023-4547-bfe9-76599ad7270a.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 0,
+      "top": 627,
+      "width": 627,
+      "height": 627
+    },
+    "pixels": [
+      269,
+      382
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "hospital",
+    "path": "hospital.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-04ce22b1-3023-4547-bfe9-76599ad7270a.png",
+    "source_pixels": [
+      1254,
+      1254
+    ],
+    "cell": {
+      "left": 627,
+      "top": 627,
+      "width": 627,
+      "height": 627
+    },
+    "pixels": [
+      364,
+      358
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "balance_large",
+    "path": "balance_large.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-99cd75bc-50da-47cc-a0e0-0aaa334569f6.png",
+    "source_pixels": [
+      1774,
+      887
+    ],
+    "cell": {
+      "left": 0,
+      "top": 0,
+      "width": 887,
+      "height": 887
+    },
+    "pixels": [
+      820,
+      634
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "delay_large",
+    "path": "delay_large.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-99cd75bc-50da-47cc-a0e0-0aaa334569f6.png",
+    "source_pixels": [
+      1774,
+      887
+    ],
+    "cell": {
+      "left": 887,
+      "top": 0,
+      "width": 887,
+      "height": 887
+    },
+    "pixels": [
+      817,
+      365
+    ],
+    "text": "none (warning exclamation is an illustrative symbol)"
+  },
+  {
+    "name": "map_base",
+    "path": "map_base.png",
+    "producer": "builtin-imagegen",
+    "source": "exec-97c91b95-e079-4bc1-ad10-f03aaf825d1d.png",
+    "pixels": [
+      887,
+      1774
+    ],
+    "text": "none"
+  }
+]

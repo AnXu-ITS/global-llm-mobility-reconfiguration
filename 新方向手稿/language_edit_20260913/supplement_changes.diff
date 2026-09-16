@@ -1,0 +1,144 @@
+--- original/supplement.tex
++++ edited/supplement.tex
+@@ -36,7 +36,7 @@
+ \maketitle
+ \section{Detailed experimental outcomes}
+ 
+-These tables report the revised numerical analysis. Means preserve the original fixed scenario weights. Intervals use seed blocks, and B0 D60 incorporates the closed-loop duplicate-command correction. Original data and earlier tables remain in the version archive.
++The tables report service outcomes from the revised numerical analysis. Means use the original fixed scenario weights, and intervals use seed blocks. The B0 D60 results include the closed-loop duplicate-command correction. The version archive retains the original data and earlier tables.
+ 
+ \begin{table}[H]
+ \centering
+@@ -64,7 +64,7 @@
+ \end{tabularx}
+ \end{table}
+ 
+-Completion, damage and deadline-rate intervals use 20 seed blocks. Each block averages the same 12 scenarios. Zero-width intervals indicate no seed-to-seed variation in that fixed-panel average; they do not establish a universal rate. Each site--policy cell contains 240 runs.
++Completion, damage and deadline-rate intervals use 20 seed blocks, each averaging the same 12 scenarios. A zero-width interval means that this fixed-panel average did not vary across seeds; it does not establish a universal rate. Each site--policy cell contains 240 runs.
+ 
+ \begin{table}[H]
+ \centering
+@@ -92,7 +92,7 @@
+ \end{tabularx}
+ \end{table}
+ 
+-All-run denominators are 320 per site and policy. Recovery is conditional on actual primary-chain exposure; B0 is N/A. Restoration is reported as observed recovered/affected counts. The fixed-panel dependence is retained without an independent-run Wilson interval.
++All-run outcomes use 320 runs per site and policy. Recovery is conditional on the primary air chain actually being affected; it is N/A for B0. Restoration is reported as observed recovered/affected counts. We retain dependence within the fixed panel and do not apply a Wilson interval that assumes independent runs.
+ 
+ \begin{table}[H]
+ \centering
+@@ -270,11 +270,11 @@
+ \end{tabularx}
+ \end{table}
+ 
+-The vocabulary is larger than the set exercised by any single scenario. Supporting an action type in the contract does not imply that the experiments independently validate every possible use of that action. The candidate interface retains legal flags and rejection reasons, while the checker applies action-specific conditions.
++Each scenario uses only part of this vocabulary. Including an action type in the contract does not mean that the experiments validate every possible use of it. The candidate interface records legal flags and rejection reasons, and the checker applies conditions specific to each action.
+ 
+ \subsection{Policy inputs and parameters}
+ 
+-The complete template is supplied as \nolinkurl{reproducibility/prompts/manager_v2.txt}; the input renderer and action schema accompany it. B4a and B4b both use the full global snapshot excluding the \nolinkurl{candidates} field. B4b appends that field as a separate JSON section, while B4a omits it. Both retain raw resource state, mission assignments, priorities, positions, deadlines, ground ETA, prompt rules and the common checker. Only B4b receives the derived air ETA, completion prediction, per-candidate legality/rejection reason and explicit preempted-mission mapping. The ablation therefore measures explicit candidate-information support, jointly including information derivation and presentation.
++The complete template is supplied as \nolinkurl{reproducibility/prompts/manager_v2.txt}, together with the input renderer and action schema. Both B4a and B4b receive the full global snapshot without its \nolinkurl{candidates} field. B4b receives that field in a separate JSON section; B4a does not. Both retain raw resource state, mission assignments, priorities, positions, deadlines, ground ETA, prompt rules and the common checker. Only B4b receives derived air ETA, completion predictions, per-candidate legality/rejection reasons and the explicit mapping to preempted missions. The ablation therefore tests explicit candidate-information support, including both derived information and its presentation.
+ 
+ \begin{table}[H]\centering\small
+ \caption{Input-field comparison for the E1 ablation.}\label{tab:S10}
+@@ -308,51 +308,59 @@
+ SWL priority weights & CRITICAL/HIGH/NORMAL/LOW: 4/3/2/1; penalties are task-specific flat values \\\bottomrule
+ \end{tabularx}\end{table}
+ 
+-B2 weights and the prompt template are unchanged. Mission-specific delay and cancellation penalties, secondary releases, workload assignments and site adaptations are specified in the supplied YAML matrices. The policy identifier records the configured backend service; no unverified underlying model-version claim is made.
++B2 weights and the prompt template remain unchanged. The supplied YAML matrices specify mission-specific delay and cancellation penalties, secondary releases, workload assignments and site adaptations. The policy identifier names the configured backend service; the underlying model version has not been verified.
+ 
+ \section{Statistical and outcome conventions}
+ 
+ \subsection{Fixed-panel estimand and random streams}
+ 
+-The runner initializes a fresh \nolinkurl{random.Random(seed)} for every scenario. Aircraft are visited in sorted order; every aircraft consumes an endurance draw and each busy aircraft an additional progress draw. The same SUMO seed is also reused. Workload-dependent draw consumption changes realizations, but does not create independently keyed scenario streams. We retain dependence within each seed across the fixed scenario panel and pair policies by scenario and seed. This choice follows implementation, not seed labels or state hashes alone.
+-
+-For a complete panel, each seed contributes the average of its scenario-specific outcomes or paired differences. Means retain equal scenario--run weights. A t interval uses the standard deviation across 20 seed averages (10 in the E1 ablation). For a conditional endpoint with $N$ retained pairs, let $\bar d$ be the original pair-weighted mean and $K$ the number of represented seeds. The cluster contribution is
++The runner initializes a fresh \nolinkurl{random.Random(seed)} for every scenario and visits aircraft in sorted order. Each aircraft consumes an endurance draw, and each busy aircraft consumes an additional progress draw. SUMO also reuses the same seed. Workload-dependent draw counts change the realizations, but they do not create independently keyed scenario streams. We therefore retain dependence within each seed across the fixed scenario panel and pair policies by scenario and seed. This decision follows the implementation, rather than seed labels or state hashes alone.
++
++For a complete panel, each seed contributes the average of its scenario-specific outcomes or paired differences. Means keep equal scenario--run weights. A t interval uses the standard deviation across 20 seed averages (10 in the E1 ablation). For a conditional endpoint with $N$ retained pairs, let $\bar d$ denote the original pair-weighted mean and $K$ the number of represented seeds. The cluster contribution is
+ \[
+ B_s=\bar d+\frac{K}{N}\sum_{i:\,s_i=s}(d_i-\bar d).
+ \]
+-The interval is $\bar d\pm t_{.975,K-1}\operatorname{sd}(B_s)/\sqrt K$. This preserves the jointly affected pair-weighted estimand instead of silently reweighting seeds with different exposure counts. Conditional populations remain policy-dependent: at Site C, B4b has 201 affected runs and the B4b--B2 recovery comparison retains 200 jointly affected pairs.
+-
+-Continuous tests use these seed contributions with the original constant-difference signed-rank fallback. Binary tests enumerate policy-label swaps of whole seed blocks; the test statistic is the total discordant paired difference. This retains the paired design while replacing an independent-pair McNemar assumption. No scenarios, endpoints or correction families are selected according to their p-values. Intervals are unadjusted; Holm-adjusted p-values retain the original three E1 ablation, 12 E2 and 12 E3 compound endpoints per site. E1 scenario-specific and E4 single-scenario comparisons retain their original seed units. The E2 family includes completion, recovery time, replan latency, incumbent damage, candidate reduction, deadline violation, restoration, recovered completion, ground fallback, failure-induced fallback, necessary-fallback correctness and air intervention. E3 compares B4b with B1/B2 at L2--L4 for SWL and CRITICAL+HIGH loss.
++The interval is $\bar d\pm t_{.975,K-1}\operatorname{sd}(B_s)/\sqrt K$. This retains the mean over jointly affected pairs without reweighting seeds that have different exposure counts. Conditional populations can differ by policy. At Site C, B4b has 201 affected runs, whereas the B4b--B2 recovery comparison includes 200 jointly affected pairs.
++
++Continuous tests use these seed contributions, with the original signed-rank fallback for constant differences. Binary tests enumerate policy-label swaps of whole seed blocks and use the total discordant paired difference as the test statistic. This preserves pairing without assuming independent pairs for McNemar inference. Scenarios, endpoints and correction families are not selected by their p-values. Intervals are unadjusted. Holm-adjusted p-values retain the original three E1 ablation, 12 E2 and 12 E3 compound endpoints per site. E1 scenario-specific and E4 single-scenario comparisons keep their original seed units.
++
++The E2 family includes completion, recovery time, replan latency, incumbent damage, candidate reduction, deadline violation, restoration, recovered completion, ground fallback, failure-induced fallback, necessary-fallback correctness and air intervention. E3 compares B4b with B1/B2 at L2--L4 for SWL and CRITICAL+HIGH loss.
+ 
+ \input{reproducibility/statistical_tests.tex}
+ 
+ \subsection{Service-loss audit}
+ 
+-All 2,880 E3 run registries were checked against their 900 s horizons. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\_ROUTE or ASSIGNED. Thus no SWL correction or overdue-task penalty sensitivity is needed for this dataset. Background missions with 1,800 s deadlines are not treated as failures merely for remaining in service at 900 s. Incumbent damage remains a count of damaged final states. As a complementary E1 measure, the recorded preemption time was linked to the incumbent identified in the candidate log and its final interrupted state. The preemption-to-horizon exposure of these persistently interrupted services averages 35 s per run for B2 and 80 s for B4b at A (B1: 300 s). This is horizon-truncated exposure, not a complete cumulative interruption-cost measure. Mission CSV records omit some incumbent preemption transitions, so zero logged interruption duration would be misleading. Initial incumbent deadlines are 1,800 s, beyond the 900 s horizon; no incumbent lateness claim is inferred from this exposure.
++All 2,880 E3 run registries were checked against their 900 s horizons. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\_ROUTE or ASSIGNED. This dataset therefore requires no SWL correction or sensitivity analysis for overdue-task penalties. Background missions with 1,800 s deadlines are not classified as failures solely because they remain in service at 900 s. Incumbent damage remains a count of damaged final states.
++
++As a complementary E1 measure, we linked recorded preemption times to the incumbent identified in the candidate log and its final interrupted state. At A, exposure from preemption to the horizon for persistently interrupted services averages 35 s per run for B2 and 80 s for B4b (B1: 300 s). This measure is truncated at the horizon; it does not capture the complete cumulative cost of interruption. Mission CSV records omit some incumbent preemption transitions, so a logged interruption duration of zero would be misleading. Initial incumbent deadlines are 1,800 s, beyond the 900 s horizon. This exposure measure therefore supports no claim about incumbent lateness.
+ 
+ \section{Technical checks and timing sensitivity}
+ 
+ \subsection{Duplicate pending commands and E4B regression}
+ 
+-The original B0 D60 action pipeline records GROUND\_FALLBACK at 300 s, due at 360 s. The 360 s fault invokes a new decision with the identical normalized action and identical 181.763 s ETA field. The original queue replaces the first command, restarts the 60 s wait, issues at 420 s and completes at 602 s. This caused the original 302 s completion duration.
+-
+-The revision preserves the original due time when a validated normalized action exactly matches a pending one. It continues to supersede a pending command when the action changes, and revalidates the surviving command at execution. The correction is implemented in \nolinkurl{queue_fix.py}, as an overlay without altering original project source or raw runs. All 20 B0 D60 seeds were rerun through SUMO--BlueSky: issue at 360 s, completion at 542 s, duration 242 s. Single-seed D00/D30 controls retain 182/212 s; fault times 359/361 s both give 242 s. B2's changed air-to-ground command retains a 302 s duration. B1 retains its air-to-air replacement sequence; patched and unpatched control reruns both give 342 s in the current runtime, versus the archived 341 s, a 1 s runtime reproduction difference unrelated to deduplication. Its archived cell is retained because the correction does not change its command sequence. No LLM calls were made in these regressions; original B4b traces contain genuine command replacement and remain unchanged.
+-
+-Table S5, main Figure 6 and Supplementary Figure S2 replace the affected B0 cell only. D60 is an evaluated event-order configuration, not a universal transport-delay threshold. External backend wall time remains separate from controlled simulation waiting.
++The original B0 D60 pipeline records a GROUND\_FALLBACK command at 300 s, due at 360 s. At 360 s, the fault triggers a new decision with the same normalized action and the same 181.763 s ETA field. The original queue replaces the pending command and restarts the 60 s wait. It issues the command at 420 s, and transport completes at 602 s. This extra wait produced the original 302 s completion duration.
++
++The revised queue keeps the original due time when a validated normalized action exactly matches a pending command. A changed action still supersedes the pending command, and the surviving command is revalidated at execution. The \nolinkurl{queue_fix.py} overlay implements this correction without changing the original project source or raw runs.
++
++All 20 B0 D60 seeds were rerun through SUMO--BlueSky. The command issued at 360 s, and transport completed at 542 s, giving a duration of 242 s. Single-seed D00/D30 controls retain 182/212 s; fault times 359/361 s both give 242 s. B2's changed air-to-ground command retains a 302 s duration. B1 retains its air-to-air replacement sequence. Patched and unpatched control reruns both give 342 s in the current runtime, compared with the archived 341 s. This 1 s reproduction difference is unrelated to deduplication. We retain the archived cell because the correction does not change the command sequence. These regressions made no LLM calls. The original B4b traces contain genuine command replacement and remain unchanged.
++
++Table S5, main Figure 6 and Supplementary Figure S2 update only the affected B0 cell. D60 tests a specified event order; it does not establish a universal transport-delay threshold. Backend wall-clock time remains separate from controlled simulation waiting.
+ 
+ \subsection{Physical transfer semantics and offline added-time sensitivity}
+ 
+-The model replaces a service assignment; it does not track an individual payload. New air candidates route through the mission origin. Interrupted-service candidates route through V3 before the destination, but a backup can be dispatched before the original carrier has reached V3. Preemption interrupts and detaches the incumbent mission. Ground takeover establishes a service timer using the current reference corridor ETA. There is no explicit unloading, rendezvous, loading, new inventory or re-shipment state.
+-
+-We therefore evaluate added transfer time as an \emph{offline trajectory-fixed sensitivity}, not a new closed-loop experiment. For an actually affected E2 mission with a post-failure DISPATCH, REASSIGN or GROUND\_FALLBACK, add one hypothesized transfer delay $h$ to its recorded completion. The same rule applies to every policy; uninterrupted services receive no added time. A previously timely completion changes status when $0\le d_m-c_m<h$. Choices, fault exposure and later scheduling are held fixed. Values $h=15,30,60$ s are illustrative assumptions, not measured handling durations.
++The model replaces service assignments without tracking individual payloads. New air candidates route through the mission origin. Interrupted-service candidates route through V3 before the destination, but the supervisor can dispatch a backup before the original carrier reaches V3. Preemption interrupts and detaches the incumbent mission. Ground takeover starts a service timer based on the current reference corridor ETA. The model has no explicit states for unloading, rendezvous, loading, new inventory or re-shipment.
++
++We evaluate added transfer time through an \emph{offline trajectory-fixed sensitivity}, rather than a new closed-loop experiment. For an actually affected E2 mission with a post-failure DISPATCH, REASSIGN or GROUND\_FALLBACK, we add one hypothesized transfer delay $h$ to recorded completion. The rule is the same for every policy; uninterrupted services receive no added time. A previously timely completion becomes late when $0\le d_m-c_m<h$. Choices, fault exposure and later scheduling remain fixed. The values $h=15,30,60$ s are illustrative assumptions, not measured handling durations.
+ 
+ \input{reproducibility/transfer_sensitivity.tex}
+ 
+-At Site B, 80 affected replacements per coordinated policy are timely with 19 s remaining; a 30 s addition makes all 80 late. At A, B1/B2 timely replacements have 60 s remaining and none flips for $h\le60$ s; B4b has one flip at 15/30 s and two at 60 s. At C, affected replacements in this subset are already late. For the preemption example in Section 4.2, 17 s of extra air-specific handling erases the realized 212 versus 229 s speed advantage; more than 88 s also loses its emergency deadline. Adding the same handling time to both initial alternatives preserves their speed difference, so this threshold applies specifically to an additional preemption step. These checks show which conclusions depend on omitted stages; they do not verify dynamic rescheduling with payload transfer.
++At Site B, 80 affected replacements per coordinated policy are timely with 19 s remaining; adding 30 s makes all 80 late. At A, timely B1/B2 replacements have 60 s remaining, and none becomes late for $h\le60$ s. B4b has one such change at 15/30 s and two at 60 s. At C, the affected replacements in this subset are already late.
++
++In the preemption example in Section 4.2, an extra 17 s of air-specific handling erases the realized speed advantage of 212 versus 229 s. More than 88 s also causes the emergency to miss its deadline. Adding the same handling time to both initial alternatives preserves their speed difference, so this threshold concerns an additional preemption step specifically. These checks identify conclusions that depend on omitted stages. They do not validate dynamic rescheduling with payload transfer.
+ 
+ \subsection{Road-statistics boundary}
+ 
+-The original morphology routine summed all imported passenger edges while dividing by 10.24 km$^2$, without clipping to its bbox argument. The revised lengths intersect every edge polyline with the configured geographic rectangle projected through the SUMO network transform. SUMO edge lengths are apportioned by the clipped polyline fraction. Density uses that same polygon's area. Intersection counts retain nodes within the polygon and count distinct neighbors in the full graph, avoiding artificial boundary intersections. Original full-network topology, OD samples and routing remain separately identified and unchanged. Site C still has higher intersection density than A; its description relies on dead ends, degree, circuity and facility distance.
++The original morphology routine summed all imported passenger edges and divided by 10.24 km$^2$, without clipping them to its bbox argument. The revised calculation intersects each edge polyline with the configured geographic rectangle after projection through the SUMO network transform. It apportions SUMO edge lengths by the fraction of the polyline inside the rectangle and uses the same polygon's area for density. Intersection counts include only nodes inside the polygon, but count their distinct neighbors in the full graph to avoid artificial boundary intersections. Original full-network topology, OD samples and routing remain separately identified and unchanged. Site C still has higher intersection density than A; its description instead draws on dead ends, degree, circuity and facility distance.
+ 
+ \subsection{Fault state machines and recovery conditions}
+ 
+@@ -368,17 +376,17 @@
+ F6 Flyaway & Target becomes uncontrolled and non-commandable; surrounding envelope can interrupt others & Target follows prescribed uncontrolled trajectory; other commandable affected aircraft divert & Exclude target and active envelope; use surviving air or ground \\\bottomrule
+ \end{tabularx}\end{table}
+ 
+-Zone applicability is evaluated at decision and execution, with configured active windows. Communication, navigation, UTM and landing-site states are not automatically repaired during these runs. Recovery denotes establishing replacement service, not repairing the original aircraft or infrastructure.
++The decision and execution checks evaluate whether zones apply within their configured active windows. Communication, navigation, UTM and landing-site states are not automatically repaired during these runs. Recovery means establishing a replacement service, not repairing the original aircraft or infrastructure.
+ 
+ \section{Figure production and source records}
+ 
+-Figure 1 combines separate, text-free AI-generated illustrations with editable PowerPoint text, routes, containers and markers. Its map is marked Not to scale and its finding graphics are schematic. A later author-edited PowerPoint removed the duplicate figure title and adjusted module labels; these edits are retained in the revision. The visual reference was supplied by the authors; generated illustrations do not depict observations or operational deployments at the study sites. Images were produced with the built-in imagegen tool and composed into PowerPoint. The retained illustration records identify the imagegen tool; no unverifiable model-release version is assigned.
+-
+-All figure text uses Times New Roman. Main Figure 3 uses native clustered-column charts with the existing seed-block intervals. Main Figure 4 restores the candidate-geometry, preemption-choice and deadline-outcome layout. Main Figure 5 contains editable vector heatmaps and contrasts; main Figure 6 and Supplementary Figure S1 use native charts with embedded workbooks. Supplementary Figure S2 retains editable pending-command and transport segments. The two PowerPoint files retain their source slide order; the editing guide maps slides to current main and supplementary figure numbers.
++Figure 1 combines separate, text-free AI-generated illustrations with editable PowerPoint text, routes, containers and markers. The map is labeled Not to scale; the finding graphics are schematic. The revision retains the authors' later PowerPoint edits removing the duplicate figure title and adjusting module labels. The authors supplied the visual reference. The illustrations depict no observations or operational deployments at the study sites. They were produced with the built-in imagegen tool and composed in PowerPoint. The records identify the tool without assigning an unverifiable model-release version.
++
++All figure text uses Times New Roman. Main Figure 3 uses native clustered-column charts with existing seed-block intervals. Main Figure 4 restores the candidate-geometry, preemption-choice and deadline-outcome layout. Main Figure 5 contains editable vector heatmaps and contrasts; main Figure 6 and Supplementary Figure S1 use native charts with embedded workbooks. Supplementary Figure S2 retains editable pending-command and transport segments. Both PowerPoint files keep their source slide order, with the editing guide mapping slides to current main and supplementary figure numbers.
+ 
+ \section{Reproduction files and entry points}
+ 
+-No public repository URL is assigned. The accompanying \nolinkurl{REPRODUCTION_README.md} and \nolinkurl{reproduce_analysis.ps1} provide original run locations, dependencies and executable processing order. The \nolinkurl{reproducibility/} folder contains prompts, schemas, weights, experiment configurations, derived data and a hashed file inventory. The local correction overlay and optional regression entry point are included; the regression makes no LLM calls. Editable figure builders and PowerPoint sources accompany the LaTeX package.
++No public repository URL has been assigned. \nolinkurl{REPRODUCTION_README.md} and \nolinkurl{reproduce_analysis.ps1} specify original run locations, dependencies and executable processing order. The \nolinkurl{reproducibility/} folder contains prompts, schemas, weights, experiment configurations, derived data and a hashed file inventory. The package includes the local correction overlay, an optional regression entry point that makes no LLM calls, editable figure builders and PowerPoint sources.
+ 
+ \FloatBarrier
+ 

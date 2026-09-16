@@ -1,0 +1,147 @@
+{
+  "duplicates": [
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240601\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240602\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240603\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240604\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240605\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240606\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240607\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240608\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240609\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240610\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240611\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240612\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240613\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240614\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240615\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240616\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240617\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240618\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240619\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    },
+    {
+      "path": "runs\\experiment4\\primary\\4B\\D60\\E4_ANCHOR\\seed20240620\\B0\\action_pipeline.jsonl",
+      "duplicate_replacements": 1
+    }
+  ],
+  "common_first_decision_states": 720,
+  "incumbent": {
+    "A_B0": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "A_B1": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "A_B2": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "A_B4b": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "B_B0": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "B_B1": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "B_B2": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "B_B4b": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "C_B0": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "C_B1": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "C_B2": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    },
+    "C_B4b": {
+      "mean_interrupted_state_seconds": 0.0,
+      "due_incumbent": 0,
+      "late_or_unfinished_due": 0
+    }
+  }
+}

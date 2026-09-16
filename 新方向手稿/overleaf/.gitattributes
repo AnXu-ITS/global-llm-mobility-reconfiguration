@@ -1,0 +1,7 @@
+*.pdf binary
+*.pptx binary
+*.png binary
+*.jpg binary
+*.zip binary
+# Preserve archived source bytes and inventory hashes across Windows checkouts.
+reproducibility/** -text

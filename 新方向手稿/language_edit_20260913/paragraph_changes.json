@@ -1,0 +1,821 @@
+[
+  {
+    "file": "main.tex",
+    "anchor": "\\begin{abstract}",
+    "purpose": "摘要：先交代服务问题，再分清生成、选择、执行及独立应急；保留全部结果与边界。",
+    "original": "\\begin{abstract}\nLow-altitude capacity alone does not ensure service resilience: an intervention must preserve useful service before its deadline margin is exhausted. We propose a Ground--Low-Altitude Mobility Manager that organizes joint ground--air states into a shared executable candidate interface. Replaceable supervisory policies select interventions using common feasibility, completion-time and incumbent-service facts, while execution checks and independent local contingencies govern their application. Four SUMO--BlueSky experiments across three contrasting transport settings examine selective air support, air failures, compound disturbances and observation--execution timing. At the meshed urban site, the fixed-objective heuristic and LLM-candidate policy both reduce emergency deadline violations from 33.33\\% to 16.67\\%, but leave 0.058 and 0.133 damaged incumbent services per run, respectively. Explicit candidate-information support changes choices when faster air service competes with service preservation. Every affected coordinated run restores a path after a single air failure, yet 39.06\\% of all LLM-policy runs at that site remain late. Delayed observation consumes the remaining margin, and execution waiting can change the intervention itself through command replacement. The study establishes an executable architecture for comparative service management and identifies surviving alternatives, incumbent-service costs and intervention timing as the mechanisms governing realized resilience. The management implication is to secure timely, useful reconfiguration, rather than equating available air capacity or a restored path with recovered service.\n\\end{abstract}",
+    "edited": "\\begin{abstract}\nAvailable aircraft do not by themselves keep disrupted transport services on time. An intervention must provide useful service before the remaining deadline margin runs out. We propose a Ground--Low-Altitude Mobility Manager in which a candidate generator converts joint ground--air observations into a shared executable candidate interface. Replaceable supervisory policies use common feasibility, completion-time and incumbent-service facts to select an intervention. The executor checks and applies the proposal, while local contingencies operate independently. Four SUMO--BlueSky experiments across three contrasting transport settings examine selective air support, air failures, compound disturbances and observation--execution timing. At the meshed urban site, the fixed-objective heuristic and LLM-candidate policy both reduce emergency deadline violations from 33.33\\% to 16.67\\%, but leave 0.058 and 0.133 damaged incumbent services per run, respectively. Explicit candidate-information support changes choices when faster air service would interrupt an incumbent service. Every affected coordinated run restores a path after a single air failure, yet 39.06\\% of all LLM-policy runs at that site remain late. Delayed observation uses up the remaining margin. Waiting for execution can also change the intervention when a newer command replaces the pending one. The study provides an executable architecture for comparing service-management policies. It shows how surviving alternatives, incumbent-service costs and intervention timing govern realized resilience. Operators therefore need to secure timely, useful reconfiguration: available air capacity or a restored path alone does not establish service recovery.\n\\end{abstract}",
+    "original_line": 62,
+    "section": "Abstract"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Restoring network connectivity",
+    "purpose": "引言：用任务、时间和车辆改派说明交通问题。",
+    "original": "Restoring network connectivity does not necessarily restore transport service. An urgent mission may retain a road route but lose enough time to miss its deadline. A useful response must therefore preserve completion within the remaining service margin. Reassigning a vehicle can rescue that mission while interrupting another service. This links disruption management to both deadline compliance and the distribution of service losses, consistent with performance-based transport resilience assessment. \\citep{ref1}",
+    "edited": "Restoring network connectivity does not necessarily restore transport service. An urgent mission may still have a road route but no longer have enough time to meet its deadline. A useful response must preserve on-time completion within the remaining service margin. Reassigning a vehicle can rescue that mission while interrupting another service. Disruption management must therefore consider both deadline compliance and how service losses are distributed, consistent with performance-based transport resilience assessment. \\citep{ref1}",
+    "original_line": 72,
+    "section": "Introduction"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Low-altitude resources offer",
+    "purpose": "引言：将资源价值和抢占后果写成具体条件。",
+    "original": "Low-altitude resources offer a way around disrupted ground links. Their value depends on where they are, which tasks they can serve and whether they are already occupied. A faster aircraft may require preempting an incumbent service even when continued ground transport would remain timely. Communication loss, degraded navigation and unavailable landing sites can also remove the air alternative after dispatch. The relevant management problem is thus to select and execute useful cross-modal interventions as resources and deadlines evolve.",
+    "edited": "Low-altitude resources offer a way around disrupted ground links. Their value depends on where they are, which tasks they can serve and whether they are already occupied. Using a faster aircraft may require preempting an incumbent service even when continued ground transport would meet the deadline. Communication loss, degraded navigation or an unavailable landing site can also remove the air alternative after dispatch. The management problem is to select and execute useful cross-modal interventions as resources and deadlines change.",
+    "original_line": 74,
+    "section": "Introduction"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Multimodal recovery and",
+    "purpose": "引言：明确已有工作与本文研究问题之间的联系。",
+    "original": "Multimodal recovery and Resilience as a Service already coordinate heterogeneous replacement services, while dynamic fleet management and truck--drone routing address evolving assignments and synchronization. \\citep{ref4,ref19,ref20,ref21,ref22} Constrained-execution architectures further distinguish a proposed action from permission to apply it. \\citep{ref8} We connect these ideas at the level of supervisory service reconfiguration: a failure-prone air layer supports disrupted ground services through a common interface that exposes feasible interventions and their consequences. This creates a controlled basis for comparing selection policies and tracing why an admissible replacement sometimes arrives too late.",
+    "edited": "Multimodal recovery and Resilience as a Service coordinate heterogeneous replacement services, while dynamic fleet management and truck--drone routing address changing assignments and synchronization. \\citep{ref4,ref19,ref20,ref21,ref22} Constrained-execution architectures distinguish a proposed action from permission to apply it. \\citep{ref8} We bring these ideas together for supervisory service reconfiguration, using a failure-prone air layer to support disrupted ground services. A common interface describes feasible interventions and their consequences. It allows us to compare selection policies under controlled conditions and trace why a feasible replacement can still arrive too late.",
+    "original_line": 76,
+    "section": "Introduction"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "We propose the \\textbf",
+    "purpose": "定义：保留完整名称首次定义，锁定 Manager 简称和各模块职责。",
+    "original": "We propose the \\textbf{Ground--Low-Altitude Mobility Manager} to connect joint state observations, deterministic candidate generation, replaceable supervisory selection and common execution checks. Its \\textbf{shared executable candidate interface} reports resource compatibility, legality, estimated completion and the incumbent service displaced by each option. The policy selects one intervention; the executor normalizes and validates it, then issues it or queues it for revalidation. Local contingencies operate independently. Here, global state denotes the joint state of one modeled study area. Ground service uses a SUMO corridor ETA timer; air transport evolves in BlueSky.",
+    "edited": "We propose the \\textbf{Ground--Low-Altitude Mobility Manager} (hereafter, the Manager). It connects joint state observations, deterministic candidate generation, replaceable supervisory selection and common execution checks. The \\textbf{shared executable candidate interface} reports resource compatibility, legality, estimated completion and the incumbent service each option would displace. The supervisor selects one intervention. The executor normalizes and validates the proposal, then issues it or queues it for revalidation. Local contingencies operate independently. Here, global state means the joint state of one modeled study area. Ground service uses a SUMO corridor ETA timer; air transport evolves in BlueSky.",
+    "original_line": 78,
+    "section": "Introduction"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "We make three contributions.",
+    "purpose": "贡献：用操作和可观察结果替代抽象机制堆叠，维持原段功能。",
+    "original": "We make three contributions. First, we develop a ground--air supervisory service-reconfiguration architecture with explicit observation, selection and execution semantics. Second, we provide a shared executable candidate interface and comparative evidence from ground-only, air-first, fixed-objective heuristic and LLM-candidate policies. Third, we quantify transport mechanisms linking surviving alternatives, service trade-offs and observation--execution timing. Selective air support reduces missed deadlines but can displace incumbent services; restored paths can remain late; delayed execution can replace the originally selected action. Figure~\\ref{fig:fig01} connects these findings to E1 selective support, E2 single air failure, E3 compound disturbance and E4 timing and input burden.",
+    "edited": "We make three contributions. First, we develop a supervisory architecture for ground--air service reconfiguration that specifies how observations, selection and execution interact. Second, we provide the shared candidate interface and compare ground-only, air-first, fixed-objective heuristic and LLM-candidate policies. Third, we quantify how surviving alternatives, service trade-offs and observation--execution timing affect transport outcomes. Selective air support can reduce missed deadlines while displacing incumbent services. A restored path can still finish late, and delayed execution can allow a new command to replace the selected action. Figure~\\ref{fig:fig01} links these findings to E1 selective support, E2 single air failure, E3 compound disturbance and E4 timing and input burden.",
+    "original_line": 80,
+    "section": "Introduction"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Jaber et al. formulate",
+    "purpose": "相关工作：合并相邻两句重复的接口与可替换策略说明。",
+    "original": "Jaber et al. formulate Resilience as a Service through resource allocation among buses, taxis and automated vans that can bridge disrupted rail services. \\citep{ref20} Their work establishes a close precedent for coordinating heterogeneous replacement services. Our setting adds a failure-prone air layer and tests replaceable supervisory policies through a shared executable candidate interface. The common interface allows this failure-prone support layer to be studied through interchangeable selection policies and their executed service consequences.",
+    "edited": "Jaber et al. formulate Resilience as a Service through resource allocation among buses, taxis and automated vans that can bridge disrupted rail services. \\citep{ref20} Their work provides a close precedent for coordinating heterogeneous replacement services. Our setting adds a failure-prone air layer. We compare interchangeable supervisory policies through the shared candidate interface and examine how their executed interventions affect service.",
+    "original_line": 98,
+    "section": "Disruption management across transport services"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "At the network level,",
+    "purpose": "相关工作：说清决策粒度与 B2 的具体选择，不扩大研究范围。",
+    "original": "At the network level, Wollenstein-Betech et al. jointly optimize intermodal vehicle routing and rebalancing while accounting for congestion generated by vehicle flows. \\citep{ref22} The present model uses a smaller decision object: an intervention for an actionable service, with ground supplied through a shared corridor travel-time proxy. It does not optimize network-wide routing flows or truck--drone launch-and-retrieval tours. Its comparison concerns how policies select, preserve or replace services as modeled feasibility changes. B2 operationalizes one explicit speed--service-preservation preference through one-step candidate ranking.",
+    "edited": "At the network level, Wollenstein-Betech et al. jointly optimize intermodal vehicle routing and rebalancing while accounting for congestion generated by vehicle flows. \\citep{ref22} Our model selects an intervention for an actionable service and represents ground transport through a shared corridor travel-time proxy. It does not optimize network-wide routing flows or truck--drone launch-and-retrieval tours. We compare how policies select, preserve or replace services as modeled feasibility changes. B2 ranks candidates one step at a time using an explicit preference between faster completion and preserving incumbent service.",
+    "original_line": 104,
+    "section": "Dynamic fleet management and ground--air coordination"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Our candidate generator exposes",
+    "purpose": "相关工作：明确 generator、supervisor、executor 和时间间隔。",
+    "original": "Our candidate generator exposes common feasibility, completion-time and incumbent-service facts before selection. The executor subsequently checks the chosen action against its current state. This distinction supports a transport comparison in which policy preferences can differ while information derivation and execution constraints remain common. It also exposes the interval between an admissible proposal and the intervention that actually reaches execution.",
+    "edited": "The candidate generator reports common feasibility, completion-time and incumbent-service facts before the supervisor selects an action. The executor then checks the chosen action against the current state. Policies can therefore express different preferences while using the same rules for deriving information and checking execution. This separation also lets us trace what happens between a feasible proposal and the intervention that executes.",
+    "original_line": 110,
+    "section": "Supervisory selection and constrained execution"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Our comparison asks how policies",
+    "purpose": "相关工作：保留消融解释范围，减少自我说明。",
+    "original": "Our comparison asks how policies use a common service-management contract and when their executed interventions protect service. B4a--B4b separately tests explicit candidate-information support within the same LLM implementation. It removes derived per-candidate facts along with their presentation, so its effect concerns information support rather than table formatting alone.",
+    "edited": "We ask how policies use the common service-management contract and when their executed interventions protect service. The B4a--B4b comparison separately tests explicit candidate-information support within the same LLM implementation. The ablation removes derived per-candidate facts as well as their presentation, so it tests information support rather than table formatting alone.",
+    "original_line": 116,
+    "section": "Language models and the comparison addressed here"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "where $G_t$ contains",
+    "purpose": "符号定义：拆开状态分量的长句，各符号及含义逐一保留。",
+    "original": "where $G_t$ contains ground connectivity and travel-time estimates, $A_t$ contains aircraft states, $I_t$ describes landing infrastructure and operating restrictions, $M_t$ is the mission registry, and $E_t$ records currently represented disturbances and recent events. A mission $m$ has a release time $r_m$, absolute deadline $d_m$, origin, destination, service type, priority $p_m$, state and configured penalties. An aircraft has a role, assignment status, position, remaining endurance, landing compatibility and commandability.",
+    "edited": "where $G_t$ contains ground connectivity and travel-time estimates, and $A_t$ contains aircraft states. $I_t$ describes landing infrastructure and operating restrictions; $M_t$ is the mission registry. $E_t$ records currently represented disturbances and recent events. A mission $m$ has a release time $r_m$, absolute deadline $d_m$, origin, destination, service type, priority $p_m$, state and configured penalties. An aircraft has a role, assignment status, position, remaining endurance, landing compatibility and commandability.",
+    "original_line": 128,
+    "section": "Ground--low-altitude service system"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "A disruption can alter",
+    "purpose": "问题定义：解释既往决策如何改变故障暴露和服务后果。",
+    "original": "A disruption can alter ground travel time, interrupt a selected air chain, remove an aircraft from supervisory control or eliminate a landing option. The same external event can affect different policies differently because their earlier assignments determine the mission's exposure. Cross-modal reconfiguration changes a task's assigned resource or transport mode, or changes the continuation of an existing operation. It can improve an emergency's outcome while changing the service state of an incumbent mission.",
+    "edited": "A disruption can change ground travel time, interrupt a selected air chain, remove an aircraft from supervisory control or eliminate a landing option. The same external event can affect policies differently because their earlier assignments determine which missions are exposed. Cross-modal reconfiguration changes a task's resource or transport mode, or changes how an existing operation continues. It can improve an emergency's outcome while interrupting or otherwise changing the state of an incumbent service.",
+    "original_line": 130,
+    "section": "Ground--low-altitude service system"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "where $\\mathcal O_t$ incorporates",
+    "purpose": "观测定义：拆分观测年龄与事件可见性，保留同秒条件。",
+    "original": "where $\\mathcal O_t$ incorporates snapshot sampling and event ordering and $\\tau(t)$ is the snapshot timestamp. The age $t-\\tau(t)$ is useful but does not completely describe visibility: an event injected after a snapshot at the same simulation second is absent from that snapshot. This distinction becomes operationally important in the observation-scheduling experiment.",
+    "edited": "where $\\mathcal O_t$ incorporates snapshot sampling and event ordering, and $\\tau(t)$ is the snapshot timestamp. Snapshot age $t-\\tau(t)$ helps describe visibility, but it does not identify every visible event. An event injected after a snapshot is absent even if both occur in the same simulation second. This distinction matters in the observation-scheduling experiment.",
+    "original_line": 138,
+    "section": "Ground--low-altitude service system"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "$\\mathcal I_{m,t}$ contains",
+    "purpose": "候选定义：分开记录范围、拒绝记录和字段内容。",
+    "original": "$\\mathcal I_{m,t}$ contains the records associated with mission $m$, whereas $\\mathcal C_{m,t}$ denotes the subset marked legal. The distinction is necessary because the interface retains rejected resource records and their rejection reasons. A candidate record identifies the mission and resource, transport mode, implied action, estimated remaining completion duration $\\widehat\\eta_c$, feasibility status, endurance information, destination conditions and any incumbent service that would be displaced.",
+    "edited": "$\\mathcal I_{m,t}$ contains the records for mission $m$; $\\mathcal C_{m,t}$ is the subset marked legal. The interface also keeps rejected resource records and their rejection reasons. Each candidate record identifies the mission, resource, transport mode and implied action. It reports estimated remaining completion duration $\\widehat\\eta_c$, feasibility status, endurance information, destination conditions and any incumbent service that would be displaced.",
+    "original_line": 149,
+    "section": "Candidate information and feasible alternatives"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The interface contains no",
+    "purpose": "定义：保留 manager-agnostic 的严格边界，拆开概念密集句。",
+    "original": "The interface contains no B2 objective score, optimizer selection or manager-specific recommended action. Nevertheless, it embodies shared modeling choices, including priority constraints, travel-time approximations and the organization of multi-mission records. Manager-agnostic therefore means that policies share the same generation rules and facts at a given state, rather than that the representation is free of operational assumptions. Once policies take different actions, their subsequent states and candidate sets can legitimately differ.",
+    "edited": "The interface contains no B2 objective score, optimizer selection or manager-specific recommended action. It does, however, reflect shared modeling choices: priority constraints, travel-time approximations and the organization of multi-mission records. Here, manager-agnostic means that policies use the same generation rules and facts at a given state. It does not mean that the representation is free of operational assumptions. After policies take different actions, their states and candidate sets can also differ.",
+    "original_line": 153,
+    "section": "Candidate information and feasible alternatives"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "A proposal replaced by",
+    "purpose": "执行定义：区分替换、拒绝和运输完成。",
+    "original": "A proposal replaced by a newer command is superseded; a proposal that fails the current checks is rejected. Neither event is equivalent to completed transport. The subsequent state follows",
+    "edited": "A newer command can supersede a pending proposal; the executor rejects a proposal that fails the current checks. Neither supersession nor rejection means that transport has been completed. The subsequent state follows",
+    "original_line": 176,
+    "section": "Supervisory actions and execution-time constraints"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "A nonempty feasible set",
+    "purpose": "时间可行性：简化集合套叠的文字解释，公式保持原样。",
+    "original": "A nonempty feasible set does not ensure a nonempty set of alternatives predicted to finish on time. Even a nonnegative estimated margin does not guarantee on-time completion, because subsequent failures, queue changes and estimation error can alter the outcome. Equation (8) connects candidate facts to the decision regimes analyzed in Figure~\\ref{fig:fig04}.",
+    "edited": "A feasible candidate set may contain no alternative predicted to finish on time. Even a nonnegative estimated margin does not guarantee on-time completion: later failures, queue changes or estimation error can change the outcome. Equation (8) links candidate facts to the decision regimes analyzed in Figure~\\ref{fig:fig04}.",
+    "original_line": 199,
+    "section": "Service outcomes and temporal feasibility"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The framework couples SUMO",
+    "purpose": "方法：以 simulation environment 和 orchestrator 代替泛指 framework。",
+    "original": "The framework couples SUMO for road traffic with BlueSky for aircraft evolution. \\citep{ref12}, \\citep{ref13} A master orchestrator advances both layers in 1 s steps, maintains the service registry and applies events and accepted interventions. Figure~\\ref{fig:fig01}(b) places the replaceable policy within this common sequence. Local aircraft contingencies remain independent of supervisory inference.",
+    "edited": "The simulation environment couples SUMO for road traffic with BlueSky for aircraft movement. \\citep{ref12}, \\citep{ref13} A master orchestrator advances both layers in 1 s steps, maintains the service registry, and applies events and accepted interventions. Figure~\\ref{fig:fig01}(b) places the replaceable policy within this sequence. Local aircraft contingencies operate independently of supervisory inference.",
+    "original_line": 207,
+    "section": "Global state and closed-loop environment"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The snapshot combines road",
+    "purpose": "方法：明确 ground fallback 查询和计时的主体，保留地面模型边界。",
+    "original": "The snapshot combines road estimates and closures with aircraft assignments, endurance, commandability, landing-site conditions and mission priorities and deadlines. Ground candidates use the shared D1--H1 corridor ETA, including for eligible missions represented in the multi-mission interface. When ground fallback executes, the implementation queries the current SUMO corridor estimate and schedules completion using the rounded duration. Completion is recorded by a mission timer; fallback does not simulate a separate dispatched road vehicle and trajectory for each mission.",
+    "edited": "The snapshot combines road estimates and closures with aircraft assignments, endurance, commandability, landing-site conditions, and mission priorities and deadlines. Ground candidates use the shared D1--H1 corridor ETA, including for eligible missions in the multi-mission interface. When ground fallback executes, the executor queries the current SUMO corridor estimate and schedules completion using the rounded duration. A mission timer records completion; the model does not dispatch and track a separate road vehicle for each fallback mission.",
+    "original_line": 209,
+    "section": "Global state and closed-loop environment"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Coupling occurs through task",
+    "purpose": "方法：按新派遣、故障后替代、独立应急、地面接替顺序解释现有语义。",
+    "original": "Coupling occurs through task status and resource assignment. A new air assignment follows the resource's current position to the mission origin and destination; an interrupted-mission candidate uses the contingency site V3 before the destination. Preemption detaches the incumbent mission and changes the resource's assignment. Local return or diversion evolves separately, but replacement dispatch is not gated by verified arrival of the original payload at V3. The registry has no payload-custody, unloading, reloading or re-shipment process. Ground fallback changes mode and schedules completion from the live corridor ETA, with the proposal ETA used only if that query is unavailable. These semantics represent service replacement, with physical transfer time examined separately through an offline margin sensitivity in Supplementary Section S4.",
+    "edited": "The simulators are coupled through task status and resource assignment. A new air assignment routes the aircraft from its current position through the mission origin to the destination. For an interrupted mission, the candidate route passes through the contingency site V3 before reaching the destination. Preemption detaches the incumbent mission and changes the aircraft's assignment. Local return or diversion continues separately. Replacement dispatch does not require verification that the original payload has arrived at V3. The registry does not model payload custody, unloading, reloading or re-shipment. Ground fallback changes the mission's mode and schedules completion from the live corridor ETA; it uses the proposal ETA only if the live query is unavailable. These rules represent service replacement. Supplementary Section S4 separately examines physical transfer time through an offline sensitivity analysis of the remaining margin.",
+    "original_line": 211,
+    "section": "Global state and closed-loop environment"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Algorithm 1 follows the implemented",
+    "purpose": "事件顺序：明确 event-before-pending 的含义，保留例外与修正指向。",
+    "original": "Algorithm 1 follows the implemented event-before-pending order. Ordinary periodic decisions are suppressed while an actionable mission already has a pending command; E4A instead follows its scheduled polling protocol. The identical-command rule is the queue correction evaluated in Section 6.6.2; independent local contingencies do not wait for that queue.",
+    "edited": "Algorithm 1 processes same-time events before pending commands. Ordinary periodic decisions are suppressed while an actionable mission has a pending command; E4A uses its scheduled polling protocol instead. The identical-command rule is the queue correction evaluated in Section 6.6.2. Independent local contingencies do not wait for the queue.",
+    "original_line": 230,
+    "section": "Global state and closed-loop environment"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The candidate generator maps",
+    "purpose": "方法：区分候选生成、接口、选择与执行时更新。",
+    "original": "The candidate generator maps the observed global state into a shared executable candidate interface. Generation computes the candidate facts; the interface specifies the fields and action semantics available to the policy. Together they make air and ground alternatives comparable without prescribing a selection. Remaining completion estimates use a common duration convention. Air estimates combine the modeled route geometry, role-specific cruise speeds and dispatch overhead. The interface also reports absolute estimated completion time, the remaining deadline margin and structural consequences of preemption. Ground uses the common fallback estimate. These estimates support supervisory choice. Execution refreshes operational quantities from the environment, while deterministic checks apply the modeled constraints.",
+    "edited": "The candidate generator computes candidate facts from the observed global state. The shared executable candidate interface defines the fields and action semantics available to the supervisor. It makes air and ground alternatives comparable without recommending a selection. All candidates use the same convention for estimated remaining completion duration. Air estimates combine modeled route geometry, role-specific cruise speeds and dispatch overhead; ground candidates use the common fallback estimate. The interface also reports estimated absolute completion time, remaining deadline margin and whether preemption would interrupt an incumbent service. The supervisor uses these estimates to choose an intervention. At execution, the executor refreshes operational quantities from the environment and applies deterministic checks against the modeled constraints.",
+    "original_line": 234,
+    "section": "Candidate generator and shared executable interface"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The generator does not run",
+    "purpose": "方法：解释中断标记的含义及不代表什么。",
+    "original": "The generator does not run B2 or receive its preference weights. B1 and B2 calculate their own selections from the shared table, while B4b receives the same table within the prompt. A structural interruption indicator identifies whether reassignment displaces an existing service; it is not a learned welfare estimate or a B2-weighted cost.",
+    "edited": "The generator does not run B2 or receive its preference weights. B1 and B2 select from the shared table, while B4b receives that table in its prompt. The interruption indicator records whether reassignment would displace an existing service. It is neither a learned welfare estimate nor a cost weighted by B2.",
+    "original_line": 256,
+    "section": "Candidate generator and shared executable interface"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "\\noindent\\textbf{A decision",
+    "purpose": "场景：以实际任务速度和既有服务中断说明 service-preservation pressure。",
+    "original": "\\noindent\\textbf{A decision with service-preservation pressure.} At Site A, high disruption and high medical workload leave a timely ground route and one faster, preemptive air option. At 300 s in seed 20240601, the HIGH-priority emergency is due at 600 s. The logged candidates are:",
+    "edited": "\\noindent\\textbf{Faster emergency transport at the cost of an incumbent service.} At Site A, high disruption and high medical workload leave a ground route that meets the deadline and one faster air option that requires preemption. At 300 s in seed 20240601, the HIGH-priority emergency is due at 600 s. The logged candidates are:",
+    "original_line": 260,
+    "section": "Candidate generator and shared executable interface"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "B2 selected ground and",
+    "purpose": "场景：保留所有数值、比较方向和 ETA 限定，分开行为与解释。",
+    "original": "B2 selected ground and completed in 229 s; B4b reassigned M-UAV-02 and completed in 212 s, leaving one damaged incumbent service. B1 also selects the legal air option under its air-first rule. The same candidate facts support all three policies. The estimated 15.794 s air advantage improves speed, but both alternatives meet the emergency deadline and only air displaces an incumbent. Thus the fastest option can have the larger system service cost. Candidate ETA is an estimate; realized air completion also reflects simulator motion and the arrival radius.",
+    "edited": "B2 selected ground and completed the emergency mission in 229 s. B4b reassigned M-UAV-02 and completed it in 212 s, leaving one damaged incumbent service. B1 also selects the legal air option under its air-first rule. All three policies use the same candidate facts. Air offers an estimated 15.794 s speed advantage, but both alternatives meet the emergency deadline and only air displaces an incumbent. The fastest option therefore has the larger system service cost in this example. Candidate ETA remains an estimate; realized air completion also depends on simulator motion and the arrival radius.",
+    "original_line": 271,
+    "section": "Candidate generator and shared executable interface"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "B1's air-first ordering",
+    "purpose": "策略差异：分别交代 B1 的模式优先与 B2 的跨模式排名。",
+    "original": "B1's air-first ordering is important: it minimizes ETA among legal air candidates, rather than minimizing travel time over both modes. B2 is a fixed-objective heuristic that ranks legal air and ground candidates for the priority-selected actionable mission using",
+    "edited": "B1 minimizes ETA among legal air candidates. It considers ground only when no legal air option remains, so it does not minimize travel time across both modes. B2 selects the actionable mission under the priority rule, then ranks its legal air and ground candidates using",
+    "original_line": 296,
+    "section": "Supervisory policies"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "B4b uses the common prompt",
+    "purpose": "策略：清楚列出消融移除的信息，保留后端及错误记录披露。",
+    "original": "B4b uses the common prompt template with temperature 0, JSON output mode and an output-token budget of 8192. The recorded backend identifier is \\nolinkurl{corp-ai/openai/deepseek-v4-pro}; it identifies the configured service, with the underlying release unverified. B4a retains the same snapshot, prompt rules and checker but removes the candidate section. This removes per-resource air ETA, explicit legal/rejection flags, deadline consequences and the mapped preempted-service consequence. Raw assignments, priorities, positions and ground ETA remain available. We therefore define the ablation as \\emph{explicit candidate-information support}. Supplementary Section S2 supplies the field comparison and full prompt file. Recorded errors and structured retries remain in the analyzed cohort.",
+    "edited": "B4b uses the common prompt template with temperature 0, JSON output mode and an output-token budget of 8192. The recorded backend identifier, \\nolinkurl{corp-ai/openai/deepseek-v4-pro}, identifies the configured service; the underlying release is unverified. B4a uses the same snapshot, prompt rules and checker but omits the candidate section. It therefore lacks per-resource air ETA, explicit legal/rejection flags, deadline consequences and the mapped consequence for the preempted service. Raw assignments, priorities, positions and ground ETA remain available. We call this ablation \\emph{explicit candidate-information support}. Supplementary Section S2 provides the field comparison and full prompt file. The analyzed cohort includes recorded errors and structured retries.",
+    "original_line": 305,
+    "section": "Supervisory policies"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The validation pipeline checks",
+    "purpose": "检查：区分观测时合法性与执行时可行性。",
+    "original": "The validation pipeline checks action structure, identifiers, mission and aircraft status, commandability, compatibility, destination availability, priority restrictions and the relevant modeled operating constraints. The distinction between preselection filtering and action checking is deliberate. Candidate legality describes the observed state; execution checks address whether the selected intervention can be applied to the state that exists when it is due.",
+    "edited": "The validation pipeline checks action structure, identifiers, mission and aircraft status, commandability, compatibility, destination availability, priority restrictions and relevant modeled operating constraints. Candidate filtering and execution checking serve different purposes. Candidate legality describes the observed state. At execution, the checker determines whether the selected intervention can be applied to the current state.",
+    "original_line": 309,
+    "section": "Deterministic checking"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Rejected proposals are logged",
+    "purpose": "检查：落实主体，合并重复的共同规则说明。",
+    "original": "Rejected proposals are logged rather than silently converted into a preferred action. An accepted assignment changes the registry and simulator commands through deterministic execution rules. These rules apply to every supervisory implementation. The execution layer supplies modeled feasibility enforcement for every policy; operational aviation certification lies outside this service model.",
+    "edited": "The executor logs rejected proposals rather than silently converting them into a preferred action. For an accepted assignment, it updates the registry and simulator commands according to deterministic rules shared by every policy. These rules enforce modeled feasibility. Operational aviation certification lies outside this service model.",
+    "original_line": 311,
+    "section": "Deterministic checking"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The executor maintains the distinction",
+    "purpose": "执行：按队列操作说明命令的保留、替换和复核。",
+    "original": "The executor maintains the distinction between proposal, issue, execution and transport completion. In the execution-delay experiment, accepted proposals enter a pending queue. Task-specific versioning allows a changed command to supersede an earlier pending command; an identical normalized command retains the original due time, and the execution pipeline revalidates the current action before application. A change in the environment can therefore alter both when a command executes and which command ultimately survives.",
+    "edited": "The executor distinguishes proposal, issue, execution and transport completion. In the execution-delay experiment, it places accepted proposals in a pending queue. A changed command supersedes the earlier command for that task; an identical normalized command keeps the original due time. Before applying the current command, the execution pipeline revalidates it. A change in the environment can therefore affect both when a command executes and which command survives.",
+    "original_line": 315,
+    "section": "Execution, pending actions and local contingencies"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Local aircraft contingency behavior",
+    "purpose": "独立应急：将 supervisor 与 local contingency 的动作明确分开。",
+    "original": "Local aircraft contingency behavior continues independently of supervisory decisions. In the modeled command-link-loss case, for example, an affected aircraft becomes unavailable for further supervisory commands and follows its local return procedure. The manager can then select another air resource or ground fallback for the interrupted service. Service recovery thus combines a common local response with a potentially policy-dependent replacement decision.",
+    "edited": "Local aircraft contingencies run independently of supervisory decisions. Under modeled command-link loss, for example, the affected aircraft becomes unavailable for further supervisory commands and follows its local return procedure. The supervisor can select another aircraft or ground fallback for the interrupted service. Recovery therefore combines the shared local response with a replacement decision that may differ by policy.",
+    "original_line": 317,
+    "section": "Execution, pending actions and local contingencies"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "E4A replaces this ordinary",
+    "purpose": "实验方法：分清三个 E4 子实验改变什么。",
+    "original": "E4A replaces this ordinary observation arrangement with controlled snapshot refresh and polling schedules. The policy uses the latest observed snapshot rather than an unrestricted view of current state. E4B instead introduces controlled execution waiting, and E4C adds inert input records around the unchanged core service problem. These experiments isolate different implementation conditions while preserving the respective policy definitions.",
+    "edited": "E4A replaces the ordinary observation arrangement with controlled snapshot-refresh and polling schedules. The supervisor uses the latest observed snapshot rather than an unrestricted view of the current state. E4B adds controlled waiting before execution. E4C adds inert input records around the unchanged core service problem. Each experiment changes one of these implementation conditions while retaining the respective policy definitions.",
+    "original_line": 323,
+    "section": "Decision opportunities and observation scheduling"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The three study areas",
+    "purpose": "场地：以 road networks 代替 substrate，拆分地图边界解释。",
+    "original": "The three study areas are based on OpenStreetMap road data from Suzhou, China (A), Amsterdam, the Netherlands (B), and Edmonton, Canada (C). OpenStreetMap supplies the geographic network substrate. \\citep{ref14} The configured study-area extent is 3.2 km $\\times$ 3.2 km at each site. Figure~\\ref{fig:fig02} shows the imported road substrates and representative service connections. Network conversion can retain geometry beyond the nominal area, so the figure uses a common projected scale and shows the full imported substrates rather than presenting their outlines as identical nominal-area boundaries.",
+    "edited": "The three study areas use OpenStreetMap road data from Suzhou, China (A), Amsterdam, the Netherlands (B), and Edmonton, Canada (C). OpenStreetMap provides the geographic networks. \\citep{ref14} Each configured study area measures 3.2 km $\\times$ 3.2 km. Figure~\\ref{fig:fig02} shows the imported road networks and representative service connections. Network conversion can retain roads beyond the nominal area. The figure therefore shows the full imported networks at a common projected scale; their outlines do not represent identical nominal-area boundaries.",
+    "original_line": 329,
+    "section": "Study sites and modeled services"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The sites offer contrasting",
+    "purpose": "场地：说明形态如何构成选择情境，保留因果范围限制。",
+    "original": "The sites offer contrasting operating contexts. Site A has a meshed urban network with meaningful choices between continued ground service and occupied air resources. Site B combines the highest within-boundary road density with water-barrier constraints on the reference ground corridor. Site C has a higher dead-end ratio and mean sampled OD circuity, with a longer reference service distance. These characteristics supply contrasting transport alternatives; their causal separation is discussed in Section 7.",
+    "edited": "The sites provide contrasting operating contexts. At Site A, the meshed urban network leaves meaningful choices between continued ground service and reassignment of occupied aircraft. Site B has the highest within-boundary road density, but water barriers constrain its reference ground corridor. Site C has a higher dead-end ratio and mean sampled OD circuity, together with a longer reference service distance. These features provide different transport alternatives. Section 7 discusses why their individual causal effects cannot be separated here.",
+    "original_line": 367,
+    "section": "Study sites and modeled services"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Every site uses a four-aircraft",
+    "purpose": "场地：明确工作负载如何改变飞机占用状态。",
+    "original": "Every site uses a four-aircraft core fleet: two medical UAVs, one logistics UAV and one passenger eVTOL. Compatibility restricts which aircraft can serve a given mission. Low medical workload leaves the medical aircraft idle, whereas high workload assigns them to existing services. Facilities, aircraft operations, landing sites and failures are scenario constructs. These are modeled services on real road substrates.",
+    "edited": "Every site uses a four-aircraft core fleet: two medical UAVs, one logistics UAV and one passenger eVTOL. Compatibility rules restrict which aircraft can serve each mission. Under low medical workload, the medical aircraft are idle; under high workload, they are assigned to existing services. Facilities, aircraft operations, landing sites and failures are scenario constructs. The experiments thus represent modeled services on real road networks.",
+    "original_line": 369,
+    "section": "Study sites and modeled services"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Policies share mission semantics",
+    "purpose": "对照：写清共享项与场地变化，保留故障时间适配依据。",
+    "original": "Policies share mission semantics, the action contract, candidate-generation rules and deterministic execution constraints within an experiment. The prompt and B2 objective remain specified. Geographic coordinates, road alternatives, aircraft travel distances and failure placement vary across sites. Failure times are adapted to intercept the modeled air operation, rather than applying an identical time that would affect different flight phases. Thus, the cross-site evaluation tests the same supervisory architecture in different network and service contexts.",
+    "edited": "Within each experiment, policies share mission semantics, the action contract, candidate-generation rules and deterministic execution constraints. The prompt and B2 objective remain as specified. Across sites, geographic coordinates, road alternatives, aircraft travel distances and failure placement vary. Fault times are adapted to intercept the modeled air operation; an identical time would affect different flight phases. The cross-site evaluation therefore tests the same supervisory architecture in different network and service contexts.",
+    "original_line": 373,
+    "section": "Shared controls and site adaptations"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "E4 retains Site A",
+    "purpose": "实验设计：解释输入规模增加的实际内容。",
+    "original": "E4 retains Site A's core task and separates three operational changes. E4A varies the snapshot observation interval, with a fault at 371 s. Scheduled polling continues over the observation experiment's horizon, including after some transport decisions have resolved. E4B introduces the same specified decision-to-execution delay for every policy, with a fault at 360 s. E4C enlarges the surrounding input using unavailable, non-commandable aircraft records with zero endurance and incompatible landing capabilities, together with inert facility and completed-mission records.",
+    "edited": "E4 retains Site A's core task and examines three operational changes separately. E4A varies the interval between observed snapshots, with a fault at 371 s. Scheduled polling continues throughout the observation experiment, including after some transport decisions have resolved. E4B applies the same specified delay from decision to execution to every policy, with a fault at 360 s. E4C adds unavailable, non-commandable aircraft records with zero endurance and incompatible landing capabilities. It also adds inert facility records and records of completed missions.",
+    "original_line": 408,
+    "section": "Observation, execution delay and input burden"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "E4C does not add usable",
+    "purpose": "实验边界：将 input burden 与扩大真实机队区分清楚。",
+    "original": "E4C does not add usable transport capacity. Its core fleet remains four aircraft, and candidate invariance is checked at matched decision stages. The experiment therefore tests input burden and selection quality for a fixed transport decision. It does not test scheduling fifty operational aircraft or serving a proportionally larger set of urgent missions.",
+    "edited": "E4C keeps the core fleet at four aircraft and adds no usable transport capacity. Candidate invariance is checked at matched decision stages. It tests how added input affects the burden on the policy and its choices for a fixed transport decision. It does not test scheduling fifty operational aircraft or serving a proportionally larger set of urgent missions.",
+    "original_line": 410,
+    "section": "Observation, execution delay and input burden"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Emergency completion and deadline",
+    "purpose": "指标：解释 damage 的操作定义，避免读作物理损伤。",
+    "original": "Emergency completion and deadline violation follow Equation (7). Existing-service damage counts non-primary missions whose horizon state is INTERRUPTED, NEEDS\\_REPLAN, CANCELLED or FAILED. It measures final service status rather than cumulative historical interruptions or physical damage. Issued actions identify air intervention; rejected proposals do not count as interventions.",
+    "edited": "Emergency completion and deadline violation follow Equation (7). Existing-service damage counts non-primary missions in state INTERRUPTED, NEEDS\\_REPLAN, CANCELLED or FAILED at the horizon. It describes their final service status, not physical damage or the cumulative history of interruptions. Air intervention is identified from issued actions; rejected proposals do not count.",
+    "original_line": 416,
+    "section": "Outcomes, pairing and statistical interpretation"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Late completion incurs a fixed",
+    "purpose": "指标：分开惩罚规则、审计事实和损失单位。",
+    "original": "Late completion incurs a fixed penalty, not a charge per second late. EN\\_ROUTE and ASSIGNED services incur no horizon penalty. A terminal-registry audit found all 4,320 E3 task instances with deadlines at or before the horizon completed; none were omitted as overdue ongoing tasks. A late primary CRITICAL mission therefore contributes 240 units and a late secondary HIGH mission contributes 135 units. SWL is expressed in configured loss units, not monetary welfare. We also report the CRITICAL+HIGH component when comparing compound-level policies.",
+    "edited": "Late completion incurs a fixed penalty, not a charge per second late. EN\\_ROUTE and ASSIGNED services incur no horizon penalty. The terminal-registry audit found that all 4,320 E3 task instances with deadlines at or before the horizon had completed. No overdue ongoing tasks were therefore omitted. A late primary CRITICAL mission contributes 240 units, and a late secondary HIGH mission contributes 135 units. SWL uses configured loss units rather than monetary welfare. We also report its CRITICAL+HIGH component for compound-level policy comparisons.",
+    "original_line": 448,
+    "section": "Outcomes, pairing and statistical interpretation"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The fixed scenario panel defines",
+    "purpose": "统计方法：解释按种子分块的原因，保留估计对象和权重。",
+    "original": "The fixed scenario panel defines the estimand. Equal weights are assigned to scenario--seed runs, preserving the E3 level sample sizes of 40, 80, 80 and 40 per policy. The initialization code restarts \\nolinkurl{random.Random(seed)} in each scenario, traverses aircraft in sorted order and also passes that seed to SUMO. Scenario workloads can change the number of draws, but do not establish independent streams. We therefore group the complete fixed panel by seed before estimating uncertainty and pair policies within each scenario and seed.",
+    "edited": "The estimand is defined over the fixed scenario panel. Scenario--seed runs receive equal weight, preserving E3 level sample sizes of 40, 80, 80 and 40 per policy. For each scenario, initialization restarts \\nolinkurl{random.Random(seed)}, visits aircraft in sorted order and passes the same seed to SUMO. Workload can change the number of random draws, but it does not create independent scenario streams. We therefore estimate uncertainty by grouping the complete fixed panel by seed, with policies paired within each scenario and seed.",
+    "original_line": 450,
+    "section": "Outcomes, pairing and statistical interpretation"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Experiments evaluate supervisory",
+    "purpose": "范围：分开模拟时间、推理耗时与修订披露；不移走透明性信息。",
+    "original": "Experiments evaluate supervisory service replacement with four core aircraft, specified fault state machines and the ground timer abstraction described in Section 4.1. External inference calls do not advance physical simulation time. E4A changes observed information and E4B inserts a controlled execution wait; wall-clock backend latency is recorded separately. The numerical revision preserves original runs, corrects the B0 D60 duplicate-command cell through a local implementation overlay, and recalculates fixed-panel statistics. Supplementary materials provide parameters, prompts, analysis scripts and revision provenance.",
+    "edited": "The experiments evaluate supervisory service replacement with four core aircraft, specified fault state machines and the ground timer described in Section 4.1. External inference calls do not advance physical simulation time. E4A changes the information observed by the supervisor; E4B inserts a controlled wait before execution. Backend wall-clock latency is recorded separately. The numerical revision retains the original runs, corrects the B0 D60 duplicate-command cell through a local implementation overlay, and recalculates fixed-panel statistics. The supplementary materials provide parameters, prompts, analysis scripts and revision provenance.",
+    "original_line": 465,
+    "section": "Provenance and model scope"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Enabling air support improved",
+    "purpose": "结果 E1：先交代比较对象，再分开紧急任务速度与既有服务后果。",
+    "original": "Enabling air support improved emergency transport, while coordinated policies imposed different incumbent-service costs (Figure~\\ref{fig:fig03}). At A, B2 and B4b reduced deadline violations from B0's 33.33\\% to 16.67\\%. Their mean completion durations were 147.62 and 146.63 s, respectively, but B4b incurred 0.133 damaged services per run against B2's 0.058. Supplementary Table S1 retains the complete site--policy summaries and intervals.",
+    "edited": "Air support improved emergency transport, but the coordinated policies differed in how much incumbent service they disrupted (Figure~\\ref{fig:fig03}). At A, B2 and B4b reduced deadline violations from B0's 33.33\\% to 16.67\\%. Their mean completion durations were 147.62 and 146.63 s, respectively. However, B4b left 0.133 damaged services per run, compared with B2's 0.058. Supplementary Table S1 provides the full site--policy summaries and intervals.",
+    "original_line": 471,
+    "section": "Selective air support and incumbent-service cost"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The high-disruption, HIGH-urgency",
+    "purpose": "结果 E1：将抽象成本取舍写成快了什么、打断了什么，保留完整推断。",
+    "original": "The high-disruption, HIGH-urgency, high-workload scenario at A exposes this trade-off. Ground could meet the 300 s slack, and B2 selected it in all 20 runs. B4b reassigned an occupied aircraft in 12 runs and used ground in eight. Relative to B2, completion decreased by 11.95 s (95\\% CI -17.330 to -6.570; Holm-adjusted $p=0.002100$), while damage increased by 0.600 services per run. Both policies met every emergency deadline. The speed gain therefore came from preempting a service even though ground retained a positive deadline margin. A manager must price that displacement alongside emergency speed.",
+    "edited": "The high-disruption, HIGH-urgency, high-workload scenario at A shows what this trade-off means for service. Ground transport could meet the 300 s deadline slack, and B2 selected it in all 20 runs. B4b reassigned an occupied aircraft in 12 runs and used ground in eight. Relative to B2, completion duration decreased by 11.95 s (95\\% CI -17.330 to -6.570; Holm-adjusted $p=0.002100$), while damage increased by 0.600 services per run. Both policies met every emergency deadline. Air reassignment therefore accelerated the emergency by interrupting another service, even though ground could still finish on time. An operator must weigh that interruption against the additional speed.",
+    "original_line": 480,
+    "section": "Selective air support and incumbent-service cost"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "At B and C, large gains",
+    "purpose": "结果 E1：区分开放空中运输的收益和策略复杂度的作用。",
+    "original": "At B and C, large gains over ground-only operation coexisted with similar outcomes among coordinated policies. Their deadline-violation rates were respectively 0\\% and 10\\%, against B0's 50.00\\% and 83.33\\%. These differences distinguish the benefit of enabling a useful transport mode from the effect of selecting a more complex supervisor.",
+    "edited": "At B and C, coordinated policies achieved large gains over ground-only operation but produced similar outcomes to one another. Their deadline-violation rates were 0\\% and 10\\%, respectively, compared with B0's 50.00\\% and 83.33\\%. These results separate the benefit of allowing a useful transport mode from the effect of choosing a more complex supervisor.",
+    "original_line": 482,
+    "section": "Selective air support and incumbent-service cost"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Explicit candidate-information support improved",
+    "purpose": "结果消融：合并重复的方向与数值报告，保留三项端点。",
+    "original": "Explicit candidate-information support improved both speed and service preservation at A (Table 5). B4b reduced completion duration, incumbent-service damage and air intervention relative to B4a. Completion decreased by 13.567 s, damage by 0.383 services per run and air intervention by 38.333 percentage points. These jointly favorable changes indicate more selective use of the same transport resources.",
+    "edited": "Explicit candidate-information support improved speed and preserved more incumbent service at A (Table 5). Relative to B4a, B4b reduced completion duration by 13.567 s, damage by 0.383 services per run and air intervention by 38.333 percentage points. Improving all three outcomes indicates more selective use of the same transport resources.",
+    "original_line": 486,
+    "section": "The candidate interface shapes supervisory choices"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The information-support effect was",
+    "purpose": "结果消融：将跨站统计、策略选择和 ETA 预测边界拆成三段，每段一个信息任务。",
+    "original": "The information-support effect was site-dependent: B had no difference passing Holm adjustment and C had zero difference on all three endpoints. Figure~\\ref{fig:fig04} relates choices to ETA advantage, deadline margin and preemption. When ground is both faster and non-preemptive, it dominates those two service criteria; B1 can still prefer air because its rule ranks only air candidates. This explains why candidate availability alone does not ensure a useful selection. At A, 20 states offer faster preemptive air and timely ground: B1, B2 and B4b choose air in 20, zero and 12 cases. At B and C, the corresponding counts are 60/60/57 and 20/20/20, showing that a speed--service conflict does not inevitably produce policy divergence. When A has no predicted timely candidate, all 40 runs per coordinated policy are late despite different mode choices. At C, 24 of 27 such cases are late; the remaining three expose the approximation in candidate ETA. These observations connect explicit information support to decisions without equating predicted margins with guaranteed completion.",
+    "edited": "The effect of information support differed by site. At B, no difference passed Holm adjustment; at C, all three endpoint differences were zero. Figure~\\ref{fig:fig04} relates choices to ETA advantage, deadline margin and preemption. When ground is faster and avoids preemption, it is preferable on both service criteria. B1 can still select air because its rule ranks only air candidates. Available candidates therefore do not by themselves ensure a useful choice.\n\nAt A, 20 states offered faster air requiring preemption and ground that could still meet the deadline. B1, B2 and B4b selected air in 20, zero and 12 cases, respectively. The corresponding counts at B and C were 60/60/57 and 20/20/20. Thus, a conflict between speed and incumbent service did not always lead policies to choose differently.\n\nWhen A had no candidate predicted to finish on time, all 40 runs per coordinated policy were late despite different mode choices. At C, 24 of 27 such cases were late. The three timely cases show that candidate ETA is approximate. These observations link explicit information support to policy decisions while distinguishing predicted deadline margins from guaranteed completion.",
+    "original_line": 520,
+    "section": "The candidate interface shapes supervisory choices"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Every affected coordinated run established",
+    "purpose": "结果 E2：明确条件恢复分母与全样本迟到率，并解释剩余运输时间。",
+    "original": "Every affected coordinated run established an executable replacement path in E2 (Supplementary Figure S1). Prior assignments changed exposure, so B4b's affected counts differed from B1/B2's; B0's conditional recovery was N/A. Despite complete restoration among affected runs, B4b's all-run deadline-violation rates remained 39.06\\%, 37.50\\% and 62.81\\% at A, B and C. A surviving route could take longer than the remaining deadline margin.",
+    "edited": "Every affected coordinated run established an executable replacement path in E2 (Supplementary Figure S1). Earlier assignments changed exposure to failure, so B4b had different affected counts from B1/B2; B0's conditional recovery was N/A. Despite restoration in every affected run, B4b's deadline-violation rates over all runs remained 39.06\\%, 37.50\\% and 62.81\\% at A, B and C. Traveling along a surviving route could require more time than remained before the deadline.",
+    "original_line": 524,
+    "section": "Restored paths do not guarantee timely recovery"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "B4b completed later than",
+    "purpose": "结果 E2：简化审计式显著性表述，保持比较和统计结论不变。",
+    "original": "\nB4b completed later than B2 at A, with an adjusted difference passing the specified test (Table 6). Its conditional recovery-time difference did not pass correction. B and C completion differences were smaller and also did not pass Holm adjustment. Rapidly establishing replacement service does not remove the travel time that remains after the fault; dispatch latency and deadline performance therefore answer different operational questions.",
+    "edited": "At A, B4b completed later than B2, and the difference passed the specified multiplicity-adjusted test (Table 6). The conditional recovery-time difference did not pass correction. Completion differences at B and C were smaller and did not pass Holm adjustment. Establishing a replacement service quickly does not eliminate the travel time remaining after a fault. Dispatch latency and deadline performance therefore describe different operational outcomes.",
+    "original_line": 526,
+    "section": "Restored paths do not guarantee timely recovery"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "These averages contained clear limits.",
+    "purpose": "结果 E3：直接说明收益不成立的条件。",
+    "original": "These averages contained clear limits. At A, all policies retained loss 240 in L2. At C, coordination produced no SWL reduction in L1, L2 or L4; its improvement was confined to L3. Thus, the E1 benefit of air availability did not persist across every combination of failures and service demand.",
+    "edited": "Coordination did not reduce loss in every setting. At A, all policies retained loss 240 in L2. At C, coordination reduced SWL only in L3, with no reduction in L1, L2 or L4. The E1 benefit of air availability therefore did not persist across every combination of failures and service demand.",
+    "original_line": 562,
+    "section": "Compound service loss depends on surviving options"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "B4b did not significantly reduce",
+    "purpose": "结果 E3：保留不显著结论、区间和比较方向，使解释更直接。",
+    "original": "B4b did not significantly reduce SWL or CRITICAL+HIGH loss relative to B1 or B2 in the recorded compound comparison families. At A, its L3 and L4 SWL differences were +1.6875 (95\\% CI [-1.844, 5.219]) and +3.375 ([-3.689, 10.439]), with adjusted $p=1$. The corresponding compound-level differences at B and C were zero. The transport benefit follows the surviving deadline-compatible alternatives, while policy differences contribute little additional protection in these panels.",
+    "edited": "B4b did not significantly reduce SWL or CRITICAL+HIGH loss relative to B1 or B2 in the recorded compound comparison families. At A, its L3 and L4 SWL differences were +1.6875 (95\\% CI [-1.844, 5.219]) and +3.375 ([-3.689, 10.439]), with adjusted $p=1$. The corresponding compound-level differences at B and C were zero. In these panels, surviving alternatives that could meet deadlines accounted for the transport benefit; differences between policies added little protection.",
+    "original_line": 564,
+    "section": "Compound service loss depends on surviving options"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Primary speed alone also",
+    "purpose": "结果 E3：说明为何主任务更慢仍可能降低整体损失。",
+    "original": "Primary speed alone also missed service benefits. At A, coordinated policies reduced SWL despite longer mean primary completion than B0. The configured loss depends on which priority-weighted services cross deadlines, not solely on average primary travel time.",
+    "edited": "Mean primary completion time did not capture all service benefits. At A, coordinated policies reduced SWL even though mean primary completion took longer than under B0. The configured loss depends on which priority-weighted services miss their deadlines, not only on how quickly the primary mission finishes on average.",
+    "original_line": 566,
+    "section": "Compound service loss depends on surviving options"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The sites separate coordination",
+    "purpose": "跨站结果：解释协调机会与策略敏感性是不同观察。",
+    "original": "The sites separate coordination opportunity from sensitivity to policy. A contains decisions where ground remains timely and air reassignment offers a smaller speed gain at an incumbent-service cost. It also shows the strongest interface effect. B combines a dense network with a barrier-constrained reference corridor; C has more dead ends, higher sampled OD circuity and a longer reference trip. Both show large E1 coordination benefits with similar coordinated-policy outcomes.",
+    "edited": "The sites show that an opportunity for coordination need not imply strong sensitivity to policy choice. At A, ground can remain timely while air reassignment offers a smaller speed gain at the cost of incumbent service. This site also has the strongest interface effect. B combines a dense network with a barrier-constrained reference corridor. C has more dead ends, higher sampled OD circuity and a longer reference trip. Both have large E1 coordination benefits and similar outcomes across coordinated policies.",
+    "original_line": 570,
+    "section": "Contrasting morphology and policy sensitivity"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "C's limited E3 gains",
+    "purpose": "跨站结果：保留形态比较的非因果限定。",
+    "original": "C's limited E3 gains qualify this pattern: useful alternatives must preserve the relevant deadline to avoid the configured penalty. Across sites, road geometry, facilities, air travel times and fault timing change together. Morphology contextualizes the manager's choices; this comparison does not estimate an independent causal effect of density, circuity or redundancy.",
+    "edited": "C's limited E3 gains show the boundary of this pattern: an alternative must meet the relevant deadline to avoid the configured penalty. Road geometry, facilities, air travel times and fault timing vary together across sites. Morphology helps explain the context in which the supervisor chooses; the comparison does not estimate an independent causal effect of density, circuity or redundancy.",
+    "original_line": 572,
+    "section": "Contrasting morphology and policy sensitivity"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Longer observation intervals could",
+    "purpose": "结果 E4A：解释 service margin 耗尽对应的完成后果。",
+    "original": "Longer observation intervals could exhaust the available service margin (Figure~\\ref{fig:fig07}a; Supplementary Table S4). B2/B4b completion increased from 140 s at OBS10 to 482 s at OBS300. Their results coincided at every arm; B1 differed at OBS300, completing in 521 s. All B4b OBS10--OBS60 runs met the deadline, with OBS60 exactly on time, whereas OBS120/OBS300 were all late.",
+    "edited": "Longer observation intervals could leave too little time to complete the service (Figure~\\ref{fig:fig07}a; Supplementary Table S4). B2/B4b completion duration increased from 140 s at OBS10 to 482 s at OBS300. Their results matched in every arm. B1 differed at OBS300, completing in 521 s. All B4b runs in OBS10--OBS60 met the deadline, with OBS60 exactly on time; all runs in OBS120/OBS300 were late.",
+    "original_line": 578,
+    "section": "Observation scheduling"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The schedule delayed both",
+    "purpose": "结果 E4A：按事件顺序解释同秒快照为何看不到新任务。",
+    "original": "The schedule delayed both task discovery and fault observation. The 300 s snapshot preceded the same-second task event; the task first appeared at 310/330/360/360/600 s across the five arms. The 371 s fault appeared at 380/390/420/480/600 s. OBS120 restored the affected path without timely completion. OBS300 had no affected primary air chain, so its conditional recovery was N/A. A timestamp alone did not describe event visibility.",
+    "edited": "The observation schedule delayed discovery of both the task and the fault. The 300 s snapshot was taken before the task event in the same simulation second. The task first appeared at 310/330/360/360/600 s across the five arms, and the 371 s fault appeared at 380/390/420/480/600 s. OBS120 restored the affected path but completed late. OBS300 had no affected primary air chain, so conditional recovery was N/A. The snapshot timestamp alone therefore did not establish which events were visible.",
+    "original_line": 587,
+    "section": "Observation scheduling"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Longer intervals also reduced",
+    "purpose": "结果 E4A：明确决策调用数的统计范围。",
+    "original": "Longer intervals also reduced B4b decisions from 62 to four per run. These counts cover the fixed full-horizon polling protocol, including calls after some services resolved. They do not estimate an adaptive policy that stops polling after completion.",
+    "edited": "Longer intervals also reduced B4b decisions from 62 to four per run. These counts cover polling over the fixed full horizon, including calls after some services had resolved. They do not estimate the call count for an adaptive policy that stops polling after completion.",
+    "original_line": 589,
+    "section": "Observation scheduling"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The D60 sequence changed",
+    "purpose": "结果 E4B：分开实际命令替换机制与代码修正记录；后者原位保留。",
+    "original": "The D60 sequence changed the surviving command (Supplementary Figure S2). An air proposal selected at 300 s waited until 360 s, when the fault and a newer ground decision superseded it. Ground fallback then waited until 420 s and completed at 602 s. This was command replacement, not checker rejection of a stale action. After correcting identical-command replacement, B0 instead executes its ground command at 360 s and completes at 542 s: 242 s from release. Its original 302 s duration included an unintended second 60 s wait. All 20 B0 D60 runs reproduce the correction; D00 and D30 controls retain 182 and 212 s, and neighboring fault times retain 242 s. Supplementary Figure S2 distinguishes this corrected ground-only sequence from B4b's genuine air-to-ground replacement. These are effects of the specified event order and command semantics.",
+    "edited": "At D60, a newer command replaced the pending intervention (Supplementary Figure S2). An air proposal selected at 300 s was due to execute at 360 s. At that time, the fault triggered a newer ground decision that superseded the air proposal. Ground fallback then waited until 420 s and completed at 602 s. The change arose from command replacement, not checker rejection of a stale action.\n\nAfter the identical-command correction, B0 executes its ground command at 360 s and completes at 542 s, or 242 s after release. Its original 302 s duration included an unintended second 60 s wait. All 20 B0 D60 runs reproduce the correction. D00 and D30 controls retain 182 and 212 s, and neighboring fault times retain 242 s. Supplementary Figure S2 distinguishes the corrected ground-only sequence from B4b's genuine air-to-ground replacement. These outcomes depend on the specified event order and command semantics.",
+    "original_line": 595,
+    "section": "Execution waiting and command replacement"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Increasing total aircraft records",
+    "purpose": "结果 E4C：将输入规模、可用候选和表现分开报告。",
+    "original": "Increasing total aircraft records from five to fifty raised B4b prompt tokens per logged call from 3,982.1 to 20,593.5 (Figure~\\ref{fig:fig07}c; Supplementary Table S6). The active fleet remained four aircraft; 640 matched-stage checks retained the same legal candidates. All 100 B4b runs completed on time, with no observed illegal or nonexistent resource selection.",
+    "edited": "Increasing total aircraft records from five to fifty raised B4b prompt tokens per logged call from 3,982.1 to 20,593.5 (Figure~\\ref{fig:fig07}c; Supplementary Table S6). The active fleet remained four aircraft. Across 640 matched-stage checks, the legal candidates stayed the same. All 100 B4b runs completed on time, with no observed selection of an illegal or nonexistent resource.",
+    "original_line": 600,
+    "section": "Input burden with a fixed active fleet"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The N05 completion mean",
+    "purpose": "结果 E4C：保留错误与重试披露，不将关联写成未经验证的因果。",
+    "original": "The N05 completion mean was 121.5 s, compared with 120 s in N10--N50, alongside one retained transport error and another decision opportunity. E4 records four final transport-error calls and four structured retries overall. These remain included: the result concerns input burden for a fixed service problem, rather than coordination of fifty operational aircraft.",
+    "edited": "Mean completion duration was 121.5 s in N05 and 120 s in N10--N50. N05 included one retained transport error and another decision opportunity. Across E4, the records contain four final transport-error calls and four structured retries, all retained in the analysis. These results concern input burden for a fixed service problem, not coordination of fifty operational aircraft.",
+    "original_line": 602,
+    "section": "Input burden with a fixed active fleet"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "We develop the Manager as",
+    "purpose": "讨论：解释架构为何有用，避免再次罗列完整方法名称。",
+    "original": "We develop the Manager as a transport method whose decision object is a service intervention. Joint state becomes useful only when linked to a compatible resource, an executable action and a completion estimate. The candidate interface makes that link explicit and carries incumbent-service consequences into selection. Common checking and execution let researchers compare policy preferences without changing the underlying transport contract. This extends multimodal recovery and dynamic fleet management to a failure-prone ground--air service system. \\citep{ref4,ref20,ref22}",
+    "edited": "The Manager treats a service intervention as the unit of transport decision-making. A joint state observation becomes useful when the candidate generator links it to a compatible resource, an executable action and an estimated completion time. The candidate interface also shows which incumbent service would be interrupted. With common checking and execution rules, researchers can compare policy preferences under the same transport contract. This extends multimodal recovery and dynamic fleet management to a failure-prone ground--air service system. \\citep{ref4,ref20,ref22}",
+    "original_line": 609,
+    "section": "An executable service-management architecture"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The comparison shows why",
+    "purpose": "讨论：从比较结果提炼策略层的管理意义，不重复数值。",
+    "original": "The comparison shows why a replaceable policy layer is useful. Deterministic and LLM policies often obtain similar outcomes because the surviving alternatives strongly constrain what can be achieved. Where timely ground competes with faster preemptive air, policies can express different service preferences. B2 makes its valuation explicit through fixed weights; B4b sometimes exchanges incumbent preservation for additional emergency speed. The Manager exposes that exchange so an operator can evaluate it against service obligations.",
+    "edited": "A replaceable policy layer is useful because service choices matter most where feasible alternatives leave room for different preferences. Deterministic and LLM policies often produced similar outcomes when the surviving alternatives constrained what could be achieved. When ground remained timely but faster air required preemption, their choices could differ. B2 values speed and incumbent service through fixed weights; B4b sometimes interrupts an incumbent to complete the emergency faster. By exposing this choice, the Manager lets an operator assess it against service obligations.",
+    "original_line": 611,
+    "section": "An executable service-management architecture"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Low-altitude capacity yields resilience",
+    "purpose": "讨论：保留跨实验综合，各实验仅承担一个解释任务。",
+    "original": "Low-altitude capacity yields resilience when it supplies a useful alternative that can be executed in time. E1 demonstrates the bypass benefit and the cost of reallocating occupied aircraft. E2 separates successful path restoration from timely completion. E3 shows how surviving options protect priority-weighted services, while exhausted alternatives leave the same loss across policies. Together these findings connect network recovery to the service outcomes that motivate intervention. \\citep{ref1,ref3}",
+    "edited": "Low-altitude capacity improves resilience when it provides a useful alternative that can be executed in time. E1 shows how air transport can bypass a disruption and what is lost when an occupied aircraft is reassigned. E2 distinguishes path restoration from on-time completion. E3 shows that surviving options can protect priority-weighted services, whereas exhausted alternatives leave the same loss across policies. Together, these findings link network recovery to the service outcomes that justify intervention. \\citep{ref1,ref3}",
+    "original_line": 615,
+    "section": "Useful alternatives and the remaining service margin"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The decision-log analysis identifies",
+    "purpose": "讨论：把 operating conditions 还原为具体可比较的选项。",
+    "original": "The decision-log analysis identifies contrasting operating conditions. Clear speed and service-preservation advantages tend to align choices; smaller speed gains with preemption expose preferences; negative predicted margins identify services that are difficult to rescue. Predictions remain approximate, as Site C's few timely completions despite negative candidate margins illustrate. The interface must therefore expose the provenance of ETA and service consequences, and timing estimates must be interpreted together with realized trajectories.",
+    "edited": "The decision logs help explain when choices converge or diverge. Policies tend to agree when one option is both faster and preserves incumbent service. Smaller speed gains that require preemption reveal their different preferences. Negative predicted margins identify services that are difficult to rescue, but the estimates remain approximate: a few Site C missions finished on time despite negative candidate margins. The interface must therefore show how ETA and service consequences were derived, and readers must assess timing estimates alongside realized trajectories.",
+    "original_line": 617,
+    "section": "Useful alternatives and the remaining service margin"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Transfer sensitivity reinforces",
+    "purpose": "讨论：明确 offline 假设改变的是迟到状态，保留路径恢复结论。",
+    "original": "Transfer sensitivity reinforces this mechanism. In the offline replacement analysis, Site B's timely affected services retain only 19 s of margin. A 30 s handover assumption makes 80 previously timely services per coordinated policy late. Site A's deterministic replacements retain 60 s, while a small number of LLM trajectories are closer to the deadline. This does not alter the observed path-restoration result, but it makes physical transfer timing central to deploying the architecture.",
+    "edited": "The offline replacement analysis shows how omitted transfer time can change deadline outcomes. At Site B, timely affected services retain only 19 s of margin. Assuming a 30 s handover makes 80 previously timely services per coordinated policy late. At Site A, deterministic replacements retain 60 s, while a small number of LLM trajectories lie closer to the deadline. Path restoration remains observed in these runs, but deployment would require accounting for physical transfer time.",
+    "original_line": 619,
+    "section": "Useful alternatives and the remaining service margin"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Observation scheduling determines",
+    "purpose": "讨论：把抽象时间语义与 idempotent 译为具体管理要求，修正披露保留。",
+    "original": "Observation scheduling determines when a mission or fault enters the decision state. Pending-command semantics determine whether an accepted intervention reaches execution before circumstances change. E4 demonstrates both mechanisms: sparse observation can exhaust the deadline, and waiting can allow a fault to replace an air command with ground service. The B0 duplicate-command correction removes an implementation-induced delay and leaves the substantive air-to-ground replacement mechanism intact. A practical Manager needs deadline-aware observation and idempotent handling of repeated commands, in addition to a capable selection policy.",
+    "edited": "Observation scheduling determines when the supervisor can see a mission or fault. Queue rules determine whether an accepted intervention executes before circumstances change. E4 shows that sparse observation can leave too little time to meet the deadline, while execution waiting can allow a fault to replace an air command with ground service. The B0 duplicate-command correction removes a delay caused by the implementation and preserves the substantive air-to-ground replacement mechanism. A practical Manager therefore needs observations timed to service deadlines and repeat commands that do not restart a pending wait, as well as a capable selection policy.",
+    "original_line": 623,
+    "section": "Observation and execution are management decisions"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Explicit candidate information also",
+    "purpose": "讨论：说明信息支持和输入负担如何共同影响接口设计。",
+    "original": "Explicit candidate information also imposes computational input demand. B4a--B4b measures the support supplied by derived candidate facts, while E4C measures input burden around a fixed active fleet. These results guide interface design and policy selection together: the available facts should make consequential choices comparable without obscuring them in unnecessary records.",
+    "edited": "Explicit candidate information increases the input the policy must process. The B4a--B4b comparison measures the support provided by derived candidate facts, while E4C measures input burden around a fixed active fleet. Together, they suggest that interface design and policy selection should be considered jointly. The interface should make consequential service choices easy to compare without burying them among unnecessary records.",
+    "original_line": 625,
+    "section": "Observation and execution are management decisions"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "The evidence concerns fixed,",
+    "purpose": "讨论边界：分开现有证据范围与下一步，全部限制保留。",
+    "original": "The evidence concerns fixed, site-adapted scenario panels and a four-aircraft core fleet. Road morphology varies together with facility placement, flight distance and fault timing. Ground service uses a corridor ETA timer, and the registry abstracts payload custody and transfer synchronization; offline added-time sensitivity does not re-optimize a closed loop. Faults and feasibility checks implement specified service-level rules. SWL uses configured flat penalties, and incumbent damage is a final-state count. The tested LLM is one recorded backend and prompt family, with wall-clock inference decoupled from simulated transport. Next steps are task-specific ground and payload-transfer models, closed-loop transfer-delay experiments, larger active fleets and controlled variation of transport geometry. These extensions would test operational generalization of the mechanisms established here.",
+    "edited": "The evidence comes from fixed, site-adapted scenario panels with a four-aircraft core fleet. Road morphology varies together with facility placement, flight distance and fault timing, limiting what can be attributed to geometry alone. Ground service uses a corridor ETA timer. The registry abstracts payload custody and transfer synchronization, and the offline added-time analysis does not re-optimize the closed loop. Faults and feasibility checks follow specified service-level rules. SWL uses configured flat penalties; incumbent damage counts final states. The LLM results concern one recorded backend and prompt family, with wall-clock inference decoupled from simulated transport.\n\nNext steps are to model task-specific ground travel and payload transfer, test transfer delays in the closed loop, expand the active fleet, and vary transport geometry under controlled conditions. These extensions would test how far the observed mechanisms generalize to other operating conditions.",
+    "original_line": 629,
+    "section": "Scope and next steps"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "We propose a Ground--Low-Altitude Mobility Manager that connects",
+    "purpose": "结论：用已有简称综合核心贡献与发现。",
+    "original": "We propose a Ground--Low-Altitude Mobility Manager that connects joint transport observations to executable service reconfiguration. Its shared candidate interface makes feasibility, remaining time and incumbent-service consequences comparable across replaceable supervisory policies. The closed-loop experiments demonstrate selective air-support benefits, expose speed--service-preservation trade-offs and distinguish path restoration from timely service recovery.",
+    "edited": "The Manager connects joint transport observations to executable service reconfiguration. Its shared candidate interface lets replaceable supervisory policies compare feasibility, remaining time and consequences for incumbent services. The closed-loop experiments show when selective air support helps, when faster emergency transport costs incumbent service, and why restoring a path does not guarantee timely recovery.",
+    "original_line": 633,
+    "section": "Conclusions"
+  },
+  {
+    "file": "main.tex",
+    "anchor": "Low-altitude capacity alone does not ensure resilience.",
+    "purpose": "结论：用主体和动作收束管理含义，保留适用条件。",
+    "original": "Low-altitude capacity alone does not ensure resilience. Its value depends on selecting and executing useful cross-modal interventions before the remaining service margin is exhausted. Surviving alternatives define what can be rescued, service preferences determine which trade-offs are accepted, and observation--execution timing determines whether the selected intervention takes effect. The Manager provides a concrete architecture and comparative evidence for managing these dependencies.",
+    "edited": "Low-altitude capacity alone does not ensure resilience. It is useful when the supervisor selects a suitable cross-modal intervention and the executor applies it before the remaining service margin runs out. Surviving alternatives determine which services can be rescued. Policy preferences determine whether additional emergency speed justifies interrupting an incumbent service, and observation--execution timing determines whether the selected intervention takes effect. The Manager provides a concrete architecture and comparative evidence for managing these dependencies.",
+    "original_line": 635,
+    "section": "Conclusions"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "These tables report the revised",
+    "purpose": "补充结果：先说明表格内容，随后保留分析版本和归档信息。",
+    "original": "These tables report the revised numerical analysis. Means preserve the original fixed scenario weights. Intervals use seed blocks, and B0 D60 incorporates the closed-loop duplicate-command correction. Original data and earlier tables remain in the version archive.",
+    "edited": "The tables report service outcomes from the revised numerical analysis. Means use the original fixed scenario weights, and intervals use seed blocks. The B0 D60 results include the closed-loop duplicate-command correction. The version archive retains the original data and earlier tables.",
+    "original_line": 39,
+    "section": "Detailed experimental outcomes"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "Completion, damage and deadline-rate",
+    "purpose": "补充结果：明确零宽区间的含义与边界。",
+    "original": "Completion, damage and deadline-rate intervals use 20 seed blocks. Each block averages the same 12 scenarios. Zero-width intervals indicate no seed-to-seed variation in that fixed-panel average; they do not establish a universal rate. Each site--policy cell contains 240 runs.",
+    "edited": "Completion, damage and deadline-rate intervals use 20 seed blocks, each averaging the same 12 scenarios. A zero-width interval means that this fixed-panel average did not vary across seeds; it does not establish a universal rate. Each site--policy cell contains 240 runs.",
+    "original_line": 67,
+    "section": "Detailed experimental outcomes"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "All-run denominators are",
+    "purpose": "补充结果：解释恢复分母及为何不用独立样本区间。",
+    "original": "All-run denominators are 320 per site and policy. Recovery is conditional on actual primary-chain exposure; B0 is N/A. Restoration is reported as observed recovered/affected counts. The fixed-panel dependence is retained without an independent-run Wilson interval.",
+    "edited": "All-run outcomes use 320 runs per site and policy. Recovery is conditional on the primary air chain actually being affected; it is N/A for B0. Restoration is reported as observed recovered/affected counts. We retain dependence within the fixed panel and do not apply a Wilson interval that assumes independent runs.",
+    "original_line": 95,
+    "section": "Detailed experimental outcomes"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The vocabulary is larger",
+    "purpose": "补充动作定义：简化动作支持范围的限定。",
+    "original": "The vocabulary is larger than the set exercised by any single scenario. Supporting an action type in the contract does not imply that the experiments independently validate every possible use of that action. The candidate interface retains legal flags and rejection reasons, while the checker applies action-specific conditions.",
+    "edited": "Each scenario uses only part of this vocabulary. Including an action type in the contract does not mean that the experiments validate every possible use of it. The candidate interface records legal flags and rejection reasons, and the checker applies conditions specific to each action.",
+    "original_line": 273,
+    "section": "Structured action vocabulary"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The complete template is supplied",
+    "purpose": "补充输入：按照共同输入和新增输入解释消融，保留字段路径。",
+    "original": "The complete template is supplied as \\nolinkurl{reproducibility/prompts/manager_v2.txt}; the input renderer and action schema accompany it. B4a and B4b both use the full global snapshot excluding the \\nolinkurl{candidates} field. B4b appends that field as a separate JSON section, while B4a omits it. Both retain raw resource state, mission assignments, priorities, positions, deadlines, ground ETA, prompt rules and the common checker. Only B4b receives the derived air ETA, completion prediction, per-candidate legality/rejection reason and explicit preempted-mission mapping. The ablation therefore measures explicit candidate-information support, jointly including information derivation and presentation.",
+    "edited": "The complete template is supplied as \\nolinkurl{reproducibility/prompts/manager_v2.txt}, together with the input renderer and action schema. Both B4a and B4b receive the full global snapshot without its \\nolinkurl{candidates} field. B4b receives that field in a separate JSON section; B4a does not. Both retain raw resource state, mission assignments, priorities, positions, deadlines, ground ETA, prompt rules and the common checker. Only B4b receives derived air ETA, completion predictions, per-candidate legality/rejection reasons and the explicit mapping to preempted missions. The ablation therefore tests explicit candidate-information support, including both derived information and its presentation.",
+    "original_line": 277,
+    "section": "Policy inputs and parameters"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "B2 weights and the prompt template",
+    "purpose": "补充参数：直接说明已知配置与未核实后端版本。",
+    "original": "B2 weights and the prompt template are unchanged. Mission-specific delay and cancellation penalties, secondary releases, workload assignments and site adaptations are specified in the supplied YAML matrices. The policy identifier records the configured backend service; no unverified underlying model-version claim is made.",
+    "edited": "B2 weights and the prompt template remain unchanged. The supplied YAML matrices specify mission-specific delay and cancellation penalties, secondary releases, workload assignments and site adaptations. The policy identifier names the configured backend service; the underlying model version has not been verified.",
+    "original_line": 311,
+    "section": "Policy inputs and parameters"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The runner initializes a fresh",
+    "purpose": "补充统计：按随机数调用顺序解释相关性和分块。",
+    "original": "The runner initializes a fresh \\nolinkurl{random.Random(seed)} for every scenario. Aircraft are visited in sorted order; every aircraft consumes an endurance draw and each busy aircraft an additional progress draw. The same SUMO seed is also reused. Workload-dependent draw consumption changes realizations, but does not create independently keyed scenario streams. We retain dependence within each seed across the fixed scenario panel and pair policies by scenario and seed. This choice follows implementation, not seed labels or state hashes alone.",
+    "edited": "The runner initializes a fresh \\nolinkurl{random.Random(seed)} for every scenario and visits aircraft in sorted order. Each aircraft consumes an endurance draw, and each busy aircraft consumes an additional progress draw. SUMO also reuses the same seed. Workload-dependent draw counts change the realizations, but they do not create independently keyed scenario streams. We therefore retain dependence within each seed across the fixed scenario panel and pair policies by scenario and seed. This decision follows the implementation, rather than seed labels or state hashes alone.",
+    "original_line": 317,
+    "section": "Fixed-panel estimand and random streams"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "For a complete panel, each seed",
+    "purpose": "补充统计：保留公式和估计对象，说明条件样本数量为何不同。",
+    "original": "For a complete panel, each seed contributes the average of its scenario-specific outcomes or paired differences. Means retain equal scenario--run weights. A t interval uses the standard deviation across 20 seed averages (10 in the E1 ablation). For a conditional endpoint with $N$ retained pairs, let $\\bar d$ be the original pair-weighted mean and $K$ the number of represented seeds. The cluster contribution is\n\\[\nB_s=\\bar d+\\frac{K}{N}\\sum_{i:\\,s_i=s}(d_i-\\bar d).\n\\]\nThe interval is $\\bar d\\pm t_{.975,K-1}\\operatorname{sd}(B_s)/\\sqrt K$. This preserves the jointly affected pair-weighted estimand instead of silently reweighting seeds with different exposure counts. Conditional populations remain policy-dependent: at Site C, B4b has 201 affected runs and the B4b--B2 recovery comparison retains 200 jointly affected pairs.",
+    "edited": "For a complete panel, each seed contributes the average of its scenario-specific outcomes or paired differences. Means keep equal scenario--run weights. A t interval uses the standard deviation across 20 seed averages (10 in the E1 ablation). For a conditional endpoint with $N$ retained pairs, let $\\bar d$ denote the original pair-weighted mean and $K$ the number of represented seeds. The cluster contribution is\n\\[\nB_s=\\bar d+\\frac{K}{N}\\sum_{i:\\,s_i=s}(d_i-\\bar d).\n\\]\nThe interval is $\\bar d\\pm t_{.975,K-1}\\operatorname{sd}(B_s)/\\sqrt K$. This retains the mean over jointly affected pairs without reweighting seeds that have different exposure counts. Conditional populations can differ by policy. At Site C, B4b has 201 affected runs, whereas the B4b--B2 recovery comparison includes 200 jointly affected pairs.",
+    "original_line": 319,
+    "section": "Fixed-panel estimand and random streams"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "Continuous tests use these seed",
+    "purpose": "补充统计：将推断规则与端点清单分段，保留全部比较族。",
+    "original": "Continuous tests use these seed contributions with the original constant-difference signed-rank fallback. Binary tests enumerate policy-label swaps of whole seed blocks; the test statistic is the total discordant paired difference. This retains the paired design while replacing an independent-pair McNemar assumption. No scenarios, endpoints or correction families are selected according to their p-values. Intervals are unadjusted; Holm-adjusted p-values retain the original three E1 ablation, 12 E2 and 12 E3 compound endpoints per site. E1 scenario-specific and E4 single-scenario comparisons retain their original seed units. The E2 family includes completion, recovery time, replan latency, incumbent damage, candidate reduction, deadline violation, restoration, recovered completion, ground fallback, failure-induced fallback, necessary-fallback correctness and air intervention. E3 compares B4b with B1/B2 at L2--L4 for SWL and CRITICAL+HIGH loss.",
+    "edited": "Continuous tests use these seed contributions, with the original signed-rank fallback for constant differences. Binary tests enumerate policy-label swaps of whole seed blocks and use the total discordant paired difference as the test statistic. This preserves pairing without assuming independent pairs for McNemar inference. Scenarios, endpoints and correction families are not selected by their p-values. Intervals are unadjusted. Holm-adjusted p-values retain the original three E1 ablation, 12 E2 and 12 E3 compound endpoints per site. E1 scenario-specific and E4 single-scenario comparisons keep their original seed units.\n\nThe E2 family includes completion, recovery time, replan latency, incumbent damage, candidate reduction, deadline violation, restoration, recovered completion, ground fallback, failure-induced fallback, necessary-fallback correctness and air intervention. E3 compares B4b with B1/B2 at L2--L4 for SWL and CRITICAL+HIGH loss.",
+    "original_line": 325,
+    "section": "Fixed-panel estimand and random streams"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "All 2,880 E3 run registries",
+    "purpose": "补充审计：分开 SWL 完整性和既有服务暴露；时长疑问保留为作者问题。",
+    "original": "All 2,880 E3 run registries were checked against their 900 s horizons. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\\_ROUTE or ASSIGNED. Thus no SWL correction or overdue-task penalty sensitivity is needed for this dataset. Background missions with 1,800 s deadlines are not treated as failures merely for remaining in service at 900 s. Incumbent damage remains a count of damaged final states. As a complementary E1 measure, the recorded preemption time was linked to the incumbent identified in the candidate log and its final interrupted state. The preemption-to-horizon exposure of these persistently interrupted services averages 35 s per run for B2 and 80 s for B4b at A (B1: 300 s). This is horizon-truncated exposure, not a complete cumulative interruption-cost measure. Mission CSV records omit some incumbent preemption transitions, so zero logged interruption duration would be misleading. Initial incumbent deadlines are 1,800 s, beyond the 900 s horizon; no incumbent lateness claim is inferred from this exposure.",
+    "edited": "All 2,880 E3 run registries were checked against their 900 s horizons. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\\_ROUTE or ASSIGNED. This dataset therefore requires no SWL correction or sensitivity analysis for overdue-task penalties. Background missions with 1,800 s deadlines are not classified as failures solely because they remain in service at 900 s. Incumbent damage remains a count of damaged final states.\n\nAs a complementary E1 measure, we linked recorded preemption times to the incumbent identified in the candidate log and its final interrupted state. At A, exposure from preemption to the horizon for persistently interrupted services averages 35 s per run for B2 and 80 s for B4b (B1: 300 s). This measure is truncated at the horizon; it does not capture the complete cumulative cost of interruption. Mission CSV records omit some incumbent preemption transitions, so a logged interruption duration of zero would be misleading. Initial incumbent deadlines are 1,800 s, beyond the 900 s horizon. This exposure measure therefore supports no claim about incumbent lateness.",
+    "original_line": 331,
+    "section": "Service-loss audit"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The original B0 D60 action",
+    "purpose": "补充代码修正：按时间顺序解释重复命令如何造成额外等待。",
+    "original": "The original B0 D60 action pipeline records GROUND\\_FALLBACK at 300 s, due at 360 s. The 360 s fault invokes a new decision with the identical normalized action and identical 181.763 s ETA field. The original queue replaces the first command, restarts the 60 s wait, issues at 420 s and completes at 602 s. This caused the original 302 s completion duration.",
+    "edited": "The original B0 D60 pipeline records a GROUND\\_FALLBACK command at 300 s, due at 360 s. At 360 s, the fault triggers a new decision with the same normalized action and the same 181.763 s ETA field. The original queue replaces the pending command and restarts the 60 s wait. It issues the command at 420 s, and transport completes at 602 s. This extra wait produced the original 302 s completion duration.",
+    "original_line": 337,
+    "section": "Duplicate pending commands and E4B regression"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The revision preserves the original",
+    "purpose": "补充复现：分开队列规则、回归结果及差异披露；不删透明性信息。",
+    "original": "The revision preserves the original due time when a validated normalized action exactly matches a pending one. It continues to supersede a pending command when the action changes, and revalidates the surviving command at execution. The correction is implemented in \\nolinkurl{queue_fix.py}, as an overlay without altering original project source or raw runs. All 20 B0 D60 seeds were rerun through SUMO--BlueSky: issue at 360 s, completion at 542 s, duration 242 s. Single-seed D00/D30 controls retain 182/212 s; fault times 359/361 s both give 242 s. B2's changed air-to-ground command retains a 302 s duration. B1 retains its air-to-air replacement sequence; patched and unpatched control reruns both give 342 s in the current runtime, versus the archived 341 s, a 1 s runtime reproduction difference unrelated to deduplication. Its archived cell is retained because the correction does not change its command sequence. No LLM calls were made in these regressions; original B4b traces contain genuine command replacement and remain unchanged.",
+    "edited": "The revised queue keeps the original due time when a validated normalized action exactly matches a pending command. A changed action still supersedes the pending command, and the surviving command is revalidated at execution. The \\nolinkurl{queue_fix.py} overlay implements this correction without changing the original project source or raw runs.\n\nAll 20 B0 D60 seeds were rerun through SUMO--BlueSky. The command issued at 360 s, and transport completed at 542 s, giving a duration of 242 s. Single-seed D00/D30 controls retain 182/212 s; fault times 359/361 s both give 242 s. B2's changed air-to-ground command retains a 302 s duration. B1 retains its air-to-air replacement sequence. Patched and unpatched control reruns both give 342 s in the current runtime, compared with the archived 341 s. This 1 s reproduction difference is unrelated to deduplication. We retain the archived cell because the correction does not change the command sequence. These regressions made no LLM calls. The original B4b traces contain genuine command replacement and remain unchanged.",
+    "original_line": 339,
+    "section": "Duplicate pending commands and E4B regression"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "Table S5, main Figure 6",
+    "purpose": "补充边界：简化表述；原图号待确认，不擅自修正。",
+    "original": "Table S5, main Figure 6 and Supplementary Figure S2 replace the affected B0 cell only. D60 is an evaluated event-order configuration, not a universal transport-delay threshold. External backend wall time remains separate from controlled simulation waiting.",
+    "edited": "Table S5, main Figure 6 and Supplementary Figure S2 update only the affected B0 cell. D60 tests a specified event order; it does not establish a universal transport-delay threshold. Backend wall-clock time remains separate from controlled simulation waiting.",
+    "original_line": 341,
+    "section": "Duplicate pending commands and E4B regression"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The model replaces a service",
+    "purpose": "补充转运：说明替代服务与实体载荷转移的模型边界。",
+    "original": "The model replaces a service assignment; it does not track an individual payload. New air candidates route through the mission origin. Interrupted-service candidates route through V3 before the destination, but a backup can be dispatched before the original carrier has reached V3. Preemption interrupts and detaches the incumbent mission. Ground takeover establishes a service timer using the current reference corridor ETA. There is no explicit unloading, rendezvous, loading, new inventory or re-shipment state.",
+    "edited": "The model replaces service assignments without tracking individual payloads. New air candidates route through the mission origin. Interrupted-service candidates route through V3 before the destination, but the supervisor can dispatch a backup before the original carrier reaches V3. Preemption interrupts and detaches the incumbent mission. Ground takeover starts a service timer based on the current reference corridor ETA. The model has no explicit states for unloading, rendezvous, loading, new inventory or re-shipment.",
+    "original_line": 345,
+    "section": "Physical transfer semantics and offline added-time sensitivity"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "We therefore evaluate added",
+    "purpose": "补充敏感性：分开施加规则、判定条件及固定轨迹限制。",
+    "original": "We therefore evaluate added transfer time as an \\emph{offline trajectory-fixed sensitivity}, not a new closed-loop experiment. For an actually affected E2 mission with a post-failure DISPATCH, REASSIGN or GROUND\\_FALLBACK, add one hypothesized transfer delay $h$ to its recorded completion. The same rule applies to every policy; uninterrupted services receive no added time. A previously timely completion changes status when $0\\le d_m-c_m<h$. Choices, fault exposure and later scheduling are held fixed. Values $h=15,30,60$ s are illustrative assumptions, not measured handling durations.",
+    "edited": "We evaluate added transfer time through an \\emph{offline trajectory-fixed sensitivity}, rather than a new closed-loop experiment. For an actually affected E2 mission with a post-failure DISPATCH, REASSIGN or GROUND\\_FALLBACK, we add one hypothesized transfer delay $h$ to recorded completion. The rule is the same for every policy; uninterrupted services receive no added time. A previously timely completion becomes late when $0\\le d_m-c_m<h$. Choices, fault exposure and later scheduling remain fixed. The values $h=15,30,60$ s are illustrative assumptions, not measured handling durations.",
+    "original_line": 347,
+    "section": "Physical transfer semantics and offline added-time sensitivity"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "At Site B, 80 affected",
+    "purpose": "补充敏感性：分开跨站结果与抢占实例；保留严格不等式和假设范围。",
+    "original": "At Site B, 80 affected replacements per coordinated policy are timely with 19 s remaining; a 30 s addition makes all 80 late. At A, B1/B2 timely replacements have 60 s remaining and none flips for $h\\le60$ s; B4b has one flip at 15/30 s and two at 60 s. At C, affected replacements in this subset are already late. For the preemption example in Section 4.2, 17 s of extra air-specific handling erases the realized 212 versus 229 s speed advantage; more than 88 s also loses its emergency deadline. Adding the same handling time to both initial alternatives preserves their speed difference, so this threshold applies specifically to an additional preemption step. These checks show which conclusions depend on omitted stages; they do not verify dynamic rescheduling with payload transfer.",
+    "edited": "At Site B, 80 affected replacements per coordinated policy are timely with 19 s remaining; adding 30 s makes all 80 late. At A, timely B1/B2 replacements have 60 s remaining, and none becomes late for $h\\le60$ s. B4b has one such change at 15/30 s and two at 60 s. At C, the affected replacements in this subset are already late.\n\nIn the preemption example in Section 4.2, an extra 17 s of air-specific handling erases the realized speed advantage of 212 versus 229 s. More than 88 s also causes the emergency to miss its deadline. Adding the same handling time to both initial alternatives preserves their speed difference, so this threshold concerns an additional preemption step specifically. These checks identify conclusions that depend on omitted stages. They do not validate dynamic rescheduling with payload transfer.",
+    "original_line": 351,
+    "section": "Physical transfer semantics and offline added-time sensitivity"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "The original morphology routine",
+    "purpose": "补充地理审计：解释每一步处理，保留原错误与修正记录。",
+    "original": "The original morphology routine summed all imported passenger edges while dividing by 10.24 km$^2$, without clipping to its bbox argument. The revised lengths intersect every edge polyline with the configured geographic rectangle projected through the SUMO network transform. SUMO edge lengths are apportioned by the clipped polyline fraction. Density uses that same polygon's area. Intersection counts retain nodes within the polygon and count distinct neighbors in the full graph, avoiding artificial boundary intersections. Original full-network topology, OD samples and routing remain separately identified and unchanged. Site C still has higher intersection density than A; its description relies on dead ends, degree, circuity and facility distance.",
+    "edited": "The original morphology routine summed all imported passenger edges and divided by 10.24 km$^2$, without clipping them to its bbox argument. The revised calculation intersects each edge polyline with the configured geographic rectangle after projection through the SUMO network transform. It apportions SUMO edge lengths by the fraction of the polyline inside the rectangle and uses the same polygon's area for density. Intersection counts include only nodes inside the polygon, but count their distinct neighbors in the full graph to avoid artificial boundary intersections. Original full-network topology, OD samples and routing remain separately identified and unchanged. Site C still has higher intersection density than A; its description instead draws on dead ends, degree, circuity and facility distance.",
+    "original_line": 355,
+    "section": "Road-statistics boundary"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "Zone applicability is evaluated",
+    "purpose": "补充故障：明确检查主体与 recovery 定义。",
+    "original": "Zone applicability is evaluated at decision and execution, with configured active windows. Communication, navigation, UTM and landing-site states are not automatically repaired during these runs. Recovery denotes establishing replacement service, not repairing the original aircraft or infrastructure.",
+    "edited": "The decision and execution checks evaluate whether zones apply within their configured active windows. Communication, navigation, UTM and landing-site states are not automatically repaired during these runs. Recovery means establishing a replacement service, not repairing the original aircraft or infrastructure.",
+    "original_line": 371,
+    "section": "Fault state machines and recovery conditions"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "Figure 1 combines separate,",
+    "purpose": "补充图像来源：保留 AI 生成、作者编辑和非观测图示披露。",
+    "original": "Figure 1 combines separate, text-free AI-generated illustrations with editable PowerPoint text, routes, containers and markers. Its map is marked Not to scale and its finding graphics are schematic. A later author-edited PowerPoint removed the duplicate figure title and adjusted module labels; these edits are retained in the revision. The visual reference was supplied by the authors; generated illustrations do not depict observations or operational deployments at the study sites. Images were produced with the built-in imagegen tool and composed into PowerPoint. The retained illustration records identify the imagegen tool; no unverifiable model-release version is assigned.",
+    "edited": "Figure 1 combines separate, text-free AI-generated illustrations with editable PowerPoint text, routes, containers and markers. The map is labeled Not to scale; the finding graphics are schematic. The revision retains the authors' later PowerPoint edits removing the duplicate figure title and adjusting module labels. The authors supplied the visual reference. The illustrations depict no observations or operational deployments at the study sites. They were produced with the built-in imagegen tool and composed in PowerPoint. The records identify the tool without assigning an unverifiable model-release version.",
+    "original_line": 375,
+    "section": "Figure production and source records"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "All figure text uses",
+    "purpose": "补充图像来源：保持精简的生产说明，图号已核实。",
+    "original": "All figure text uses Times New Roman. Main Figure 3 uses native clustered-column charts with the existing seed-block intervals. Main Figure 4 restores the candidate-geometry, preemption-choice and deadline-outcome layout. Main Figure 5 contains editable vector heatmaps and contrasts; main Figure 6 and Supplementary Figure S1 use native charts with embedded workbooks. Supplementary Figure S2 retains editable pending-command and transport segments. The two PowerPoint files retain their source slide order; the editing guide maps slides to current main and supplementary figure numbers.",
+    "edited": "All figure text uses Times New Roman. Main Figure 3 uses native clustered-column charts with existing seed-block intervals. Main Figure 4 restores the candidate-geometry, preemption-choice and deadline-outcome layout. Main Figure 5 contains editable vector heatmaps and contrasts; main Figure 6 and Supplementary Figure S1 use native charts with embedded workbooks. Supplementary Figure S2 retains editable pending-command and transport segments. Both PowerPoint files keep their source slide order, with the editing guide mapping slides to current main and supplementary figure numbers.",
+    "original_line": 377,
+    "section": "Figure production and source records"
+  },
+  {
+    "file": "supplement.tex",
+    "anchor": "No public repository URL is assigned.",
+    "purpose": "补充复现入口：以文件功能组织信息，保留所有路径和材料类别。",
+    "original": "No public repository URL is assigned. The accompanying \\nolinkurl{REPRODUCTION_README.md} and \\nolinkurl{reproduce_analysis.ps1} provide original run locations, dependencies and executable processing order. The \\nolinkurl{reproducibility/} folder contains prompts, schemas, weights, experiment configurations, derived data and a hashed file inventory. The local correction overlay and optional regression entry point are included; the regression makes no LLM calls. Editable figure builders and PowerPoint sources accompany the LaTeX package.",
+    "edited": "No public repository URL has been assigned. \\nolinkurl{REPRODUCTION_README.md} and \\nolinkurl{reproduce_analysis.ps1} specify original run locations, dependencies and executable processing order. The \\nolinkurl{reproducibility/} folder contains prompts, schemas, weights, experiment configurations, derived data and a hashed file inventory. The package includes the local correction overlay, an optional regression entry point that makes no LLM calls, editable figure builders and PowerPoint sources.",
+    "original_line": 381,
+    "section": "Reproduction files and entry points"
+  }
+]

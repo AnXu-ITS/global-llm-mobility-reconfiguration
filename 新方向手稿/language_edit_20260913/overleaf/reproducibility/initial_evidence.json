@@ -1,0 +1,151 @@
+{
+  "A": {
+    "runs": 960,
+    "deadline_le_horizon_states": {
+      "COMPLETED": 1440
+    },
+    "expired_ongoing": []
+  },
+  "B": {
+    "runs": 960,
+    "deadline_le_horizon_states": {
+      "COMPLETED": 1440
+    },
+    "expired_ongoing": []
+  },
+  "C": {
+    "runs": 960,
+    "deadline_le_horizon_states": {
+      "COMPLETED": 1440
+    },
+    "expired_ongoing": []
+  },
+  "result_schema": {
+    "release": "str",
+    "primary_runs": "int",
+    "ablation_runs": "int",
+    "inference": "str",
+    "E1": [
+      "A",
+      "B",
+      "C"
+    ],
+    "E2": [
+      "A",
+      "B",
+      "C"
+    ],
+    "E3": [
+      "A",
+      "B",
+      "C"
+    ],
+    "E4": [
+      "cohort",
+      "anchor_arm",
+      "analysis_version",
+      "matrix_version",
+      "definitions",
+      "4A",
+      "4B",
+      "4C"
+    ]
+  },
+  "e2_schema": [
+    "action_types",
+    "affected_critical",
+    "air_availability_after",
+    "air_availability_before",
+    "air_intervention",
+    "candidate_count_after",
+    "candidate_count_before",
+    "candidate_count_pre_failure_asif",
+    "candidate_set_reduction_delta",
+    "critical_first_valid_replan_time_s",
+    "critical_mission_completion_t",
+    "critical_mission_completion_time_s",
+    "critical_mission_deadline_s",
+    "critical_mission_deadline_violation",
+    "critical_mission_final_mode",
+    "critical_mission_final_resource",
+    "critical_mission_final_state",
+    "critical_mission_id",
+    "disruption",
+    "duration_s",
+    "existing_missions_damaged",
+    "existing_missions_damaged_count",
+    "experiment",
+    "failed_resource_reselection",
+    "failure_config_hash",
+    "failure_family",
+    "failure_induced_ground_fallback",
+    "failure_time",
+    "failure_to_replan_latency_s",
+    "ground_fallback",
+    "ground_fallback_rate",
+    "impact_context",
+    "issued_action_types",
+    "llm_latency_total_s",
+    "llm_retry_total",
+    "manager",
+    "manager_kind",
+    "necessary_ground_fallback",
+    "necessary_ground_fallback_correct",
+    "num_manager_decisions",
+    "post_failure_issued_types",
+    "post_failure_proposals",
+    "post_failure_proposed_types",
+    "post_failure_rejected",
+    "post_failure_rejected_failure_related",
+    "reassignment_count",
+    "recovered_completed",
+    "recovery_mode",
+    "recovery_success",
+    "recovery_time_s",
+    "scenario_id",
+    "seed",
+    "tradeoff_label",
+    "urgency",
+    "workload",
+    "decision_switch_count",
+    "decision_oscillation_count",
+    "analysis_version",
+    "paper_manager",
+    "paper_site",
+    "paper_experiment",
+    "source_run"
+  ],
+  "e1_example": {
+    "action_types": [
+      "GROUND_FALLBACK"
+    ],
+    "air_intervention": false,
+    "critical_mission_completion_t": 529,
+    "critical_mission_completion_time_s": 229,
+    "critical_mission_deadline_s": 600,
+    "critical_mission_deadline_violation": false,
+    "critical_mission_final_mode": "GROUND",
+    "critical_mission_final_resource": "GROUND",
+    "critical_mission_final_state": "COMPLETED",
+    "critical_mission_id": "M-EMERGENCY-001",
+    "disruption": "HIGH",
+    "duration_s": 900,
+    "existing_missions_damaged": [],
+    "existing_missions_damaged_count": 0,
+    "ground_fallback": true,
+    "issued_action_types": [
+      "GROUND_FALLBACK"
+    ],
+    "llm_latency_total_s": 0.0,
+    "llm_retry_total": 0,
+    "manager": "optimization",
+    "manager_kind": "optimization",
+    "num_manager_decisions": 1,
+    "reassignment_count": 0,
+    "scenario_id": "E1_H_H_high",
+    "seed": 20240601,
+    "tradeoff_label": "ground_preferable",
+    "urgency": "HIGH",
+    "workload": "high"
+  }
+}

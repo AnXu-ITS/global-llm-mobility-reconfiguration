@@ -1,0 +1,29 @@
+--- a/source/revision_v3/rewrite_manuscript.py
++++ b/source/revision_v3/rewrite_manuscript.py
+@@ -237,7 +237,7 @@
+ Endurance & Initial 1,800 s, reduced by a seeded 0--15\%; candidate reserve margin 60 s \\
+ Busy-aircraft progress & Seeded fraction 0.05--0.40 of its initial route \\
+ Simulation step / ordinary decision period & 1 s / 30 s while actionable; E4A overrides observation polling \\
+-Horizon / emergency release & 900 s / 300 s \\
++Simulation horizon / primary emergency release & 900 s (E3 L3/L4: 1,200 s) / 300 s \\
+ E1 deadline slack & HIGH 300 s; CRITICAL 180 s \\
+ E2/E4 primary deadline & 480 s at Site A; site-adapted configurations accompany the data \\
+ Incumbent default deadline & 1,800 s for initial background missions \\
+@@ -268,7 +268,7 @@
+ 
+ \subsection{Service-loss audit}
+ 
+-All 2,880 E3 run registries were checked against their 900 s horizons. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\_ROUTE or ASSIGNED. Thus no SWL correction or overdue-task penalty sensitivity is needed for this dataset. Background missions with 1,800 s deadlines are not treated as failures merely for remaining in service at 900 s. Incumbent damage remains a count of damaged final states, not an accumulated interruption duration.
++All 2,880 E3 run registries were checked against their run-specific horizons: 900 s for L1/L2 and 1,200 s for L3/L4. At each site, 1,440 task instances had deadlines at or before the horizon, and all were COMPLETED. Across sites, zero overdue tasks remained EN\_ROUTE or ASSIGNED. Thus no SWL correction or overdue-task penalty sensitivity is needed for this dataset. Background missions with 1,800 s deadlines are not treated as failures merely for remaining in service at the end of a 900 or 1,200 s run. Incumbent damage remains a count of damaged final states, not an accumulated interruption duration.
+ 
+ '''
+ si=si[:st]+stats_text+si[en:]
+@@ -333,7 +333,7 @@
+ 
+ rep=W/'overleaf/reproducibility';rep.mkdir(exist_ok=True)
+ def tex_table(caption,label,head,rows,spec):
+- return '\n'.join([r'\begin{table}[H]\centering\footnotesize',r'\caption{'+caption+'}'+r'\label{'+label+'}',r'\begin{tabularx}{\textwidth}{@{}'+spec+'@{}}\toprule',' & '.join(head)+r' \\\midrule',*[' & '.join(map(str,row))+r' \\' for row in rows],r'\bottomrule\end{tabularx}\end{table}'])
++ return '\n'.join([r'\begin{table}[H]\centering\footnotesize',r'\caption{'+caption+'}'+r'\label{'+label+'}',r'\begin{tabularx}{\textwidth}{@{}'+spec+r'@{}}\toprule',' & '.join(head)+r' \\\midrule',*[' & '.join(map(str,row))+r' \\' for row in rows],r'\bottomrule\end{tabularx}\end{table}'])
+ rows=[]
+ for s in 'ABC':
+  for t in D['E2'][s]['b4b_vs_b2_family']:

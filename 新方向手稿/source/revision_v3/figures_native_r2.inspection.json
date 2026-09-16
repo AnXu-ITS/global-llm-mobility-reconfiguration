@@ -1,0 +1,1230 @@
+﻿[
+    {
+        "slide":  1,
+        "shapes":  425,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "Contrasting network morphology",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  328.125031,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "(a) Site A: Suzhou",
+                              "width":  277.5,
+                              "height":  25.5,
+                              "boundWidth":  149.09,
+                              "boundHeight":  22.5,
+                              "rotation":  0,
+                              "fontSize":  18.75
+                          },
+                          {
+                              "text":  "D1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  23.25,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "H1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  24.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Closure",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  56.21504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "V3",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "500 m",
+                              "width":  75,
+                              "height":  21,
+                              "boundWidth":  43.87504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Urban (meshed)",
+                              "width":  292.5,
+                              "height":  22.5,
+                              "boundWidth":  106,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(b) Site B: Amsterdam",
+                              "width":  277.5,
+                              "height":  25.5,
+                              "boundWidth":  184.59,
+                              "boundHeight":  22.5,
+                              "rotation":  0,
+                              "fontSize":  18.75
+                          },
+                          {
+                              "text":  "D1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  23.25,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "H1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  24.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Closure",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  56.21504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "V3",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "D2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "H2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.87504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "C2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "500 m",
+                              "width":  75,
+                              "height":  21,
+                              "boundWidth":  43.87504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "River (barrier)",
+                              "width":  292.5,
+                              "height":  22.5,
+                              "boundWidth":  95.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(c) Site C: Edmonton",
+                              "width":  277.5,
+                              "height":  25.5,
+                              "boundWidth":  174.125046,
+                              "boundHeight":  22.5,
+                              "rotation":  0,
+                              "fontSize":  18.75
+                          },
+                          {
+                              "text":  "D1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  23.25,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "H1",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  24.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Closure",
+                              "width":  58.5,
+                              "height":  20.25,
+                              "boundWidth":  56.21504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "V3",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "D2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "H2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.87504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "C2",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "C3",
+                              "width":  31.5,
+                              "height":  21,
+                              "boundWidth":  22.12504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "500 m",
+                              "width":  75,
+                              "height":  21,
+                              "boundWidth":  43.87504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Suburban (sparse)",
+                              "width":  292.5,
+                              "height":  22.5,
+                              "boundWidth":  118.25,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Primary ground",
+                              "width":  153.75,
+                              "height":  25.5,
+                              "boundWidth":  98.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Detour",
+                              "width":  153.75,
+                              "height":  25.5,
+                              "boundWidth":  45.37504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Primary air",
+                              "width":  153.75,
+                              "height":  25.5,
+                              "boundWidth":  71.5,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Auxiliary ground",
+                              "width":  153.75,
+                              "height":  25.5,
+                              "boundWidth":  107.375038,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Other air",
+                              "width":  153.75,
+                              "height":  25.5,
+                              "boundWidth":  57.37504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          }
+                      ]
+    },
+    {
+        "slide":  2,
+        "shapes":  16,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "E1: selective air support and incumbent-service cost",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  505.22,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "B0 Ground",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  74.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1 Air-first",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  76.81504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B2 Heuristic",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  84.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B4b LLM",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  67.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(a) Emergency completion",
+                              "width":  298.5,
+                              "height":  33,
+                              "boundWidth":  197.875046,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "(b) Deadline violations",
+                              "width":  298.5,
+                              "height":  33,
+                              "boundWidth":  170.25,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "(c) Service damage",
+                              "width":  298.5,
+                              "height":  33,
+                              "boundWidth":  143.25,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          }
+                      ]
+    },
+    {
+        "slide":  3,
+        "shapes":  287,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "Supervisory decision regimes",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  285.22,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "(a) Candidate geometry at Site A",
+                              "width":  427.5,
+                              "height":  31.5,
+                              "boundWidth":  267.09,
+                              "boundHeight":  22.5,
+                              "rotation":  0,
+                              "fontSize":  18.75
+                          },
+                          {
+                              "text":  "-150",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  29.75,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "-100",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  29.75,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "-50",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  22.62504,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "0",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  10.75,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "50",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  17.87496,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "100",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  25,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "150",
+                              "width":  42,
+                              "height":  21,
+                              "boundWidth":  25,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "-50",
+                              "width":  36,
+                              "height":  21,
+                              "boundWidth":  22.62504,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "0",
+                              "width":  36,
+                              "height":  21,
+                              "boundWidth":  10.75,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "100",
+                              "width":  36,
+                              "height":  21,
+                              "boundWidth":  25,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "200",
+                              "width":  36,
+                              "height":  21,
+                              "boundWidth":  25,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "Margin (s)",
+                              "width":  137.25,
+                              "height":  19.5,
+                              "boundWidth":  63.99504,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "Ground ETA − air ETA (s)",
+                              "width":  366.75,
+                              "height":  24,
+                              "boundWidth":  171.24,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Preemption",
+                              "width":  129.75,
+                              "height":  24,
+                              "boundWidth":  69.5,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "No preemption",
+                              "width":  162,
+                              "height":  24,
+                              "boundWidth":  89.75,
+                              "boundHeight":  17.1,
+                              "rotation":  0,
+                              "fontSize":  14.25
+                          },
+                          {
+                              "text":  "(b) Faster air vs timely ground",
+                              "width":  411,
+                              "height":  31.5,
+                              "boundWidth":  249.48,
+                              "boundHeight":  22.5,
+                              "rotation":  0,
+                              "fontSize":  18.75
+                          },
+                          {
+                              "text":  "Air selection (%) when air requires preemption",
+                              "width":  411,
+                              "height":  24.75,
+                              "boundWidth":  301.875031,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1",
+                              "width":  77.25,
+                              "height":  21,
+                              "boundWidth":  21.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "B2",
+                              "width":  77.25,
+                              "height":  21,
+                              "boundWidth":  21.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "B4b",
+                              "width":  77.25,
+                              "height":  21,
+                              "boundWidth":  28.75,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Matched states: A 20 · B 60 · C 20",
+                              "width":  372.75,
+                              "height":  22.5,
+                              "boundWidth":  222.88504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(c) No candidate predicted timely",
+                              "width":  412.5,
+                              "height":  25.5,
+                              "boundWidth":  260.175049,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "Observed late: A 40/40 · C 24/27 per policy",
+                              "width":  412.5,
+                              "height":  24,
+                              "boundWidth":  293.305054,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          }
+                      ]
+    },
+    {
+        "slide":  4,
+        "shapes":  33,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "E2: restoring a path and meeting the deadline",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  444.595032,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "B0 Ground",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  74.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1 Air-first",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  76.81504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B2 Heuristic",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  84.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B4b LLM",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  67.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(a) Deadline violations in all runs",
+                              "width":  420,
+                              "height":  31.5,
+                              "boundWidth":  259,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "(b) Recovered / affected critical chains",
+                              "width":  418.5,
+                              "height":  31.5,
+                              "boundWidth":  298.675049,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "Site",
+                              "width":  97.5,
+                              "height":  43.5,
+                              "boundWidth":  29.37504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Rule\r(B1)",
+                              "width":  97.5,
+                              "height":  43.5,
+                              "boundWidth":  35.5,
+                              "boundHeight":  37.8,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "Heuristic\r(B2)",
+                              "width":  97.5,
+                              "height":  43.5,
+                              "boundWidth":  66.12496,
+                              "boundHeight":  37.8,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "LLM\r(B4b)",
+                              "width":  97.5,
+                              "height":  43.5,
+                              "boundWidth":  41.62496,
+                              "boundHeight":  37.8,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "A",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  16.87504,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "191/191",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "B",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  15.8750391,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "199/199",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "C",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  16.87504,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "200/200",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "201/201",
+                              "width":  97.5,
+                              "height":  28.5,
+                              "boundWidth":  63.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "Every affected coordinated run restores a path\rB0 recovery: not applicable",
+                              "width":  410.25,
+                              "height":  46.5,
+                              "boundWidth":  294.59,
+                              "boundHeight":  37.8,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          }
+                      ]
+    },
+    {
+        "slide":  5,
+        "shapes":  16,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "E3: priority-weighted service loss across network contexts",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  561.47,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "B0 Ground",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  74.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1 Air-first",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  76.81504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B2 Heuristic",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  84.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B4b LLM",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  67.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(a) Site A",
+                              "width":  285,
+                              "height":  30,
+                              "boundWidth":  75.50504,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "(b) Site B",
+                              "width":  285,
+                              "height":  30,
+                              "boundWidth":  76.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "(c) Site C",
+                              "width":  285,
+                              "height":  30,
+                              "boundWidth":  75.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          }
+                      ]
+    },
+    {
+        "slide":  6,
+        "shapes":  19,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "E4: observation, execution and input burden",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  434.375031,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "B0 Ground",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  74.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1 Air-first",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  76.81504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B2 Heuristic",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  84.12504,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B4b LLM",
+                              "width":  155.25,
+                              "height":  22.5,
+                              "boundWidth":  67.5,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "(a) Observation interval",
+                              "width":  288.75,
+                              "height":  31.5,
+                              "boundWidth":  189.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "(b) Execution delay",
+                              "width":  288.75,
+                              "height":  31.5,
+                              "boundWidth":  153.5,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "(c) LLM input burden",
+                              "width":  288.75,
+                              "height":  31.5,
+                              "boundWidth":  176,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "B2 = B4b (all arms)",
+                              "width":  256.5,
+                              "height":  23.25,
+                              "boundWidth":  135.75,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B1 = B2 = B4b (0–30 s)",
+                              "width":  282.75,
+                              "height":  23.25,
+                              "boundWidth":  158,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          },
+                          {
+                              "text":  "B2 = B4b (60 s)",
+                              "width":  243.75,
+                              "height":  22.5,
+                              "boundWidth":  105.875038,
+                              "boundHeight":  18.9,
+                              "rotation":  0,
+                              "fontSize":  15.75
+                          }
+                      ]
+    },
+    {
+        "slide":  7,
+        "shapes":  65,
+        "images":  0,
+        "textItems":  [
+                          {
+                              "text":  "Execution waiting: repeated command or changed intervention",
+                              "width":  897,
+                              "height":  39,
+                              "boundWidth":  611.065063,
+                              "boundHeight":  27,
+                              "rotation":  0,
+                              "fontSize":  22.5
+                          },
+                          {
+                              "text":  "B0 ground-only",
+                              "width":  132.75,
+                              "height":  37.5,
+                              "boundWidth":  124.675041,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "B4b air command",
+                              "width":  134.25,
+                              "height":  42,
+                              "boundWidth":  136.44,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "B4b ground",
+                              "width":  135,
+                              "height":  39,
+                              "boundWidth":  95.67504,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "Identical command retained",
+                              "width":  353.25,
+                              "height":  26.25,
+                              "boundWidth":  221.175034,
+                              "boundHeight":  21.6,
+                              "rotation":  0,
+                              "fontSize":  18
+                          },
+                          {
+                              "text":  "360 s execute",
+                              "width":  141.75,
+                              "height":  25.5,
+                              "boundWidth":  94.12504,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "542 s complete",
+                              "width":  156,
+                              "height":  25.5,
+                              "boundWidth":  104.25,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "300 s air selected",
+                              "width":  197.25,
+                              "height":  25.5,
+                              "boundWidth":  118.5,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "360 s fault: air → ground",
+                              "width":  360,
+                              "height":  28.5,
+                              "boundWidth":  190.505035,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "420 s execute",
+                              "width":  159,
+                              "height":  24,
+                              "boundWidth":  94.12504,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "602 s complete",
+                              "width":  166.5,
+                              "height":  24,
+                              "boundWidth":  104.25,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "480 s deadline",
+                              "width":  167.25,
+                              "height":  31.5,
+                              "boundWidth":  108,
+                              "boundHeight":  20.7,
+                              "rotation":  0,
+                              "fontSize":  17.25
+                          },
+                          {
+                              "text":  "300",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "360",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "420",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "480",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "540",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "600",
+                              "width":  45,
+                              "height":  20.25,
+                              "boundWidth":  26.25,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Simulation time (s)",
+                              "width":  248.25,
+                              "height":  23.25,
+                              "boundWidth":  131.875046,
+                              "boundHeight":  19.8,
+                              "rotation":  0,
+                              "fontSize":  16.5
+                          },
+                          {
+                              "text":  "Pending",
+                              "width":  113.25,
+                              "height":  23.25,
+                              "boundWidth":  52.87504,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          },
+                          {
+                              "text":  "Actual transport",
+                              "width":  202.5,
+                              "height":  23.25,
+                              "boundWidth":  100.625038,
+                              "boundHeight":  18,
+                              "rotation":  0,
+                              "fontSize":  15
+                          }
+                      ]
+    }
+]

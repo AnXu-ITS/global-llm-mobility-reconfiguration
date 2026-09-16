@@ -1,0 +1,6 @@
+t,mission_id,type,priority,origin,destination,status,assigned_resource
+0,M-L-001,logistics,NORMAL,V2,V3,EN_ROUTE,L-UAV-01
+0,M-P-001,passenger_transfer,NORMAL,V2,V1,EN_ROUTE,EVTOL-01
+300,M-CRITICAL-001,medical_blood,CRITICAL,V2,V1,WAITING,
+420,M-CRITICAL-001,medical_blood,CRITICAL,V2,V1,EN_ROUTE,M-UAV-01
+642,M-CRITICAL-001,medical_blood,CRITICAL,V2,V1,COMPLETED,M-UAV-01

@@ -1,0 +1,3140 @@
+[
+  {
+    "slide": 1,
+    "shapes": 236,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Completion time",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 176.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Mean and 95% interval",
+        "width": 292.5,
+        "height": 22.5,
+        "boundWidth": 172.87505,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "360",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Time (s)",
+        "width": 243.75,
+        "height": 24.0,
+        "boundWidth": 70.33,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site A",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 55.33,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site B",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site C",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Missed deadlines",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 186.0,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Mean and 95% interval",
+        "width": 292.5,
+        "height": 22.5,
+        "boundWidth": 172.87505,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "25",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 22.87496,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "50",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 22.87496,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "75",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 22.87496,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Runs (%)",
+        "width": 243.75,
+        "height": 24.0,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site A",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 55.33,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site B",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site C",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "c",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Incumbent damage",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 204.12505,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Mean and 95% interval",
+        "width": 292.5,
+        "height": 22.5,
+        "boundWidth": 172.87505,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0.0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 27.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0.2",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 27.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0.4",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 27.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0.6",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 27.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Damaged services / run",
+        "width": 243.75,
+        "height": 24.0,
+        "boundWidth": 195.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site A",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 55.33,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site B",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Site C",
+        "width": 277.5,
+        "height": 21.75,
+        "boundWidth": 56.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 51.0,
+        "height": 22.5,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      }
+    ]
+  },
+  {
+    "slide": 2,
+    "shapes": 534,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "Preemptive air",
+        "width": 142.5,
+        "height": 24.0,
+        "boundWidth": 110.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Other air",
+        "width": 123.0,
+        "height": 24.0,
+        "boundWidth": 68.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site A",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 66.82,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-100",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "100",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Best margin (s)",
+        "width": 187.5,
+        "height": 21.0,
+        "boundWidth": 116.37504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "(d) Air selection (%)",
+        "width": 292.5,
+        "height": 26.25,
+        "boundWidth": 187.65,
+        "boundHeight": 23.4,
+        "rotation": 0.0,
+        "fontSize": 19.5
+      },
+      {
+        "text": "B1",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 35.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "A",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "67",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "67",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=180",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 48.62504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "B",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 14.374961,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "60",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=20",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 39.87504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "C",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 17.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "35",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "50",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=40",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 39.87504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site B",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-100",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "100",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Best margin (s)",
+        "width": 187.5,
+        "height": 21.0,
+        "boundWidth": 116.37504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "(e) Air selection (%)",
+        "width": 292.5,
+        "height": 26.25,
+        "boundWidth": 186.65,
+        "boundHeight": 23.4,
+        "rotation": 0.0,
+        "fontSize": 19.5
+      },
+      {
+        "text": "B1",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 35.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "A",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=180",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 48.62504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "B",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "95",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=60",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 39.87504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "C",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 17.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "—",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 22.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "—",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 22.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "—",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 22.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=0",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 31.12504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "c",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site C",
+        "width": 260.25,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-100",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "100",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "200",
+        "width": 34.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Best margin (s)",
+        "width": 187.5,
+        "height": 21.0,
+        "boundWidth": 116.37504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "(f) Air selection (%)",
+        "width": 292.5,
+        "height": 26.25,
+        "boundWidth": 182.27504,
+        "boundHeight": 23.4,
+        "rotation": 0.0,
+        "fontSize": 19.5
+      },
+      {
+        "text": "B1",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 25.62504,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 35.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "A",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=193",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 48.62504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "B",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 16.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=20",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 39.87504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "C",
+        "width": 45.75,
+        "height": 21.0,
+        "boundWidth": 17.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "100",
+        "width": 58.5,
+        "height": 22.5,
+        "boundWidth": 33.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "n=27",
+        "width": 65.25,
+        "height": 20.25,
+        "boundWidth": 39.87504,
+        "boundHeight": 18.9,
+        "rotation": 0.0,
+        "fontSize": 15.75
+      },
+      {
+        "text": "Ground ETA − air ETA (s)",
+        "width": 337.5,
+        "height": 22.5,
+        "boundWidth": 206.84,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "A  Other timely states     B  Faster preemptive air vs timely ground     C  No timely option",
+        "width": 900.0,
+        "height": 23.25,
+        "boundWidth": 647.215,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      }
+    ]
+  },
+  {
+    "slide": 3,
+    "shapes": 37,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "On time",
+        "width": 103.5,
+        "height": 21.0,
+        "boundWidth": 65.12504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Late",
+        "width": 97.5,
+        "height": 21.0,
+        "boundWidth": 38.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site A",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 66.82,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Path restored / affected",
+        "width": 282.0,
+        "height": 25.5,
+        "boundWidth": 213.5,
+        "boundHeight": 22.5,
+        "rotation": 0.0,
+        "fontSize": 18.75
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "191 / 191",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site B",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Path restored / affected",
+        "width": 282.0,
+        "height": 25.5,
+        "boundWidth": 213.5,
+        "boundHeight": 22.5,
+        "rotation": 0.0,
+        "fontSize": 18.75
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "199 / 199",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "c",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site C",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Path restored / affected",
+        "width": 282.0,
+        "height": 25.5,
+        "boundWidth": 213.5,
+        "boundHeight": 22.5,
+        "rotation": 0.0,
+        "fontSize": 18.75
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "200 / 200",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "201 / 201",
+        "width": 161.25,
+        "height": 22.5,
+        "boundWidth": 80.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      }
+    ]
+  },
+  {
+    "slide": 4,
+    "shapes": 320,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site A",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 66.82,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "L1",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L2",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L3",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L4",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "6",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "1.7",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 27.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "123.4",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 45.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "d",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B4b − B0",
+        "width": 256.5,
+        "height": 30.0,
+        "boundWidth": 99.75,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "-200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "L1",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L2",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L3",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L4",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site B",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "L1",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L2",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L3",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L4",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "255",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "255",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "120",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "255",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "e",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B4b − B0",
+        "width": 256.5,
+        "height": 30.0,
+        "boundWidth": 99.75,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "-200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "L1",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L2",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L3",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L4",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "c",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Site C",
+        "width": 252.75,
+        "height": 30.0,
+        "boundWidth": 67.62504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "L1",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L2",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L3",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "L4",
+        "width": 56.25,
+        "height": 22.5,
+        "boundWidth": 26.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B0",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B1",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 26.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B4b",
+        "width": 48.75,
+        "height": 22.5,
+        "boundWidth": 37.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "240",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "135",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "375",
+        "width": 56.25,
+        "height": 23.25,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "f",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 13.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B4b − B0",
+        "width": 256.5,
+        "height": 30.0,
+        "boundWidth": 99.75,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "-400",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "-200",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 37.5,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "0",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "L1",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L2",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L3",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "L4",
+        "width": 39.0,
+        "height": 22.5,
+        "boundWidth": 24.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "0",
+        "width": 27.75,
+        "height": 22.5,
+        "boundWidth": 13.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "400",
+        "width": 44.25,
+        "height": 22.5,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "SWL",
+        "width": 72.75,
+        "height": 22.5,
+        "boundWidth": 42.12504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Paired change in SWL (negative values indicate lower loss)",
+        "width": 720.0,
+        "height": 23.25,
+        "boundWidth": 477.33,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      }
+    ]
+  },
+  {
+    "slide": 5,
+    "shapes": 27,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "B0",
+        "width": 90.75,
+        "height": 23.25,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B1",
+        "width": 90.75,
+        "height": 23.25,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B2",
+        "width": 90.75,
+        "height": 23.25,
+        "boundWidth": 27.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "B4b",
+        "width": 90.75,
+        "height": 23.25,
+        "boundWidth": 37.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Observation interval",
+        "width": 259.5,
+        "height": 30.0,
+        "boundWidth": 216.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Execution wait",
+        "width": 259.5,
+        "height": 30.0,
+        "boundWidth": 158.12505,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "c",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Input burden",
+        "width": 259.5,
+        "height": 30.0,
+        "boundWidth": 138.62505,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B2 = B4b at every interval",
+        "width": 290.25,
+        "height": 24.0,
+        "boundWidth": 193.75,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B1 = B2 = B4b at 0–30 s",
+        "width": 287.25,
+        "height": 24.0,
+        "boundWidth": 184.25,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Four active aircraft",
+        "width": 273.0,
+        "height": 24.0,
+        "boundWidth": 141.12505,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "180 s service window",
+        "width": 290.25,
+        "height": 24.0,
+        "boundWidth": 161.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "B2 = B4b at 60 s",
+        "width": 287.25,
+        "height": 24.0,
+        "boundWidth": 127.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "5–50 total records",
+        "width": 273.0,
+        "height": 24.0,
+        "boundWidth": 136.37505,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      }
+    ]
+  },
+  {
+    "slide": 6,
+    "shapes": 52,
+    "images": 0,
+    "textItems": [
+      {
+        "text": "a",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 18.12504,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B0: repeated ground command",
+        "width": 657.75,
+        "height": 30.0,
+        "boundWidth": 327.37503,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "b",
+        "width": 24.0,
+        "height": 30.0,
+        "boundWidth": 19.25,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "B4b: air replaced by ground",
+        "width": 657.75,
+        "height": 30.0,
+        "boundWidth": 294.62503,
+        "boundHeight": 26.1,
+        "rotation": 0.0,
+        "fontSize": 21.75
+      },
+      {
+        "text": "Selected",
+        "width": 86.25,
+        "height": 24.0,
+        "boundWidth": 72.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "300 s",
+        "width": 78.0,
+        "height": 22.5,
+        "boundWidth": 47.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Execute",
+        "width": 96.75,
+        "height": 24.0,
+        "boundWidth": 67.12504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "360 s",
+        "width": 78.75,
+        "height": 22.5,
+        "boundWidth": 47.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Complete",
+        "width": 106.5,
+        "height": 24.0,
+        "boundWidth": 78.75,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "542 s",
+        "width": 89.25,
+        "height": 22.5,
+        "boundWidth": 47.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Same command, same due time",
+        "width": 449.25,
+        "height": 25.5,
+        "boundWidth": 301.25,
+        "boundHeight": 23.4,
+        "rotation": 0.0,
+        "fontSize": 19.5
+      },
+      {
+        "text": "Deadline",
+        "width": 112.5,
+        "height": 23.25,
+        "boundWidth": 76.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "480 s",
+        "width": 75.75,
+        "height": 22.5,
+        "boundWidth": 47.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "300 s",
+        "width": 75.0,
+        "height": 23.25,
+        "boundWidth": 47.0,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "360 s fault",
+        "width": 134.25,
+        "height": 23.25,
+        "boundWidth": 84.37504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "420 s execute",
+        "width": 156.0,
+        "height": 23.25,
+        "boundWidth": 112.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "602 s complete",
+        "width": 172.5,
+        "height": 23.25,
+        "boundWidth": 121.87504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Air selected",
+        "width": 138.0,
+        "height": 25.5,
+        "boundWidth": 99.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "New ground command",
+        "width": 276.75,
+        "height": 25.5,
+        "boundWidth": 207.5,
+        "boundHeight": 22.5,
+        "rotation": 0.0,
+        "fontSize": 18.75
+      },
+      {
+        "text": "Deadline",
+        "width": 112.5,
+        "height": 22.5,
+        "boundWidth": 76.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "300",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "360",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "420",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "480",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "540",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "600",
+        "width": 58.5,
+        "height": 21.0,
+        "boundWidth": 32.0,
+        "boundHeight": 19.8,
+        "rotation": 0.0,
+        "fontSize": 16.5
+      },
+      {
+        "text": "Simulation time (s)",
+        "width": 214.5,
+        "height": 23.25,
+        "boundWidth": 154.0,
+        "boundHeight": 21.6,
+        "rotation": 0.0,
+        "fontSize": 18.0
+      },
+      {
+        "text": "Pending",
+        "width": 122.25,
+        "height": 23.25,
+        "boundWidth": 68.25,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      },
+      {
+        "text": "Actual transport",
+        "width": 183.0,
+        "height": 23.25,
+        "boundWidth": 125.62504,
+        "boundHeight": 20.7,
+        "rotation": 0.0,
+        "fontSize": 17.25
+      }
+    ]
+  }
+]
