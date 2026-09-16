@@ -1,6 +1,6 @@
 # Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions
 
-地面–低空移动系统在中断场景下的全局 LLM 监督重构（PhD 项目私有仓库）。
+地面–低空移动系统在中断场景下的全局 LLM 监督重构。
 
 ## 概览
 
