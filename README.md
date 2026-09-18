@@ -21,8 +21,6 @@
 
 旧缓存与批量结果已完整备份；工作区副本按逐文件 SHA-256 核验后清理，恢复索引与执行日志在 `research_hscc2027/outputs/bootstrap/`。新方向不导入旧动作缓存，也不将旧结果作为新运行时的主要实验结果。
 
-新论文在线项目：<https://www.overleaf.com/project/6aaca76497f5b6e09545fc20>。
-
 本目录现在是资料容器。论文 Git 操作应在 `manuscript_hscc2027/` 执行；旧仓库 Git 操作对应 `legacy/20260918/`。旧 tracked 源码与历史 Git 提交保留；需要旧批量数据的历史脚本应在恢复副本中运行。
 
 现已运行首轮开发仿真，尚未启动正式实验、实验模型调用或推送远程。独立备份在 `C:/Users/xuan1/research-backups/ground-air-legacy-20260918/`；它与本工作区分离，但仍处于同一台机器的 C 盘。
