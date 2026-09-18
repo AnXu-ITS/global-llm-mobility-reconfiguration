@@ -49,7 +49,7 @@
 - 另清理旧批量数据的 318,948 个工作区副本、6,499,271,306 字节，详见 [冷归档清单](outputs/bootstrap/cold_storage_plan.json) 与执行日志；完整内容仍在独立 ZIP 中。两步合计移除 **319,326 个文件、6,544,448,527 字节（逻辑大小约 6.54 GB）**。旧 `archive/manuscript_workspace` 含目录链接，保留该分支，未沿链接清理外部依赖。
 - R0 历史证据 `legacy/20260918/manuscript/source/revision_v3/regression/` 留在原处。旧 tracked 源码、主 Git 历史和旧论文保留；原迁移清单作为历史快照不覆写。
 - 新代码复用 240 个源文件和地图资产，复制到 `vendor/legacy_platform/`；来源 SHA-256 见 `PROVENANCE.json`，不导入旧动作/模型缓存。
-- 完整 ZIP：`C:/Users/xuan1/research-backups/ground-air-legacy-20260918/legacy_snapshot.zip`。恢复单个文件可用 `tools/restore_legacy_file.py`，恢复到单独目录并验证内容 hash，拒绝覆盖已有文件。
+- 完整 ZIP：`C:/Users/user/research-backups/ground-air-legacy-20260918/legacy_snapshot.zip`。恢复单个文件可用 `tools/restore_legacy_file.py`，恢复到单独目录并验证内容 hash，拒绝覆盖已有文件。
 - [清理后审计](outputs/bootstrap/cleanup_verification.json)已通过：904 个旧 tracked 文件内容哈希不变，27 个 R0 来源指标哈希不变，新 Overleaf 仓库无改动；已实际恢复一个旧结果并验证 SHA-256。
 
 ## 复现入口

@@ -12,7 +12,7 @@
 | 新 Overleaf | `manuscript_hscc2027/`；HEAD `e94a0ef036ac2e3283f6257f8fb159115c8168b5`；分支 `main` |
 | 远程写入 | 无；仅查询与 clone |
 | 归档规模 | 329,525 个文件，7,808,576,298 字节；以机器清单为准 |
-| 独立 ZIP 备份 | `C:/Users/xuan1/research-backups/ground-air-legacy-20260918/legacy_snapshot.zip` |
+| 独立 ZIP 备份 | `C:/Users/user/research-backups/ground-air-legacy-20260918/legacy_snapshot.zip` |
 | Git 历史备份 | 同目录 `legacy.bundle`，包含主仓库全部 refs，已通过 bundle verify |
 
 `git_status_before.txt` 是备份开始时的状态，此时新 Overleaf 克隆和 provenance 目录已经创建；其中这些新增条目是本次整理产物。转向计划书保留在根目录，旧的两个 Overleaf 工作副本随整个 manuscript 归档。

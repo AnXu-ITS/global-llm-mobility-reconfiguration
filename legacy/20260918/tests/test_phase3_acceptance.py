@@ -23,7 +23,7 @@ from orchestrator import config as config_mod     # noqa: E402
 from orchestrator.registry import Aircraft, Mission, Registry  # noqa: E402
 from safety.feasibility_checker import FeasibilityChecker  # noqa: E402
 
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 OFFLINE = ROOT / "runs" / "phase3_offline_decisions"
 LIVE = ROOT / "runs" / "phase3_live_smoke"
 LIVE_C2 = ROOT / "runs" / "phase3_live_c2"

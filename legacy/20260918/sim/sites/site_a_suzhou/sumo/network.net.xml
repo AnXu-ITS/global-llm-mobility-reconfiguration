@@ -4,11 +4,11 @@
 <netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <osm-files value="C:\Users\xuan1\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\sim\sumo\area.osm.xml"/>
+        <osm-files value="C:\Users\user\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\sim\sumo\area.osm.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\xuan1\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\sim\sumo\network.net.xml"/>
+        <output-file value="C:\Users\user\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\sim\sumo\network.net.xml"/>
     </output>
 
     <projection>

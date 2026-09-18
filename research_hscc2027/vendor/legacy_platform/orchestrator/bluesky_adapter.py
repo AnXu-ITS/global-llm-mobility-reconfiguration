@@ -9,7 +9,7 @@ from typing import Any, Dict, List
 # BlueSky is imported from a local source checkout (github.com/TUDelft-CNS-ATM/bluesky).
 # Override the location with the BLUESKY_REPO environment variable so that the project
 # is portable across machines; the fallback is this machine's historical checkout.
-BLUESKY_REPO = Path(os.environ.get("BLUESKY_REPO", r"C:\Users\xuan1\OneDrive\桌面\学术agent\bluesky"))
+BLUESKY_REPO = Path(os.environ.get("BLUESKY_REPO", r"C:\Users\user\OneDrive\桌面\学术agent\bluesky"))
 
 ROLE_TO_ACTYPE = {
     "logistics_uav": "Amzn",

@@ -5,7 +5,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-CRED = Path(r"C:\Users\xuan1\.dsh\.credentials.yaml").read_text(encoding="utf-8")
+CRED = Path(r"C:\Users\user\.dsh\.credentials.yaml").read_text(encoding="utf-8")
 m = re.search(r'CORP_AI_API_KEY:\s*["\']?([^"\'\s]+)', CRED)
 key = m.group(1) if m else None
 if not key:

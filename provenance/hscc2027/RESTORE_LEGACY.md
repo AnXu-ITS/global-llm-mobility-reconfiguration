@@ -2,7 +2,7 @@
 
 初次迁移档案位于 `legacy/20260918/`。2026-09-18 首轮实现时，已验证的缓存和旧批量数据工作区副本被清理；完整内容以以下独立 ZIP 为准。旧 tracked 源码、主 Git 历史、稿件和 R0 回放所需历史证据仍在工作区。
 
-独立备份目录：`C:/Users/xuan1/research-backups/ground-air-legacy-20260918/`。
+独立备份目录：`C:/Users/user/research-backups/ground-air-legacy-20260918/`。
 
 - `legacy_snapshot.zip`：旧项目所有发现文件的备份，含 `.git/` 和未跟踪/被忽略内容。
 - `legacy.bundle`：主仓库全部 refs 和可达 Git 历史；不包含原始数据等 Git 外材料。

@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 
-REPO = Path(r"C:\Users\xuan1\OneDrive\桌面\学术agent\bluesky")
+REPO = Path(r"C:\Users\user\OneDrive\桌面\学术agent\bluesky")
 sys.path.insert(0, str(REPO))
 
 import bluesky as bs
