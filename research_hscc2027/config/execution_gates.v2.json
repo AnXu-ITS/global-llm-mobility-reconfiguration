@@ -1,0 +1,26 @@
+{
+  "version": "2026-09-18-symbolic-g1-v0.3",
+  "sequence": [
+    "R1",
+    "G-D",
+    "G-F",
+    "G-E",
+    "G-ABC",
+    "R6_FREEZE"
+  ],
+  "r1_pointer": "outputs/r1_symbolic/acceptance_latest.json",
+  "acceptance_reports": {
+    "G-D": "runs\\development\\d_suite_20260918_184336_439352\\report.json",
+    "G-F": null,
+    "G-E": null,
+    "G-ABC": null,
+    "R6_FREEZE": null
+  },
+  "formal_transport_run_enabled": false,
+  "additional_formal_run_requirements": [
+    "R0 six runtime bridge anchors",
+    "all applicable original G0-G4 gates",
+    "frozen common estimators and controller versions"
+  ],
+  "notes": "Map packages and single-cargo diagnostics do not satisfy G-D/G-F/G-E. No gate may be inferred from existence of a map, generated plan, or absence of observed counterexamples."
+}

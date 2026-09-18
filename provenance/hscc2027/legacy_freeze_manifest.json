@@ -1,0 +1,134 @@
+{
+  "root_before": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions",
+  "archive_root": "legacy/20260918",
+  "backup": "C:\\Users\\xuan1\\research-backups\\ground-air-legacy-20260918",
+  "names": [
+    ".git",
+    ".env.example",
+    ".gitignore",
+    "README.md",
+    "README.zh-CN.md",
+    "requirements.txt",
+    "archive",
+    "config",
+    "docs",
+    "failures",
+    "managers",
+    "manuscript",
+    "orchestrator",
+    "outputs",
+    "prompts",
+    "runs",
+    "safety",
+    "schemas",
+    "sim",
+    "state",
+    "tests",
+    "tmp",
+    "tools"
+  ],
+  "head": "3078ffb60d58952b4c193b2edb1de7d85375bbab",
+  "branch": "main",
+  "status_before": "?? \"HSCC_ICCPS_2027_\\347\\240\\224\\347\\251\\266\\346\\226\\271\\345\\220\\221\\350\\275\\254\\345\\220\\221\\350\\256\\241\\345\\210\\222\\344\\271\\246.md\"\n?? manuscript/overleaf_recovery/\n?? manuscript/overleaf_remote/\n?? manuscript_hscc2027/\n?? provenance/\n",
+  "started": 1789703932.2201083,
+  "files": 329525,
+  "bytes": 7808576298,
+  "totals": {
+    ".git": {
+      "files": 106,
+      "bytes": 244747444
+    },
+    ".env.example": {
+      "files": 1,
+      "bytes": 960
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 659
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 6978
+    },
+    "README.zh-CN.md": {
+      "files": 1,
+      "bytes": 6718
+    },
+    "requirements.txt": {
+      "files": 1,
+      "bytes": 473
+    },
+    "archive": {
+      "files": 87064,
+      "bytes": 2440730923
+    },
+    "config": {
+      "files": 22,
+      "bytes": 112658
+    },
+    "docs": {
+      "files": 1,
+      "bytes": 11764
+    },
+    "failures": {
+      "files": 12,
+      "bytes": 81476
+    },
+    "managers": {
+      "files": 18,
+      "bytes": 149410
+    },
+    "manuscript": {
+      "files": 853,
+      "bytes": 196645908
+    },
+    "orchestrator": {
+      "files": 48,
+      "bytes": 643944
+    },
+    "outputs": {
+      "files": 465,
+      "bytes": 246574603
+    },
+    "prompts": {
+      "files": 2,
+      "bytes": 9264
+    },
+    "runs": {
+      "files": 240235,
+      "bytes": 4514867136
+    },
+    "safety": {
+      "files": 10,
+      "bytes": 73495
+    },
+    "schemas": {
+      "files": 2,
+      "bytes": 8228
+    },
+    "sim": {
+      "files": 67,
+      "bytes": 75559919
+    },
+    "state": {
+      "files": 6,
+      "bytes": 33944
+    },
+    "tests": {
+      "files": 27,
+      "bytes": 181458
+    },
+    "tmp": {
+      "files": 449,
+      "bytes": 86951206
+    },
+    "tools": {
+      "files": 133,
+      "bytes": 1177730
+    }
+  },
+  "backup_full_hash_verification": true,
+  "finished": 1789704437.9580386,
+  "observed_metrics_files": 15369,
+  "backup_zip_sha256": "771269266d5126efa826b75202873bdb05cec08968c8a1f28099043e3d2449bb"
+}

@@ -1,0 +1,394 @@
+# Experiment 2 — Air-Layer Failure Management
+# Scenario matrix (frozen pre-pilot). Protocol §15-§18.
+#
+# Fixed ground-side context for EVERY scenario (protocol §4):
+#   disruption = MEDIUM (B1 critical-link closure, +37.87 %),
+#   urgency    = CRITICAL (slack 180 s -> deadline = 300 + 180 = 480 s),
+#   release t = 300 s, failure t = 360 s, duration 900 s, 30 s periodic.
+# ONLY the air-layer failure (and the workload needed to realize the C1/C2/C3
+# impact contexts) varies. One and only one air failure family per run (§3).
+# The failure target / zone / site / trajectory is frozen here and is NEVER
+# derived from manager behaviour (exogeneity, §7/§8).
+#
+# Target matrix: 6 families x 3 contexts = 18.
+# Realized: 16 scenario classes. Documented SCENARIO_DESIGN_LIMITATIONs:
+#   F3-C2: a single UTM state change cannot break the critical chain while
+#          leaving a legal air backup (OUTAGE forbids all new air assignments;
+#          DEGRADED does not interrupt in-flight missions).
+#   F4-C2: a single landing-site failure on the critical destination V1 removes
+#          ALL air alternatives at once (destination-level failure); a failure
+#          on V2/V3 is peripheral. No single-site failure can break the current
+#          critical option while >=1 air alternative to V1 remains legal.
+experiment2:
+  version: 1
+  duration_s: 900
+  step_s: 1
+  mission_release_t_s: 300
+  disruption_t_s: 300
+  failure_t_s: 360
+  periodic_decision_s: 30
+
+  emergency_mission:
+    mission_id: M-CRITICAL-001
+    type: medical_blood
+    origin: V2
+    destination: V1
+    ground_fallback: true
+
+  disruptions:
+    MEDIUM:
+      severity: MEDIUM
+      links: [B1]              # +37.87 % (frozen measured value)
+
+  urgencies:
+    CRITICAL:
+      priority: CRITICAL
+      deadline_slack_s: 180    # frozen E1 CRITICAL slack; deadline = 480 s
+      delay_cost: 60.0
+      cancellation_cost: 600.0
+
+  # W0 = canonical background workload; W1 = low-redundancy variant (needed to
+  # realize C3 for F1/F2: the critical mission has exactly ONE feasible air
+  # option pre-failure). Fleet is NEVER expanded (4 aircraft).
+  workloads:
+    W0:
+      busy:
+        - [L-UAV-01,  M-L-001, logistics,          NORMAL, V2, V3, false]
+        - [EVTOL-01, M-P-001, passenger_transfer, NORMAL, V2, V1, false]
+      idle: [M-UAV-01, M-UAV-02]
+    W1:
+      busy:
+        - [L-UAV-01,  M-L-001, logistics,          NORMAL, V2, V3, false]
+        - [EVTOL-01, M-P-001, passenger_transfer, NORMAL, V2, V1, false]
+        - [M-UAV-01,  M-M-001, medical_transfer,   HIGH,   V1, V3, false]
+      idle: [M-UAV-02]
+
+  scenarios:
+    # ------------------------------------------------------------------
+    # F1 — C2 Lost Link (frozen RETURN->V3 local contingency)
+    # ------------------------------------------------------------------
+    - id: E2_F1_C1
+      failure_family: F1
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_c2_lost
+      failure:
+        family: F1
+        time_s: 360
+        target: L-UAV-01       # background logistics service
+
+    - id: E2_F1_C2
+      failure_family: F1
+      impact_context: C2
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: critical_chain_c2_with_backup
+      failure:
+        family: F1
+        time_s: 360
+        target: M-UAV-02       # the dispatched critical aircraft
+
+    - id: E2_F1_C3
+      failure_family: F1
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W1
+      tradeoff_label: low_redundancy_c2_lost
+      failure:
+        family: F1
+        time_s: 360
+        target: M-UAV-02       # only feasible air option -> 0 air left
+
+    # ------------------------------------------------------------------
+    # F2 — GNSS / Localization Degradation (one-shot zone policy)
+    # ------------------------------------------------------------------
+    - id: E2_F2_C1
+      failure_family: F2
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_gnss_zone
+      failure:
+        family: F2
+        time_s: 360
+        zone:
+          id: ZN-F2-01
+          type: circle
+          lat: 31.30656037384353   # V3: degrades the logistics shuttle (always in zone at t=360)
+          lon: 120.60276072224819
+          radius_m: 300
+          active_from_s: 360
+          active_until_s: 900
+          candidate_rule: none     # aircraft-state-only: GNSS degradation at trigger;
+                                   # the zone imposes no route restriction on others
+
+    - id: E2_F2_C2
+      failure_family: F2
+      impact_context: C2
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: critical_chain_gnss_with_backup
+      failure:
+        family: F2
+        time_s: 360
+        zone:
+          id: ZN-F2-02
+          type: circle
+          lat: 31.304298246108699   # V2->V1 corridor progress 0.52 (critical aircraft position at t=360)
+          lon: 120.59997631782517
+          radius_m: 100
+          active_from_s: 360
+          active_until_s: 900
+          candidate_rule: none     # aircraft-state-only (same frozen GNSS semantics)
+
+    - id: E2_F2_C3
+      failure_family: F2
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W1
+      tradeoff_label: low_redundancy_gnss
+      failure:
+        family: F2
+        time_s: 360
+        zone:
+          id: ZN-F2-03
+          type: circle
+          lat: 31.304298246108699
+          lon: 120.59997631782517
+          radius_m: 100
+          active_from_s: 360
+          active_until_s: 900
+          candidate_rule: none     # aircraft-state-only (same frozen GNSS semantics)
+
+    # ------------------------------------------------------------------
+    # F3 — UTM / U-space (DEGRADED = C1; OUTAGE = C3; C2 documented limitation)
+    # ------------------------------------------------------------------
+    - id: E2_F3_C1
+      failure_family: F3
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_utm_degraded
+      extra_mission:
+        id: M-L-002
+        type: logistics
+        priority: NORMAL
+        origin: V2
+        destination: V3
+        deadline_s: 900
+        ground_fallback: false
+        delay_cost: 10.0
+        cancellation_cost: 100.0
+      failure:
+        family: F3
+        time_s: 360
+        utm_state: DEGRADED
+
+    - id: E2_F3_C3
+      failure_family: F3
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: full_utm_outage
+      failure:
+        family: F3
+        time_s: 360
+        utm_state: OUTAGE
+
+    # ------------------------------------------------------------------
+    # F4 — Landing-site failure (V2 = C1; V1 = C3; C2 documented limitation)
+    # ------------------------------------------------------------------
+    - id: E2_F4_C1
+      failure_family: F4
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_site_failure
+      failure:
+        family: F4
+        time_s: 360
+        site: V2                # logistics-hub site (critical destination = V1)
+
+    - id: E2_F4_C3
+      failure_family: F4
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: critical_destination_site_failure
+      failure:
+        family: F4
+        time_s: 360
+        site: V1                # critical destination -> all air options die at once
+
+    # ------------------------------------------------------------------
+    # F5 — Unknown / non-cooperative aircraft + temporary risk zone
+    # ------------------------------------------------------------------
+    - id: E2_F5_C1
+      failure_family: F5
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_intrusion
+      failure:
+        family: F5
+        time_s: 360
+        zone:
+          id: ZN-F5-01
+          type: circle
+          lat: 31.3140              # NW corner: contains no current asset; critical
+          lon: 120.5870             # chain and backup (V1 / V3->V1) fully outside
+          radius_m: 400
+          active_from_s: 360
+          active_until_s: 480
+        unknown_trajectory:
+          lat0: 31.3140
+          lon0: 120.5845
+          heading_deg: 90
+          speed_kts: 25
+          length_m: 2500
+
+    - id: E2_F5_C2
+      failure_family: F5
+      impact_context: C2
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: critical_chain_intrusion_with_backup
+      failure:
+        family: F5
+        time_s: 360
+        zone:
+          id: ZN-F5-02
+          type: circle
+          lat: 31.304024142602      # V2->V1 corridor progress 0.50
+          lon: 120.59980924131
+          radius_m: 100
+          active_from_s: 360
+          active_until_s: 480
+        unknown_trajectory:
+          lat0: 31.3040
+          lon0: 120.5975
+          heading_deg: 90
+          speed_kts: 25
+          length_m: 2500
+
+    - id: E2_F5_C3
+      failure_family: F5
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: wide_intrusion_no_air
+      failure:
+        family: F5
+        time_s: 360
+        zone:
+          id: ZN-F5-03
+          type: circle
+          lat: 31.3060               # covers the critical corridor AND V3->V1 recovery
+          lon: 120.6005
+          radius_m: 600
+          active_from_s: 360
+          active_until_s: 480
+        unknown_trajectory:
+          lat0: 31.3060
+          lon0: 120.5970
+          heading_deg: 90
+          speed_kts: 25
+          length_m: 2500
+
+    # ------------------------------------------------------------------
+    # F6 — Flyaway / uncontrolled trajectory + envelope
+    # ------------------------------------------------------------------
+    - id: E2_F6_C1
+      failure_family: F6
+      impact_context: C1
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: peripheral_flyaway
+      failure:
+        family: F6
+        time_s: 360
+        target: L-UAV-01           # background logistics aircraft flies away
+        envelope:
+          id: ENV-F6-01
+          type: strip
+          lat0: 31.2975
+          lon0: 120.5975
+          heading_deg: 90          # due east: crosses only the low-latitude band
+          half_width_m: 250
+          length_m: 2000
+          active_from_s: 360
+          active_until_s: 900
+        trajectory:
+          speed_kts: 30
+
+    - id: E2_F6_C2
+      failure_family: F6
+      impact_context: C2
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: critical_chain_flyaway_with_backup
+      failure:
+        family: F6
+        time_s: 360
+        target: L-UAV-01
+        envelope:
+          id: ENV-F6-02
+          type: strip
+          lat0: 31.3010
+          lon0: 120.5970
+          heading_deg: 20           # crosses the critical corridor; V3->V1 stays clear
+          half_width_m: 200
+          length_m: 2000
+          active_from_s: 360
+          active_until_s: 900
+        trajectory:
+          speed_kts: 30
+
+    - id: E2_F6_C3
+      failure_family: F6
+      impact_context: C3
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      tradeoff_label: flyaway_blocks_all_air
+      failure:
+        family: F6
+        time_s: 360
+        target: L-UAV-01
+        envelope:
+          id: ENV-F6-03
+          type: strip
+          lat0: 31.3025
+          lon0: 120.5970
+          heading_deg: 40           # covers the critical corridor AND V3->V1
+          half_width_m: 350
+          length_m: 2000
+          active_from_s: 360
+          active_until_s: 900
+        trajectory:
+          speed_kts: 30
+
+  # pilot (§24): 6 scenarios, one per family, 2 x C1 / 2 x C2 / 2 x C3
+  pilots:
+    - {scenario: E2_F1_C1, label: PILOT-F1-C1 (peripheral C2 lost)}
+    - {scenario: E2_F4_C1, label: PILOT-F4-C1 (peripheral site failure)}
+    - {scenario: E2_F2_C2, label: PILOT-F2-C2 (GNSS critical chain + backup)}
+    - {scenario: E2_F5_C2, label: PILOT-F5-C2 (intrusion critical chain + backup)}
+    - {scenario: E2_F3_C3, label: PILOT-F3-C3 (full UTM outage)}
+    - {scenario: E2_F6_C3, label: PILOT-F6-C3 (flyaway blocks all air)}

@@ -1,0 +1,31 @@
+{
+  "site_id": "E",
+  "status": {
+    "osm_downloaded": true,
+    "network_converted": true,
+    "route_diagnostics_passed": true,
+    "map_assets_frozen": true,
+    "traffic_volatility_observed": true,
+    "single_cargo_closed_loop_passed": true,
+    "multi_task_custody_and_contention_validated": false,
+    "formal_fixture_frozen": false,
+    "G_D": "not_applicable",
+    "G_E": "pending_deadline_and_load_calibration",
+    "G_F": "not_applicable"
+  },
+  "evidence": {
+    "selection": "selection.json",
+    "routes": "site_candidate_report.json",
+    "traffic": "runs\\site_diagnostics\\E_20260918_163933_f75e65\\report.json",
+    "physical": "runs\\development\\physical_20260918_165143_c7698c",
+    "compatibility": "compatibility.json"
+  },
+  "formal_admission": false,
+  "remaining": [
+    "full R0 bridge and R1 gates",
+    "two-task resource/custody validation",
+    "deadline<=900 and baseline timing calibration",
+    "all held-out exogenous fixtures",
+    "parameters shared across sites; no per-site FULL/LST tuning"
+  ]
+}

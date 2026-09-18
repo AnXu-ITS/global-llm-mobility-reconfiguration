@@ -1,0 +1,25 @@
+{
+  "site_id": "D",
+  "map_assets_frozen": true,
+  "formal_fixture_frozen": false,
+  "files": {
+    "acceptance.json": "8f076d4c07ecb1a4ae0f85daeae21527017181f3e49291fe9e116f8aab2b2d2e",
+    "boundary.geojson": "acf73ea6e6514aa5ca0a6fe1a198efc82e3f1b6b7384a9b6b42765ae99b64d27",
+    "candidate_facilities.geojson": "3c4127baec9afc5c69b6c55cb189fac0c730cd002fd7c7f362e2c60dcb8beea1",
+    "compatibility.json": "e5b884877f4a707111ca2bf40ec3ddcb32c9ab2ab9aabb655b545521837edf0e",
+    "external_events.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "facilities.json": "3df6061d0767c29e8b4c15f04b8a2187ef019f29233c73e61b256a333dc519f9",
+    "netconvert.log": "94d42b38fed4d6a7d56abb2517d45691983f314f3ffb0d46734638766b0ef334",
+    "network.net.xml": "5f0debf3a5c7c4f47f04e77ecf8fdfe5c4512283afe9f6478f2c563704134d03",
+    "physical_diagnostic_pointer.json": "045a26dac149733a4e51d19851f4d618b6179b1f8c6b729e2006c8afdd56fbdb",
+    "routes.rou.xml": "07d89300f8091813d754769274513f10dfaddb9b0ba343d34b8bed76c0957491",
+    "route_diagnostics.csv": "7480d32056c75674bcd319725751474cc01b151b057fc355f0b4f653b8075650",
+    "selection.json": "192e451f7840cc84ac9573b5f5b9cd290f88c027554452fb982f426286d8da6a",
+    "site.sumocfg": "4306048a0d77d469ab3dec266cd3712096e113f8488831fbad87000db8fb9d0f",
+    "site_candidate_report.json": "f814e261ab2f138add00050c2a319ecd864b707cbbc4404460c636f708f6c03d",
+    "site_config.json": "b505b483d02a094ea449b12250743ad732055a26c5a88c1e7991fd99d79d8794",
+    "site_config.yaml": "d87f8183e80a5e825050f2a9a4ec459f841a130d7b41c2993b9d1214a4d6a001",
+    "site_signature.json": "97da36268dd18c3a3979f67d6682aa7224a983a720048cafe9ba1914e0a122bf",
+    "traffic_diagnostic_pointer.json": "709ab9d1917384af67bc0fe593fde09d6e7ce34f54c00f0e9f75941431ca959d"
+  }
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\.git",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\.git",
+    "name": ".git"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\.env.example",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\.env.example",
+    "name": ".env.example"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\.gitignore",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\.gitignore",
+    "name": ".gitignore"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\README.md",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\README.md",
+    "name": "README.md"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\README.zh-CN.md",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\README.zh-CN.md",
+    "name": "README.zh-CN.md"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\requirements.txt",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\requirements.txt",
+    "name": "requirements.txt"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\archive",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\archive",
+    "name": "archive"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\config",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\config",
+    "name": "config"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\docs",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\docs",
+    "name": "docs"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\failures",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\failures",
+    "name": "failures"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\managers",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\managers",
+    "name": "managers"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\manuscript",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\manuscript",
+    "name": "manuscript"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\orchestrator",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\orchestrator",
+    "name": "orchestrator"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\outputs",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\outputs",
+    "name": "outputs"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\prompts",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\prompts",
+    "name": "prompts"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\runs",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\runs",
+    "name": "runs"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\safety",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\safety",
+    "name": "safety"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\schemas",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\schemas",
+    "name": "schemas"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\sim",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\sim",
+    "name": "sim"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\state",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\state",
+    "name": "state"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\tests",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\tests",
+    "name": "tests"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\tmp",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\tmp",
+    "name": "tmp"
+  },
+  {
+    "source": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\tools",
+    "destination": "C:\\Users\\xuan1\\OneDrive\\桌面\\PhD论文\\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions\\legacy\\20260918\\tools",
+    "name": "tools"
+  }
+]

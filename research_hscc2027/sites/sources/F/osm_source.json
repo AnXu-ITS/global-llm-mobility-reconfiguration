@@ -1,0 +1,20 @@
+{
+  "region_label": "Berlin-Prenzlauer-Berg",
+  "site_target": "F",
+  "bbox": {
+    "south": 52.52283772594704,
+    "north": 52.57316227405296,
+    "west": 13.375724117755762,
+    "east": 13.458275882244237
+  },
+  "downloaded_utc": "2026-09-18T08:34:34.026507+00:00",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_sha256": "60f78cfc0c5858d1b837705cd11224e42eeb358ea6636438c54e63c78143c5b3",
+  "sha256": "d53cf973db6b01478dbaae763f923f7595f28b5c7585484e4773966163aa9db8",
+  "bytes": 23433199,
+  "osm_base_timestamp": "2026-09-18T08:32:07Z",
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "failed_attempts": []
+}

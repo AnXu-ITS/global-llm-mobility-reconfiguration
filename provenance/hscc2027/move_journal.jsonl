@@ -1,0 +1,23 @@
+{"name":"manuscript","completed":"2026-09-18T12:07:26.2037711+08:00"}
+{"name":"tests","completed":"2026-09-18T12:07:26.2194940+08:00"}
+{"name":"state","completed":"2026-09-18T12:07:26.2304066+08:00"}
+{"name":"sim","completed":"2026-09-18T12:07:26.2426191+08:00"}
+{"name":"schemas","completed":"2026-09-18T12:07:26.2545317+08:00"}
+{"name":"safety","completed":"2026-09-18T12:07:26.2648024+08:00"}
+{"name":"runs","completed":"2026-09-18T12:07:26.5930325+08:00"}
+{"name":"prompts","completed":"2026-09-18T12:07:26.6037718+08:00"}
+{"name":"outputs","completed":"2026-09-18T12:07:26.6144861+08:00"}
+{"name":"orchestrator","completed":"2026-09-18T12:07:26.6282987+08:00"}
+{"name":"tmp","completed":"2026-09-18T12:07:26.6407868+08:00"}
+{"name":"tools","completed":"2026-09-18T12:07:26.6501004+08:00"}
+{"name":"failures","completed":"2026-09-18T12:07:26.6604077+08:00"}
+{"name":"docs","completed":"2026-09-18T12:07:26.6782695+08:00"}
+{"name":"config","completed":"2026-09-18T12:07:26.6875239+08:00"}
+{"name":"archive","completed":"2026-09-18T12:07:26.7231791+08:00"}
+{"name":"requirements.txt","completed":"2026-09-18T12:07:26.7284456+08:00"}
+{"name":"README.zh-CN.md","completed":"2026-09-18T12:07:26.7324292+08:00"}
+{"name":"README.md","completed":"2026-09-18T12:07:26.7369335+08:00"}
+{"name":".gitignore","completed":"2026-09-18T12:07:26.7416440+08:00"}
+{"name":".env.example","completed":"2026-09-18T12:07:26.7460294+08:00"}
+{"name":"managers","completed":"2026-09-18T12:07:26.7555842+08:00"}
+{"name":".git","completed":"2026-09-18T12:14:54.5093082+08:00","method":"Missing files restored from verified ZIP; remainder retained externally","verified_files":329525,"hash_errors":0}

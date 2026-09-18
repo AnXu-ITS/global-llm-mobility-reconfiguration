@@ -1,0 +1,141 @@
+{
+  "milestone": "bootstrap_r0_r1_minimal_physical",
+  "date": "2026-09-18",
+  "status": "development_slice_verified_full_gates_pending",
+  "r0": {
+    "replayed": 27,
+    "matching": 27,
+    "bridge_pending": 6,
+    "full_gate_passed": false,
+    "report": "runs/regression/r0_20260918_153251_6462ec/report.json",
+    "pipeline_audit": "runs/regression/r0_20260918_153251_6462ec/pipeline_audit.json"
+  },
+  "r1": {
+    "semantic_witnesses_passed": 48,
+    "mutants_detected": 6,
+    "bounded_schedules": 720,
+    "depth": 6,
+    "full_gate_passed": false,
+    "report": "runs/protocol/r1_20260918_154225_0d33c4/report.json"
+  },
+  "physical": {
+    "controls_passed": 3,
+    "report": "runs/development/physical_controls_20260918_154631_46df83/report.json",
+    "performance_model_calibrated": false,
+    "native_async_validated": false
+  },
+  "llm": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "calls_in_this_milestone": 0,
+    "adapter_implemented": false
+  },
+  "formal_experiments_started": false,
+  "cleanup": {
+    "plan": "outputs/bootstrap/cold_storage_plan.json",
+    "cache_plan": "outputs/bootstrap/cleanup_plan.json",
+    "execution_audit": "outputs/bootstrap/cleanup_verification.json"
+  },
+  "design_snapshot": "config/experiment_protocol.v1.json",
+  "current_protocol": "config/experiment_protocol.v2.json",
+  "site_extension": {
+    "status": "three_real_osm_maps_and_single_cargo_diagnostics_verified",
+    "date": "2026-09-18",
+    "sites": [
+      "D",
+      "E",
+      "F"
+    ],
+    "candidate_windows": 15,
+    "registry": "config/sites.v1.json",
+    "report": "design/SITES_D_E_F_IMPLEMENTATION_v0.2.md",
+    "verification": "outputs/site_integration/verification.json",
+    "baseline_a_regression": "runs/development/physical_20260918_165704_afc781/report.json",
+    "baseline_a_delivery_time_s": 625,
+    "formal_admission": false,
+    "llm_calls": 0
+  },
+  "current_milestone": "G1_passed_finite_bound_D_admission_in_progress",
+  "r1_full": {
+    "status": "incomplete_G1_closed",
+    "full_gate_passed": false,
+    "report": "runs\\protocol\\r1_full_20260918_174345_a1f80e\\report.json",
+    "semantic_witnesses_passed": 48,
+    "new_regressions_passed": 10,
+    "independent_mutants_detected": 6,
+    "mailbox_tests_passed": 9,
+    "conditional_progress_cases_passed": 80,
+    "model_runtime_matched_transitions": 5844,
+    "bounded_exploration": {
+      "status": "incomplete",
+      "stop_reason": "state_limit",
+      "configured_depth": 12,
+      "max_states": 1000000,
+      "max_seconds": 600,
+      "unique_states": 1000000,
+      "expanded_states": 8108,
+      "transitions_checked": 1408721,
+      "maximum_discovered_depth": 3,
+      "fully_expanded_through_depth": 1,
+      "depth_histogram": {
+        "0": 1,
+        "1": 317,
+        "2": 58637,
+        "3": 941045
+      },
+      "action_transition_counts": {
+        "tick": 8109,
+        "issue": 453990,
+        "hold": 826180,
+        "wait": 32104,
+        "invalidate": 16085,
+        "terminate": 16151,
+        "start": 23638,
+        "fail": 32300,
+        "interrupt": 132,
+        "receive": 32
+      },
+      "elapsed_s": 9.362,
+      "counterexample": null,
+      "state_encoding": {
+        "bytes_per_state": 81,
+        "parents_typecode": "i",
+        "actions_typecode": "H",
+        "byte_order": "little",
+        "frontier_head": 8108
+      },
+      "bounds": {
+        "missions": 2,
+        "aircraft": 2,
+        "ground_vehicles": 1,
+        "bays": 1,
+        "requests_per_mission": 2,
+        "responses": 4,
+        "duplicates_per_response": 1,
+        "times": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "resource_bundles": "all 15 nonempty subsets",
+        "due_and_lease_ticks": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "abstraction": "Both unique payloads accessible at V3; physical approach/flight not part of R1. All interleavings overapproximate fixed scheduler order. Failed no-op actions omitted; no POR/symmetry reduction. No progress proof from search depth."
+    },
+    "physical_regression": "runs/development/physical_20260918_174345_352f9c/report.json",
+    "execution_order": "config/execution_gates.v1.json"
+  },
+  "r1_v3": {
+    "run_dir": "runs\\protocol\\r1_acceptance_v3_20260918_183450_65042f",
+    "status": "passed_within_declared_finite_bound",
+    "full_G1_gate": true
+  }
+}

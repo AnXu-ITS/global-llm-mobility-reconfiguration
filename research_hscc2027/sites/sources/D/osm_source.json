@@ -1,0 +1,20 @@
+{
+  "region_label": "Leipzig",
+  "site_target": "D",
+  "bbox": {
+    "south": 51.31453253178886,
+    "north": 51.36486746821114,
+    "west": 12.332918505820496,
+    "east": 12.413281494179506
+  },
+  "downloaded_utc": "2026-09-18T08:30:28.099147+00:00",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_sha256": "7fb436878535dae1b042fa9b2ea8448e0ef438391da22153927edfdf048b5891",
+  "sha256": "e81701ff1e225adbc56a3166fd07680d91ff054f169232b60b5d1d3f999c0b1e",
+  "bytes": 15891622,
+  "osm_base_timestamp": "2026-09-18T08:28:05Z",
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "failed_attempts": []
+}

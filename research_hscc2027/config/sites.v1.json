@@ -1,0 +1,150 @@
+{
+  "version": "six-sites-v1",
+  "sites": {
+    "A": {
+      "region": "Suzhou",
+      "archetype": "Meshed / Flexible",
+      "network": "vendor\\legacy_platform\\sim\\sumo\\network.net.xml",
+      "config": "vendor\\legacy_platform\\config\\scenario_config.yaml",
+      "air_fleet_n": 4,
+      "asset_hashes": {
+        "network": "c34caea7f89f77c820aba915db4bd8a03e093f57aa46edc51a769499df67ff2d",
+        "facility_layout": "f8adb1a2353d93c3b9b6b3062f1293dcf540f2c419203533d06728e0bef5d434",
+        "compatibility": null,
+        "external_events": null,
+        "reference_deadlines": null
+      },
+      "status": {
+        "legacy_map_available": true,
+        "new_semantics_formal_fixture_frozen": false
+      },
+      "formal_signature": null
+    },
+    "B": {
+      "region": "Amsterdam",
+      "archetype": "Barrier / Bottleneck",
+      "network": "vendor\\legacy_platform\\sim\\sites\\site_b_amsterdam\\sumo\\network.net.xml",
+      "config": "vendor\\legacy_platform\\config\\site_b_amsterdam_config.yaml",
+      "air_fleet_n": 4,
+      "asset_hashes": {
+        "network": "7167c7bcd8fc712fb3c9babb4964e4332d3c26f95968123ca8135baeb1d7e9b7",
+        "facility_layout": "aec510f3bccd62cbf79a8e6b9a13672ff995c220596201c41e82564e0b9f5438",
+        "compatibility": null,
+        "external_events": null,
+        "reference_deadlines": null
+      },
+      "status": {
+        "legacy_map_available": true,
+        "new_semantics_formal_fixture_frozen": false
+      },
+      "formal_signature": null
+    },
+    "C": {
+      "region": "Edmonton",
+      "archetype": "Sparse / Long-haul",
+      "network": "vendor\\legacy_platform\\sim\\sites\\site_c_edmonton\\sumo\\network.net.xml",
+      "config": "vendor\\legacy_platform\\config\\site_c_edmonton_config.yaml",
+      "air_fleet_n": 4,
+      "asset_hashes": {
+        "network": "54e388bcf3a6320dedffe195ea3f87b593919a69c68927a632690261b0dad66d",
+        "facility_layout": "8fe672a5832b5ce992601de0c8f11a08d313ee7c0ca4de41325f61de76f5daba",
+        "compatibility": null,
+        "external_events": null,
+        "reference_deadlines": null
+      },
+      "status": {
+        "legacy_map_available": true,
+        "new_semantics_formal_fixture_frozen": false
+      },
+      "formal_signature": null
+    },
+    "D": {
+      "region": "Leipzig",
+      "archetype": "Transfer-hub Bottleneck",
+      "selected_candidate": "D_03",
+      "network": "sites\\frozen\\D\\network.net.xml",
+      "config": "sites\\frozen\\D\\site_config.json",
+      "air_fleet_n": 4,
+      "asset_hashes": {
+        "network": "5f0debf3a5c7c4f47f04e77ecf8fdfe5c4512283afe9f6478f2c563704134d03",
+        "facility_layout": "3df6061d0767c29e8b4c15f04b8a2187ef019f29233c73e61b256a333dc519f9",
+        "compatibility": "e5b884877f4a707111ca2bf40ec3ddcb32c9ab2ab9aabb655b545521837edf0e",
+        "external_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "reference_deadlines": null
+      },
+      "status": {
+        "osm_downloaded": true,
+        "network_converted": true,
+        "route_diagnostics_passed": true,
+        "map_assets_frozen": true,
+        "traffic_volatility_observed": null,
+        "single_cargo_closed_loop_passed": true,
+        "multi_task_custody_and_contention_validated": false,
+        "formal_fixture_frozen": false,
+        "G_D": "pending",
+        "G_E": "not_applicable",
+        "G_F": "not_applicable"
+      },
+      "formal_signature": null
+    },
+    "E": {
+      "region": "Barcelona",
+      "archetype": "Travel-time Volatile",
+      "selected_candidate": "E_02",
+      "network": "sites\\frozen\\E\\network.net.xml",
+      "config": "sites\\frozen\\E\\site_config.json",
+      "air_fleet_n": 4,
+      "asset_hashes": {
+        "network": "a9384b858e124963ec5a1ed6c1d560f29b4a6bfb15f221f4f7b50903858cbc69",
+        "facility_layout": "621fd8e840928f3bae25ebd67d6217965cf954a90c5b1590e6a6caba13fdea63",
+        "compatibility": "e5b884877f4a707111ca2bf40ec3ddcb32c9ab2ab9aabb655b545521837edf0e",
+        "external_events": "e92424f29312faf15c2d6a4d89f4b804d02aa4ecd7b52a27189ff6c9e3527c22",
+        "reference_deadlines": null
+      },
+      "status": {
+        "osm_downloaded": true,
+        "network_converted": true,
+        "route_diagnostics_passed": true,
+        "map_assets_frozen": true,
+        "traffic_volatility_observed": true,
+        "single_cargo_closed_loop_passed": true,
+        "multi_task_custody_and_contention_validated": false,
+        "formal_fixture_frozen": false,
+        "G_D": "not_applicable",
+        "G_E": "pending_deadline_and_load_calibration",
+        "G_F": "not_applicable"
+      },
+      "formal_signature": null
+    },
+    "F": {
+      "region": "Berlin-Prenzlauer-Berg",
+      "archetype": "Multi-hub Resource-coupled",
+      "selected_candidate": "F_04",
+      "network": "sites\\frozen\\F\\network.net.xml",
+      "config": "sites\\frozen\\F\\site_config.json",
+      "air_fleet_n": 5,
+      "asset_hashes": {
+        "network": "4d388687f11e22848ce3378f93c90050733440f436500741d90e1b135fea1f5e",
+        "facility_layout": "e439b7cabd5c8052e74b6f335abfa9eb687350cf37d8ffe93a4302ea9c040fa7",
+        "compatibility": "44a603bc5890e65ca6161be40b7ab0791e34be2d3f10035bc04ce47f5cd382c9",
+        "external_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "reference_deadlines": null
+      },
+      "status": {
+        "osm_downloaded": true,
+        "network_converted": true,
+        "route_diagnostics_passed": true,
+        "map_assets_frozen": true,
+        "traffic_volatility_observed": null,
+        "single_cargo_closed_loop_passed": true,
+        "multi_task_custody_and_contention_validated": false,
+        "formal_fixture_frozen": false,
+        "G_D": "not_applicable",
+        "G_E": "not_applicable",
+        "G_F": "pending_runtime_compatibility_and_resource_contention"
+      },
+      "formal_signature": null
+    }
+  },
+  "formal_admission": false
+}

@@ -1,0 +1,93 @@
+{
+  "site_id": "D",
+  "scenario_family": "R6_COMPETING",
+  "seed": 20270901,
+  "status": "development_skeleton_not_execution_frozen",
+  "tasks": [
+    {
+      "mission_id": "D-T1",
+      "release_s": 300,
+      "deadline_s": 671,
+      "deadline_anchor_s": 360,
+      "reference_tau_s": 280.7561242204881,
+      "reference_stage_graph": [
+        {
+          "id": "parallel_ready_max",
+          "duration_s": 71.83051423567343,
+          "parallel_durations_s": [
+            71.83051423567343,
+            0
+          ]
+        },
+        {
+          "id": "handoff",
+          "duration_s": 30
+        },
+        {
+          "id": "ground_from_V3",
+          "duration_s": 163.92560998481466
+        },
+        {
+          "id": "unload",
+          "duration_s": 15
+        }
+      ],
+      "reference_validation": "nominal_skeleton_physical_initial_state_pending",
+      "priority": "CRITICAL",
+      "payload_id": "D-P1",
+      "origin": "D1",
+      "destination": "H1",
+      "slack_s": 30,
+      "reference_only": true
+    },
+    {
+      "mission_id": "D-T2",
+      "release_s": 360,
+      "deadline_s": 656,
+      "deadline_anchor_s": 360,
+      "reference_tau_s": 265.0768935649429,
+      "reference_stage_graph": [
+        {
+          "id": "parallel_ready_max",
+          "duration_s": 71.83051423567343,
+          "parallel_durations_s": [
+            71.83051423567343,
+            0
+          ]
+        },
+        {
+          "id": "handoff",
+          "duration_s": 30
+        },
+        {
+          "id": "ground_from_V3",
+          "duration_s": 148.2463793292695
+        },
+        {
+          "id": "unload",
+          "duration_s": 15
+        }
+      ],
+      "reference_validation": "nominal_skeleton_physical_initial_state_pending",
+      "priority": "CRITICAL",
+      "payload_id": "D-P2",
+      "origin": "D2",
+      "destination": "H2",
+      "slack_s": 30,
+      "reference_only": true
+    }
+  ],
+  "external_events": [],
+  "failure_time_s": 360,
+  "network_sha256": "5f0debf3a5c7c4f47f04e77ecf8fdfe5c4512283afe9f6478f2c563704134d03",
+  "facility_layout_sha256": "3df6061d0767c29e8b4c15f04b8a2187ef019f29233c73e61b256a333dc519f9",
+  "compatibility_sha256": "e5b884877f4a707111ca2bf40ec3ddcb32c9ab2ab9aabb655b545521837edf0e",
+  "missing_for_formal": [
+    "physically consistent pre-fault carrier/payload initial states",
+    "full background mission realization",
+    "supervisor admission gates",
+    "all held-out seed realizations",
+    "individual best legal reference plan validation"
+  ],
+  "native_model_calls": 0
+}

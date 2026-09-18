@@ -1,0 +1,66 @@
+{
+  "site_id": "E",
+  "region": "Barcelona",
+  "selected_candidate": "E_02",
+  "selection_rule_sha256": "12a726fe3cc2b2224dcf50671f78d7ec12e14ba9a262fc5555c29b2b526d94c8",
+  "all_candidates": [
+    {
+      "id": "E_00",
+      "score": [
+        1,
+        393,
+        7,
+        0.862015,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "id": "E_01",
+      "score": [
+        1,
+        367,
+        7,
+        0.852904,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "id": "E_02",
+      "score": [
+        1,
+        408,
+        5,
+        0.889009,
+        -2
+      ],
+      "pass": true
+    },
+    {
+      "id": "E_03",
+      "score": [
+        1,
+        404,
+        7,
+        0.857517,
+        -3
+      ],
+      "pass": true
+    },
+    {
+      "id": "E_04",
+      "score": [
+        1,
+        304,
+        6,
+        0.866359,
+        -4
+      ],
+      "pass": true
+    }
+  ],
+  "map_assets_frozen": true,
+  "formal_fixture_frozen": false,
+  "formal_admission": false
+}

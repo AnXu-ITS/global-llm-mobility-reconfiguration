@@ -1,176 +1,28 @@
-# A Ground–Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions
+# HSCC+ICCPS 2027 研究工作区
 
-[English](README.md) · [中文说明](README.zh-CN.md)
+候选方向：**Deadline-Aware Runtime Supervision for Ground–Air Service Reconfiguration**。
 
-Reference implementation for the paper *"A Ground–Low-Altitude Mobility Manager for
-Service Reconfiguration under Disruptions"*. A **candidate generator** converts joint
-ground–air observations into a shared **executable candidate interface**; replaceable
-**supervisory policies** (heuristic or LLM) select an intervention; an **executor**
-checks and applies it while local aircraft contingencies run independently. Four
-SUMO–BlueSky experiments are evaluated across **three contrasting transport settings**.
+本目录已于 2026-09-18 按新旧方向整理。旧项目有完整独立备份，新论文与新实验使用独立目录；旧批量数据的冗余工作区副本按校验清单清理。
 
----
+| 入口 | 内容 |
+|---|---|
+| [转向计划书](HSCC_ICCPS_2027_研究方向转向计划书.md) | 用户提供的完整研究迁移方案，保持原文件 |
+| [转向分析与处置矩阵](provenance/hscc2027/MIGRATION_ANALYSIS.md) | 核心贡献判断、本地风险、旧材料如何使用 |
+| [新研究工作区](research_hscc2027/README.md) | 新设计、首版运行时、隔离回放与物理仿真 |
+| [当前实现和验证](research_hscc2027/IMPLEMENTATION_STATUS.md) | 27 次 R0 回放、48 个 R1 用例、三组物理闭环开发对照及尚未通过的完整门 |
+| [具体实验设计 v0.1](research_hscc2027/design/EXPERIMENT_PROTOCOL_v0.1.md) | R0–R5 实验协议、运行矩阵、GPT-6 Astra high 调用与验收 |
+| [当前六场地协议 v0.2](research_hscc2027/design/EXPERIMENT_PROTOCOL_v0.2.md) | 新增D/E/F与R6；基础计划3821，可选440 |
+| [新增场地落地报告](research_hscc2027/design/SITES_D_E_F_IMPLEMENTATION_v0.2.md) | 莱比锡、巴塞罗那、柏林真实OSM地图、物理诊断与待验收项 |
+| [新 Overleaf 仓库](manuscript_hscc2027/) | 已克隆的独立 Git 仓库，当前为 ACM 示例模板 |
+| [旧项目档案](legacy/20260918/) | 保留的旧仓库、设计、稿件、R0 证据；旧批量数据可从独立 ZIP 恢复 |
+| [迁移校验报告](provenance/hscc2027/migration_verification.json) | 文件集合、内容哈希、修正对应与 Git 状态 |
+| [恢复说明](provenance/hscc2027/RESTORE_LEGACY.md) | 独立备份位置、校验和恢复方式 |
+| [后续工作](provenance/hscc2027/NEXT_STAGE_PLAN.md) | R0 桥接、异步诊断、物理交接和强基线验证 |
 
-## 1. Overview
+旧缓存与批量结果已完整备份；工作区副本按逐文件 SHA-256 核验后清理，恢复索引与执行日志在 `research_hscc2027/outputs/bootstrap/`。新方向不导入旧动作缓存，也不将旧结果作为新运行时的主要实验结果。
 
-- **Three study sites**, each 3.2 km × 3.2 km from OpenStreetMap:
-  - **A** — Suzhou, China (meshed urban)
-  - **B** — Amsterdam, the Netherlands
-  - **C** — Edmonton, Canada
-- **Co-simulation** — SUMO 1.27.1 (ground) + BlueSky (air), 1 s step, 900 s horizon.
-- **Core fleet** — 2 medical UAVs + 1 logistics UAV + 1 passenger eVTOL (4 aircraft).
-- **LLM** — OpenAI-compatible chat-completions endpoint
-  (`corp-ai/openai/deepseek-v4-pro` by default); stdlib-only client
-  (`managers/llm_client.py`), key from `CORP_AI_API_KEY` or `~/.dsh/.credentials.yaml`.
+新论文在线项目：<https://www.overleaf.com/project/6aaca76497f5b6e09545fc20>。
 
-### Supervisory policies (the only thing that changes between runs)
+本目录现在是资料容器。论文 Git 操作应在 `manuscript_hscc2027/` 执行；旧仓库 Git 操作对应 `legacy/20260918/`。旧 tracked 源码与历史 Git 提交保留；需要旧批量数据的历史脚本应在恢复副本中运行。
 
-| ID | Policy | Meaning |
-|---|---|---|
-| `B0` | ground-only | baseline: no air dispatch |
-| `B1` | rule-based | hand-coded rules that rank only air candidates |
-| `B2` | fixed-objective heuristic | one-step score trading speed vs. incumbent-service preservation |
-| `B4a` | LLM (no candidate info) | ablation: LLM without the derived candidate section |
-| `B4b` | LLM (candidate info) | main LLM policy with explicit candidate-information support |
-
-### Experiments
-
-| ID | Question | Span |
-|---|---|---|
-| E1 | Selective air support (baseline vs. coordinated) | 3 sites |
-| E2 | Air failures (6 fault families F1–F6) | 3 sites |
-| E3 | Compound disturbances (levels L1–L4) | 3 sites |
-| E4 | Observation–execution timing (4A refresh · 4B delay · 4C scale) | site A |
-
-**E4 arms** — 4A observation interval `OBS10/30/60/120/300` · 4B execution delay
-`D00/01/05/10/20/30/60` · 4C aircraft-record scale `N05/10/20/30/50` (core fleet fixed at 4).
-
----
-
-## 2. Repository layout
-
-```
-├── orchestrator/   experiment runners, SUMO/BlueSky adapters, registry, fleet
-├── managers/       B0/B1/B2/B4a/B4b policies + LLM client
-├── safety/         feasibility checker + semantic validator (policy-agnostic gates)
-├── config/         scenario + experiment matrices (3 sites) + LLM (phase3_config.yaml)
-├── prompts/        LLM prompt templates (manager_v1/v2)
-├── schemas/        JSON schemas for action validation
-├── failures/       E2 fault-injection models (F1–F6)
-├── state/          global-state model
-├── sim/            SUMO network/routes + BlueSky inputs for site_a/b/c
-├── tests/          standalone acceptance tests (no pytest)
-├── tools/          run_experiment{1..4}[_cross_site].py + analyze_*.py
-├── docs/           design documents
-└── manuscript/     paper + reproduction pipeline (see below)
-```
-
-`manuscript/` contains the authoritative paper source and its reproduction pipeline:
-
-```
-manuscript/
-├── overleaf/               main.tex, supplement.tex, references.bib, journal class files
-│   ├── figures/            PDF figure assets
-│   ├── editable_figures/   PowerPoint figure decks
-│   └── reproducibility/    frozen paper reproducibility package (configs, prompts,
-│                           schemas, derived data, hashed inventory, queue_fix.py)
-├── source/revision_v3/     analysis scripts + derived data + regression runs
-├── figure1/                Figure 1 builder and assets
-├── reproduce_analysis.ps1  postprocessing/reproduction entry point
-└── REPRODUCTION_README.md  full reproduction instructions (see Section 6)
-```
-
-Runtime artifacts (`runs/`, `outputs/`) and `archive/` are **git-ignored** (large and
-reproducible on demand; `archive/` also holds superseded planning docs and reviews).
-
----
-
-## 3. Requirements
-
-- **Python 3.14** (virtualenv recommended)
-- **SUMO 1.27.1** — via the `eclipse-sumo` pip wheel (no separate install)
-- **BlueSky** — a *source checkout* (not pip); see Setup
-- Python packages — [`requirements.txt`](requirements.txt)
-
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate   |   POSIX: source .venv/bin/activate
-pip install -r requirements.txt
-```
-
----
-
-## 4. Setup
-
-### 4.1 SUMO
-
-`eclipse-sumo` is in `requirements.txt`. At runtime `orchestrator/sumo_env.py` imports
-`sumo` to locate `SUMO_HOME` and add `traci`/`sumolib` to the path.
-
-### 4.2 BlueSky
-
-BlueSky is imported **from source** (`orchestrator/bluesky_adapter.py`):
-
-```bash
-git clone https://github.com/TUDelft-CNS-ATM/bluesky.git
-```
-
-Point the framework at it via `BLUESKY_REPO`:
-
-```bash
-# Windows (PowerShell)                    # POSIX
-$env:BLUESKY_REPO = "C:\...\bluesky"      export BLUESKY_REPO=/path/to/bluesky
-```
-
-### 4.3 LLM endpoint
-
-Edit the `llm:` block of [`config/phase3_config.yaml`](config/phase3_config.yaml):
-
-```yaml
-llm:
-  model: corp-ai/openai/deepseek-v4-pro
-  base_url: http://<your-host>:<port>/v1
-  api_key_env: CORP_AI_API_KEY
-  max_tokens: 8192
-```
-
-Then set the key (`CORP_AI_API_KEY`, or `~/.dsh/.credentials.yaml`). See
-[`.env.example`](.env.example) for the environment variables the code reads.
-
----
-
-## 5. Quick start
-
-```bash
-# Single in-process run (E4 4B, arm D10, LLM policy, seed 20240601)
-python tools/run_experiment4.py --sub 4B --arm D10 --manager B4b \
-    --seed 20240601 --scenario E4_ANCHOR --cohort primary --direct
-
-# Full E4 sweep (parallel workers)
-python tools/run_experiment4.py --sub 4A --manager all --jobs 8
-
-# Cross-site experiments (3 sites A/B/C)
-python tools/run_experiment1_cross_site.py --help
-python tools/run_experiment2_cross_site.py --help
-python tools/run_experiment3_cross_site.py --help
-
-# Analyze
-python tools/analyze_experiment4.py primary
-```
-
-Runs are written under `runs/<experiment>/<cohort>/...`; `--force` re-runs current runs.
-`tests/` are standalone scripts (no pytest): `python tests/test_experiment4_acceptance.py`.
-
----
-
-## 6. Reproducing the paper
-
-1. Install the environment (Section 3) and configure SUMO / BlueSky / LLM (Section 4).
-2. Run the framework sweeps with the `tools/run_*.py` dispatchers (Section 5).
-3. Follow [`manuscript/REPRODUCTION_README.md`](manuscript/REPRODUCTION_README.md) and
-   `manuscript/reproduce_analysis.ps1` to reproduce the numerical analysis and figures
-   from the saved run artifacts and the frozen `manuscript/overleaf/reproducibility/`
-   package. The postprocessing is LLM-free; `-RunRegression` adds the documented
-   deterministic regression runs (requires SUMO/traci).
-
-The LLM endpoint and BlueSky path are the only machine-specific settings.
+现已运行首轮开发仿真，尚未启动正式实验、实验模型调用或推送远程。独立备份在 `C:/Users/xuan1/research-backups/ground-air-legacy-20260918/`；它与本工作区分离，但仍处于同一台机器的 C 盘。

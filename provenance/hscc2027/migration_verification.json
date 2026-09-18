@@ -1,0 +1,34 @@
+{
+  "checked_files": 329525,
+  "verified_bytes": 7808576298,
+  "hash_errors": [],
+  "file_set_exact_match": true,
+  "observed_run_directories": 15385,
+  "observed_metrics_files": 15369,
+  "logical_matrix_completeness": "not_audited",
+  "missing_metrics_in_observed_run_dirs": 16,
+  "correction_pairs_present": 20,
+  "legacy_head": {
+    "exit_code": 0,
+    "stdout": "3078ffb60d58952b4c193b2edb1de7d85375bbab",
+    "stderr": ""
+  },
+  "legacy_status": {
+    "exit_code": 0,
+    "stdout": "?? manuscript/overleaf_recovery/\n?? manuscript/overleaf_remote/",
+    "stderr": ""
+  },
+  "overleaf_head": {
+    "exit_code": 0,
+    "stdout": "e94a0ef036ac2e3283f6257f8fb159115c8168b5",
+    "stderr": ""
+  },
+  "overleaf_status": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "simulation_or_api_runs": 0,
+  "deleted_legacy_files": 0,
+  "completed": 1789704852.5673609
+}

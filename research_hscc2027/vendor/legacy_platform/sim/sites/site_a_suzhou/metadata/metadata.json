@@ -1,0 +1,24 @@
+{
+  "site": "site_a_suzhou",
+  "city": "Suzhou, China",
+  "center": {
+    "lat": 31.30377,
+    "lon": 120.59981
+  },
+  "bbox": {
+    "south": 31.289339293328542,
+    "north": 31.31820070667146,
+    "west": 120.58300330305475,
+    "east": 120.61661669694526
+  },
+  "area_km2": 10.24,
+  "morphology": "meshed_mixed_urban",
+  "role": "primary",
+  "frozen_exp1": true,
+  "config_source": "config/scenario_config.yaml (COPY, frozen)",
+  "freeze_hashes_ok": true,
+  "notes": [
+    "Site A copied byte-identical; NO regeneration of any file.",
+    "water_osm.json and routes/primary.json are derived read-only analyses for plotting/validation."
+  ]
+}

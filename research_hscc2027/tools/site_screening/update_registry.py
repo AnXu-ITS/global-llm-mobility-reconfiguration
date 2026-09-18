@@ -1,0 +1,40 @@
+"""Publish site provenance and v0.2 planning config, never enable formal runs."""
+from screen_sites import ROOT,OUT,dump,sha,haversine
+import json,statistics
+def read(p):return json.loads(p.read_text(encoding='utf-8'))
+def main():
+    registry={'version':'six-sites-v1','sites':{},'formal_admission':False}
+    for site,city,name,path,cfg in [
+        ('A','Suzhou','Meshed / Flexible','sim/sumo/network.net.xml','config/scenario_config.yaml'),
+        ('B','Amsterdam','Barrier / Bottleneck','sim/sites/site_b_amsterdam/sumo/network.net.xml','config/site_b_amsterdam_config.yaml'),
+        ('C','Edmonton','Sparse / Long-haul','sim/sites/site_c_edmonton/sumo/network.net.xml','config/site_c_edmonton_config.yaml')]:
+        net=ROOT/'vendor/legacy_platform'/path;config=ROOT/'vendor/legacy_platform'/cfg
+        registry['sites'][site]={'region':city,'archetype':name,'network':str(net.relative_to(ROOT)),'config':str(config.relative_to(ROOT)),'air_fleet_n':4,'asset_hashes':{'network':sha(net),'facility_layout':sha(config),'compatibility':None,'external_events':None,'reference_deadlines':None},'status':{'legacy_map_available':True,'new_semantics_formal_fixture_frozen':False},'formal_signature':None}
+    for site,name in [('D','Transfer-hub Bottleneck'),('E','Travel-time Volatile'),('F','Multi-hub Resource-coupled')]:
+        d=OUT/'frozen'/site;r=read(d/'site_candidate_report.json');selection=read(d/'selection.json');f=read(d/'facilities.json')['facilities'];c=read(d/'compatibility.json')
+        pointer=read(d/'traffic_diagnostic_pointer.json');tr=read(ROOT/pointer['report']);nominal=read(ROOT/tr['output']/'nominal.json')
+        perturbed=read(ROOT/tr['output']/'perturbed.json') if site=='E' else None
+        physical=read(d/'physical_diagnostic_pointer.json')
+        tasklib=c['task_library'];preferred=[set(x['preferred']) for x in tasklib];allresources=set().union(*(set(x['legal_backups']) for x in tasklib))
+        degrees={key:sum(key in x['legal_backups'] for x in tasklib) for key in allresources}
+        shared=[sum(any(resource in other for j,other in enumerate(preferred) if i!=j) for resource in pref)/len(pref) for i,pref in enumerate(preferred)]
+        shares=[2/3,1/3] if site=='F' else [1]
+        sig={'version':'site-signature-v1','site_id':site,'workload_basis':'three-task medical_h1/medical_h2/logistics_h2 reference library; not three R6 evaluated tasks','route_redundancy_lower_bound_mean':statistics.mean(x['reasonably_distinct_paths_lower_bound'] for x in r['routes'].values()),'closure_detour_freeflow_ratio':r['routes']['D1_H1']['closure_freeflow_eta_ratio'],'ground_reference_eta_s':r['routes']['D1_H1']['freeflow_eta_s'],'ground_reference_distance_m':r['routes']['D1_H1']['distance_m'],'air_reference_distance_m':haversine(f['D1']['lat'],f['D1']['lon'],f['H1']['lat'],f['H1']['lon']),'nominal_eta_cv':nominal['eta_cv'],'nominal_p95_eta_over_median':nominal['p95_eta_over_median'],'perturbed_eta_cv':perturbed['eta_cv'] if perturbed else None,'handoff_concentration':max(shares),'handoff_hhi':sum(x*x for x in shares),'preferred_resource_coupling':statistics.mean(shared),'task_resource_graph_density':sum(degrees.values())/(len(tasklib)*len(allresources)),'mean_resource_degree':statistics.mean(degrees.values()),'max_resource_degree':max(degrees.values()),'sources':{'structural':'site_candidate_report.json','traffic':pointer['report'],'resource_graph':'compatibility.json'},'limitations':['route lower bound is not exhaustive route count','reference ETA is freeflow, distinct from actual probe travel time','ETA CV uses current fixed-route edge estimates at10s sampling over250..600, seed20270901, common declared background','handoff and compatibility are modeled design properties, not OSM measurements','A/B/C signatures must be recomputed under this same protocol before quantitative six-site comparison']}
+        sig['air_reference_eta_s']=sig['air_reference_distance_m']/15
+        dump(d/'site_signature.json',sig)
+        statuses={'osm_downloaded':True,'network_converted':True,'route_diagnostics_passed':tr['nominal_probe_passed'],'map_assets_frozen':True,'traffic_volatility_observed':tr.get('physical_volatility_observed') if site=='E' else None,'single_cargo_closed_loop_passed':physical.get('status')=='passed','multi_task_custody_and_contention_validated':False,'formal_fixture_frozen':False,'G_D':'pending' if site=='D' else 'not_applicable','G_E':'pending_deadline_and_load_calibration' if site=='E' else 'not_applicable','G_F':'pending_runtime_compatibility_and_resource_contention' if site=='F' else 'not_applicable'}
+        dump(d/'acceptance.json',{'site_id':site,'status':statuses,'evidence':{'selection':'selection.json','routes':'site_candidate_report.json','traffic':pointer['report'],'physical':physical['run_dir'],'compatibility':'compatibility.json'},'formal_admission':False,'remaining':['full R0 bridge and R1 gates','two-task resource/custody validation','deadline<=900 and baseline timing calibration','all held-out exogenous fixtures','parameters shared across sites; no per-site FULL/LST tuning']})
+        assets={key:sha(d/file) for key,file in [('network','network.net.xml'),('facility_layout','facilities.json'),('compatibility','compatibility.json'),('external_events','external_events.json')]};assets['reference_deadlines']=None
+        registry['sites'][site]={'region':selection['region'],'archetype':name,'selected_candidate':selection['selected_candidate'],'network':str((d/'network.net.xml').relative_to(ROOT)),'config':str((d/'site_config.json').relative_to(ROOT)),'air_fleet_n':5 if site=='F' else 4,'asset_hashes':assets,'status':statuses,'formal_signature':None}
+        dump(d/'asset_manifest.json',{'site_id':site,'map_assets_frozen':True,'formal_fixture_frozen':False,'files':{x.name:sha(x) for x in d.iterdir() if x.is_file() and x.name!='asset_manifest.json'}})
+    dump(ROOT/'config/sites.v1.json',registry)
+    p=read(ROOT/'config/experiment_protocol.v1.json');p.update({'protocol_id':'hscc2027-astra-high-v0.2-six-sites','supersedes':'experiment_protocol.v1.json','site_registry':'sites.v1.json','scenario_sites':{'S0':'A','S1':'A','S2':'A','S3':'A','H_A':'A','H_B':'B','SCALE_C':'C'},'site_design_source':'../design/SITES_D_E_F_DESIGN_v0.1.md'})
+    p['runtime']['implementation_status']='development_slice_verified_full_gates_pending';p['seed_sets']['cross_site']=list(range(20271201,20271211))
+    p['randomness']['derivation']='first64bits SHA256(protocol_id|site_id|scenario_family|seed|stream_name); exclude method and execution order'
+    p['runtime']['activation'].update({'R6_SINGLE':'fixture_failure_time','R6_COMPETING':'fixture_failure_time_and_later_mission_release'})
+    p['groups'] += [{'id':'R6_SITE','cohort':'cross_site_exploratory','mode':'ASYNC_EMULATED','seeds':'cross_site','fixed':{'delay_s':30},'axes':{'site_id':list('ABCDEF'),'scenario':['R6_SINGLE','R6_COMPETING'],'method':['X_LST','X_FULL']},'expected_runs':240},{'id':'R6_B2','cohort':'optional','mode':'FAST_NATIVE_COMPUTE','seeds':'cross_site','axes':{'site_id':list('ABCDEF'),'scenario':['R6_SINGLE','R6_COMPETING'],'method':['B2_FAST']},'expected_runs':120}]
+    p['statistics']['cross_site']={'primary_contrast':['X_FULL','X_LST'],'estimand':'equal-weight fixed6site x2scenario panel within each of10 cross_site seeds','resampling_unit':'entire_cross_site_seed_block_all12site_scenario_cells_and_paired_methods','bootstrap_replicates':10000,'bootstrap_seed':731605,'scope':'exploratory fixed operational-context panel; no causal urban-morphology/random-city inference; separate fromR2','B2':'optional120 actual fast-compute controls; no artificial30s delay','selection':'controller-free structural and physical diagnostics only; no performance-based held-out seed selection'}
+    p['gates']['G_SITE']='map provenance and controller-free diagnostics plus site G-D/G-E/G-F; G0-G4 remain required for respective formal cohorts'
+    dump(ROOT/'config/experiment_protocol.v2.json',p)
+    print('REGISTRY_AND_PROTOCOL_WRITTEN',flush=True)
+if __name__=='__main__':main()

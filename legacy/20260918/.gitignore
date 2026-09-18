@@ -1,0 +1,46 @@
+# ---- runtime / generated experiment artifacts (very large) ----
+runs/
+outputs/
+archive/
+tmp/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+
+# ---- virtualenv / tooling ----
+.venv/
+venv/
+env/
+
+# ---- IDE / OS ----
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- logs / caches ----
+*.log
+.cache/
+
+# ---- transient chart-data scratch dirs ----
+.chart-data*/
+
+# ---- secrets / credentials (defensive; real key lives in ~/.dsh) ----
+.env
+.env.*
+!.env.example
+*.credentials.yaml
+.credentials.yaml
+credentials*.yaml
+secrets*.yaml

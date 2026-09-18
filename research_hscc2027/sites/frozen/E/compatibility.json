@@ -1,0 +1,126 @@
+{
+  "resources": {
+    "M-UAV-1": {
+      "classes": [
+        "medical"
+      ],
+      "sites": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "H1",
+        "H2"
+      ],
+      "capacity": 1
+    },
+    "M-UAV-2": {
+      "classes": [
+        "medical"
+      ],
+      "sites": [
+        "V1",
+        "V2",
+        "V3",
+        "H1"
+      ],
+      "capacity": 1
+    },
+    "L-UAV-1": {
+      "classes": [
+        "logistics"
+      ],
+      "sites": [
+        "D1",
+        "D2",
+        "V2",
+        "V3",
+        "V4",
+        "H1",
+        "H2"
+      ],
+      "capacity": 1
+    },
+    "EVTOL-1": {
+      "classes": [
+        "passenger",
+        "nonmedical_cargo"
+      ],
+      "sites": [
+        "V1",
+        "V2",
+        "V3",
+        "V4"
+      ],
+      "capacity": 1
+    },
+    "GV-1": {
+      "classes": [
+        "medical",
+        "logistics"
+      ],
+      "sites": [
+        "D1",
+        "V3",
+        "H1"
+      ],
+      "capacity": 1
+    },
+    "GV-2": {
+      "classes": [
+        "medical",
+        "logistics"
+      ],
+      "sites": [
+        "D2",
+        "V3",
+        "V4",
+        "H2"
+      ],
+      "capacity": 1
+    }
+  },
+  "bays": {
+    "BAY_V3": {
+      "site": "V3",
+      "capacity": 1
+    }
+  },
+  "default": "deny_unlisted_class_or_site",
+  "task_library": [
+    {
+      "id": "medical_h1",
+      "class": "medical",
+      "destination": "H1",
+      "preferred": [
+        "M-UAV-1"
+      ],
+      "legal_backups": [
+        "M-UAV-1",
+        "M-UAV-2"
+      ]
+    },
+    {
+      "id": "medical_h2",
+      "class": "medical",
+      "destination": "H2",
+      "preferred": [
+        "M-UAV-1"
+      ],
+      "legal_backups": [
+        "M-UAV-1"
+      ]
+    },
+    {
+      "id": "logistics_h2",
+      "class": "logistics",
+      "destination": "H2",
+      "preferred": [
+        "L-UAV-1"
+      ],
+      "legal_backups": [
+        "L-UAV-1"
+      ]
+    }
+  ]
+}

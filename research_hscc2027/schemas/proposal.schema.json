@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ground-air proposal envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {"type":"string"},
+    "snapshot_sha256": {"type":"string"},
+    "proposals": {
+      "type":"array",
+      "items": {
+        "type":"object",
+        "additionalProperties":false,
+        "properties": {
+          "mission_id":{"type":"string"},
+          "mission_version":{"type":"integer"},
+          "decision":{"type":"string","enum":["PROPOSE","NO_FEASIBLE_ACTION"]},
+          "candidate_id":{"type":["string","null"]},
+          "reason_code":{"type":"string","enum":["DEADLINE_AND_SERVICE_TRADEOFF","NO_LEGAL_CANDIDATE"]}
+        },
+        "required":["mission_id","mission_version","decision","candidate_id","reason_code"]
+      }
+    }
+  },
+  "required":["request_id","snapshot_sha256","proposals"]
+}

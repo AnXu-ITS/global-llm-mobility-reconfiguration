@@ -1,0 +1,45 @@
+{
+  "version": "structural-screen-v2-actuated-signals",
+  "candidate_windows_per_site": 5,
+  "window_km": [
+    3.2,
+    3.2
+  ],
+  "regional_extract_km": [
+    5.6,
+    5.6
+  ],
+  "offsets_km": [
+    [
+      0,
+      0
+    ],
+    [
+      0.75,
+      0
+    ],
+    [
+      -0.75,
+      0
+    ],
+    [
+      0,
+      0.75
+    ],
+    [
+      0,
+      -0.75
+    ]
+  ],
+  "minimum_scc_fraction": 0.65,
+  "minimum_redundant_ods_of_8": 2,
+  "route_distance_range_m": [
+    100,
+    6000
+  ],
+  "E_min_signal_systems": 5,
+  "F_min_hub_separation_m": 500,
+  "ranking": "D: pass, redundant ODs, SCC fraction, negative dead ends; E: pass, signal systems, redundant ODs, SCC; F: pass, redundant ODs, hub separation, SCC; lower candidate index breaks ties",
+  "selection_uses_controller_performance": false,
+  "import_revision_reason": "Controller-free Barcelona probes exposed excessive delay with legacy static unjoined signals; all15 windows reimported uniformly with SUMO-recommended joined, simplified actuated signals. Previous maps/results retained in archive/import_v1."
+}

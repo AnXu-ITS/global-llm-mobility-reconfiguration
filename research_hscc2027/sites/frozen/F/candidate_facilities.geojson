@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "D1",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.404095427604243,
+          52.546828659158905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "D2",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.404440035067388,
+          52.53608472910862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "H1",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.43029975171378,
+          52.54602426875749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "H2",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.429677584234973,
+          52.536450009044664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V1",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.426130621949511,
+          52.54747908810468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V2",
+        "modeled_service_point": true,
+        "handoff_capacity": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.407454089959193,
+          52.5474251308658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V3",
+        "modeled_service_point": true,
+        "handoff_capacity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.41504729042916,
+          52.54144528308678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V4",
+        "modeled_service_point": true,
+        "handoff_capacity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.421840037547462,
+          52.53541974819269
+        ]
+      }
+    }
+  ]
+}

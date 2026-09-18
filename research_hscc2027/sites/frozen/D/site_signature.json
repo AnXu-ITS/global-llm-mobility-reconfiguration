@@ -1,0 +1,32 @@
+{
+  "version": "site-signature-v1",
+  "site_id": "D",
+  "workload_basis": "three-task medical_h1/medical_h2/logistics_h2 reference library; not three R6 evaluated tasks",
+  "route_redundancy_lower_bound_mean": 2.625,
+  "closure_detour_freeflow_ratio": 1.1140883456446695,
+  "ground_reference_eta_s": 272.64370629461285,
+  "ground_reference_distance_m": 3396.92,
+  "air_reference_distance_m": 1856.2416854599828,
+  "nominal_eta_cv": 0.03189754757045834,
+  "nominal_p95_eta_over_median": 1.0518511873779297,
+  "perturbed_eta_cv": null,
+  "handoff_concentration": 1,
+  "handoff_hhi": 1,
+  "preferred_resource_coupling": 0.6666666666666666,
+  "task_resource_graph_density": 0.4444444444444444,
+  "mean_resource_degree": 1.3333333333333333,
+  "max_resource_degree": 2,
+  "sources": {
+    "structural": "site_candidate_report.json",
+    "traffic": "runs\\site_diagnostics\\D_20260918_163938_4fd08e\\report.json",
+    "resource_graph": "compatibility.json"
+  },
+  "limitations": [
+    "route lower bound is not exhaustive route count",
+    "reference ETA is freeflow, distinct from actual probe travel time",
+    "ETA CV uses current fixed-route edge estimates at10s sampling over250..600, seed20270901, common declared background",
+    "handoff and compatibility are modeled design properties, not OSM measurements",
+    "A/B/C signatures must be recomputed under this same protocol before quantitative six-site comparison"
+  ],
+  "air_reference_eta_s": 123.74944569733219
+}

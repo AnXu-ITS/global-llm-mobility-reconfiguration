@@ -1,0 +1,22 @@
+{
+  "site_id": "D",
+  "exit_code": 0,
+  "run_dir": "runs\\development\\physical_20260918_165138_8479c8",
+  "fixture_id": "MINIMAL_AIR_TO_GROUND_V1",
+  "status": "passed",
+  "errors": [],
+  "delivery_time_s": 609,
+  "ground_arrival_s": 594,
+  "handoff_start_s": 432,
+  "physical_ready_s": 432,
+  "fallback_commit_s": 365,
+  "response_ready_s": 480,
+  "air_moving_ticks_while_proposal_pending": 64,
+  "air_distance_m": 1491.7577765417593,
+  "ground_distance_m": 1423.4184970710842,
+  "facility_delay_s": 0,
+  "response_delay_s": 120,
+  "completion_source": "actual SUMO arrival plus unloading; no ETA timer",
+  "scope": "single unique cargo, actual air return and ground continuation; initial engineering diagnostic, not full S1 cohort",
+  "llm_calls": 0
+}

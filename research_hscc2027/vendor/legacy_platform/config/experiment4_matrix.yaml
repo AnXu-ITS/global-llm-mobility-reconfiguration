@@ -1,0 +1,160 @@
+# Experiment 4 — LLM Operational Limits (post-review revision 2026-09-09)
+# Architecture & design: docs/EXPERIMENT4_DESIGN.md
+#
+# Three sub-experiments over ONE frozen machinery (E2 runner lineage):
+#   4A  Information Update Frequency  — three-clock: physical events / observation
+#                                      snapshot refresh / manager decision. Arms are
+#                                      OBSERVATION INTERVALS; the manager always
+#                                      decides on the latest observed snapshot.
+#   4B  Inference Latency             — delayed execution (Mode B): decide on S_t,
+#                                      re-validate + execute at S_(t+delay). Fixed
+#                                      time-slice order + pending queue versioning.
+#   4C  Global State Scale (input)    — core decision problem IDENTICAL across arms;
+#                                      only inert distractor entries grow the GS.
+#
+# Reuses the FROZEN 4-aircraft base fleet + F1-C2 anchor (B1 closure +
+# M-CRITICAL-001 + C2 lost on M-UAV-02). No frozen component is modified.
+#
+# Statistical unit = scenario x seed. Paired across managers per (scenario, seed).
+
+experiment4:
+  version: 2                       # bumped: 4A/4C redefined (review 20260909)
+  step_s: 1
+  mission_release_t_s: 300
+  disruption_t_s: 300
+  duration_s: 900
+  periodic_decision_s: 30          # decision trigger for 4B/4C (event + periodic)
+  observation_interval_s: 30       # default observation interval (4A overrides)
+
+  emergency_mission:
+    mission_id: M-CRITICAL-001
+    type: medical_blood
+    priority: CRITICAL
+    origin: V2
+    destination: V1
+    deadline_slack_s: 180          # deadline = 300 + 180 = 480 s
+    ground_fallback: true
+    delay_cost: 60.0
+    cancellation_cost: 600.0
+
+  disruptions:
+    MEDIUM:
+      severity: MEDIUM
+      links: [B1]                  # +37.87% (frozen measured value)
+
+  urgencies:
+    CRITICAL:
+      priority: CRITICAL
+      deadline_slack_s: 180
+      delay_cost: 60.0
+      cancellation_cost: 600.0
+
+  # W0 = canonical 4-aircraft background workload (2 busy / 2 idle).
+  workloads:
+    W0:
+      busy:
+        - [L-UAV-01,  M-L-001, logistics,          NORMAL, V2, V3, false]
+        - [EVTOL-01, M-P-001, passenger_transfer, NORMAL, V2, V1, false]
+      idle: [M-UAV-01, M-UAV-02]
+
+  # ------------------------------------------------------------------
+  # 4A — Information Update Frequency (three clocks)
+  # Arms = observation interval (s). The failure time is NON-ALIGNED (t=371) so
+  # the failure-discovery latency differs monotonically across arms:
+  #   OBS10 -> 380 (9s)   OBS30 -> 390 (19s)   OBS60 -> 420 (49s)
+  #   OBS120 -> 480 (109s)  OBS300 -> 600 (229s)
+  # The manager is triggered at every observation tick AND at every disruptive
+  # event, always deciding on the latest observed snapshot.
+  # ------------------------------------------------------------------
+  exp4a:
+    label: Information Update Frequency
+    managers: [B0, B1, B2, B4b]
+    scenarios: [E4_REFRESH]
+    arms:
+      - {id: OBS10,  obs_interval_s: 10}
+      - {id: OBS30,  obs_interval_s: 30}
+      - {id: OBS60,  obs_interval_s: 60}
+      - {id: OBS120, obs_interval_s: 120}
+      - {id: OBS300, obs_interval_s: 300}
+
+  # ------------------------------------------------------------------
+  # 4B — Inference Latency (Mode B delayed execution)
+  # ------------------------------------------------------------------
+  exp4b:
+    label: Inference Latency
+    managers: [B0, B1, B2, B4b]
+    scenarios: [E4_ANCHOR]
+    arms:
+      - {id: D00, delay_s: 0}
+      - {id: D01, delay_s: 1}
+      - {id: D05, delay_s: 5}
+      - {id: D10, delay_s: 10}
+      - {id: D20, delay_s: 20}
+      - {id: D30, delay_s: 30}
+      - {id: D60, delay_s: 60}
+
+  # ------------------------------------------------------------------
+  # 4C — Global State Scale (input burden ONLY)
+  # Arms = total aircraft N; the extra N-4 are INERT distractor entries
+  # (UNAVAILABLE, not commandable, incompatible landing). The viable candidate
+  # set, failure, and reference-optimal action are identical across all arms.
+  # ------------------------------------------------------------------
+  exp4c:
+    label: Global State Scale (input)
+    managers: [B0, B1, B2, B4b]
+    scenarios: [E4_INPUT]
+    arms:
+      - {id: N05, fleet_n: 5}
+      - {id: N10, fleet_n: 10}
+      - {id: N20, fleet_n: 20}
+      - {id: N30, fleet_n: 30}
+      - {id: N50, fleet_n: 50}
+
+  # ------------------------------------------------------------------
+  # scenarios
+  # ------------------------------------------------------------------
+  scenarios:
+    - id: E4_REFRESH                 # 4A: failure NON-aligned to observation grid
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      duration_s: 900
+      failure:
+        family: F1
+        time_s: 371
+        target: M-UAV-02
+
+    - id: E4_ANCHOR                  # 4B: frozen F1-C2 anchor (t=360)
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      duration_s: 900
+      failure:
+        family: F1
+        time_s: 360
+        target: M-UAV-02
+
+    - id: E4_INPUT                   # 4C: frozen anchor + inert distractor padding
+      disruption: MEDIUM
+      urgency: CRITICAL
+      workload: W0
+      duration_s: 900
+      failure:
+        family: F1
+        time_s: 360
+        target: M-UAV-02
+      scale:
+        # inert distractor generation (input-size only; no extra emergencies,
+        # no extra failures, no viable-capacity change).
+        distractor_role: inspection_uav
+        distractor_site_count: 6     # DX1..DX6 (backup_landing_site, inert)
+        distractor_aircraft_prefix: D-UAV
+        distractor_mission_prefix: M-D
+
+  # ------------------------------------------------------------------
+  # pilots (3 x managers via --pilot)
+  # ------------------------------------------------------------------
+  pilots:
+    - {sub: 4A, arm: OBS30, scenario: E4_REFRESH, manager: B4b}
+    - {sub: 4B, arm: D10,  scenario: E4_ANCHOR,  manager: B4b}
+    - {sub: 4C, arm: N10,  scenario: E4_INPUT,   manager: B4b}

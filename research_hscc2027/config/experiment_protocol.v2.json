@@ -1,0 +1,622 @@
+{
+  "protocol_id": "hscc2027-astra-high-v0.2-six-sites",
+  "status": "design_only_not_execution_frozen",
+  "source_plan": "../../HSCC_ICCPS_2027_研究方向转向计划书.md",
+  "legacy_commit": "3078ffb60d58952b4c193b2edb1de7d85375bbab",
+  "model_config": "llm_codex_astra_high.json",
+  "runtime": {
+    "implementation_status": "development_slice_verified_full_gates_pending",
+    "environment_semantics": "ground_air_custody_v2",
+    "step_s": 1,
+    "horizon_s": 900,
+    "task_release_s": 300,
+    "reference_failure_s": 360,
+    "fast_monitor_interval_s": 1,
+    "proposal_epoch_interval_s": 30,
+    "snapshot_policy": "immutable_visible_state_created_before_queueing",
+    "event_order": [
+      "advance_physics_to_t",
+      "inject_exogenous_events",
+      "apply_physical_confirmations",
+      "expire_only_strictly_past_valid_through_and_update_versions",
+      "fast_monitor_and_emergency",
+      "receive_and_validate_responses",
+      "admit_due_operations_and_fallback",
+      "launch_scheduled_proposals",
+      "log_end_of_tick"
+    ],
+    "zero_delay_response_rule": "response launched at t is not eligible before next tick t+1; common to all four supervisors",
+    "native_wall_clock_ratio": 1.0,
+    "native_realtime_interval_s": [
+      300,
+      900
+    ],
+    "native_pre_warmup": "deterministic physical simulation 0..300 before realtime origin; no model calls",
+    "payload_policy": "unique_same_payload_no_resupply",
+    "ground_completion": "physical_vehicle_arrival_and_unloading_complete",
+    "air_completion": "physical_carrier_arrival_and_unloading_complete",
+    "handoff_capacity": 1,
+    "default_handoff_s": 30,
+    "default_load_s": 15,
+    "default_unload_s": 15,
+    "max_requests_per_task_in_flight": 1,
+    "proposal_cache": "disabled_for_new_native_runs",
+    "activation": {
+      "S0": "task_release",
+      "SCALE_C": "task_release",
+      "S1": "fixture_failure_time",
+      "S2": "fixture_failure_time",
+      "S3": "fixture_failure_time",
+      "H_A": "fixture_failure_time",
+      "H_B": "fixture_failure_time",
+      "R6_SINGLE": "fixture_failure_time",
+      "R6_COMPETING": "fixture_failure_time_and_later_mission_release"
+    },
+    "emulated_proposer": {
+      "id": "SCRIPTED_V1",
+      "task_selection": "independent_per_task",
+      "ranking": [
+        "predicted_miss_indicator",
+        "predicted_lateness_s",
+        "predicted_incumbent_exposure_delta",
+        "predicted_delivery_time",
+        "candidate_id"
+      ],
+      "no_feasible": "NO_FEASIBLE_ACTION",
+      "reads_future": false
+    },
+    "deadline_inclusive": true,
+    "monitor_issue_budget_s": 2,
+    "latest_start_trigger": "floor(latest_start/step_s)*step_s; if already passed, immediate best-effort on current tick"
+  },
+  "methods": {
+    "X_FIX": {
+      "time_rule": "fixed",
+      "resource_plan": false
+    },
+    "X_LST": {
+      "time_rule": "latest_start_shared_kernel",
+      "resource_plan": false
+    },
+    "X_TX": {
+      "time_rule": "fixed",
+      "resource_plan": true
+    },
+    "X_FULL": {
+      "time_rule": "latest_start_shared_kernel",
+      "resource_plan": true
+    },
+    "B2_FAST": {
+      "time_rule": "immediate_measured_compute",
+      "resource_plan": false
+    },
+    "X_FULL_NO_HANDOFF_ETA": {
+      "time_rule": "latest_start_shared_kernel",
+      "resource_plan": true,
+      "handoff_eta_in_budget": false,
+      "physical_handoff_constraints": true
+    }
+  },
+  "tuning": {
+    "fixed_timeout_candidates_s": [
+      5,
+      15,
+      30,
+      60
+    ],
+    "shared_margin_candidates_s": [
+      0,
+      2,
+      5
+    ],
+    "development_default_timeout_s": 30,
+    "development_default_margin_s": 2,
+    "selected_timeout_s": null,
+    "selected_margin_s": null,
+    "selection": "minimize scenario-delay-seed equal-weight mean missed-deadline ratio pooled over the applicable two methods; tie: lower incumbent exposure, then smaller parameter",
+    "lease_rule": "decision hold valid through floor(latest_start), expires only when t > valid_through; atomic conversion at fallback; committed stage reservations valid through ceil(predicted_stage_end)+epsilon+2 ticks; no renewal from metadata/version change alone",
+    "formal_requires_selected_parameters": true
+  },
+  "seed_sets": {
+    "development": [
+      20270901,
+      20270902,
+      20270903,
+      20270904,
+      20270905
+    ],
+    "tuning": [
+      20270901,
+      20270902,
+      20270903
+    ],
+    "primary": [
+      20271001,
+      20271002,
+      20271003,
+      20271004,
+      20271005,
+      20271006,
+      20271007,
+      20271008,
+      20271009,
+      20271010,
+      20271011,
+      20271012,
+      20271013,
+      20271014,
+      20271015,
+      20271016,
+      20271017,
+      20271018,
+      20271019,
+      20271020
+    ],
+    "scale": [
+      20271001,
+      20271002,
+      20271003,
+      20271004,
+      20271005,
+      20271006,
+      20271007,
+      20271008,
+      20271009,
+      20271010
+    ],
+    "native": [
+      20271101,
+      20271102,
+      20271103,
+      20271104,
+      20271105,
+      20271106,
+      20271107,
+      20271108,
+      20271109,
+      20271110
+    ],
+    "cross_site": [
+      20271201,
+      20271202,
+      20271203,
+      20271204,
+      20271205,
+      20271206,
+      20271207,
+      20271208,
+      20271209,
+      20271210
+    ]
+  },
+  "randomness": {
+    "derivation": "first64bits SHA256(protocol_id|site_id|scenario_family|seed|stream_name); exclude method and execution order",
+    "streams": [
+      "traffic_departures",
+      "initial_background_phase",
+      "resource_initialization",
+      "failure_schedule",
+      "delay_process",
+      "execution_order"
+    ],
+    "initial_background_phase_s": [
+      0,
+      30
+    ],
+    "traffic_departure_jitter_s": [
+      0,
+      5
+    ],
+    "formal_realization_files_required": true,
+    "model_seed_supported": false
+  },
+  "groups": [
+    {
+      "id": "DEV_CORE",
+      "cohort": "development",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "development",
+      "axes": {
+        "scenario": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "delay_s": [
+          0,
+          30,
+          60
+        ],
+        "method": [
+          "X_FIX",
+          "X_LST",
+          "X_TX",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 240
+    },
+    {
+      "id": "DEV_B2",
+      "cohort": "development",
+      "mode": "FAST_NATIVE_COMPUTE",
+      "seeds": "development",
+      "axes": {
+        "scenario": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "method": [
+          "B2_FAST"
+        ]
+      },
+      "expected_runs": 20
+    },
+    {
+      "id": "TUNE_TIMEOUT",
+      "cohort": "tuning",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "tuning",
+      "axes": {
+        "scenario": [
+          "S2",
+          "S3"
+        ],
+        "delay_s": [
+          15,
+          60
+        ],
+        "method": [
+          "X_FIX",
+          "X_TX"
+        ],
+        "timeout_s": [
+          5,
+          15,
+          30,
+          60
+        ]
+      },
+      "expected_runs": 96
+    },
+    {
+      "id": "TUNE_MARGIN",
+      "cohort": "tuning",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "tuning",
+      "axes": {
+        "scenario": [
+          "S2",
+          "S3"
+        ],
+        "delay_s": [
+          15,
+          60
+        ],
+        "method": [
+          "X_LST",
+          "X_FULL"
+        ],
+        "margin_s": [
+          0,
+          2,
+          5
+        ]
+      },
+      "expected_runs": 72
+    },
+    {
+      "id": "R2_MAIN",
+      "cohort": "primary",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "primary",
+      "axes": {
+        "scenario": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "delay_s": [
+          0,
+          5,
+          15,
+          30,
+          60
+        ],
+        "method": [
+          "X_FIX",
+          "X_LST",
+          "X_TX",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 1600
+    },
+    {
+      "id": "R2_PHASE",
+      "cohort": "primary",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "primary",
+      "fixed": {
+        "delay_s": 30
+      },
+      "axes": {
+        "scenario": [
+          "S1",
+          "S3"
+        ],
+        "fault_offset_s": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "method": [
+          "X_LST",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 400
+    },
+    {
+      "id": "R3_HANDOFF",
+      "cohort": "primary",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "primary",
+      "fixed": {
+        "delay_s": 30
+      },
+      "axes": {
+        "scenario": [
+          "H_A",
+          "H_B"
+        ],
+        "handoff_s": [
+          0,
+          15,
+          30,
+          60,
+          120
+        ],
+        "method": [
+          "X_FIX",
+          "X_LST",
+          "X_TX",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 800
+    },
+    {
+      "id": "R4_SCALE",
+      "cohort": "exploratory",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "scale",
+      "fixed": {
+        "scenario": "SCALE_C",
+        "delay_s": 30
+      },
+      "axes": {
+        "fleet_n": [
+          4,
+          8,
+          16
+        ],
+        "load_ratio": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "method": [
+          "X_LST",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 180
+    },
+    {
+      "id": "R2_B2",
+      "cohort": "primary",
+      "mode": "FAST_NATIVE_COMPUTE",
+      "seeds": "primary",
+      "axes": {
+        "scenario": [
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "method": [
+          "B2_FAST"
+        ]
+      },
+      "expected_runs": 80
+    },
+    {
+      "id": "R5_NATIVE",
+      "cohort": "native_validation",
+      "mode": "ASYNC_NATIVE",
+      "seeds": "native",
+      "axes": {
+        "scenario": [
+          "S1",
+          "S3"
+        ],
+        "method": [
+          "X_FIX",
+          "X_LST",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 60
+    },
+    {
+      "id": "R3_ETA_STRESS",
+      "cohort": "optional",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "primary",
+      "fixed": {
+        "delay_s": 30,
+        "handoff_s": 30
+      },
+      "axes": {
+        "scenario": [
+          "H_A",
+          "H_B"
+        ],
+        "eta_multiplier": [
+          0.8,
+          1.2
+        ],
+        "method": [
+          "X_LST",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 160
+    },
+    {
+      "id": "R3_PREDICTION_ABLATION",
+      "cohort": "optional",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "primary",
+      "fixed": {
+        "delay_s": 30
+      },
+      "axes": {
+        "scenario": [
+          "H_A",
+          "H_B"
+        ],
+        "handoff_s": [
+          30,
+          60
+        ],
+        "method": [
+          "X_FULL",
+          "X_FULL_NO_HANDOFF_ETA"
+        ]
+      },
+      "expected_runs": 160
+    },
+    {
+      "id": "R6_SITE",
+      "cohort": "cross_site_exploratory",
+      "mode": "ASYNC_EMULATED",
+      "seeds": "cross_site",
+      "fixed": {
+        "delay_s": 30
+      },
+      "axes": {
+        "site_id": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "scenario": [
+          "R6_SINGLE",
+          "R6_COMPETING"
+        ],
+        "method": [
+          "X_LST",
+          "X_FULL"
+        ]
+      },
+      "expected_runs": 240
+    },
+    {
+      "id": "R6_B2",
+      "cohort": "optional",
+      "mode": "FAST_NATIVE_COMPUTE",
+      "seeds": "cross_site",
+      "axes": {
+        "site_id": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "scenario": [
+          "R6_SINGLE",
+          "R6_COMPETING"
+        ],
+        "method": [
+          "B2_FAST"
+        ]
+      },
+      "expected_runs": 120
+    }
+  ],
+  "statistics": {
+    "primary_group": "R2_MAIN",
+    "primary_outcome": "released_due_emergency_missed_ratio",
+    "primary_contrast": [
+      "X_FULL",
+      "X_LST"
+    ],
+    "supporting_contrasts": [
+      [
+        "X_FULL",
+        "X_FIX"
+      ],
+      [
+        "X_FULL",
+        "X_TX"
+      ]
+    ],
+    "estimand": "equal-weight mean over 4 scenarios and 5 delays, paired within seed",
+    "resampling_unit": "entire_seed_block_all_scenarios_delays_methods",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 731604,
+    "confidence_level": 0.95,
+    "hypothesis_tests": "optional paired seed-block sign randomization; Holm across three prespecified contrasts",
+    "interaction_contrast": "(X_FULL-X_TX)-(X_LST-X_FIX)",
+    "scenario_specific_effects": "diagnostic; do not replace primary pooled estimand",
+    "native": "10 whole-seed blocks with randomized/counterbalanced order and batch logs; exploratory",
+    "identical_seed_outputs": "report determinism; do not infer precision from duplicate trajectories",
+    "cross_site": {
+      "primary_contrast": [
+        "X_FULL",
+        "X_LST"
+      ],
+      "estimand": "equal-weight fixed6site x2scenario panel within each of10 cross_site seeds",
+      "resampling_unit": "entire_cross_site_seed_block_all12site_scenario_cells_and_paired_methods",
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 731605,
+      "scope": "exploratory fixed operational-context panel; no causal urban-morphology/random-city inference; separate fromR2",
+      "B2": "optional120 actual fast-compute controls; no artificial30s delay",
+      "selection": "controller-free structural and physical diagnostics only; no performance-based held-out seed selection"
+    }
+  },
+  "gates": {
+    "G0": "corrected R0 anchors and provenance verified without legacy mutation",
+    "G1": "protocol invariants and mutation sensitivity within declared finite scope",
+    "G2": "physical custody and per-task ground/air arrivals; route fixtures materialized and checked",
+    "G3": "development tuning frozen, strong baselines checked, full plan signature generated",
+    "G4": "native admission confirms model/effort/auth/context isolation/schema/clock health; provider quotas permit a complete seed block",
+    "run_enabled": false,
+    "G_SITE": "map provenance and controller-free diagnostics plus site G-D/G-E/G-F; G0-G4 remain required for respective formal cohorts"
+  },
+  "supersedes": "experiment_protocol.v1.json",
+  "site_registry": "sites.v1.json",
+  "scenario_sites": {
+    "S0": "A",
+    "S1": "A",
+    "S2": "A",
+    "S3": "A",
+    "H_A": "A",
+    "H_B": "B",
+    "SCALE_C": "C"
+  },
+  "site_design_source": "../design/SITES_D_E_F_DESIGN_v0.1.md"
+}

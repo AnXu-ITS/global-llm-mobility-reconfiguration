@@ -1,0 +1,66 @@
+{
+  "site_id": "D",
+  "region": "Leipzig",
+  "selected_candidate": "D_03",
+  "selection_rule_sha256": "12a726fe3cc2b2224dcf50671f78d7ec12e14ba9a262fc5555c29b2b526d94c8",
+  "all_candidates": [
+    {
+      "id": "D_00",
+      "score": [
+        1,
+        7,
+        0.983512,
+        -0.100255,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "id": "D_01",
+      "score": [
+        1,
+        8,
+        0.982704,
+        -0.116555,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "id": "D_02",
+      "score": [
+        1,
+        7,
+        0.94659,
+        -0.111542,
+        -2
+      ],
+      "pass": true
+    },
+    {
+      "id": "D_03",
+      "score": [
+        1,
+        8,
+        0.98295,
+        -0.107349,
+        -3
+      ],
+      "pass": true
+    },
+    {
+      "id": "D_04",
+      "score": [
+        1,
+        8,
+        0.982806,
+        -0.096985,
+        -4
+      ],
+      "pass": true
+    }
+  ],
+  "map_assets_frozen": true,
+  "formal_fixture_frozen": false,
+  "formal_admission": false
+}

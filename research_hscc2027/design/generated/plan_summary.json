@@ -1,0 +1,34 @@
+{
+  "protocol_id": "hscc2027-astra-high-v0.1",
+  "status": "offline_design_validated_not_executed",
+  "planned_cells_by_group": {
+    "DEV_B2": 20,
+    "DEV_CORE": 240,
+    "R2_B2": 80,
+    "R2_MAIN": 1600,
+    "R2_PHASE": 400,
+    "R3_ETA_STRESS": 160,
+    "R3_HANDOFF": 800,
+    "R3_PREDICTION_ABLATION": 160,
+    "R4_SCALE": 180,
+    "R5_NATIVE": 60,
+    "TUNE_MARGIN": 72,
+    "TUNE_TIMEOUT": 96
+  },
+  "core_controlled_planned_cells": 3060,
+  "native_planned_runs": 60,
+  "development_planned_cells": 428,
+  "r0_planned_runs": 33,
+  "base_transport_plan_slots": 3581,
+  "optional_plan_slots": 320,
+  "phase_zero_reusable_anchors": 80,
+  "independent_unit": "whole_seed_block_not_run_or_task",
+  "experimental_model_calls_made": 0,
+  "simulations_executed": 0,
+  "source_hashes": {
+    "config\\experiment_protocol.v1.json": "b5207f2f458a11d7b8bbf130f4e4fc4282fb48069c0f216d1dc1560d7aca1e52",
+    "config\\llm_codex_astra_high.json": "3a503a2ce1c9f181e222ff48cdcf84a46c0907e51af054cc4e003e86b2e5851c",
+    "schemas\\proposal.schema.json": "28fd5f333e817d7dd947a47b907853f71b528adeec1449dfa4b33f53ebf73517",
+    "prompts\\astra_proposer_v1.txt": "f4c9adf778a4d790615f67dd3f3546436bda480f232bb9d5315f292c9df17bd4"
+  }
+}

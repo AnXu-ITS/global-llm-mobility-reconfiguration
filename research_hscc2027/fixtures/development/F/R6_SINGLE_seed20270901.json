@@ -1,0 +1,57 @@
+{
+  "site_id": "F",
+  "scenario_family": "R6_SINGLE",
+  "seed": 20270901,
+  "status": "development_skeleton_not_execution_frozen",
+  "tasks": [
+    {
+      "mission_id": "F-T1",
+      "release_s": 300,
+      "deadline_s": 698,
+      "deadline_anchor_s": 300,
+      "reference_tau_s": 307.8009897603871,
+      "reference_stage_graph": [
+        {
+          "id": "load",
+          "duration_s": 15
+        },
+        {
+          "id": "candidate_air_to_V3",
+          "duration_s": 63.61127154048572
+        },
+        {
+          "id": "handoff",
+          "duration_s": 30
+        },
+        {
+          "id": "ground_from_V3",
+          "duration_s": 184.18971821990135
+        },
+        {
+          "id": "unload",
+          "duration_s": 15
+        }
+      ],
+      "reference_validation": "candidate_chain_only_best_legal_not_yet_established",
+      "priority": "HIGH",
+      "payload_id": "F-P1",
+      "origin": "D1",
+      "destination": "H1",
+      "slack_s": 90,
+      "reference_only": true
+    }
+  ],
+  "external_events": [],
+  "failure_time_s": 360,
+  "network_sha256": "4d388687f11e22848ce3378f93c90050733440f436500741d90e1b135fea1f5e",
+  "facility_layout_sha256": "e439b7cabd5c8052e74b6f335abfa9eb687350cf37d8ffe93a4302ea9c040fa7",
+  "compatibility_sha256": "44a603bc5890e65ca6161be40b7ab0791e34be2d3f10035bc04ce47f5cd382c9",
+  "missing_for_formal": [
+    "physically consistent pre-fault carrier/payload initial states",
+    "full background mission realization",
+    "supervisor admission gates",
+    "all held-out seed realizations",
+    "individual best legal reference plan validation"
+  ],
+  "native_model_calls": 0
+}

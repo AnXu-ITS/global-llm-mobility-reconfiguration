@@ -1,0 +1,110 @@
+{
+  "site_id": "D",
+  "facilities": {
+    "D1": {
+      "lat": 51.350347100117574,
+      "lon": 12.35785294443939,
+      "x": 662.508381997294,
+      "y": 2206.449693343342,
+      "edge_id": "-125049868#1",
+      "lane_id": "-125049868#1_0",
+      "lane_pos_m": 305.0632241104881,
+      "snap_to_design_target_m": 210.9418985214512,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "D2": {
+      "lat": 51.34146903090791,
+      "lon": 12.361474437577487,
+      "x": 879.1257683063434,
+      "y": 1210.2647783808825,
+      "edge_id": "-420549726#6",
+      "lane_id": "-420549726#6_0",
+      "lane_pos_m": 94.91597430875576,
+      "snap_to_design_target_m": 33.067924774945546,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "H1": {
+      "lat": 51.35156252371668,
+      "lon": 12.384511015903133,
+      "x": 2523.3645206147626,
+      "y": 2275.0333524338616,
+      "edge_id": "-1372037888",
+      "lane_id": "-1372037888_0",
+      "lane_pos_m": 12,
+      "snap_to_design_target_m": 36.38063142918495,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "H2": {
+      "lat": 51.34195671682867,
+      "lon": 12.38558806047503,
+      "x": 2560.2657816295027,
+      "y": 1204.3368337112527,
+      "edge_id": "1199525496",
+      "lane_id": "1199525496_0",
+      "lane_pos_m": 14.230187884522694,
+      "snap_to_design_target_m": 20.009644589805756,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "V1": {
+      "lat": 51.35294197266122,
+      "lon": 12.382065549633325,
+      "x": 2358.5831280272732,
+      "y": 2434.4844685825656,
+      "edge_id": "-8454922#4",
+      "lane_id": "-8454922#4_0",
+      "lane_pos_m": 49.63763636625754,
+      "snap_to_design_target_m": 0.10394093179610008,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "V2": {
+      "lat": 51.35477171558539,
+      "lon": 12.364160913243085,
+      "x": 1119.38,
+      "y": 2682.59,
+      "edge_id": "41827100#0",
+      "lane_id": "41827100#0_0",
+      "lane_pos_m": 48.386534018741976,
+      "snap_to_design_target_m": 255.53994056421948,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 1,
+      "handoff_capacity": 0
+    },
+    "V3": {
+      "lat": 51.34631166895096,
+      "lon": 12.371687987736259,
+      "x": 1609.6698755151003,
+      "y": 1723.1469519644868,
+      "edge_id": "31977837",
+      "lane_id": "31977837_0",
+      "lane_pos_m": 106.39307722177605,
+      "snap_to_design_target_m": 11.315549881353014,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 2,
+      "handoff_capacity": 1
+    },
+    "V4": {
+      "lat": 51.340578690806296,
+      "lon": 12.377541304599973,
+      "x": 1994.436964683297,
+      "y": 1071.1323630833926,
+      "edge_id": "135097883#0",
+      "lane_id": "135097883#0_0",
+      "lane_pos_m": 12,
+      "snap_to_design_target_m": 19.349307524080203,
+      "source": "synthetic_service_point_on_real_OSM_road",
+      "parking_capacity": 2,
+      "handoff_capacity": 0
+    }
+  },
+  "facility_semantics": "abstract service sites snapped to passenger lanes; not real operating permissions"
+}

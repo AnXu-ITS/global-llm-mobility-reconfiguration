@@ -1,0 +1,66 @@
+{
+  "site_id": "F",
+  "region": "Berlin-Prenzlauer-Berg",
+  "selected_candidate": "F_04",
+  "selection_rule_sha256": "12a726fe3cc2b2224dcf50671f78d7ec12e14ba9a262fc5555c29b2b526d94c8",
+  "all_candidates": [
+    {
+      "id": "F_00",
+      "score": [
+        1,
+        8,
+        795.752,
+        0.954683,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "id": "F_01",
+      "score": [
+        1,
+        8,
+        696.453,
+        0.964729,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "id": "F_02",
+      "score": [
+        1,
+        8,
+        721.979,
+        0.95987,
+        -2
+      ],
+      "pass": true
+    },
+    {
+      "id": "F_03",
+      "score": [
+        1,
+        8,
+        706.543,
+        0.927597,
+        -3
+      ],
+      "pass": true
+    },
+    {
+      "id": "F_04",
+      "score": [
+        1,
+        8,
+        812.385,
+        0.965763,
+        -4
+      ],
+      "pass": true
+    }
+  ],
+  "map_assets_frozen": true,
+  "formal_fixture_frozen": false,
+  "formal_admission": false
+}

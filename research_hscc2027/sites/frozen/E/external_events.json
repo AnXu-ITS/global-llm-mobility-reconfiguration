@@ -1,0 +1,21 @@
+[
+  {
+    "event_id": "E_CAPACITY_DROP",
+    "start_s": 330,
+    "end_s": 450,
+    "type": "physical_speed_limit",
+    "edges": [
+      "544243187",
+      "538722960",
+      "538551233#0",
+      "538722959",
+      "1391901666",
+      "1391901664#0",
+      "-244059991#1",
+      "451607872#2",
+      "1161444395"
+    ],
+    "speed_mps": 2.0,
+    "selection": "fixed middle-quarter of reference D1-H1 route; no controller outcomes used"
+  }
+]

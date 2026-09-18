@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+  <poi id="H1" x="1929.337" y="797.325" color="200,20,20" layer="2" width="6.0" type="hospital"/>
+  <poi id="D1" x="2986.829" y="3050.326" color="20,20,200" layer="2" width="6.0" type="logistics_depot"/>
+  <poi id="V1" x="1929.337" y="797.325" color="20,180,20" layer="2" width="6.0" type="hospital_landing_site"/>
+  <poi id="V2" x="2986.829" y="3050.326" color="20,180,20" layer="2" width="6.0" type="logistics_hub_landing_site"/>
+  <poi id="V3" x="2441.024" y="2263.466" color="20,120,120" layer="2" width="6.0" type="backup_landing_site"/>
+  <poi id="B1" x="2941.090" y="1602.390" color="200,120,20" layer="2" width="6.0" type="disruption_link"/>
+  <poi id="D2" x="1272.885" y="2998.966" color="200,200,200" layer="2" width="6.0" type="west_commercial_origin"/>
+  <poi id="H2" x="2869.929" y="443.800" color="200,200,200" layer="2" width="6.0" type="east_medical_destination"/>
+  <poi id="C2" x="846.251" y="604.579" color="200,200,200" layer="2" width="6.0" type="southwest_commercial_activity"/>
+  <poi id="C3" x="3431.359" y="1358.945" color="200,200,200" layer="2" width="6.0" type="east_commercial_activity"/>
+  <poi id="V4" x="2869.929" y="443.800" color="200,200,200" layer="2" width="6.0" type="auxiliary_landing_site"/>
+  <poi id="V5" x="1272.885" y="2998.966" color="200,200,200" layer="2" width="6.0" type="auxiliary_landing_site"/>
+</additional>

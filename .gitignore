@@ -1,13 +1,38 @@
-# ---- runtime / generated experiment artifacts (very large) ----
+# ============================================================
+# Global LLM-Supervised Reconfiguration of Ground–Low-Altitude
+# Mobility under Disruptions  —  HSCC+ICCPS 2027 研究转向
+# ============================================================
+# 本仓库只跟踪代码、设计、配置、schema、文档与清单。
+# 生成数据、原始/转换地图、二进制与大清单 CSV 一律忽略，
+# 靠外部备份 + 索引恢复（见 provenance/hscc2027/RESTORE_LEGACY.md）。
+
+# ---- generated experiment artifacts (very large) ----
 runs/
 outputs/
 archive/
 tmp/
 
+# ---- large provenance inventory dumps (recoverable from cold storage) ----
+provenance/hscc2027/legacy_file_inventory.csv
+provenance/hscc2027/legacy_inventory.csv
+provenance/hscc2027/observed_run_metrics.json
+
+# ---- raw / converted road-network maps (regenerable; source URL + hash recorded) ----
+*.osm
+*.osm.xml
+*.osm.pbf
+*.net.xml
+water_osm.json
+
+# ---- vendored native binaries (install via requirements instead) ----
+*.exe
+*.dll
+*.pyd
+*.so
+
 # ---- Python ----
 __pycache__/
 *.py[cod]
-*$py.class
 *.egg-info/
 .eggs/
 build/
@@ -33,10 +58,7 @@ desktop.ini
 *.log
 .cache/
 
-# ---- transient chart-data scratch dirs ----
-.chart-data*/
-
-# ---- secrets / credentials (defensive; real key lives in ~/.dsh) ----
+# ---- secrets / credentials (defensive; real key lives outside the repo) ----
 .env
 .env.*
 !.env.example
