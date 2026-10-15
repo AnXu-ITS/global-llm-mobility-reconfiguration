@@ -1,71 +1,82 @@
-# Supplementary material for the ITSAC paper
+# Online supplementary material for the ITSAC paper
 
-**A Ground-Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions**
-
+**A Ground-Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions**  
 An Xu, Chengbo Zhang and Yunfei Yin.
 
-This is the paper-specific supplement on branch `itsac-restored-20261016`. The branch restores the pre-pivot project at commit `3078ffb60d58952b4c193b2edb1de7d85375bbab` and adds the eight-page Springer LNEE manuscript. The repository's `main` branch remains the later research project. Results from that later direction are not used here.
+## Start here
 
-## Read the paper and extended results
+**[Open the supplementary PDF](ITSAC_Supplement.pdf)**: 20 pages, 20 tables and 9 extended figures.
 
-- [Eight-page manuscript PDF](../ITSAC_LNEE_8pages.pdf), including all references.
-- [Editable Word manuscript](../ITSAC_LNEE_8pages.docx), following the author-supplied LNEE template, with native Word equations.
-- [Supplementary PDF](ITSAC_Supplement.pdf): 20 pages, 20 tables and 9 extended figures.
-- [Supplementary LaTeX source](source/supplement.tex) and [original vector figure assets](source/figures/).
-- [Compact manuscript figure sources](../figures/) and [manuscript content](../manuscript_source/paper_content.json).
+The conference submission has no separate supplementary-file field. This public, paper-specific directory provides the extended evidence. The revised eight-page main manuscript contains the essential method, experimental definitions, key quantitative results and limitations without requiring the reader to consult this archive.
 
-The main paper retains the problem, policy definitions, experimental design, core results, statistical interpretation and limitations. The supplement contains full outcome tables, action and input definitions, fault state machines, statistics, handling-time sensitivity, network descriptors and extended graphical evidence.
+This paper uses branch `itsac-restored-20261016`, which restores the pre-pivot project at commit `3078ffb60d58952b4c193b2edb1de7d85375bbab`. The repository's `main` branch is a later research direction and is not evidence for this paper.
+
+### Manuscript version
+
+The author-facing revised files are `ITSAC_LNEE_8pages_Revised.pdf` and `ITSAC_LNEE_8pages_Revised.docx`, supplied in the revised submission package. The [PDF](../ITSAC_LNEE_8pages.pdf) and [Word file](../ITSAC_LNEE_8pages.docx) already in the repository are the **preceding compression draft**, not this revised main paper. Use the main manuscript submitted through the conference system as authoritative.
+
+The supplement PDF and its historical numerical results are unchanged. [Revision notes](REVIEW_REVISION.md) explain the new main-paper figure numbering, restored decision evidence and scope of the edits. No new simulation or language-model cohort was executed for the manuscript revision.
+
+## Where to find the supporting evidence
+
+| Main-paper topic | Supplement locations |
+|---|---|
+| Shared candidate interface, action vocabulary and operational parameters | S2; Tables S8-S11; archived overview in Fig. S4 |
+| E1 service performance and incumbent commitments | Table S1; Figs. S6-S7; candidate-information ablation in Table S19 |
+| Revised main Fig. 3: matched policy choices | Fig. S7 and archived `decision_regimes.json` |
+| E2 restoration versus timely completion | Table S2; Fig. S1; paired tests in Tables S12-S14 and S20 |
+| Omitted physical transfer and added-time sensitivity | S4.2; Table S16 |
+| Compound service loss | Tables S3, S7 and S15; Figs. S3 and S8 |
+| Observation and execution timing | Tables S4-S5; Figs. S2 and S9; command correction in S4.1 |
+| Input burden with four active aircraft | Table S6; Fig. S9 |
+| Study networks and model scope | Table S18; Fig. S5; S4.3-S4.4 |
+| Reproduction and recovery boundaries | S3, S5-S6; this README and the revision notes |
+
+[Supplement LaTeX source](source/supplement.tex) and [vector figure assets](source/figures/) are available. Revised main Fig. 3 uses the decision evidence retained in Fig. S7; supplement numbering has not changed.
 
 ## Recovered data and code
 
 | Material | Location | Recovery status |
 |---|---|---|
-| E1–E3 per-run metrics | [all_metrics.json](../../manuscript/source/revision_v3/all_metrics.json) | 9,780 records, including 180 B4a ablation runs |
-| Corrected E4 per-run metrics | [e4_run_metrics_revised.json](../../manuscript/source/revision_v3/e4_run_metrics_revised.json) | 1,360 records; includes the 20 corrected B0 D60 observations |
-| Archived numerical summaries | [results_revised.json](../../manuscript/source/revision_v3/results_revised.json) | Preserved without numerical edits |
+| E1-E3 per-run metrics | [all_metrics.json](../../manuscript/source/revision_v3/all_metrics.json) | 9,780 records, including 180 B4a ablation runs |
+| Corrected E4 per-run metrics | [e4_run_metrics_revised.json](../../manuscript/source/revision_v3/e4_run_metrics_revised.json) | 1,360 records, including 20 corrected B0 D60 observations |
+| Archived numerical summaries | [results_revised.json](../../manuscript/source/revision_v3/results_revised.json) | Historical results retained |
 | Candidate decision summaries | [decision_regimes.json](../../manuscript/source/revision_v3/decision_regimes.json) | Derived decision records, not complete candidate logs |
-| Transfer sensitivity | [transfer_margins.json](../../manuscript/source/revision_v3/transfer_margins.json) and [transfer_summary.json](../../manuscript/source/revision_v3/transfer_summary.json) | Archived offline trajectory-fixed sensitivity |
-| Experiment configurations | [config/](../../config/) | Restored site, seed, failure and policy configuration files |
-| Prompts and schemas | [prompts/](../../prompts/) and [schemas/](../../schemas/) | Restored, including the explicit-candidate prompt |
-| Simulation and policy code | [orchestrator/](../../orchestrator/), [managers/](../../managers/), [failures/](../../failures/), [safety/](../../safety/) | Restored pre-pivot implementation |
+| Transfer sensitivity | [transfer_margins.json](../../manuscript/source/revision_v3/transfer_margins.json), [transfer_summary.json](../../manuscript/source/revision_v3/transfer_summary.json) | Archived offline trajectory-fixed sensitivity |
+| Experiment settings | [config/](../../config/) | Restored site, seed, failure and policy configurations |
+| Prompts and schemas | [prompts/](../../prompts/), [schemas/](../../schemas/) | Restored inputs and action contract |
+| Simulation and policies | [orchestrator/](../../orchestrator/), [managers/](../../managers/), [failures/](../../failures/), [safety/](../../safety/) | Restored pre-pivot implementation |
 | Road networks | [sim/sites/](../../sim/sites/) | Three original study sites |
-| Queue correction | [queue_fix.py](../../manuscript/source/revision_v3/queue_fix.py) | Retained correction overlay; historical base queue remains distinct |
-| Saved deterministic regressions | [regression/](../../manuscript/source/revision_v3/regression/) | 27 archived runs, including 20 corrected B0 D60 seeds |
-| Full historical raw logs | Original `runs/` and `outputs/` | **Not recovered**: these directories were excluded from Git |
+| Queue correction | [queue_fix.py](../../manuscript/source/revision_v3/queue_fix.py) | Correction overlay retained separately |
+| Deterministic regressions | [regression/](../../manuscript/source/revision_v3/regression/) | 27 saved regression runs |
+| Full historical raw logs | Original `runs/` and `outputs/` | **Not recovered**; excluded from Git |
 
-The recovered dataset contains **11,140 per-run metric records: 10,960 primary runs plus 180 extra ablation runs**. This is not a claim that every raw simulation trace has been recovered. Some recorded `source_run` paths refer to the original, unavailable raw folders.
+There are **11,140 per-run metric records: 10,960 primary runs and 180 additional ablation runs**. Records are not independent experimental replicates; statistical inference retains fixed-panel seed dependence. Some recorded source paths refer to unavailable historical raw directories.
 
-## Offline verification
+## Offline numerical verification
 
 From the repository root, with Python, NumPy and SciPy installed:
 
-```powershell
+```bash
 python itsac/verify_restored_metrics.py
 ```
 
-This command reads the committed metrics and recomputes principal E1–E3 means and seed-block confidence intervals, E1 ablation and scenario contrasts, all E2 comparison endpoints, E3 compound comparisons and E4 completion/deadline summaries. It verifies the corrected B0 D60 result of 242 s separately from the retained B4b result of 302 s. The [verification report](verification/metric_verification.json) records **879 passed numeric checks**, file hashes and comparison details.
+The script recomputes saved-metric means, seed-block intervals and paired comparisons, including the corrected B0 D60 duration of 242 s and retained B4b duration of 302 s. The [existing verification report](verification/metric_verification.json) records 879 passed numerical checks from the prior restoration. This manuscript revision does not claim those checks were newly rerun.
 
-The verification does **not** launch SUMO, BlueSky or any LLM/API call. It does not reconstruct metrics from missing raw logs. The historical [full reproduction guide](../../manuscript/REPRODUCTION_README.md) is retained for provenance, but its end-to-end analysis requires the missing original run/output directories and should not be presented as fully executable from this checkout alone. Some legacy summary fields retain older interval conventions; the paper uses the specified seed-block estimates and conditional restored/affected counts.
+The verifier does not launch SUMO, BlueSky or an LLM/API call. It cannot recreate missing raw trajectories. The [historical reproduction guide](../../manuscript/REPRODUCTION_README.md) requires unavailable original run/output directories for end-to-end postprocessing and is retained for provenance, not as a promise of full replay from this checkout.
 
-To rebuild the supplementary PDF:
+To rebuild the unchanged supplementary PDF:
 
-```powershell
+```bash
 cd itsac/supplement/source
 pdflatex -interaction=nonstopmode -halt-on-error supplement.tex
 pdflatex -interaction=nonstopmode -halt-on-error supplement.tex
 ```
 
-The compact figures can be rebuilt from the committed metrics with `python itsac/build_figures.py` (NumPy, SciPy and Matplotlib). The `.docx` is the editable manuscript source. Its original template styles and page geometry are retained; native Word export was used to verify eight-page pagination.
+The prior two-figure compression draft can be rebuilt with `python itsac/build_figures.py`; the revised three-figure source and editable manuscript are supplied in the author-facing revised submission package.
 
-## Interpretation and provenance
+## Interpretation and integrity
 
-- Ground fallback is a SUMO corridor ETA timer, not an individually dispatched ground vehicle.
-- Payload custody and physical loading/transfer are absent. Added handling time is an offline assumed sensitivity.
-- B0 comparisons include a change in available transport modes. B1/B2/B4b compare policy choice under common candidate and execution rules.
-- The 5–50-record input experiment keeps four active aircraft.
-- Inference wall-clock time is separate from injected simulation execution waiting.
-- The three sites are fixed contexts; morphology, facility geometry and fault placement are not independently randomized.
-- The backend string is the recorded configured identifier, not independently verified model-release provenance.
-- The supplied ZIP's original diagram includes AI-generated illustrative elements. It is retained as a labeled conceptual supplement figure, not empirical evidence. The new main-paper diagram and chart are deterministic vector figures.
+Ground fallback uses a corridor-ETA timer rather than independently dispatched road vehicles. Payload custody, loading and physical transfers are absent. Added handling time is an assumed, offline sensitivity with decisions fixed. B0 comparisons include access to a different set of transport modes; B1/B2/B4b compare policies under shared candidate and execution rules. The 5-50-record input study keeps four active aircraft. Backend wall-clock inference is distinct from injected simulation waiting. Site geometry, facilities and fault timing vary together. The configured LLM identifier does not independently verify the underlying model release.
 
-See [recovery provenance](../provenance/recovery.json) and [claim-to-evidence map](../provenance/CLAIM_EVIDENCE.md). The restoration preserves the later public archive's username redactions. Original inputs and historical metric values are otherwise retained.
+Some archived illustrative elements are AI-generated and do not depict observed deployment. Revised main figures are deterministic diagrams and charts based on the stated model and archived numerical evidence. See [recovery provenance](../provenance/recovery.json), [claim-to-evidence map](../provenance/CLAIM_EVIDENCE.md) and [revision notes](REVIEW_REVISION.md).
