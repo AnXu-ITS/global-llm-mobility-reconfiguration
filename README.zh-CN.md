@@ -1,5 +1,7 @@
 # 地面–低空移动系统在中断场景下的服务重构管理器
 
+> **ITSAC 恢复版（2026-10-16）**：本独立分支恢复转向前的旧项目，并提供[含参考文献的 8 页论文](itsac/ITSAC_LNEE_8pages.pdf)、[可编辑 Word](itsac/ITSAC_LNEE_8pages.docx)与[补充材料](itsac/supplement/)。当前 `main` 研究方向保留。已恢复 11,140 条逐次实验指标和 27 次存档回归运行；历史 `runs/` 与 `outputs/` 完整原始日志未纳入 Git，无法据此恢复。运行 `python itsac/verify_restored_metrics.py` 可离线核对主要数值。以下历史配置说明仅作溯源，部分命令依赖缺失的原始输入。本次未运行新仿真或 API 调用。
+
 [English](README.md) · [中文说明](README.zh-CN.md)
 
 论文 *"A Ground–Low-Altitude Mobility Manager for Service Reconfiguration under

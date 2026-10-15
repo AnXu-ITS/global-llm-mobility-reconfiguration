@@ -1,0 +1,3666 @@
+{
+  "status": "PASS",
+  "total_metric_records": 11140,
+  "primary_records": 10960,
+  "ablation_records": 180,
+  "numeric_checks_passed": 879,
+  "simulation_runs_executed": 0,
+  "llm_calls_executed": 0,
+  "source_files_sha256_lf_normalized": {
+    "all_metrics.json": "fecf3840a42ab6386f90d650fd62307d3abeb50c23138aa8668a50bb51410407",
+    "e4_run_metrics_revised.json": "1dc3d50fa65d754a2d088f16503f095009ef9448e7905b5727be040520a2c0fe",
+    "results_revised.json": "6c8c2618da7daa89c3304d7562b3883954cd06b1cef2306cf0890331acfcd649"
+  },
+  "scope": "Recomputed from restored per-run metrics. Does not regenerate metrics from raw logs. Historical raw runs/ and outputs/ are missing from Git.",
+  "summaries": {
+    "E1_A": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 187.66666666666666,
+          "ci95": [
+            187.66666666666666,
+            187.66666666666666
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.3333333333333333,
+          "ci95": [
+            0.3333333333333333,
+            0.3333333333333333
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 160.775,
+          "ci95": [
+            159.12821956393543,
+            162.42178043606458
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.25,
+          "ci95": [
+            0.25,
+            0.25
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 147.61666666666667,
+          "ci95": [
+            147.1972975593464,
+            148.03603577398695
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.16666666666666666,
+          "ci95": [
+            0.16666666666666666,
+            0.16666666666666666
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.058333333333333334,
+          "ci95": [
+            0.039996437393700984,
+            0.07667022927296568
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 146.63333333333333,
+          "ci95": [
+            145.88298087672266,
+            147.383685789944
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.16666666666666666,
+          "ci95": [
+            0.16666666666666666,
+            0.16666666666666666
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.13333333333333333,
+          "ci95": [
+            0.1137303670067532,
+            0.15293629965991345
+          ]
+        }
+      }
+    },
+    "E1_B": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 262.6666666666667,
+          "ci95": [
+            262.6666666666667,
+            262.6666666666667
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 47.7,
+          "ci95": [
+            46.48667297796647,
+            48.913327022033535
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 47.7,
+          "ci95": [
+            46.48667297796647,
+            48.913327022033535
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 49.09583333333333,
+          "ci95": [
+            47.02633985174282,
+            51.165326814923844
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.4875,
+          "ci95": [
+            0.4732120057941798,
+            0.5017879942058201
+          ]
+        }
+      }
+    },
+    "E1_C": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 323.6666666666667,
+          "ci95": [
+            323.6666666666667,
+            323.6666666666667
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.8333333333333334,
+          "ci95": [
+            0.8333333333333334,
+            0.8333333333333334
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 168.275,
+          "ci95": [
+            165.3155282213055,
+            171.2344717786945
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.1,
+          "ci95": [
+            0.0411911010202596,
+            0.1588088989797404
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 168.275,
+          "ci95": [
+            165.3155282213055,
+            171.2344717786945
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.1,
+          "ci95": [
+            0.0411911010202596,
+            0.1588088989797404
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 168.65,
+          "ci95": [
+            165.58186960697324,
+            171.71813039302677
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.1,
+          "ci95": [
+            0.0411911010202596,
+            0.1588088989797404
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    "E2_A": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 182.0,
+          "ci95": [
+            182.0,
+            182.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.08125,
+          "ci95": [
+            0.06749732804527575,
+            0.09500267195472425
+          ]
+        },
+        "restored_affected": [
+          0,
+          0
+        ]
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 162.0,
+          "ci95": [
+            162.0,
+            162.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.375,
+          "ci95": [
+            0.375,
+            0.375
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.39375,
+          "ci95": [
+            0.37999732804527575,
+            0.4075026719547242
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 162.0,
+          "ci95": [
+            162.0,
+            162.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.375,
+          "ci95": [
+            0.375,
+            0.375
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.39375,
+          "ci95": [
+            0.37999732804527575,
+            0.4075026719547242
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 166.525,
+          "ci95": [
+            164.41162657448754,
+            168.63837342551247
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.390625,
+          "ci95": [
+            0.37762994648040965,
+            0.40362005351959035
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.396875,
+          "ci95": [
+            0.3772528994899221,
+            0.4164971005100779
+          ]
+        },
+        "restored_affected": [
+          191,
+          191
+        ]
+      }
+    },
+    "E2_B": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 241.0,
+          "ci95": [
+            241.0,
+            241.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.125,
+          "ci95": [
+            0.125,
+            0.125
+          ]
+        },
+        "restored_affected": [
+          0,
+          0
+        ]
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 153.875,
+          "ci95": [
+            153.875,
+            153.875
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.375,
+          "ci95": [
+            0.375,
+            0.375
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.403125,
+          "ci95": [
+            0.38819482019231977,
+            0.41805517980768025
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 153.875,
+          "ci95": [
+            153.875,
+            153.875
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.375,
+          "ci95": [
+            0.375,
+            0.375
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.403125,
+          "ci95": [
+            0.38819482019231977,
+            0.41805517980768025
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 154.05,
+          "ci95": [
+            153.93548612156016,
+            154.16451387843986
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.375,
+          "ci95": [
+            0.375,
+            0.375
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.403125,
+          "ci95": [
+            0.38819482019231977,
+            0.41805517980768025
+          ]
+        },
+        "restored_affected": [
+          199,
+          199
+        ]
+      }
+    },
+    "E2_C": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 310.0,
+          "ci95": [
+            310.0,
+            310.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.13125,
+          "ci95": [
+            0.09991781476586109,
+            0.16258218523413892
+          ]
+        },
+        "restored_affected": [
+          0,
+          0
+        ]
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 278.0,
+          "ci95": [
+            278.0,
+            278.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.625,
+          "ci95": [
+            0.625,
+            0.625
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.44375,
+          "ci95": [
+            0.41241781476586103,
+            0.4750821852341389
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 278.0,
+          "ci95": [
+            278.0,
+            278.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.625,
+          "ci95": [
+            0.625,
+            0.625
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.44375,
+          "ci95": [
+            0.41241781476586103,
+            0.4750821852341389
+          ]
+        },
+        "restored_affected": [
+          200,
+          200
+        ]
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 278.921875,
+          "ci95": [
+            277.786456289716,
+            280.057293710284
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.628125,
+          "ci95": [
+            0.6215842998299741,
+            0.634665700170026
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 320,
+          "seed_blocks": 20,
+          "mean": 0.44375,
+          "ci95": [
+            0.41241781476586103,
+            0.4750821852341389
+          ]
+        },
+        "restored_affected": [
+          201,
+          201
+        ]
+      }
+    },
+    "E3_A": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 182.0,
+          "ci95": [
+            182.0,
+            182.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 240.0,
+          "ci95": [
+            240.0,
+            240.0
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 187.25,
+          "ci95": [
+            187.25,
+            187.25
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.4166666666666667,
+          "ci95": [
+            0.4166666666666667,
+            0.4166666666666667
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 100.0,
+          "ci95": [
+            100.0,
+            100.0
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 187.25,
+          "ci95": [
+            187.25,
+            187.25
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.4166666666666667,
+          "ci95": [
+            0.4166666666666667,
+            0.4166666666666667
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 100.0,
+          "ci95": [
+            100.0,
+            100.0
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 188.79583333333332,
+          "ci95": [
+            187.18183551815756,
+            190.40983114850908
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.42083333333333334,
+          "ci95": [
+            0.4121123997732987,
+            0.42955426689336795
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 102.125,
+          "ci95": [
+            99.57779271284707,
+            104.67220728715293
+          ]
+        }
+      }
+    },
+    "E3_B": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 241.0,
+          "ci95": [
+            241.0,
+            241.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 307.5,
+          "ci95": [
+            307.5,
+            307.5
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 146.83333333333334,
+          "ci95": [
+            146.83333333333334,
+            146.83333333333334
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.25,
+          "ci95": [
+            0.25,
+            0.25
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 127.5,
+          "ci95": [
+            127.5,
+            127.5
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 146.83333333333334,
+          "ci95": [
+            146.83333333333334,
+            146.83333333333334
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.25,
+          "ci95": [
+            0.25,
+            0.25
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 127.5,
+          "ci95": [
+            127.5,
+            127.5
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 147.05,
+          "ci95": [
+            146.7820529530716,
+            147.31794704692842
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.25,
+          "ci95": [
+            0.25,
+            0.25
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 127.5,
+          "ci95": [
+            127.5,
+            127.5
+          ]
+        }
+      }
+    },
+    "E3_C": {
+      "B0": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 310.0,
+          "ci95": [
+            310.0,
+            310.0
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 307.5,
+          "ci95": [
+            307.5,
+            307.5
+          ]
+        }
+      },
+      "B1": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 322.6666666666667,
+          "ci95": [
+            322.6666666666667,
+            322.6666666666667
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.6666666666666666,
+          "ci95": [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 227.5,
+          "ci95": [
+            227.5,
+            227.5
+          ]
+        }
+      },
+      "B2": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 322.6666666666667,
+          "ci95": [
+            322.6666666666667,
+            322.6666666666667
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.6666666666666666,
+          "ci95": [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 227.5,
+          "ci95": [
+            227.5,
+            227.5
+          ]
+        }
+      },
+      "B4b": {
+        "critical_mission_completion_time_s": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 323.825,
+          "ci95": [
+            322.97353934127335,
+            324.6764606587266
+          ]
+        },
+        "critical_mission_deadline_violation": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.6666666666666666,
+          "ci95": [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        },
+        "existing_missions_damaged_count": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "system_weighted_loss": {
+          "n": 240,
+          "seed_blocks": 20,
+          "mean": 227.5,
+          "ci95": [
+            227.5,
+            227.5
+          ]
+        }
+      }
+    },
+    "E4_4A_OBS10_B0": {
+      "n": 20,
+      "completion_mean": 192.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS10_B1": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS10_B2": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS10_B4b": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS120_B0": {
+      "n": 20,
+      "completion_mean": 253.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS120_B1": {
+      "n": 20,
+      "completion_mean": 240.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS120_B2": {
+      "n": 20,
+      "completion_mean": 240.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS120_B4b": {
+      "n": 20,
+      "completion_mean": 240.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS30_B0": {
+      "n": 20,
+      "completion_mean": 212.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS30_B1": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS30_B2": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS30_B4b": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS300_B0": {
+      "n": 20,
+      "completion_mean": 482.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS300_B1": {
+      "n": 20,
+      "completion_mean": 521.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS300_B2": {
+      "n": 20,
+      "completion_mean": 482.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS300_B4b": {
+      "n": 20,
+      "completion_mean": 482.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS60_B0": {
+      "n": 20,
+      "completion_mean": 253.0,
+      "late_rate": 1.0
+    },
+    "E4_4A_OBS60_B1": {
+      "n": 20,
+      "completion_mean": 180.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS60_B2": {
+      "n": 20,
+      "completion_mean": 180.0,
+      "late_rate": 0.0
+    },
+    "E4_4A_OBS60_B4b": {
+      "n": 20,
+      "completion_mean": 180.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D00_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D00_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D00_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D00_B4b": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D01_B0": {
+      "n": 20,
+      "completion_mean": 183.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D01_B1": {
+      "n": 20,
+      "completion_mean": 121.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D01_B2": {
+      "n": 20,
+      "completion_mean": 121.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D01_B4b": {
+      "n": 20,
+      "completion_mean": 121.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D05_B0": {
+      "n": 20,
+      "completion_mean": 187.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D05_B1": {
+      "n": 20,
+      "completion_mean": 125.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D05_B2": {
+      "n": 20,
+      "completion_mean": 125.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D05_B4b": {
+      "n": 20,
+      "completion_mean": 125.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D10_B0": {
+      "n": 20,
+      "completion_mean": 192.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D10_B1": {
+      "n": 20,
+      "completion_mean": 130.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D10_B2": {
+      "n": 20,
+      "completion_mean": 130.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D10_B4b": {
+      "n": 20,
+      "completion_mean": 130.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D20_B0": {
+      "n": 20,
+      "completion_mean": 202.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D20_B1": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D20_B2": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D20_B4b": {
+      "n": 20,
+      "completion_mean": 140.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D30_B0": {
+      "n": 20,
+      "completion_mean": 212.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D30_B1": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D30_B2": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D30_B4b": {
+      "n": 20,
+      "completion_mean": 150.0,
+      "late_rate": 0.0
+    },
+    "E4_4B_D60_B0": {
+      "n": 20,
+      "completion_mean": 242.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D60_B1": {
+      "n": 20,
+      "completion_mean": 341.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D60_B2": {
+      "n": 20,
+      "completion_mean": 302.0,
+      "late_rate": 1.0
+    },
+    "E4_4B_D60_B4b": {
+      "n": 20,
+      "completion_mean": 302.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N05_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N05_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N05_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N05_B4b": {
+      "n": 20,
+      "completion_mean": 121.5,
+      "late_rate": 0.0
+    },
+    "E4_4C_N10_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N10_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N10_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N10_B4b": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N20_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N20_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N20_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N20_B4b": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N30_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N30_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N30_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N30_B4b": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N50_B0": {
+      "n": 20,
+      "completion_mean": 182.0,
+      "late_rate": 1.0
+    },
+    "E4_4C_N50_B1": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N50_B2": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    },
+    "E4_4C_N50_B4b": {
+      "n": 20,
+      "completion_mean": 120.0,
+      "late_rate": 0.0
+    }
+  },
+  "contrasts": {
+    "E1_A_ablation": [
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": -13.566666666666666,
+        "ci95": [
+          -15.9783248329423,
+          -11.155008500391032
+        ],
+        "p": 4.6625155804357897e-07,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 9.325031160871579e-07
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": -0.38333333333333336,
+        "ci95": [
+          -0.4409250357356073,
+          -0.3257416309310594
+        ],
+        "p": 1.0915203756826318e-07,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 3.274561127047895e-07
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": -0.38333333333333336,
+        "ci95": [
+          -0.4409250357356073,
+          -0.3257416309310594
+        ],
+        "p": 0.001953125,
+        "metric": "air_intervention",
+        "p_holm": 0.001953125
+      }
+    ],
+    "E1_B_ablation": [
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": 1.45,
+        "ci95": [
+          -2.288309722100501,
+          5.188309722100501
+        ],
+        "p": 0.4030641511508679,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 1.0
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": -0.016666666666666666,
+        "ci95": [
+          -0.05436928604663674,
+          0.021035952713303403
+        ],
+        "p": 0.3434363961379136,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 1.0
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": -0.016666666666666666,
+        "ci95": [
+          -0.05436928604663674,
+          0.021035952713303403
+        ],
+        "p": 1.0,
+        "metric": "air_intervention",
+        "p_holm": 1.0
+      }
+    ],
+    "E1_C_ablation": [
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 1.0
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 1.0
+      },
+      {
+        "n": 60,
+        "seed_blocks": 10,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "air_intervention",
+        "p_holm": 1.0
+      }
+    ],
+    "E1_A_scenario_family": [
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": -2.85,
+        "ci95": [
+          -5.020226332364872,
+          -0.6797736676351285
+        ],
+        "p": 0.012773236721619157,
+        "scenario": "E1_H_C_high",
+        "p_holm": 0.14050560393781072
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_H_C_low",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": -11.95,
+        "ci95": [
+          -17.330237580344267,
+          -6.569762419655732
+        ],
+        "p": 0.00017503742151074418,
+        "scenario": "E1_H_H_high",
+        "p_holm": 0.0021004490581289304
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_H_H_low",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_L_C_high",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_L_C_low",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 1.5,
+        "ci95": [
+          -1.6395360816124631,
+          4.639536081612463
+        ],
+        "p": 0.329876800921125,
+        "scenario": "E1_L_H_high",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_L_H_low",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 1.5,
+        "ci95": [
+          -1.6395360816124631,
+          4.639536081612463
+        ],
+        "p": 0.329876800921125,
+        "scenario": "E1_M_C_high",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_M_C_low",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_M_H_high",
+        "p_holm": 1.0
+      },
+      {
+        "n": 20,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "scenario": "E1_M_H_low",
+        "p_holm": 1.0
+      }
+    ],
+    "E2_A": [
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 4.525,
+        "ci95": [
+          2.4116265744875505,
+          6.63837342551245
+        ],
+        "p": 0.00025573986934005903,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 0.0030688784320807086
+      },
+      {
+        "n": 191,
+        "seed_blocks": 20,
+        "mean": 3.926701570680628,
+        "ci95": [
+          0.9296154779318169,
+          6.923787663429439
+        ],
+        "p": 0.012951407452901716,
+        "metric": "recovery_time_s",
+        "p_holm": 0.14246548198191888
+      },
+      {
+        "n": 191,
+        "seed_blocks": 20,
+        "mean": 3.926701570680628,
+        "ci95": [
+          0.9296154779318169,
+          6.923787663429439
+        ],
+        "p": 0.012951407452901716,
+        "metric": "failure_to_replan_latency_s",
+        "p_holm": 0.14246548198191888
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.003125,
+        "ci95": [
+          -0.011805179807680238,
+          0.01805517980768024
+        ],
+        "p": 0.6662641376986583,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0125,
+        "ci95": [
+          0.0004956837637294827,
+          0.02450431623627052
+        ],
+        "p": 0.04208628671050175,
+        "metric": "candidate_set_reduction_delta",
+        "p_holm": 0.336690293684014
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.015625,
+        "ci95": [
+          0.0026299464804096645,
+          0.028620053519590336
+        ],
+        "p": 0.0625,
+        "metric": "critical_mission_deadline_violation",
+        "p_holm": 0.4375
+      },
+      {
+        "n": 191,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovery_success",
+        "p_holm": 1.0
+      },
+      {
+        "n": 191,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovered_completed",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0125,
+        "ci95": [
+          0.0004956837637294827,
+          0.02450431623627052
+        ],
+        "p": 0.125,
+        "metric": "ground_fallback_rate",
+        "p_holm": 0.625
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0125,
+        "ci95": [
+          0.0004956837637294827,
+          0.02450431623627052
+        ],
+        "p": 0.125,
+        "metric": "failure_induced_ground_fallback",
+        "p_holm": 0.625
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": -0.015625,
+        "ci95": [
+          -0.028620053519590336,
+          -0.0026299464804096645
+        ],
+        "p": 0.0625,
+        "metric": "necessary_ground_fallback_correct",
+        "p_holm": 0.4375
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": -0.028125,
+        "ci95": [
+          -0.04820085065358745,
+          -0.00804914934641255
+        ],
+        "p": 0.015625,
+        "metric": "air_intervention",
+        "p_holm": 0.14246548198191888
+      }
+    ],
+    "E2_B": [
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.175,
+        "ci95": [
+          0.060486121560156286,
+          0.28951387843984366
+        ],
+        "p": 0.004729458789911819,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 0.05571044225940014
+      },
+      {
+        "n": 199,
+        "seed_blocks": 20,
+        "mean": 0.2814070351758794,
+        "ci95": [
+          0.09773920232103916,
+          0.4650748680307196
+        ],
+        "p": 0.004642536854950012,
+        "metric": "recovery_time_s",
+        "p_holm": 0.05571044225940014
+      },
+      {
+        "n": 199,
+        "seed_blocks": 20,
+        "mean": 0.2814070351758794,
+        "ci95": [
+          0.09773920232103916,
+          0.4650748680307196
+        ],
+        "p": 0.004642536854950012,
+        "metric": "failure_to_replan_latency_s",
+        "p_holm": 0.05571044225940014
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "candidate_set_reduction_delta",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "critical_mission_deadline_violation",
+        "p_holm": 1.0
+      },
+      {
+        "n": 199,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovery_success",
+        "p_holm": 1.0
+      },
+      {
+        "n": 199,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovered_completed",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "ground_fallback_rate",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "failure_induced_ground_fallback",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": -0.003125,
+        "ci95": [
+          -0.009665700170025965,
+          0.0034157001700259636
+        ],
+        "p": 1.0,
+        "metric": "necessary_ground_fallback_correct",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": -0.003125,
+        "ci95": [
+          -0.009665700170025965,
+          0.0034157001700259636
+        ],
+        "p": 1.0,
+        "metric": "air_intervention",
+        "p_holm": 1.0
+      }
+    ],
+    "E2_C": [
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.921875,
+        "ci95": [
+          -0.21354371028398478,
+          2.057293710283985
+        ],
+        "p": 0.10556203685658509,
+        "metric": "critical_mission_completion_time_s",
+        "p_holm": 1.0
+      },
+      {
+        "n": 200,
+        "seed_blocks": 20,
+        "mean": 0.255,
+        "ci95": [
+          -0.13759069690170062,
+          0.6475906969017007
+        ],
+        "p": 0.1899102487185037,
+        "metric": "recovery_time_s",
+        "p_holm": 1.0
+      },
+      {
+        "n": 200,
+        "seed_blocks": 20,
+        "mean": 0.255,
+        "ci95": [
+          -0.13759069690170062,
+          0.6475906969017007
+        ],
+        "p": 0.1899102487185037,
+        "metric": "failure_to_replan_latency_s",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "existing_missions_damaged_count",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "candidate_set_reduction_delta",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.003125,
+        "ci95": [
+          -0.0034157001700259636,
+          0.009665700170025965
+        ],
+        "p": 1.0,
+        "metric": "critical_mission_deadline_violation",
+        "p_holm": 1.0
+      },
+      {
+        "n": 200,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovery_success",
+        "p_holm": 1.0
+      },
+      {
+        "n": 200,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "recovered_completed",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "ground_fallback_rate",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "failure_induced_ground_fallback",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "necessary_ground_fallback_correct",
+        "p_holm": 1.0
+      },
+      {
+        "n": 320,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "metric": "air_intervention",
+        "p_holm": 1.0
+      }
+    ],
+    "E3_A_compound": [
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 1.6875,
+        "ci95": [
+          -1.844478091814021,
+          5.219478091814021
+        ],
+        "p": 0.329876800921125,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 1.6875,
+        "ci95": [
+          -1.844478091814021,
+          5.219478091814021
+        ],
+        "p": 0.329876800921125,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 3.375,
+        "ci95": [
+          -3.688956183628042,
+          10.438956183628042
+        ],
+        "p": 0.329876800921125,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 3.375,
+        "ci95": [
+          -3.688956183628042,
+          10.438956183628042
+        ],
+        "p": 0.329876800921125,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 1.6875,
+        "ci95": [
+          -1.844478091814021,
+          5.219478091814021
+        ],
+        "p": 0.329876800921125,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 1.6875,
+        "ci95": [
+          -1.844478091814021,
+          5.219478091814021
+        ],
+        "p": 0.329876800921125,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 3.375,
+        "ci95": [
+          -3.688956183628042,
+          10.438956183628042
+        ],
+        "p": 0.329876800921125,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 3.375,
+        "ci95": [
+          -3.688956183628042,
+          10.438956183628042
+        ],
+        "p": 0.329876800921125,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      }
+    ],
+    "E3_B_compound": [
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      }
+    ],
+    "E3_C_compound": [
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B1",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L2",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 80,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L3",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "system_weighted_loss",
+        "p_holm": 1.0
+      },
+      {
+        "n": 40,
+        "seed_blocks": 20,
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p": 1.0,
+        "level": "L4",
+        "baseline": "B2",
+        "metric": "_critical_high_loss",
+        "p_holm": 1.0
+      }
+    ]
+  },
+  "checks": [
+    "E1_A/B0/critical_mission_completion_time_s/mean",
+    "E1_A/B0/critical_mission_completion_time_s/ci0",
+    "E1_A/B0/critical_mission_completion_time_s/ci1",
+    "E1_A/B0/critical_mission_deadline_violation/mean",
+    "E1_A/B0/critical_mission_deadline_violation/ci0",
+    "E1_A/B0/critical_mission_deadline_violation/ci1",
+    "E1_A/B0/existing_missions_damaged_count/mean",
+    "E1_A/B0/existing_missions_damaged_count/ci0",
+    "E1_A/B0/existing_missions_damaged_count/ci1",
+    "E1_A/B1/critical_mission_completion_time_s/mean",
+    "E1_A/B1/critical_mission_completion_time_s/ci0",
+    "E1_A/B1/critical_mission_completion_time_s/ci1",
+    "E1_A/B1/critical_mission_deadline_violation/mean",
+    "E1_A/B1/critical_mission_deadline_violation/ci0",
+    "E1_A/B1/critical_mission_deadline_violation/ci1",
+    "E1_A/B1/existing_missions_damaged_count/mean",
+    "E1_A/B1/existing_missions_damaged_count/ci0",
+    "E1_A/B1/existing_missions_damaged_count/ci1",
+    "E1_A/B2/critical_mission_completion_time_s/mean",
+    "E1_A/B2/critical_mission_completion_time_s/ci0",
+    "E1_A/B2/critical_mission_completion_time_s/ci1",
+    "E1_A/B2/critical_mission_deadline_violation/mean",
+    "E1_A/B2/critical_mission_deadline_violation/ci0",
+    "E1_A/B2/critical_mission_deadline_violation/ci1",
+    "E1_A/B2/existing_missions_damaged_count/mean",
+    "E1_A/B2/existing_missions_damaged_count/ci0",
+    "E1_A/B2/existing_missions_damaged_count/ci1",
+    "E1_A/B4b/critical_mission_completion_time_s/mean",
+    "E1_A/B4b/critical_mission_completion_time_s/ci0",
+    "E1_A/B4b/critical_mission_completion_time_s/ci1",
+    "E1_A/B4b/critical_mission_deadline_violation/mean",
+    "E1_A/B4b/critical_mission_deadline_violation/ci0",
+    "E1_A/B4b/critical_mission_deadline_violation/ci1",
+    "E1_A/B4b/existing_missions_damaged_count/mean",
+    "E1_A/B4b/existing_missions_damaged_count/ci0",
+    "E1_A/B4b/existing_missions_damaged_count/ci1",
+    "E1_A/ablation/critical_mission_completion_time_s/mean",
+    "E1_A/ablation/critical_mission_completion_time_s/p",
+    "E1_A/ablation/critical_mission_completion_time_s/p_holm",
+    "E1_A/ablation/critical_mission_completion_time_s/ci0",
+    "E1_A/ablation/critical_mission_completion_time_s/ci1",
+    "E1_A/ablation/existing_missions_damaged_count/mean",
+    "E1_A/ablation/existing_missions_damaged_count/p",
+    "E1_A/ablation/existing_missions_damaged_count/p_holm",
+    "E1_A/ablation/existing_missions_damaged_count/ci0",
+    "E1_A/ablation/existing_missions_damaged_count/ci1",
+    "E1_A/ablation/air_intervention/mean",
+    "E1_A/ablation/air_intervention/p",
+    "E1_A/ablation/air_intervention/p_holm",
+    "E1_A/ablation/air_intervention/ci0",
+    "E1_A/ablation/air_intervention/ci1",
+    "E1_B/B0/critical_mission_completion_time_s/mean",
+    "E1_B/B0/critical_mission_completion_time_s/ci0",
+    "E1_B/B0/critical_mission_completion_time_s/ci1",
+    "E1_B/B0/critical_mission_deadline_violation/mean",
+    "E1_B/B0/critical_mission_deadline_violation/ci0",
+    "E1_B/B0/critical_mission_deadline_violation/ci1",
+    "E1_B/B0/existing_missions_damaged_count/mean",
+    "E1_B/B0/existing_missions_damaged_count/ci0",
+    "E1_B/B0/existing_missions_damaged_count/ci1",
+    "E1_B/B1/critical_mission_completion_time_s/mean",
+    "E1_B/B1/critical_mission_completion_time_s/ci0",
+    "E1_B/B1/critical_mission_completion_time_s/ci1",
+    "E1_B/B1/critical_mission_deadline_violation/mean",
+    "E1_B/B1/critical_mission_deadline_violation/ci0",
+    "E1_B/B1/critical_mission_deadline_violation/ci1",
+    "E1_B/B1/existing_missions_damaged_count/mean",
+    "E1_B/B1/existing_missions_damaged_count/ci0",
+    "E1_B/B1/existing_missions_damaged_count/ci1",
+    "E1_B/B2/critical_mission_completion_time_s/mean",
+    "E1_B/B2/critical_mission_completion_time_s/ci0",
+    "E1_B/B2/critical_mission_completion_time_s/ci1",
+    "E1_B/B2/critical_mission_deadline_violation/mean",
+    "E1_B/B2/critical_mission_deadline_violation/ci0",
+    "E1_B/B2/critical_mission_deadline_violation/ci1",
+    "E1_B/B2/existing_missions_damaged_count/mean",
+    "E1_B/B2/existing_missions_damaged_count/ci0",
+    "E1_B/B2/existing_missions_damaged_count/ci1",
+    "E1_B/B4b/critical_mission_completion_time_s/mean",
+    "E1_B/B4b/critical_mission_completion_time_s/ci0",
+    "E1_B/B4b/critical_mission_completion_time_s/ci1",
+    "E1_B/B4b/critical_mission_deadline_violation/mean",
+    "E1_B/B4b/critical_mission_deadline_violation/ci0",
+    "E1_B/B4b/critical_mission_deadline_violation/ci1",
+    "E1_B/B4b/existing_missions_damaged_count/mean",
+    "E1_B/B4b/existing_missions_damaged_count/ci0",
+    "E1_B/B4b/existing_missions_damaged_count/ci1",
+    "E1_B/ablation/critical_mission_completion_time_s/mean",
+    "E1_B/ablation/critical_mission_completion_time_s/p",
+    "E1_B/ablation/critical_mission_completion_time_s/p_holm",
+    "E1_B/ablation/critical_mission_completion_time_s/ci0",
+    "E1_B/ablation/critical_mission_completion_time_s/ci1",
+    "E1_B/ablation/existing_missions_damaged_count/mean",
+    "E1_B/ablation/existing_missions_damaged_count/p",
+    "E1_B/ablation/existing_missions_damaged_count/p_holm",
+    "E1_B/ablation/existing_missions_damaged_count/ci0",
+    "E1_B/ablation/existing_missions_damaged_count/ci1",
+    "E1_B/ablation/air_intervention/mean",
+    "E1_B/ablation/air_intervention/p",
+    "E1_B/ablation/air_intervention/p_holm",
+    "E1_B/ablation/air_intervention/ci0",
+    "E1_B/ablation/air_intervention/ci1",
+    "E1_C/B0/critical_mission_completion_time_s/mean",
+    "E1_C/B0/critical_mission_completion_time_s/ci0",
+    "E1_C/B0/critical_mission_completion_time_s/ci1",
+    "E1_C/B0/critical_mission_deadline_violation/mean",
+    "E1_C/B0/critical_mission_deadline_violation/ci0",
+    "E1_C/B0/critical_mission_deadline_violation/ci1",
+    "E1_C/B0/existing_missions_damaged_count/mean",
+    "E1_C/B0/existing_missions_damaged_count/ci0",
+    "E1_C/B0/existing_missions_damaged_count/ci1",
+    "E1_C/B1/critical_mission_completion_time_s/mean",
+    "E1_C/B1/critical_mission_completion_time_s/ci0",
+    "E1_C/B1/critical_mission_completion_time_s/ci1",
+    "E1_C/B1/critical_mission_deadline_violation/mean",
+    "E1_C/B1/critical_mission_deadline_violation/ci0",
+    "E1_C/B1/critical_mission_deadline_violation/ci1",
+    "E1_C/B1/existing_missions_damaged_count/mean",
+    "E1_C/B1/existing_missions_damaged_count/ci0",
+    "E1_C/B1/existing_missions_damaged_count/ci1",
+    "E1_C/B2/critical_mission_completion_time_s/mean",
+    "E1_C/B2/critical_mission_completion_time_s/ci0",
+    "E1_C/B2/critical_mission_completion_time_s/ci1",
+    "E1_C/B2/critical_mission_deadline_violation/mean",
+    "E1_C/B2/critical_mission_deadline_violation/ci0",
+    "E1_C/B2/critical_mission_deadline_violation/ci1",
+    "E1_C/B2/existing_missions_damaged_count/mean",
+    "E1_C/B2/existing_missions_damaged_count/ci0",
+    "E1_C/B2/existing_missions_damaged_count/ci1",
+    "E1_C/B4b/critical_mission_completion_time_s/mean",
+    "E1_C/B4b/critical_mission_completion_time_s/ci0",
+    "E1_C/B4b/critical_mission_completion_time_s/ci1",
+    "E1_C/B4b/critical_mission_deadline_violation/mean",
+    "E1_C/B4b/critical_mission_deadline_violation/ci0",
+    "E1_C/B4b/critical_mission_deadline_violation/ci1",
+    "E1_C/B4b/existing_missions_damaged_count/mean",
+    "E1_C/B4b/existing_missions_damaged_count/ci0",
+    "E1_C/B4b/existing_missions_damaged_count/ci1",
+    "E1_C/ablation/critical_mission_completion_time_s/mean",
+    "E1_C/ablation/critical_mission_completion_time_s/p",
+    "E1_C/ablation/critical_mission_completion_time_s/p_holm",
+    "E1_C/ablation/critical_mission_completion_time_s/ci0",
+    "E1_C/ablation/critical_mission_completion_time_s/ci1",
+    "E1_C/ablation/existing_missions_damaged_count/mean",
+    "E1_C/ablation/existing_missions_damaged_count/p",
+    "E1_C/ablation/existing_missions_damaged_count/p_holm",
+    "E1_C/ablation/existing_missions_damaged_count/ci0",
+    "E1_C/ablation/existing_missions_damaged_count/ci1",
+    "E1_C/ablation/air_intervention/mean",
+    "E1_C/ablation/air_intervention/p",
+    "E1_C/ablation/air_intervention/p_holm",
+    "E1_C/ablation/air_intervention/ci0",
+    "E1_C/ablation/air_intervention/ci1",
+    "E2_A/B0/critical_mission_completion_time_s/mean",
+    "E2_A/B0/critical_mission_completion_time_s/ci0",
+    "E2_A/B0/critical_mission_completion_time_s/ci1",
+    "E2_A/B0/critical_mission_deadline_violation/mean",
+    "E2_A/B0/critical_mission_deadline_violation/ci0",
+    "E2_A/B0/critical_mission_deadline_violation/ci1",
+    "E2_A/B0/existing_missions_damaged_count/mean",
+    "E2_A/B0/existing_missions_damaged_count/ci0",
+    "E2_A/B0/existing_missions_damaged_count/ci1",
+    "E2_A/B0/affected",
+    "E2_A/B0/restored",
+    "E2_A/B1/critical_mission_completion_time_s/mean",
+    "E2_A/B1/critical_mission_completion_time_s/ci0",
+    "E2_A/B1/critical_mission_completion_time_s/ci1",
+    "E2_A/B1/critical_mission_deadline_violation/mean",
+    "E2_A/B1/critical_mission_deadline_violation/ci0",
+    "E2_A/B1/critical_mission_deadline_violation/ci1",
+    "E2_A/B1/existing_missions_damaged_count/mean",
+    "E2_A/B1/existing_missions_damaged_count/ci0",
+    "E2_A/B1/existing_missions_damaged_count/ci1",
+    "E2_A/B1/affected",
+    "E2_A/B1/restored",
+    "E2_A/B2/critical_mission_completion_time_s/mean",
+    "E2_A/B2/critical_mission_completion_time_s/ci0",
+    "E2_A/B2/critical_mission_completion_time_s/ci1",
+    "E2_A/B2/critical_mission_deadline_violation/mean",
+    "E2_A/B2/critical_mission_deadline_violation/ci0",
+    "E2_A/B2/critical_mission_deadline_violation/ci1",
+    "E2_A/B2/existing_missions_damaged_count/mean",
+    "E2_A/B2/existing_missions_damaged_count/ci0",
+    "E2_A/B2/existing_missions_damaged_count/ci1",
+    "E2_A/B2/affected",
+    "E2_A/B2/restored",
+    "E2_A/B4b/critical_mission_completion_time_s/mean",
+    "E2_A/B4b/critical_mission_completion_time_s/ci0",
+    "E2_A/B4b/critical_mission_completion_time_s/ci1",
+    "E2_A/B4b/critical_mission_deadline_violation/mean",
+    "E2_A/B4b/critical_mission_deadline_violation/ci0",
+    "E2_A/B4b/critical_mission_deadline_violation/ci1",
+    "E2_A/B4b/existing_missions_damaged_count/mean",
+    "E2_A/B4b/existing_missions_damaged_count/ci0",
+    "E2_A/B4b/existing_missions_damaged_count/ci1",
+    "E2_A/B4b/affected",
+    "E2_A/B4b/restored",
+    "E2_B/B0/critical_mission_completion_time_s/mean",
+    "E2_B/B0/critical_mission_completion_time_s/ci0",
+    "E2_B/B0/critical_mission_completion_time_s/ci1",
+    "E2_B/B0/critical_mission_deadline_violation/mean",
+    "E2_B/B0/critical_mission_deadline_violation/ci0",
+    "E2_B/B0/critical_mission_deadline_violation/ci1",
+    "E2_B/B0/existing_missions_damaged_count/mean",
+    "E2_B/B0/existing_missions_damaged_count/ci0",
+    "E2_B/B0/existing_missions_damaged_count/ci1",
+    "E2_B/B0/affected",
+    "E2_B/B0/restored",
+    "E2_B/B1/critical_mission_completion_time_s/mean",
+    "E2_B/B1/critical_mission_completion_time_s/ci0",
+    "E2_B/B1/critical_mission_completion_time_s/ci1",
+    "E2_B/B1/critical_mission_deadline_violation/mean",
+    "E2_B/B1/critical_mission_deadline_violation/ci0",
+    "E2_B/B1/critical_mission_deadline_violation/ci1",
+    "E2_B/B1/existing_missions_damaged_count/mean",
+    "E2_B/B1/existing_missions_damaged_count/ci0",
+    "E2_B/B1/existing_missions_damaged_count/ci1",
+    "E2_B/B1/affected",
+    "E2_B/B1/restored",
+    "E2_B/B2/critical_mission_completion_time_s/mean",
+    "E2_B/B2/critical_mission_completion_time_s/ci0",
+    "E2_B/B2/critical_mission_completion_time_s/ci1",
+    "E2_B/B2/critical_mission_deadline_violation/mean",
+    "E2_B/B2/critical_mission_deadline_violation/ci0",
+    "E2_B/B2/critical_mission_deadline_violation/ci1",
+    "E2_B/B2/existing_missions_damaged_count/mean",
+    "E2_B/B2/existing_missions_damaged_count/ci0",
+    "E2_B/B2/existing_missions_damaged_count/ci1",
+    "E2_B/B2/affected",
+    "E2_B/B2/restored",
+    "E2_B/B4b/critical_mission_completion_time_s/mean",
+    "E2_B/B4b/critical_mission_completion_time_s/ci0",
+    "E2_B/B4b/critical_mission_completion_time_s/ci1",
+    "E2_B/B4b/critical_mission_deadline_violation/mean",
+    "E2_B/B4b/critical_mission_deadline_violation/ci0",
+    "E2_B/B4b/critical_mission_deadline_violation/ci1",
+    "E2_B/B4b/existing_missions_damaged_count/mean",
+    "E2_B/B4b/existing_missions_damaged_count/ci0",
+    "E2_B/B4b/existing_missions_damaged_count/ci1",
+    "E2_B/B4b/affected",
+    "E2_B/B4b/restored",
+    "E2_C/B0/critical_mission_completion_time_s/mean",
+    "E2_C/B0/critical_mission_completion_time_s/ci0",
+    "E2_C/B0/critical_mission_completion_time_s/ci1",
+    "E2_C/B0/critical_mission_deadline_violation/mean",
+    "E2_C/B0/critical_mission_deadline_violation/ci0",
+    "E2_C/B0/critical_mission_deadline_violation/ci1",
+    "E2_C/B0/existing_missions_damaged_count/mean",
+    "E2_C/B0/existing_missions_damaged_count/ci0",
+    "E2_C/B0/existing_missions_damaged_count/ci1",
+    "E2_C/B0/affected",
+    "E2_C/B0/restored",
+    "E2_C/B1/critical_mission_completion_time_s/mean",
+    "E2_C/B1/critical_mission_completion_time_s/ci0",
+    "E2_C/B1/critical_mission_completion_time_s/ci1",
+    "E2_C/B1/critical_mission_deadline_violation/mean",
+    "E2_C/B1/critical_mission_deadline_violation/ci0",
+    "E2_C/B1/critical_mission_deadline_violation/ci1",
+    "E2_C/B1/existing_missions_damaged_count/mean",
+    "E2_C/B1/existing_missions_damaged_count/ci0",
+    "E2_C/B1/existing_missions_damaged_count/ci1",
+    "E2_C/B1/affected",
+    "E2_C/B1/restored",
+    "E2_C/B2/critical_mission_completion_time_s/mean",
+    "E2_C/B2/critical_mission_completion_time_s/ci0",
+    "E2_C/B2/critical_mission_completion_time_s/ci1",
+    "E2_C/B2/critical_mission_deadline_violation/mean",
+    "E2_C/B2/critical_mission_deadline_violation/ci0",
+    "E2_C/B2/critical_mission_deadline_violation/ci1",
+    "E2_C/B2/existing_missions_damaged_count/mean",
+    "E2_C/B2/existing_missions_damaged_count/ci0",
+    "E2_C/B2/existing_missions_damaged_count/ci1",
+    "E2_C/B2/affected",
+    "E2_C/B2/restored",
+    "E2_C/B4b/critical_mission_completion_time_s/mean",
+    "E2_C/B4b/critical_mission_completion_time_s/ci0",
+    "E2_C/B4b/critical_mission_completion_time_s/ci1",
+    "E2_C/B4b/critical_mission_deadline_violation/mean",
+    "E2_C/B4b/critical_mission_deadline_violation/ci0",
+    "E2_C/B4b/critical_mission_deadline_violation/ci1",
+    "E2_C/B4b/existing_missions_damaged_count/mean",
+    "E2_C/B4b/existing_missions_damaged_count/ci0",
+    "E2_C/B4b/existing_missions_damaged_count/ci1",
+    "E2_C/B4b/affected",
+    "E2_C/B4b/restored",
+    "E3_A/B0/critical_mission_completion_time_s/mean",
+    "E3_A/B0/critical_mission_completion_time_s/ci0",
+    "E3_A/B0/critical_mission_completion_time_s/ci1",
+    "E3_A/B0/critical_mission_deadline_violation/mean",
+    "E3_A/B0/critical_mission_deadline_violation/ci0",
+    "E3_A/B0/critical_mission_deadline_violation/ci1",
+    "E3_A/B0/existing_missions_damaged_count/mean",
+    "E3_A/B0/existing_missions_damaged_count/ci0",
+    "E3_A/B0/existing_missions_damaged_count/ci1",
+    "E3_A/B0/system_weighted_loss/mean",
+    "E3_A/B0/system_weighted_loss/ci0",
+    "E3_A/B0/system_weighted_loss/ci1",
+    "E3_A/B1/critical_mission_completion_time_s/mean",
+    "E3_A/B1/critical_mission_completion_time_s/ci0",
+    "E3_A/B1/critical_mission_completion_time_s/ci1",
+    "E3_A/B1/critical_mission_deadline_violation/mean",
+    "E3_A/B1/critical_mission_deadline_violation/ci0",
+    "E3_A/B1/critical_mission_deadline_violation/ci1",
+    "E3_A/B1/existing_missions_damaged_count/mean",
+    "E3_A/B1/existing_missions_damaged_count/ci0",
+    "E3_A/B1/existing_missions_damaged_count/ci1",
+    "E3_A/B1/system_weighted_loss/mean",
+    "E3_A/B1/system_weighted_loss/ci0",
+    "E3_A/B1/system_weighted_loss/ci1",
+    "E3_A/B2/critical_mission_completion_time_s/mean",
+    "E3_A/B2/critical_mission_completion_time_s/ci0",
+    "E3_A/B2/critical_mission_completion_time_s/ci1",
+    "E3_A/B2/critical_mission_deadline_violation/mean",
+    "E3_A/B2/critical_mission_deadline_violation/ci0",
+    "E3_A/B2/critical_mission_deadline_violation/ci1",
+    "E3_A/B2/existing_missions_damaged_count/mean",
+    "E3_A/B2/existing_missions_damaged_count/ci0",
+    "E3_A/B2/existing_missions_damaged_count/ci1",
+    "E3_A/B2/system_weighted_loss/mean",
+    "E3_A/B2/system_weighted_loss/ci0",
+    "E3_A/B2/system_weighted_loss/ci1",
+    "E3_A/B4b/critical_mission_completion_time_s/mean",
+    "E3_A/B4b/critical_mission_completion_time_s/ci0",
+    "E3_A/B4b/critical_mission_completion_time_s/ci1",
+    "E3_A/B4b/critical_mission_deadline_violation/mean",
+    "E3_A/B4b/critical_mission_deadline_violation/ci0",
+    "E3_A/B4b/critical_mission_deadline_violation/ci1",
+    "E3_A/B4b/existing_missions_damaged_count/mean",
+    "E3_A/B4b/existing_missions_damaged_count/ci0",
+    "E3_A/B4b/existing_missions_damaged_count/ci1",
+    "E3_A/B4b/system_weighted_loss/mean",
+    "E3_A/B4b/system_weighted_loss/ci0",
+    "E3_A/B4b/system_weighted_loss/ci1",
+    "E3_B/B0/critical_mission_completion_time_s/mean",
+    "E3_B/B0/critical_mission_completion_time_s/ci0",
+    "E3_B/B0/critical_mission_completion_time_s/ci1",
+    "E3_B/B0/critical_mission_deadline_violation/mean",
+    "E3_B/B0/critical_mission_deadline_violation/ci0",
+    "E3_B/B0/critical_mission_deadline_violation/ci1",
+    "E3_B/B0/existing_missions_damaged_count/mean",
+    "E3_B/B0/existing_missions_damaged_count/ci0",
+    "E3_B/B0/existing_missions_damaged_count/ci1",
+    "E3_B/B0/system_weighted_loss/mean",
+    "E3_B/B0/system_weighted_loss/ci0",
+    "E3_B/B0/system_weighted_loss/ci1",
+    "E3_B/B1/critical_mission_completion_time_s/mean",
+    "E3_B/B1/critical_mission_completion_time_s/ci0",
+    "E3_B/B1/critical_mission_completion_time_s/ci1",
+    "E3_B/B1/critical_mission_deadline_violation/mean",
+    "E3_B/B1/critical_mission_deadline_violation/ci0",
+    "E3_B/B1/critical_mission_deadline_violation/ci1",
+    "E3_B/B1/existing_missions_damaged_count/mean",
+    "E3_B/B1/existing_missions_damaged_count/ci0",
+    "E3_B/B1/existing_missions_damaged_count/ci1",
+    "E3_B/B1/system_weighted_loss/mean",
+    "E3_B/B1/system_weighted_loss/ci0",
+    "E3_B/B1/system_weighted_loss/ci1",
+    "E3_B/B2/critical_mission_completion_time_s/mean",
+    "E3_B/B2/critical_mission_completion_time_s/ci0",
+    "E3_B/B2/critical_mission_completion_time_s/ci1",
+    "E3_B/B2/critical_mission_deadline_violation/mean",
+    "E3_B/B2/critical_mission_deadline_violation/ci0",
+    "E3_B/B2/critical_mission_deadline_violation/ci1",
+    "E3_B/B2/existing_missions_damaged_count/mean",
+    "E3_B/B2/existing_missions_damaged_count/ci0",
+    "E3_B/B2/existing_missions_damaged_count/ci1",
+    "E3_B/B2/system_weighted_loss/mean",
+    "E3_B/B2/system_weighted_loss/ci0",
+    "E3_B/B2/system_weighted_loss/ci1",
+    "E3_B/B4b/critical_mission_completion_time_s/mean",
+    "E3_B/B4b/critical_mission_completion_time_s/ci0",
+    "E3_B/B4b/critical_mission_completion_time_s/ci1",
+    "E3_B/B4b/critical_mission_deadline_violation/mean",
+    "E3_B/B4b/critical_mission_deadline_violation/ci0",
+    "E3_B/B4b/critical_mission_deadline_violation/ci1",
+    "E3_B/B4b/existing_missions_damaged_count/mean",
+    "E3_B/B4b/existing_missions_damaged_count/ci0",
+    "E3_B/B4b/existing_missions_damaged_count/ci1",
+    "E3_B/B4b/system_weighted_loss/mean",
+    "E3_B/B4b/system_weighted_loss/ci0",
+    "E3_B/B4b/system_weighted_loss/ci1",
+    "E3_C/B0/critical_mission_completion_time_s/mean",
+    "E3_C/B0/critical_mission_completion_time_s/ci0",
+    "E3_C/B0/critical_mission_completion_time_s/ci1",
+    "E3_C/B0/critical_mission_deadline_violation/mean",
+    "E3_C/B0/critical_mission_deadline_violation/ci0",
+    "E3_C/B0/critical_mission_deadline_violation/ci1",
+    "E3_C/B0/existing_missions_damaged_count/mean",
+    "E3_C/B0/existing_missions_damaged_count/ci0",
+    "E3_C/B0/existing_missions_damaged_count/ci1",
+    "E3_C/B0/system_weighted_loss/mean",
+    "E3_C/B0/system_weighted_loss/ci0",
+    "E3_C/B0/system_weighted_loss/ci1",
+    "E3_C/B1/critical_mission_completion_time_s/mean",
+    "E3_C/B1/critical_mission_completion_time_s/ci0",
+    "E3_C/B1/critical_mission_completion_time_s/ci1",
+    "E3_C/B1/critical_mission_deadline_violation/mean",
+    "E3_C/B1/critical_mission_deadline_violation/ci0",
+    "E3_C/B1/critical_mission_deadline_violation/ci1",
+    "E3_C/B1/existing_missions_damaged_count/mean",
+    "E3_C/B1/existing_missions_damaged_count/ci0",
+    "E3_C/B1/existing_missions_damaged_count/ci1",
+    "E3_C/B1/system_weighted_loss/mean",
+    "E3_C/B1/system_weighted_loss/ci0",
+    "E3_C/B1/system_weighted_loss/ci1",
+    "E3_C/B2/critical_mission_completion_time_s/mean",
+    "E3_C/B2/critical_mission_completion_time_s/ci0",
+    "E3_C/B2/critical_mission_completion_time_s/ci1",
+    "E3_C/B2/critical_mission_deadline_violation/mean",
+    "E3_C/B2/critical_mission_deadline_violation/ci0",
+    "E3_C/B2/critical_mission_deadline_violation/ci1",
+    "E3_C/B2/existing_missions_damaged_count/mean",
+    "E3_C/B2/existing_missions_damaged_count/ci0",
+    "E3_C/B2/existing_missions_damaged_count/ci1",
+    "E3_C/B2/system_weighted_loss/mean",
+    "E3_C/B2/system_weighted_loss/ci0",
+    "E3_C/B2/system_weighted_loss/ci1",
+    "E3_C/B4b/critical_mission_completion_time_s/mean",
+    "E3_C/B4b/critical_mission_completion_time_s/ci0",
+    "E3_C/B4b/critical_mission_completion_time_s/ci1",
+    "E3_C/B4b/critical_mission_deadline_violation/mean",
+    "E3_C/B4b/critical_mission_deadline_violation/ci0",
+    "E3_C/B4b/critical_mission_deadline_violation/ci1",
+    "E3_C/B4b/existing_missions_damaged_count/mean",
+    "E3_C/B4b/existing_missions_damaged_count/ci0",
+    "E3_C/B4b/existing_missions_damaged_count/ci1",
+    "E3_C/B4b/system_weighted_loss/mean",
+    "E3_C/B4b/system_weighted_loss/ci0",
+    "E3_C/B4b/system_weighted_loss/ci1",
+    "E1_A/E1_H_C_high/delta",
+    "E1_A/E1_H_C_high/p_holm",
+    "E1_A/E1_H_C_low/delta",
+    "E1_A/E1_H_C_low/p_holm",
+    "E1_A/E1_H_H_high/delta",
+    "E1_A/E1_H_H_high/p_holm",
+    "E1_A/E1_H_H_low/delta",
+    "E1_A/E1_H_H_low/p_holm",
+    "E1_A/E1_L_C_high/delta",
+    "E1_A/E1_L_C_high/p_holm",
+    "E1_A/E1_L_C_low/delta",
+    "E1_A/E1_L_C_low/p_holm",
+    "E1_A/E1_L_H_high/delta",
+    "E1_A/E1_L_H_high/p_holm",
+    "E1_A/E1_L_H_low/delta",
+    "E1_A/E1_L_H_low/p_holm",
+    "E1_A/E1_M_C_high/delta",
+    "E1_A/E1_M_C_high/p_holm",
+    "E1_A/E1_M_C_low/delta",
+    "E1_A/E1_M_C_low/p_holm",
+    "E1_A/E1_M_H_high/delta",
+    "E1_A/E1_M_H_high/p_holm",
+    "E1_A/E1_M_H_low/delta",
+    "E1_A/E1_M_H_low/p_holm",
+    "E2_A/critical_mission_completion_time_s/delta",
+    "E2_A/recovery_time_s/delta",
+    "E2_A/failure_to_replan_latency_s/delta",
+    "E2_A/existing_missions_damaged_count/delta",
+    "E2_A/candidate_set_reduction_delta/delta",
+    "E2_A/critical_mission_deadline_violation/delta",
+    "E2_A/recovery_success/delta",
+    "E2_A/recovered_completed/delta",
+    "E2_A/ground_fallback_rate/delta",
+    "E2_A/failure_induced_ground_fallback/delta",
+    "E2_A/necessary_ground_fallback_correct/delta",
+    "E2_A/air_intervention/delta",
+    "E2_A/critical_mission_completion_time_s/p",
+    "E2_A/critical_mission_completion_time_s/p_holm",
+    "E2_A/critical_mission_completion_time_s/ci0",
+    "E2_A/critical_mission_completion_time_s/ci1",
+    "E2_A/recovery_time_s/p",
+    "E2_A/recovery_time_s/p_holm",
+    "E2_A/recovery_time_s/ci0",
+    "E2_A/recovery_time_s/ci1",
+    "E2_A/failure_to_replan_latency_s/p",
+    "E2_A/failure_to_replan_latency_s/p_holm",
+    "E2_A/failure_to_replan_latency_s/ci0",
+    "E2_A/failure_to_replan_latency_s/ci1",
+    "E2_A/existing_missions_damaged_count/p",
+    "E2_A/existing_missions_damaged_count/p_holm",
+    "E2_A/existing_missions_damaged_count/ci0",
+    "E2_A/existing_missions_damaged_count/ci1",
+    "E2_A/candidate_set_reduction_delta/p",
+    "E2_A/candidate_set_reduction_delta/p_holm",
+    "E2_A/candidate_set_reduction_delta/ci0",
+    "E2_A/candidate_set_reduction_delta/ci1",
+    "E2_A/critical_mission_deadline_violation/p",
+    "E2_A/critical_mission_deadline_violation/p_holm",
+    "E2_A/critical_mission_deadline_violation/ci0",
+    "E2_A/critical_mission_deadline_violation/ci1",
+    "E2_A/recovery_success/p",
+    "E2_A/recovery_success/p_holm",
+    "E2_A/recovery_success/ci0",
+    "E2_A/recovery_success/ci1",
+    "E2_A/recovered_completed/p",
+    "E2_A/recovered_completed/p_holm",
+    "E2_A/recovered_completed/ci0",
+    "E2_A/recovered_completed/ci1",
+    "E2_A/ground_fallback_rate/p",
+    "E2_A/ground_fallback_rate/p_holm",
+    "E2_A/ground_fallback_rate/ci0",
+    "E2_A/ground_fallback_rate/ci1",
+    "E2_A/failure_induced_ground_fallback/p",
+    "E2_A/failure_induced_ground_fallback/p_holm",
+    "E2_A/failure_induced_ground_fallback/ci0",
+    "E2_A/failure_induced_ground_fallback/ci1",
+    "E2_A/necessary_ground_fallback_correct/p",
+    "E2_A/necessary_ground_fallback_correct/p_holm",
+    "E2_A/necessary_ground_fallback_correct/ci0",
+    "E2_A/necessary_ground_fallback_correct/ci1",
+    "E2_A/air_intervention/p",
+    "E2_A/air_intervention/p_holm",
+    "E2_A/air_intervention/ci0",
+    "E2_A/air_intervention/ci1",
+    "E2_B/critical_mission_completion_time_s/delta",
+    "E2_B/recovery_time_s/delta",
+    "E2_B/failure_to_replan_latency_s/delta",
+    "E2_B/existing_missions_damaged_count/delta",
+    "E2_B/candidate_set_reduction_delta/delta",
+    "E2_B/critical_mission_deadline_violation/delta",
+    "E2_B/recovery_success/delta",
+    "E2_B/recovered_completed/delta",
+    "E2_B/ground_fallback_rate/delta",
+    "E2_B/failure_induced_ground_fallback/delta",
+    "E2_B/necessary_ground_fallback_correct/delta",
+    "E2_B/air_intervention/delta",
+    "E2_B/critical_mission_completion_time_s/p",
+    "E2_B/critical_mission_completion_time_s/p_holm",
+    "E2_B/critical_mission_completion_time_s/ci0",
+    "E2_B/critical_mission_completion_time_s/ci1",
+    "E2_B/recovery_time_s/p",
+    "E2_B/recovery_time_s/p_holm",
+    "E2_B/recovery_time_s/ci0",
+    "E2_B/recovery_time_s/ci1",
+    "E2_B/failure_to_replan_latency_s/p",
+    "E2_B/failure_to_replan_latency_s/p_holm",
+    "E2_B/failure_to_replan_latency_s/ci0",
+    "E2_B/failure_to_replan_latency_s/ci1",
+    "E2_B/existing_missions_damaged_count/p",
+    "E2_B/existing_missions_damaged_count/p_holm",
+    "E2_B/existing_missions_damaged_count/ci0",
+    "E2_B/existing_missions_damaged_count/ci1",
+    "E2_B/candidate_set_reduction_delta/p",
+    "E2_B/candidate_set_reduction_delta/p_holm",
+    "E2_B/candidate_set_reduction_delta/ci0",
+    "E2_B/candidate_set_reduction_delta/ci1",
+    "E2_B/critical_mission_deadline_violation/p",
+    "E2_B/critical_mission_deadline_violation/p_holm",
+    "E2_B/critical_mission_deadline_violation/ci0",
+    "E2_B/critical_mission_deadline_violation/ci1",
+    "E2_B/recovery_success/p",
+    "E2_B/recovery_success/p_holm",
+    "E2_B/recovery_success/ci0",
+    "E2_B/recovery_success/ci1",
+    "E2_B/recovered_completed/p",
+    "E2_B/recovered_completed/p_holm",
+    "E2_B/recovered_completed/ci0",
+    "E2_B/recovered_completed/ci1",
+    "E2_B/ground_fallback_rate/p",
+    "E2_B/ground_fallback_rate/p_holm",
+    "E2_B/ground_fallback_rate/ci0",
+    "E2_B/ground_fallback_rate/ci1",
+    "E2_B/failure_induced_ground_fallback/p",
+    "E2_B/failure_induced_ground_fallback/p_holm",
+    "E2_B/failure_induced_ground_fallback/ci0",
+    "E2_B/failure_induced_ground_fallback/ci1",
+    "E2_B/necessary_ground_fallback_correct/p",
+    "E2_B/necessary_ground_fallback_correct/p_holm",
+    "E2_B/necessary_ground_fallback_correct/ci0",
+    "E2_B/necessary_ground_fallback_correct/ci1",
+    "E2_B/air_intervention/p",
+    "E2_B/air_intervention/p_holm",
+    "E2_B/air_intervention/ci0",
+    "E2_B/air_intervention/ci1",
+    "E2_C/critical_mission_completion_time_s/delta",
+    "E2_C/recovery_time_s/delta",
+    "E2_C/failure_to_replan_latency_s/delta",
+    "E2_C/existing_missions_damaged_count/delta",
+    "E2_C/candidate_set_reduction_delta/delta",
+    "E2_C/critical_mission_deadline_violation/delta",
+    "E2_C/recovery_success/delta",
+    "E2_C/recovered_completed/delta",
+    "E2_C/ground_fallback_rate/delta",
+    "E2_C/failure_induced_ground_fallback/delta",
+    "E2_C/necessary_ground_fallback_correct/delta",
+    "E2_C/air_intervention/delta",
+    "E2_C/critical_mission_completion_time_s/p",
+    "E2_C/critical_mission_completion_time_s/p_holm",
+    "E2_C/critical_mission_completion_time_s/ci0",
+    "E2_C/critical_mission_completion_time_s/ci1",
+    "E2_C/recovery_time_s/p",
+    "E2_C/recovery_time_s/p_holm",
+    "E2_C/recovery_time_s/ci0",
+    "E2_C/recovery_time_s/ci1",
+    "E2_C/failure_to_replan_latency_s/p",
+    "E2_C/failure_to_replan_latency_s/p_holm",
+    "E2_C/failure_to_replan_latency_s/ci0",
+    "E2_C/failure_to_replan_latency_s/ci1",
+    "E2_C/existing_missions_damaged_count/p",
+    "E2_C/existing_missions_damaged_count/p_holm",
+    "E2_C/existing_missions_damaged_count/ci0",
+    "E2_C/existing_missions_damaged_count/ci1",
+    "E2_C/candidate_set_reduction_delta/p",
+    "E2_C/candidate_set_reduction_delta/p_holm",
+    "E2_C/candidate_set_reduction_delta/ci0",
+    "E2_C/candidate_set_reduction_delta/ci1",
+    "E2_C/critical_mission_deadline_violation/p",
+    "E2_C/critical_mission_deadline_violation/p_holm",
+    "E2_C/critical_mission_deadline_violation/ci0",
+    "E2_C/critical_mission_deadline_violation/ci1",
+    "E2_C/recovery_success/p",
+    "E2_C/recovery_success/p_holm",
+    "E2_C/recovery_success/ci0",
+    "E2_C/recovery_success/ci1",
+    "E2_C/recovered_completed/p",
+    "E2_C/recovered_completed/p_holm",
+    "E2_C/recovered_completed/ci0",
+    "E2_C/recovered_completed/ci1",
+    "E2_C/ground_fallback_rate/p",
+    "E2_C/ground_fallback_rate/p_holm",
+    "E2_C/ground_fallback_rate/ci0",
+    "E2_C/ground_fallback_rate/ci1",
+    "E2_C/failure_induced_ground_fallback/p",
+    "E2_C/failure_induced_ground_fallback/p_holm",
+    "E2_C/failure_induced_ground_fallback/ci0",
+    "E2_C/failure_induced_ground_fallback/ci1",
+    "E2_C/necessary_ground_fallback_correct/p",
+    "E2_C/necessary_ground_fallback_correct/p_holm",
+    "E2_C/necessary_ground_fallback_correct/ci0",
+    "E2_C/necessary_ground_fallback_correct/ci1",
+    "E2_C/air_intervention/p",
+    "E2_C/air_intervention/p_holm",
+    "E2_C/air_intervention/ci0",
+    "E2_C/air_intervention/ci1",
+    "E3_A/L2/B1/system_weighted_loss/mean",
+    "E3_A/L2/B1/system_weighted_loss/p",
+    "E3_A/L2/B1/system_weighted_loss/p_holm",
+    "E3_A/L2/B1/_critical_high_loss/mean",
+    "E3_A/L2/B1/_critical_high_loss/p",
+    "E3_A/L2/B1/_critical_high_loss/p_holm",
+    "E3_A/L3/B1/system_weighted_loss/mean",
+    "E3_A/L3/B1/system_weighted_loss/p",
+    "E3_A/L3/B1/system_weighted_loss/p_holm",
+    "E3_A/L3/B1/_critical_high_loss/mean",
+    "E3_A/L3/B1/_critical_high_loss/p",
+    "E3_A/L3/B1/_critical_high_loss/p_holm",
+    "E3_A/L4/B1/system_weighted_loss/mean",
+    "E3_A/L4/B1/system_weighted_loss/p",
+    "E3_A/L4/B1/system_weighted_loss/p_holm",
+    "E3_A/L4/B1/_critical_high_loss/mean",
+    "E3_A/L4/B1/_critical_high_loss/p",
+    "E3_A/L4/B1/_critical_high_loss/p_holm",
+    "E3_A/L2/B2/system_weighted_loss/mean",
+    "E3_A/L2/B2/system_weighted_loss/p",
+    "E3_A/L2/B2/system_weighted_loss/p_holm",
+    "E3_A/L2/B2/_critical_high_loss/mean",
+    "E3_A/L2/B2/_critical_high_loss/p",
+    "E3_A/L2/B2/_critical_high_loss/p_holm",
+    "E3_A/L3/B2/system_weighted_loss/mean",
+    "E3_A/L3/B2/system_weighted_loss/p",
+    "E3_A/L3/B2/system_weighted_loss/p_holm",
+    "E3_A/L3/B2/_critical_high_loss/mean",
+    "E3_A/L3/B2/_critical_high_loss/p",
+    "E3_A/L3/B2/_critical_high_loss/p_holm",
+    "E3_A/L4/B2/system_weighted_loss/mean",
+    "E3_A/L4/B2/system_weighted_loss/p",
+    "E3_A/L4/B2/system_weighted_loss/p_holm",
+    "E3_A/L4/B2/_critical_high_loss/mean",
+    "E3_A/L4/B2/_critical_high_loss/p",
+    "E3_A/L4/B2/_critical_high_loss/p_holm",
+    "E3_B/L2/B1/system_weighted_loss/mean",
+    "E3_B/L2/B1/system_weighted_loss/p",
+    "E3_B/L2/B1/system_weighted_loss/p_holm",
+    "E3_B/L2/B1/_critical_high_loss/mean",
+    "E3_B/L2/B1/_critical_high_loss/p",
+    "E3_B/L2/B1/_critical_high_loss/p_holm",
+    "E3_B/L3/B1/system_weighted_loss/mean",
+    "E3_B/L3/B1/system_weighted_loss/p",
+    "E3_B/L3/B1/system_weighted_loss/p_holm",
+    "E3_B/L3/B1/_critical_high_loss/mean",
+    "E3_B/L3/B1/_critical_high_loss/p",
+    "E3_B/L3/B1/_critical_high_loss/p_holm",
+    "E3_B/L4/B1/system_weighted_loss/mean",
+    "E3_B/L4/B1/system_weighted_loss/p",
+    "E3_B/L4/B1/system_weighted_loss/p_holm",
+    "E3_B/L4/B1/_critical_high_loss/mean",
+    "E3_B/L4/B1/_critical_high_loss/p",
+    "E3_B/L4/B1/_critical_high_loss/p_holm",
+    "E3_B/L2/B2/system_weighted_loss/mean",
+    "E3_B/L2/B2/system_weighted_loss/p",
+    "E3_B/L2/B2/system_weighted_loss/p_holm",
+    "E3_B/L2/B2/_critical_high_loss/mean",
+    "E3_B/L2/B2/_critical_high_loss/p",
+    "E3_B/L2/B2/_critical_high_loss/p_holm",
+    "E3_B/L3/B2/system_weighted_loss/mean",
+    "E3_B/L3/B2/system_weighted_loss/p",
+    "E3_B/L3/B2/system_weighted_loss/p_holm",
+    "E3_B/L3/B2/_critical_high_loss/mean",
+    "E3_B/L3/B2/_critical_high_loss/p",
+    "E3_B/L3/B2/_critical_high_loss/p_holm",
+    "E3_B/L4/B2/system_weighted_loss/mean",
+    "E3_B/L4/B2/system_weighted_loss/p",
+    "E3_B/L4/B2/system_weighted_loss/p_holm",
+    "E3_B/L4/B2/_critical_high_loss/mean",
+    "E3_B/L4/B2/_critical_high_loss/p",
+    "E3_B/L4/B2/_critical_high_loss/p_holm",
+    "E3_C/L2/B1/system_weighted_loss/mean",
+    "E3_C/L2/B1/system_weighted_loss/p",
+    "E3_C/L2/B1/system_weighted_loss/p_holm",
+    "E3_C/L2/B1/_critical_high_loss/mean",
+    "E3_C/L2/B1/_critical_high_loss/p",
+    "E3_C/L2/B1/_critical_high_loss/p_holm",
+    "E3_C/L3/B1/system_weighted_loss/mean",
+    "E3_C/L3/B1/system_weighted_loss/p",
+    "E3_C/L3/B1/system_weighted_loss/p_holm",
+    "E3_C/L3/B1/_critical_high_loss/mean",
+    "E3_C/L3/B1/_critical_high_loss/p",
+    "E3_C/L3/B1/_critical_high_loss/p_holm",
+    "E3_C/L4/B1/system_weighted_loss/mean",
+    "E3_C/L4/B1/system_weighted_loss/p",
+    "E3_C/L4/B1/system_weighted_loss/p_holm",
+    "E3_C/L4/B1/_critical_high_loss/mean",
+    "E3_C/L4/B1/_critical_high_loss/p",
+    "E3_C/L4/B1/_critical_high_loss/p_holm",
+    "E3_C/L2/B2/system_weighted_loss/mean",
+    "E3_C/L2/B2/system_weighted_loss/p",
+    "E3_C/L2/B2/system_weighted_loss/p_holm",
+    "E3_C/L2/B2/_critical_high_loss/mean",
+    "E3_C/L2/B2/_critical_high_loss/p",
+    "E3_C/L2/B2/_critical_high_loss/p_holm",
+    "E3_C/L3/B2/system_weighted_loss/mean",
+    "E3_C/L3/B2/system_weighted_loss/p",
+    "E3_C/L3/B2/system_weighted_loss/p_holm",
+    "E3_C/L3/B2/_critical_high_loss/mean",
+    "E3_C/L3/B2/_critical_high_loss/p",
+    "E3_C/L3/B2/_critical_high_loss/p_holm",
+    "E3_C/L4/B2/system_weighted_loss/mean",
+    "E3_C/L4/B2/system_weighted_loss/p",
+    "E3_C/L4/B2/system_weighted_loss/p_holm",
+    "E3_C/L4/B2/_critical_high_loss/mean",
+    "E3_C/L4/B2/_critical_high_loss/p",
+    "E3_C/L4/B2/_critical_high_loss/p_holm",
+    "E4/4A/OBS10/B0/critical_mission_completion_time_s",
+    "E4/4A/OBS10/B0/critical_mission_deadline_violation",
+    "E4/4A/OBS10/B1/critical_mission_completion_time_s",
+    "E4/4A/OBS10/B1/critical_mission_deadline_violation",
+    "E4/4A/OBS10/B2/critical_mission_completion_time_s",
+    "E4/4A/OBS10/B2/critical_mission_deadline_violation",
+    "E4/4A/OBS10/B4b/critical_mission_completion_time_s",
+    "E4/4A/OBS10/B4b/critical_mission_deadline_violation",
+    "E4/4A/OBS120/B0/critical_mission_completion_time_s",
+    "E4/4A/OBS120/B0/critical_mission_deadline_violation",
+    "E4/4A/OBS120/B1/critical_mission_completion_time_s",
+    "E4/4A/OBS120/B1/critical_mission_deadline_violation",
+    "E4/4A/OBS120/B2/critical_mission_completion_time_s",
+    "E4/4A/OBS120/B2/critical_mission_deadline_violation",
+    "E4/4A/OBS120/B4b/critical_mission_completion_time_s",
+    "E4/4A/OBS120/B4b/critical_mission_deadline_violation",
+    "E4/4A/OBS30/B0/critical_mission_completion_time_s",
+    "E4/4A/OBS30/B0/critical_mission_deadline_violation",
+    "E4/4A/OBS30/B1/critical_mission_completion_time_s",
+    "E4/4A/OBS30/B1/critical_mission_deadline_violation",
+    "E4/4A/OBS30/B2/critical_mission_completion_time_s",
+    "E4/4A/OBS30/B2/critical_mission_deadline_violation",
+    "E4/4A/OBS30/B4b/critical_mission_completion_time_s",
+    "E4/4A/OBS30/B4b/critical_mission_deadline_violation",
+    "E4/4A/OBS300/B0/critical_mission_completion_time_s",
+    "E4/4A/OBS300/B0/critical_mission_deadline_violation",
+    "E4/4A/OBS300/B1/critical_mission_completion_time_s",
+    "E4/4A/OBS300/B1/critical_mission_deadline_violation",
+    "E4/4A/OBS300/B2/critical_mission_completion_time_s",
+    "E4/4A/OBS300/B2/critical_mission_deadline_violation",
+    "E4/4A/OBS300/B4b/critical_mission_completion_time_s",
+    "E4/4A/OBS300/B4b/critical_mission_deadline_violation",
+    "E4/4A/OBS60/B0/critical_mission_completion_time_s",
+    "E4/4A/OBS60/B0/critical_mission_deadline_violation",
+    "E4/4A/OBS60/B1/critical_mission_completion_time_s",
+    "E4/4A/OBS60/B1/critical_mission_deadline_violation",
+    "E4/4A/OBS60/B2/critical_mission_completion_time_s",
+    "E4/4A/OBS60/B2/critical_mission_deadline_violation",
+    "E4/4A/OBS60/B4b/critical_mission_completion_time_s",
+    "E4/4A/OBS60/B4b/critical_mission_deadline_violation",
+    "E4/4B/D00/B0/critical_mission_completion_time_s",
+    "E4/4B/D00/B0/critical_mission_deadline_violation",
+    "E4/4B/D00/B1/critical_mission_completion_time_s",
+    "E4/4B/D00/B1/critical_mission_deadline_violation",
+    "E4/4B/D00/B2/critical_mission_completion_time_s",
+    "E4/4B/D00/B2/critical_mission_deadline_violation",
+    "E4/4B/D00/B4b/critical_mission_completion_time_s",
+    "E4/4B/D00/B4b/critical_mission_deadline_violation",
+    "E4/4B/D01/B0/critical_mission_completion_time_s",
+    "E4/4B/D01/B0/critical_mission_deadline_violation",
+    "E4/4B/D01/B1/critical_mission_completion_time_s",
+    "E4/4B/D01/B1/critical_mission_deadline_violation",
+    "E4/4B/D01/B2/critical_mission_completion_time_s",
+    "E4/4B/D01/B2/critical_mission_deadline_violation",
+    "E4/4B/D01/B4b/critical_mission_completion_time_s",
+    "E4/4B/D01/B4b/critical_mission_deadline_violation",
+    "E4/4B/D05/B0/critical_mission_completion_time_s",
+    "E4/4B/D05/B0/critical_mission_deadline_violation",
+    "E4/4B/D05/B1/critical_mission_completion_time_s",
+    "E4/4B/D05/B1/critical_mission_deadline_violation",
+    "E4/4B/D05/B2/critical_mission_completion_time_s",
+    "E4/4B/D05/B2/critical_mission_deadline_violation",
+    "E4/4B/D05/B4b/critical_mission_completion_time_s",
+    "E4/4B/D05/B4b/critical_mission_deadline_violation",
+    "E4/4B/D10/B0/critical_mission_completion_time_s",
+    "E4/4B/D10/B0/critical_mission_deadline_violation",
+    "E4/4B/D10/B1/critical_mission_completion_time_s",
+    "E4/4B/D10/B1/critical_mission_deadline_violation",
+    "E4/4B/D10/B2/critical_mission_completion_time_s",
+    "E4/4B/D10/B2/critical_mission_deadline_violation",
+    "E4/4B/D10/B4b/critical_mission_completion_time_s",
+    "E4/4B/D10/B4b/critical_mission_deadline_violation",
+    "E4/4B/D20/B0/critical_mission_completion_time_s",
+    "E4/4B/D20/B0/critical_mission_deadline_violation",
+    "E4/4B/D20/B1/critical_mission_completion_time_s",
+    "E4/4B/D20/B1/critical_mission_deadline_violation",
+    "E4/4B/D20/B2/critical_mission_completion_time_s",
+    "E4/4B/D20/B2/critical_mission_deadline_violation",
+    "E4/4B/D20/B4b/critical_mission_completion_time_s",
+    "E4/4B/D20/B4b/critical_mission_deadline_violation",
+    "E4/4B/D30/B0/critical_mission_completion_time_s",
+    "E4/4B/D30/B0/critical_mission_deadline_violation",
+    "E4/4B/D30/B1/critical_mission_completion_time_s",
+    "E4/4B/D30/B1/critical_mission_deadline_violation",
+    "E4/4B/D30/B2/critical_mission_completion_time_s",
+    "E4/4B/D30/B2/critical_mission_deadline_violation",
+    "E4/4B/D30/B4b/critical_mission_completion_time_s",
+    "E4/4B/D30/B4b/critical_mission_deadline_violation",
+    "E4/4B/D60/B0/critical_mission_completion_time_s",
+    "E4/4B/D60/B0/critical_mission_deadline_violation",
+    "E4/4B/D60/B1/critical_mission_completion_time_s",
+    "E4/4B/D60/B1/critical_mission_deadline_violation",
+    "E4/4B/D60/B2/critical_mission_completion_time_s",
+    "E4/4B/D60/B2/critical_mission_deadline_violation",
+    "E4/4B/D60/B4b/critical_mission_completion_time_s",
+    "E4/4B/D60/B4b/critical_mission_deadline_violation",
+    "E4/4C/N05/B0/critical_mission_completion_time_s",
+    "E4/4C/N05/B0/critical_mission_deadline_violation",
+    "E4/4C/N05/B1/critical_mission_completion_time_s",
+    "E4/4C/N05/B1/critical_mission_deadline_violation",
+    "E4/4C/N05/B2/critical_mission_completion_time_s",
+    "E4/4C/N05/B2/critical_mission_deadline_violation",
+    "E4/4C/N05/B4b/critical_mission_completion_time_s",
+    "E4/4C/N05/B4b/critical_mission_deadline_violation",
+    "E4/4C/N10/B0/critical_mission_completion_time_s",
+    "E4/4C/N10/B0/critical_mission_deadline_violation",
+    "E4/4C/N10/B1/critical_mission_completion_time_s",
+    "E4/4C/N10/B1/critical_mission_deadline_violation",
+    "E4/4C/N10/B2/critical_mission_completion_time_s",
+    "E4/4C/N10/B2/critical_mission_deadline_violation",
+    "E4/4C/N10/B4b/critical_mission_completion_time_s",
+    "E4/4C/N10/B4b/critical_mission_deadline_violation",
+    "E4/4C/N20/B0/critical_mission_completion_time_s",
+    "E4/4C/N20/B0/critical_mission_deadline_violation",
+    "E4/4C/N20/B1/critical_mission_completion_time_s",
+    "E4/4C/N20/B1/critical_mission_deadline_violation",
+    "E4/4C/N20/B2/critical_mission_completion_time_s",
+    "E4/4C/N20/B2/critical_mission_deadline_violation",
+    "E4/4C/N20/B4b/critical_mission_completion_time_s",
+    "E4/4C/N20/B4b/critical_mission_deadline_violation",
+    "E4/4C/N30/B0/critical_mission_completion_time_s",
+    "E4/4C/N30/B0/critical_mission_deadline_violation",
+    "E4/4C/N30/B1/critical_mission_completion_time_s",
+    "E4/4C/N30/B1/critical_mission_deadline_violation",
+    "E4/4C/N30/B2/critical_mission_completion_time_s",
+    "E4/4C/N30/B2/critical_mission_deadline_violation",
+    "E4/4C/N30/B4b/critical_mission_completion_time_s",
+    "E4/4C/N30/B4b/critical_mission_deadline_violation",
+    "E4/4C/N50/B0/critical_mission_completion_time_s",
+    "E4/4C/N50/B0/critical_mission_deadline_violation",
+    "E4/4C/N50/B1/critical_mission_completion_time_s",
+    "E4/4C/N50/B1/critical_mission_deadline_violation",
+    "E4/4C/N50/B2/critical_mission_completion_time_s",
+    "E4/4C/N50/B2/critical_mission_deadline_violation",
+    "E4/4C/N50/B4b/critical_mission_completion_time_s",
+    "E4/4C/N50/B4b/critical_mission_deadline_violation",
+    "corrected B0 D60",
+    "retained B4b D60"
+  ]
+}

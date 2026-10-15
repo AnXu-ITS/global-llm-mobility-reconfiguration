@@ -25,7 +25,7 @@ from orchestrator.registry import Aircraft, Mission, Registry  # noqa: E402
 from safety.feasibility_checker import FeasibilityChecker  # noqa: E402
 
 RUN = ROOT / "runs" / "cosim_smoke_test"
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 
 RESULTS = []
 

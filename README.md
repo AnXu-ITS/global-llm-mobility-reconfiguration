@@ -1,5 +1,7 @@
 # A Ground–Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions
 
+> **ITSAC restored edition (2026-10-16).** This independent branch restores the pre-pivot project and adds the [eight-page manuscript](itsac/ITSAC_LNEE_8pages.pdf), [editable Word file](itsac/ITSAC_LNEE_8pages.docx) and [paper supplement](itsac/supplement/). The later `main` branch is preserved. Recovered data include 11,140 per-run metric records and 27 archived regression runs; the complete historical `runs/` and `outputs/` folders were never tracked. For a runnable offline check, use `python itsac/verify_restored_metrics.py`. The historical setup below is retained for context and can require missing raw inputs. No new experiment or API call was made for this restoration.
+
 [English](README.md) · [中文说明](README.zh-CN.md)
 
 Reference implementation for the paper *"A Ground–Low-Altitude Mobility Manager for

@@ -1,0 +1,140 @@
+{
+  "recovery_date": "2026-10-16",
+  "restored_base_commit": "3078ffb60d58952b4c193b2edb1de7d85375bbab",
+  "main_preserved_at_start": "898f2f524e833cf23f267a3e5403ab41d2aca436",
+  "paper_branch": "itsac-restored-20261016",
+  "original_zip_sha256": "2b0c00129cc34e5afb2e087b531f127a2c0b5ac460039d917c77b07289cf3d88",
+  "template_sha256": "8ade88cbd5f022cafaeaec28d86f0c3c7e3355383f20d5f52dc0dcceaa6bc882",
+  "sanitized_archive_edits_retained": [
+    {
+      "path": "manuscript/figure1/.build/build_figure1_revised.mjs",
+      "old_sha": "16fcf06f06f108455e4aa4762cc7a5b96f699908",
+      "sanitized_sha": "02e44a114712b1da98b74e61bd1cf3b1d44e8e48",
+      "only_username_redaction": true
+    },
+    {
+      "path": "manuscript/figure1/.build/build_hybrid_figure1.mjs",
+      "old_sha": "2b04fec6303c71e6c5eec2d6c97eb58bbe529acc",
+      "sanitized_sha": "28b8eacbf2c8fdeacca60ee188b8f7c53cb45107",
+      "only_username_redaction": true
+    },
+    {
+      "path": "manuscript/figure1/.build/prepare_hybrid_assets.mjs",
+      "old_sha": "bd7bff64f46ba1c64274cd996f269e806d60773b",
+      "sanitized_sha": "4a9ecebcea7c7cff9a011f4216bd6c2631e44292",
+      "only_username_redaction": true
+    },
+    {
+      "path": "manuscript/source/build_figures_v3.mjs",
+      "old_sha": "71fba085cc8d0ef6355e8964de2bfd23cc7056ef",
+      "sanitized_sha": "4d10c8f158f389c87c7beb6575db65713c3e92dd",
+      "only_username_redaction": true
+    },
+    {
+      "path": "orchestrator/bluesky_adapter.py",
+      "old_sha": "ecb77a82884e8cce9543f6b62df7878291cd4f27",
+      "sanitized_sha": "9515fa0852517d5a46479092f388b6a92ff557fa",
+      "only_username_redaction": true
+    },
+    {
+      "path": "sim/sites/site_a_suzhou/sumo/network.net.xml",
+      "old_sha": "f47ec2bf10ed5a9750eb5cc14e12f2c529681600",
+      "sanitized_sha": "5466e274660aa77a08d424f55fad8bb14d2ac515",
+      "only_username_redaction": true
+    },
+    {
+      "path": "sim/sites/site_b_amsterdam/sumo/network.net.xml",
+      "old_sha": "27f55d9749d528c864a3a66c1d01b7f03dd52d24",
+      "sanitized_sha": "0ddc96d8732246137f72f8d019ccb51bb0e58f21",
+      "only_username_redaction": true
+    },
+    {
+      "path": "sim/sites/site_c_edmonton/sumo/network.net.xml",
+      "old_sha": "98ccb2d0eafbe598b1604af1a7cef215bacdb16d",
+      "sanitized_sha": "cc8cb6c508de18cea40104094ff89d891fd07e6f",
+      "only_username_redaction": true
+    },
+    {
+      "path": "sim/sumo/network.net.xml",
+      "old_sha": "f47ec2bf10ed5a9750eb5cc14e12f2c529681600",
+      "sanitized_sha": "5466e274660aa77a08d424f55fad8bb14d2ac515",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/_exp2_audit_common.py",
+      "old_sha": "22b0994a003ae1dc90014a9e680293e29d327b5e",
+      "sanitized_sha": "012d9112ce83e3f4ee5c40e4cf8bda5e837b0f60",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/test_acceptance.py",
+      "old_sha": "49492b0becd7ace34ed090819b3524814a326a51",
+      "sanitized_sha": "30a4ecdefca255b594d3ce79945ea17559acdab1",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/test_deterministic_replay_post_resize.py",
+      "old_sha": "5f5d34397b3fbef85374895868d13f4bdf78916f",
+      "sanitized_sha": "b41d6e157861c0999f742f2fca35bd84981eac22",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/test_failure_exogeneity.py",
+      "old_sha": "d4a482b476c0cfe9130565aefbca1d2d3c3882a2",
+      "sanitized_sha": "482d6ae18f901bada98efd1770442842af2dbcf4",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/test_phase2_acceptance.py",
+      "old_sha": "0c17b143116d336a1ba478623ac857acaba252b5",
+      "sanitized_sha": "111dae62c11294d03f4a75db471670a961a0550b",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tests/test_phase3_acceptance.py",
+      "old_sha": "46face42565f4ebf9add10daa6a9ea48e6ca9b60",
+      "sanitized_sha": "8f7c1bda582c04326bddad35ed66805f6f086309",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tools/dump_snapshots.py",
+      "old_sha": "cf85f972830c6ae82ffb89c54a9fd153481ff3d8",
+      "sanitized_sha": "e03e2c84d20145d3c39a3daa0e2a949675cc0957",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tools/exp2_replay_audit.py",
+      "old_sha": "5048c4dc308b18f024c3539b1fa39e8005c017df",
+      "sanitized_sha": "e2eaa3d67df434a256a21da5f522d5e0377da76b",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tools/run_entry_regression.py",
+      "old_sha": "7e9678d5da8f2652284e19fdd1f66cf7971aa71b",
+      "sanitized_sha": "2016c17e14af7c7e4dfa2e0493d8bce53a960b5a",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tools/test_bluesky_step.py",
+      "old_sha": "d154b0ef61d4a918306c77eeb76ee06f5ca441d5",
+      "sanitized_sha": "cfbeb6e420d3f02f205695c8d01178a4d89b5797",
+      "only_username_redaction": true
+    },
+    {
+      "path": "tools/test_llm_api.py",
+      "old_sha": "a9bfc7f5319429d02ed0d47163e3c215bf12b616",
+      "sanitized_sha": "ac62a07f983d155d04bc25774fcb7133b18aeada",
+      "only_username_redaction": true
+    }
+  ],
+  "metric_records": 11140,
+  "primary_records": 10960,
+  "ablation_records": 180,
+  "saved_regression_runs": 27,
+  "missing": [
+    "full historical runs/",
+    "full historical outputs/"
+  ],
+  "new_simulations": 0,
+  "new_llm_calls": 0
+}

@@ -25,7 +25,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 
 AUDITED = [("E2_F1_C2", 20240601), ("E2_F3_C3", 20240601), ("E2_F6_C2", 20240602)]
 MANAGERS = ("B0", "B1", "B2", "B4b")

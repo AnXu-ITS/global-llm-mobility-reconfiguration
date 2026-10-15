@@ -1,0 +1,5 @@
+supplement/source/*.aux
+supplement/source/*.log
+supplement/source/*.out
+supplement/source/*.pdf
+__pycache__/

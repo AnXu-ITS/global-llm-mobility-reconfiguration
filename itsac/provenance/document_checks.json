@@ -1,0 +1,21 @@
+{
+  "main_pages": 8,
+  "supplement_pages": 20,
+  "references": 12,
+  "recent_references_2024_2026": 4,
+  "abstract_words": 179,
+  "native_word_math_objects": 8,
+  "template_styles_unchanged": true,
+  "template_numbering_unchanged": true,
+  "page_geometry_unchanged": true,
+  "macro_free": true,
+  "main_text_chinese_characters": 0,
+  "supplement_link_in_pdf": "https://github.com/AnXu-ITS/global-llm-mobility-reconfiguration/tree/itsac-restored-20261016/itsac/supplement",
+  "numeric_checks": 879,
+  "render_engine": "Microsoft Word native PDF export; PDF pages rendered with PyMuPDF",
+  "files": {
+    "ITSAC_LNEE_8pages.docx": "2abf6a5407f2023335db20bffa74911c4f817aafd0949a93cd8958f21812e23b",
+    "ITSAC_LNEE_8pages.pdf": "9e4468335c0d4f1e28c6572b11ab83042e364ee977b53962ebd5a7a0ada69bd6",
+    "ITSAC_Supplement.pdf": "c4f65ae9d2a06d90cb530e1f9c9000960ba82070ff5b81b4920b2d250a6a98b3"
+  }
+}

@@ -24,7 +24,7 @@ from orchestrator import config as config_mod          # noqa: E402
 from orchestrator.registry import Aircraft, Mission, Registry  # noqa: E402
 from safety.feasibility_checker import FeasibilityChecker    # noqa: E402
 
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 SCHEMA = ROOT / "schemas" / "global_state_v1.schema.json"
 RUNS = ROOT / "runs" / "phase2_rule_manager"
 

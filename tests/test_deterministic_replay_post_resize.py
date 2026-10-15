@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 RUNNER = ROOT / "tools" / "run_post_resize_smoke.py"
 A_DIR = ROOT / "runs" / "replay_post_a"
 B_DIR = ROOT / "runs" / "replay_post_b"

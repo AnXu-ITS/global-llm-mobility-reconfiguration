@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import sys
 
-root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(r"C:\Users\xuan1\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions")
+root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(r"C:\Users\user\OneDrive\桌面\PhD论文\Global LLM-Supervised Reconfiguration of Ground–Low-Altitude Mobility under Disruptions")
 run = root / "runs" / "phase2_rule_manager" / "C2_B"
 snaps = [json.loads(l) for l in open(run / "snapshots.jsonl", encoding="utf-8")]
 for s in snaps:

@@ -25,7 +25,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-VENV_PY = r"C:\Users\xuan1\.venvs\bluesky\Scripts\python.exe"
+VENV_PY = r"C:\Users\user\.venvs\bluesky\Scripts\python.exe"
 MANAGERS = ("B0", "B1", "B2", "B4b")
 COMPARE_FILES = ("events.csv", "actions.csv", "missions.csv", "clock_sync.csv")
 
