@@ -1,4 +1,4 @@
-# Claim-to-evidence map
+# Results and supporting data
 
 This map identifies evidence used by the eight-page conference manuscript. It distinguishes numeric recomputation from historical trace-derived evidence.
 
@@ -17,16 +17,7 @@ This map identifies evidence used by the eight-page conference manuscript. It di
 | At B, 80 timely replacements have 19 s margin; +30 s makes them late | `transfer_margins.json`, `transfer_summary.json` | Archived offline trajectory-fixed calculation; no physical-transfer validation |
 | Four active aircraft, larger inert input payload | E4 configuration, revised metric records and source supplement | Does not establish larger-fleet scalability |
 
-## Manuscript and template provenance
 
-The user's source ZIP supplies the original prose, author list, affiliations, references and extended figure assets. Original files are retained unchanged locally. The final user instruction chooses the supplied Springer LNEE template; an intermediate SPIE instruction was superseded before delivery.
+## Data provenance
 
-The final DOCX reuses the original template's styles, numbering, section geometry and page-number headers. Only the body, its relationships and package content types are replaced or extended. VBA parts are removed for the macro-free DOCX output and were never executed. All two displayed equations and inline mathematical symbols are native Office Math. Main figures have vector SVG content with high-resolution raster fallbacks.
-
-The standard `render_docx.py` renderer was attempted but LibreOffice is not installed. Microsoft Word's native fixed-format PDF export was used, followed by rendered page inspection. Final text and figure placement were checked over all eight pages.
-
-## Reference correction
-
-The original BibTeX misspelled the LLMLight authors' full names and the given name of the fourth Lost in the Middle author. The conference reference initials are consistent with the primary records. Verified primary records: [LLMLight v5](https://arxiv.org/abs/2312.16044v5), [Lost in the Middle](https://aclanthology.org/2024.tacl-1.9/), [Meng et al. author repository](https://research.lancaster-university.uk/en/publications/the-multi-visit-drone-assisted-routing-problem-with-soft-time-win/), and [Jaber et al. publisher record](https://www.sciencedirect.com/science/article/pii/S2210670725001532).
-
-No result was invented or strengthened beyond its experimental scope. No new LLM calls or SUMO–BlueSky experiments were run during the restoration and manuscript compression.
+The paper branch retains the pre-pivot implementation and the archived derived metrics. [recovery.json](recovery.json) records the source commit, original archive hashes and recovered material. Complete historical raw logs are unavailable. The numerical verifier checks saved metrics; historical trajectory-derived findings remain bounded by the records actually retained.

@@ -1,178 +1,83 @@
 # A Ground–Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions
 
-> **ITSAC restored edition (2026-10-16).** This independent branch restores the pre-pivot project and adds the [eight-page manuscript](itsac/ITSAC_LNEE_8pages.pdf), [editable Word file](itsac/ITSAC_LNEE_8pages.docx) and [paper supplement](itsac/supplement/). The later `main` branch is preserved. Recovered data include 11,140 per-run metric records and 27 archived regression runs; the complete historical `runs/` and `outputs/` folders were never tracked. For a runnable offline check, use `python itsac/verify_restored_metrics.py`. The historical setup below is retained for context and can require missing raw inputs. No new experiment or API call was made for this restoration.
+[中文说明](README.zh-CN.md) · [Paper](itsac/ITSAC_XU_AN.docx) · [Supplementary material](itsac/supplement/)
 
-[English](README.md) · [中文说明](README.zh-CN.md)
+This repository provides the code, configurations and saved results for the ITSAC paper. The study asks how low-altitude resources can restore time-critical ground services under disruptions while preserving existing service commitments.
 
-Reference implementation for the paper *"A Ground–Low-Altitude Mobility Manager for
-Service Reconfiguration under Disruptions"*. A **candidate generator** converts joint
-ground–air observations into a shared **executable candidate interface**; replaceable
-**supervisory policies** (heuristic or LLM) select an intervention; an **executor**
-checks and applies it while local aircraft contingencies run independently. Four
-SUMO–BlueSky experiments are evaluated across **three contrasting transport settings**.
+The manager shares candidate information across replaceable supervisory policies, compares completion estimates and incumbent-service costs, and revalidates selected actions before execution. SUMO–BlueSky simulations examine selective air support, recovery after failures, compound disturbances and observation–execution timing at Suzhou, Amsterdam and Edmonton.
 
----
+## Paper and data
 
-## 1. Overview
+Use branch `itsac-restored-20261016` for this paper. The default `main` branch contains separate follow-up research. The [Word manuscript](itsac/ITSAC_XU_AN.docx) is the final file supplied by the authors. The [supplement](itsac/supplement/) contains extended tables, figures, sources and data links.
 
-- **Three study sites**, each 3.2 km × 3.2 km from OpenStreetMap:
-  - **A** — Suzhou, China (meshed urban)
-  - **B** — Amsterdam, the Netherlands
-  - **C** — Edmonton, Canada
-- **Co-simulation** — SUMO 1.27.1 (ground) + BlueSky (air), 1 s step, 900 s horizon.
-- **Core fleet** — 2 medical UAVs + 1 logistics UAV + 1 passenger eVTOL (4 aircraft).
-- **LLM** — OpenAI-compatible chat-completions endpoint
-  (`corp-ai/openai/deepseek-v4-pro` by default); stdlib-only client
-  (`managers/llm_client.py`), key from `CORP_AI_API_KEY` or `~/.dsh/.credentials.yaml`.
+The archive retains **11,140 per-run metric records**: 10,960 primary runs and 180 candidate-information ablation runs. It also retains 27 deterministic regression runs. Complete historical raw trajectories are unavailable; the saved metrics support statistical recomputation, but cannot reconstruct the missing trajectories.
 
-### Supervisory policies (the only thing that changes between runs)
+## Verify the numerical results
 
-| ID | Policy | Meaning |
-|---|---|---|
-| `B0` | ground-only | baseline: no air dispatch |
-| `B1` | rule-based | hand-coded rules that rank only air candidates |
-| `B2` | fixed-objective heuristic | one-step score trading speed vs. incumbent-service preservation |
-| `B4a` | LLM (no candidate info) | ablation: LLM without the derived candidate section |
-| `B4b` | LLM (candidate info) | main LLM policy with explicit candidate-information support |
+With Python, NumPy and SciPy installed, run from the repository root:
 
-### Experiments
-
-| ID | Question | Span |
-|---|---|---|
-| E1 | Selective air support (baseline vs. coordinated) | 3 sites |
-| E2 | Air failures (6 fault families F1–F6) | 3 sites |
-| E3 | Compound disturbances (levels L1–L4) | 3 sites |
-| E4 | Observation–execution timing (4A refresh · 4B delay · 4C scale) | site A |
-
-**E4 arms** — 4A observation interval `OBS10/30/60/120/300` · 4B execution delay
-`D00/01/05/10/20/30/60` · 4C aircraft-record scale `N05/10/20/30/50` (core fleet fixed at 4).
-
----
-
-## 2. Repository layout
-
-```
-├── orchestrator/   experiment runners, SUMO/BlueSky adapters, registry, fleet
-├── managers/       B0/B1/B2/B4a/B4b policies + LLM client
-├── safety/         feasibility checker + semantic validator (policy-agnostic gates)
-├── config/         scenario + experiment matrices (3 sites) + LLM (phase3_config.yaml)
-├── prompts/        LLM prompt templates (manager_v1/v2)
-├── schemas/        JSON schemas for action validation
-├── failures/       E2 fault-injection models (F1–F6)
-├── state/          global-state model
-├── sim/            SUMO network/routes + BlueSky inputs for site_a/b/c
-├── tests/          standalone acceptance tests (no pytest)
-├── tools/          run_experiment{1..4}[_cross_site].py + analyze_*.py
-├── docs/           design documents
-└── manuscript/     paper + reproduction pipeline (see below)
+```bash
+python itsac/verify_restored_metrics.py
 ```
 
-`manuscript/` contains the authoritative paper source and its reproduction pipeline:
+The verifier recomputes means, seed-block intervals and paired comparisons and writes [its report](itsac/supplement/verification/metric_verification.json). It does not launch a simulator or call an LLM. See the [reproduction guide](manuscript/REPRODUCTION_README.md) for the historical analysis pipeline and its additional input requirements.
 
-```
-manuscript/
-├── overleaf/               main.tex, supplement.tex, references.bib, journal class files
-│   ├── figures/            PDF figure assets
-│   ├── editable_figures/   PowerPoint figure decks
-│   └── reproducibility/    frozen paper reproducibility package (configs, prompts,
-│                           schemas, derived data, hashed inventory, queue_fix.py)
-├── source/revision_v3/     analysis scripts + derived data + regression runs
-├── figure1/                Figure 1 builder and assets
-├── reproduce_analysis.ps1  postprocessing/reproduction entry point
-└── REPRODUCTION_README.md  full reproduction instructions (see Section 6)
-```
+## Policies and experiments
 
-Runtime artifacts (`runs/`, `outputs/`) and `archive/` are **git-ignored** (large and
-reproducible on demand; `archive/` also holds superseded planning docs and reviews).
+| Policy | Selection rule |
+|---|---|
+| B0 | Ground-only service |
+| B1 | Rule-based ranking of air candidates |
+| B2 | Fixed-objective heuristic balancing completion duration and incumbent commitments |
+| B4a | DeepSeek V4 Pro without derived candidate information |
+| B4b | DeepSeek V4 Pro with derived candidate information |
 
----
+B4a and B4b share the raw observations, prompt rules and execution checks. Their difference is access to derived candidate information, including air ETA, legality, deadline consequences and the affected incumbent service.
 
-## 3. Requirements
+| Experiment | Question |
+|---|---|
+| E1 | When does air support improve emergency service, and what incumbent service does it displace? |
+| E2 | When does restoring a replacement path also restore timely completion? |
+| E3 | Which usable alternatives remain under compound disturbances? |
+| E4 | How do observation intervals, execution waiting and input size affect outcomes? |
 
-- **Python 3.14** (virtualenv recommended)
-- **SUMO 1.27.1** — via the `eclipse-sumo` pip wheel (no separate install)
-- **BlueSky** — a *source checkout* (not pip); see Setup
-- Python packages — [`requirements.txt`](requirements.txt)
+## Code layout
+
+| Directory | Contents |
+|---|---|
+| `orchestrator/` | Experiment runners, simulator adapters, state and service registry |
+| `managers/` | Supervisory policies and model client |
+| `config/` | Site configurations, seeds, experiment matrices and policy settings |
+| `prompts/`, `schemas/` | Experimental prompts and structured action contracts |
+| `safety/`, `failures/` | Modeled feasibility checks and fault injection |
+| `sim/` | SUMO and BlueSky inputs for the three study sites |
+| `tools/`, `tests/` | Execution, analysis and acceptance scripts |
+| `manuscript/source/revision_v3/` | Saved metrics, analysis scripts and regression records |
+| `itsac/supplement/` | Supplementary PDF, sources and numerical verification |
+
+## Simulation setup
+
+The study used Python 3.14, SUMO 1.27.1 and a BlueSky source checkout, with a 1 s step, 900 s horizon and four active aircraft. Install the Python dependencies in [requirements.txt](requirements.txt):
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate   |   POSIX: source .venv/bin/activate
 pip install -r requirements.txt
-```
-
----
-
-## 4. Setup
-
-### 4.1 SUMO
-
-`eclipse-sumo` is in `requirements.txt`. At runtime `orchestrator/sumo_env.py` imports
-`sumo` to locate `SUMO_HOME` and add `traci`/`sumolib` to the path.
-
-### 4.2 BlueSky
-
-BlueSky is imported **from source** (`orchestrator/bluesky_adapter.py`):
-
-```bash
 git clone https://github.com/TUDelft-CNS-ATM/bluesky.git
 ```
 
-Point the framework at it via `BLUESKY_REPO`:
+Set `BLUESKY_REPO` to the BlueSky checkout. For B4a/B4b, configure the OpenAI-compatible endpoint in [config/phase3_config.yaml](config/phase3_config.yaml) and provide the key through `CORP_AI_API_KEY`; see [.env.example](.env.example). The study used DeepSeek V4 Pro, recorded as `corp-ai/openai/deepseek-v4-pro`.
+
+The experiment dispatchers expose their options through `--help`, for example:
 
 ```bash
-# Windows (PowerShell)                    # POSIX
-$env:BLUESKY_REPO = "C:\...\bluesky"      export BLUESKY_REPO=/path/to/bluesky
-```
-
-### 4.3 LLM endpoint
-
-Edit the `llm:` block of [`config/phase3_config.yaml`](config/phase3_config.yaml):
-
-```yaml
-llm:
-  model: corp-ai/openai/deepseek-v4-pro
-  base_url: http://<your-host>:<port>/v1
-  api_key_env: CORP_AI_API_KEY
-  max_tokens: 8192
-```
-
-Then set the key (`CORP_AI_API_KEY`, or `~/.dsh/.credentials.yaml`). See
-[`.env.example`](.env.example) for the environment variables the code reads.
-
----
-
-## 5. Quick start
-
-```bash
-# Single in-process run (E4 4B, arm D10, LLM policy, seed 20240601)
-python tools/run_experiment4.py --sub 4B --arm D10 --manager B4b \
-    --seed 20240601 --scenario E4_ANCHOR --cohort primary --direct
-
-# Full E4 sweep (parallel workers)
-python tools/run_experiment4.py --sub 4A --manager all --jobs 8
-
-# Cross-site experiments (3 sites A/B/C)
 python tools/run_experiment1_cross_site.py --help
 python tools/run_experiment2_cross_site.py --help
 python tools/run_experiment3_cross_site.py --help
-
-# Analyze
-python tools/analyze_experiment4.py primary
+python tools/run_experiment4.py --help
 ```
 
-Runs are written under `runs/<experiment>/<cohort>/...`; `--force` re-runs current runs.
-`tests/` are standalone scripts (no pytest): `python tests/test_experiment4_acceptance.py`.
+Fresh B4a/B4b simulation runs call the configured model endpoint. They are separate from offline verification of the published metrics.
 
----
+## Model scope
 
-## 6. Reproducing the paper
-
-1. Install the environment (Section 3) and configure SUMO / BlueSky / LLM (Section 4).
-2. Run the framework sweeps with the `tools/run_*.py` dispatchers (Section 5).
-3. Follow [`manuscript/REPRODUCTION_README.md`](manuscript/REPRODUCTION_README.md) and
-   `manuscript/reproduce_analysis.ps1` to reproduce the numerical analysis and figures
-   from the saved run artifacts and the frozen `manuscript/overleaf/reproducibility/`
-   package. The postprocessing is LLM-free; `-RunRegression` adds the documented
-   deterministic regression runs (requires SUMO/traci).
-
-The LLM endpoint and BlueSky path are the only machine-specific settings.
+This is a service-level simulation. Ground fallback uses an ETA timer; physical payload loading and handoff are not modeled. Feasibility checks implement the stated simulation constraints. Backend inference time does not advance simulation time; E4 injects execution waiting separately. E4C varies input records while keeping four active aircraft. The three sites form a fixed scenario panel rather than a sample of cities.
