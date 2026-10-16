@@ -13,9 +13,9 @@ This paper uses branch `itsac-restored-20261016`, which restores the pre-pivot p
 
 ### Manuscript version
 
-The author-facing revised files are `ITSAC_LNEE_8pages_Revised.pdf` and `ITSAC_LNEE_8pages_Revised.docx`, supplied in the revised submission package. The [PDF](../ITSAC_LNEE_8pages.pdf) and [Word file](../ITSAC_LNEE_8pages.docx) already in the repository are the **preceding compression draft**, not this revised main paper. Use the main manuscript submitted through the conference system as authoritative.
+The author-facing revised files are `ITSAC_Final_Academic_Revision.pdf` and `ITSAC_Final_Academic_Revision.docx`, supplied in the revised submission package. The [PDF](../ITSAC_LNEE_8pages.pdf) and [Word file](../ITSAC_LNEE_8pages.docx) already in the repository are the **preceding compression draft**, not this revised main paper. Use the main manuscript submitted through the conference system as authoritative.
 
-The supplement PDF and its historical numerical results are unchanged. [Revision notes](REVIEW_REVISION.md) explain the new main-paper figure numbering, restored decision evidence and scope of the edits. No new simulation or language-model cohort was executed for the manuscript revision.
+The final academic revision retains five main figures: Fig. 1 is the original four-panel overview, Fig. 2 the study networks, Fig. 3 E1 outcomes, Fig. 4 matched policy choices, and Fig. 5 compound service loss. Figure 1 and its caption are unchanged from the supplied original-figure-restored submission package. The supplement PDF and its historical numerical results are unchanged. The [earlier revision notes](REVIEW_REVISION.md) describe a superseded three-figure manuscript; their figure mapping and filenames do not apply to this final version. No new simulation or language-model cohort was executed.
 
 ## Where to find the supporting evidence
 
@@ -23,7 +23,7 @@ The supplement PDF and its historical numerical results are unchanged. [Revision
 |---|---|
 | Shared candidate interface, action vocabulary and operational parameters | S2; Tables S8-S11; archived overview in Fig. S4 |
 | E1 service performance and incumbent commitments | Table S1; Figs. S6-S7; candidate-information ablation in Table S19 |
-| Revised main Fig. 3: matched policy choices | Fig. S7 and archived `decision_regimes.json` |
+| Final main Fig. 4: matched policy choices | Fig. S7 and archived `decision_regimes.json` |
 | E2 restoration versus timely completion | Table S2; Fig. S1; paired tests in Tables S12-S14 and S20 |
 | Omitted physical transfer and added-time sensitivity | S4.2; Table S16 |
 | Compound service loss | Tables S3, S7 and S15; Figs. S3 and S8 |
@@ -32,7 +32,7 @@ The supplement PDF and its historical numerical results are unchanged. [Revision
 | Study networks and model scope | Table S18; Fig. S5; S4.3-S4.4 |
 | Reproduction and recovery boundaries | S3, S5-S6; this README and the revision notes |
 
-[Supplement LaTeX source](source/supplement.tex) and [vector figure assets](source/figures/) are available. Revised main Fig. 3 uses the decision evidence retained in Fig. S7; supplement numbering has not changed.
+[Supplement LaTeX source](source/supplement.tex) and [vector figure assets](source/figures/) are available. Final main Fig. 4 uses the decision evidence retained in Fig. S7; supplement numbering has not changed. Main Fig. 1 preserves the original conceptual overview, and its symbols and bars are qualitative.
 
 ## Recovered data and code
 
@@ -61,7 +61,7 @@ From the repository root, with Python, NumPy and SciPy installed:
 python itsac/verify_restored_metrics.py
 ```
 
-The script recomputes saved-metric means, seed-block intervals and paired comparisons, including the corrected B0 D60 duration of 242 s and retained B4b duration of 302 s. The [existing verification report](verification/metric_verification.json) records 879 passed numerical checks from the prior restoration. This manuscript revision does not claim those checks were newly rerun.
+The script recomputes saved-metric means, seed-block intervals and paired comparisons, including the corrected B0 D60 duration of 242 s and retained B4b duration of 302 s. The [verification report](verification/metric_verification.json) records 879 passed numerical checks. The verifier was rerun during the final academic revision on 16 October 2026 and again passed all 879 checks. E2 timely completions conditional on restoration were additionally counted from saved metrics and cross-checked against transfer-margin records: B1/B2 each have 80/200 at Suzhou, 80/200 at Amsterdam and 0/200 at Edmonton; B4b has 75/191, 80/199 and 0/201, respectively. These conditional counts are distinct from all-run deadline-violation rates.
 
 The verifier does not launch SUMO, BlueSky or an LLM/API call. It cannot recreate missing raw trajectories. The [historical reproduction guide](../../manuscript/REPRODUCTION_README.md) requires unavailable original run/output directories for end-to-end postprocessing and is retained for provenance, not as a promise of full replay from this checkout.
 
@@ -73,10 +73,10 @@ pdflatex -interaction=nonstopmode -halt-on-error supplement.tex
 pdflatex -interaction=nonstopmode -halt-on-error supplement.tex
 ```
 
-The prior two-figure compression draft can be rebuilt with `python itsac/build_figures.py`; the revised three-figure source and editable manuscript are supplied in the author-facing revised submission package.
+The prior two-figure compression draft can be rebuilt with `python itsac/build_figures.py`; the final five-figure manuscript is supplied as the author-facing Word/PDF pair. The repository manuscript files have not been replaced by this documentation update.
 
 ## Interpretation and integrity
 
-Ground fallback uses a corridor-ETA timer rather than independently dispatched road vehicles. Payload custody, loading and physical transfers are absent. Added handling time is an assumed, offline sensitivity with decisions fixed. B0 comparisons include access to a different set of transport modes; B1/B2/B4b compare policies under shared candidate and execution rules. The 5-50-record input study keeps four active aircraft. Backend wall-clock inference is distinct from injected simulation waiting. Site geometry, facilities and fault timing vary together. The configured LLM identifier does not independently verify the underlying model release.
+Ground fallback uses a corridor-ETA timer rather than independently dispatched road vehicles. Payload custody, loading and physical transfers are absent. Added handling time is an assumed, offline sensitivity with decisions fixed. B0 comparisons include access to a different set of transport modes; B1/B2/B4b compare policies under shared candidate and execution rules. The 5-50-record input study keeps four active aircraft. Backend wall-clock inference is distinct from injected simulation waiting. Site geometry, facilities and fault timing vary together. The authors confirm that the LLM used was DeepSeek V4 Pro; the retained configured identifier is `deepseek-v4-pro`.
 
-Some archived illustrative elements are AI-generated and do not depict observed deployment. Revised main figures are deterministic diagrams and charts based on the stated model and archived numerical evidence. See [recovery provenance](../provenance/recovery.json), [claim-to-evidence map](../provenance/CLAIM_EVIDENCE.md) and [revision notes](REVIEW_REVISION.md).
+Some archived illustrative elements are AI-generated and do not depict observed deployment. Main Fig. 1 preserves the original conceptual artwork, including illustrative elements; it is not deployment evidence. Main Figs. 2–5 show the stated networks and archived numerical evidence. See [recovery provenance](../provenance/recovery.json), [claim-to-evidence map](../provenance/CLAIM_EVIDENCE.md) and [revision notes](REVIEW_REVISION.md).
