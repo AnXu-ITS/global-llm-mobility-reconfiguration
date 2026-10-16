@@ -8,7 +8,7 @@
 
 本机存在 Codex CLI 0.147.0；`codex login status` 显示 ChatGPT 登录；本地模型缓存包含 `gpt-6-astra` 和 `high`。本轮没有发送实验模型请求。机器配置为 `config/llm_codex_astra_high.json`，新提示词为 `prompts/astra_proposer_v1.txt`，响应 schema 为 `schemas/proposal.schema.json`。
 
-后续实现应以 Codex 非交互子进程作为提案 backend。它复用本机登录，但每次请求是新会话，不复用当前 Codex 对话历史。不要读取/导出 auth.json、复制令牌到实验目录，或把旧 DeepSeek base_url/key 填入新配置。
+后续实现应以 Codex 非交互子进程作为提案 backend。它复用本机登录，但每次请求是新会话，不复用已有会话历史。不要读取/导出 auth.json、复制令牌到实验目录，或把旧 DeepSeek base_url/key 填入新配置。
 
 ## 调用蓝图
 

@@ -1,6 +1,8 @@
 # 首轮实现与验证记录 — 2026-09-18
 
-最新R1更新：已修复双载荷共享bay及终态预留缺陷，新增独立状态检查、响应mailbox和条件进展验证；深度12枚举触及100万状态，**完整G1仍未通过**。详见 [R1验收记录](design/R1_ACCEPTANCE_v0.2.md) 与 [严格执行顺序](design/EXECUTION_PRIORITY_v0.1.md)。以下首轮记录保持为历史证据。
+后续 [R1 v0.3](design/R1_ACCEPTANCE_v0.3.md) 报告声明有限模型内通过。以下保留此前开发检查的范围和结果；不代表正式运输实验已经完成。
+
+R1 v0.2历史记录：已修复双载荷共享bay及终态预留缺陷，新增独立状态检查、响应mailbox和条件进展验证；深度12枚举触及100万状态，**完整G1仍未通过**。详见 [R1验收记录](design/R1_ACCEPTANCE_v0.2.md) 与 [严格执行顺序](design/EXECUTION_PRIORITY_v0.1.md)。以下首轮记录保持为历史证据。
 
 后续更新：D/E/F真实OSM地图和逐场地单载荷诊断已经完成，详见 [场地落地报告](design/SITES_D_E_F_IMPLEMENTATION_v0.2.md)；当前规划改用 [协议v0.2](design/EXPERIMENT_PROTOCOL_v0.2.md)。下文保留首轮实现的原始证据与限制。规划校验默认v0.2，复核首轮快照需加 `--protocol v0.1`。
 
@@ -12,7 +14,7 @@
 - 流水线比对包括原始、规范化和已执行动作、仿真时间、执行结果；仅排除 decision ID。
 - B0：D0=182 s，D30=212 s，D60=242 s；故障 359/360/361 s 对照均符合对应历史值。B2=302 s，B1=342 s。
 - **6 个 runtime_v2 兼容桥接单元尚未实现，因此不宣称整个 33 单元 R0 门通过。** 这 27 次使用带去重修正的旧执行器及一个旧原版控制，仅验证复制平台和历史基线。
-- [结果](runs/regression/r0_20260918_153251_6462ec/report.json)；[完整流水线复核](runs/regression/r0_20260918_153251_6462ec/pipeline_audit.json)。
+- 结果（历史本地路径：`runs/regression/r0_20260918_153251_6462ec/report.json`；当前公开归档未包含）；完整流水线复核（历史本地路径：`runs/regression/r0_20260918_153251_6462ec/pipeline_audit.json`；当前公开归档未包含）。
 
 ## R1：协议内核
 
@@ -23,7 +25,7 @@
 - 拒绝非世界线程写入，以及 3 种畸形 proposal。
 - 两任务争用一个资源的六事件所有排列：720 条调度、52 个观察状态、深度 6，未发现检查器违例。
 - **尚未完成计划中的深度 12、两空一地一设施完整状态空间，也未做真实异步适配器的乱序 I/O 验证；不宣称完整 G1 通过。**
-- [结果与具名用例表](runs/protocol/r1_20260918_154225_0d33c4/report.json)。同目录保留逐用例事件。
+- 结果与具名用例表（历史本地路径：`runs/protocol/r1_20260918_154225_0d33c4/report.json`；当前公开归档未包含）。同目录保留逐用例事件。
 
 ## 最小物理闭环
 
@@ -39,22 +41,22 @@
 
 在 360 s 请求一个**受控模拟**的慢响应，365 s 执行固定截止的地面兜底，480 s 到达的旧版本响应被丢弃；等待期间飞行器仍有 48 个运动 tick。这里没有启动 LLM 进程，也没有验证原生异步 CLI。截止 365 s 是诊断 fixture 的常量，尚非完整 latest-start 计算。
 
-[三组对照总报告](runs/development/physical_controls_20260918_154631_46df83/report.json)包含轨迹审计和源码 SHA-256；各子运行包含 `fixture.json`、`events.jsonl`、`trajectory.jsonl`、`report.json`。对照目录保存控制台输出。
+三组对照总报告（历史本地路径：`runs/development/physical_controls_20260918_154631_46df83/report.json`；当前公开归档未包含）包含轨迹审计和源码 SHA-256；各子运行包含 `fixture.json`、`events.jsonl`、`trajectory.jsonl`、`report.json`。对照目录保存控制台输出。
 
 边界：设施坐标显式对齐 SUMO 车道；四架飞机均用 M600 占位，仅主载具运动。BlueSky 初始化日志提示 legacy 性能回退，实际对象为 `bluesky.traffic.performance.perfbase.PerfBase`。本轮证明运动状态与交接事件相连，**没有证明无人机动力/能耗标定、真实通信故障、完整 S1 背景任务或航空安全**。
 
 ## 清理、复用与恢复
 
-- 首先移除 378 个已核对原文件及 ZIP 副本 SHA-256 的非跟踪缓存文件，共 45,177,221 字节；[清单](outputs/bootstrap/cleanup_plan.json)、[执行日志](outputs/bootstrap/cleanup_journal.jsonl)。
-- 另清理旧批量数据的 318,948 个工作区副本、6,499,271,306 字节，详见 [冷归档清单](outputs/bootstrap/cold_storage_plan.json) 与执行日志；完整内容仍在独立 ZIP 中。两步合计移除 **319,326 个文件、6,544,448,527 字节（逻辑大小约 6.54 GB）**。旧 `archive/manuscript_workspace` 含目录链接，保留该分支，未沿链接清理外部依赖。
+- 首先移除 378 个已核对原文件及 ZIP 副本 SHA-256 的非跟踪缓存文件，共 45,177,221 字节；清单（历史本地路径：`outputs/bootstrap/cleanup_plan.json`；当前公开归档未包含）、执行日志（历史本地路径：`outputs/bootstrap/cleanup_journal.jsonl`；当前公开归档未包含）。
+- 另清理旧批量数据的 318,948 个工作区副本、6,499,271,306 字节，详见 冷归档清单（历史本地路径：`outputs/bootstrap/cold_storage_plan.json`；当前公开归档未包含） 与执行日志；完整内容仍在独立 ZIP 中。两步合计移除 **319,326 个文件、6,544,448,527 字节（逻辑大小约 6.54 GB）**。旧 `archive/manuscript_workspace` 含目录链接，保留该分支，未沿链接清理外部依赖。
 - R0 历史证据 `legacy/20260918/manuscript/source/revision_v3/regression/` 留在原处。旧 tracked 源码、主 Git 历史和旧论文保留；原迁移清单作为历史快照不覆写。
 - 新代码复用 240 个源文件和地图资产，复制到 `vendor/legacy_platform/`；来源 SHA-256 见 `PROVENANCE.json`，不导入旧动作/模型缓存。
 - 完整 ZIP：`C:/Users/user/research-backups/ground-air-legacy-20260918/legacy_snapshot.zip`。恢复单个文件可用 `tools/restore_legacy_file.py`，恢复到单独目录并验证内容 hash，拒绝覆盖已有文件。
-- [清理后审计](outputs/bootstrap/cleanup_verification.json)已通过：904 个旧 tracked 文件内容哈希不变，27 个 R0 来源指标哈希不变，新 Overleaf 仓库无改动；已实际恢复一个旧结果并验证 SHA-256。
+- 清理后审计（历史本地路径：`outputs/bootstrap/cleanup_verification.json`；当前公开归档未包含）已通过：904 个旧 tracked 文件内容哈希不变，27 个 R0 来源指标哈希不变，新 Overleaf 仓库无改动；已实际恢复一个旧结果并验证 SHA-256。
 
 ## 复现入口
 
-从总工作区根目录执行，使用 [环境清单](outputs/bootstrap/environment_inventory.json) 中记录的 Python 与现有 BlueSky 安装：
+从总工作区根目录执行，使用 环境清单（历史本地路径：`outputs/bootstrap/environment_inventory.json`；当前公开归档未包含） 中记录的 Python 与现有 BlueSky 安装：
 
 ```powershell
 python -B research_hscc2027/tools/run_r0.py

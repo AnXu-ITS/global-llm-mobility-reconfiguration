@@ -19,7 +19,7 @@
 
 论文按两层组织：**Transport structure** 为A—Meshed flexibility、B—Barrier bottleneck、C—Sparse long-haul；**Execution structure** 为D—Transfer bottleneck、E—Temporal volatility、F—Resource coupling。R6用于检验deadline-aware supervision与cross-stage reservation能否跨这些约束重现。信号系统数量属于统一导入参数下的模拟网络属性，不作现场城市比较；A–F签名须统一生成后才能进入Figure 2热图。
 
-实际筛选及证据见 [场地落地报告](SITES_D_E_F_IMPLEMENTATION_v0.2.md)。作者提及的 `SITES_D_E_F_DESIGN_v0.1.md` 是设计输入，其中 Task 清单属于方案材料；本轮实施范围及未完成项以落地报告为准。交付时文件链接检查未在原路径找到该输入文件，因此不提供失效链接，也不将本轮文档冒充其原件。
+场地筛选、实现范围及未完成项见 [场地实现报告](SITES_D_E_F_IMPLEMENTATION_v0.2.md)。早期设计输入 `SITES_D_E_F_DESIGN_v0.1.md` 未包含在当前归档中。
 
 ## 2. 保留原矩阵，单列 R6
 

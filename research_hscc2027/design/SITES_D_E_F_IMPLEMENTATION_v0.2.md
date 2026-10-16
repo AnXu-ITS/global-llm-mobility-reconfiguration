@@ -38,13 +38,13 @@
 
 时间为仿真绝对秒；释放300、装载完成315、故障360、地面承诺365，交接30 s、卸载15 s。实际飞行状态到位后才交接；地面到达来自SUMO事件。每次固定模拟慢响应在480 s返回并被过期检查丢弃；并未调用GPT。F诊断创建第五个静态飞机占位，但尚不运行五机多任务争用。
 
-新增场地支持后，原A默认闭环也通过回归，送达仍为625 s，见 [A回归报告](../runs/development/physical_20260918_165704_afc781/report.json)。
+新增场地支持后，原A默认闭环也通过回归，送达仍为625 s，见 A回归报告（历史本地路径：`../runs/development/physical_20260918_165704_afc781/report.json`；当前公开归档未包含）。
 
 当前运行路径：
 
-- D：[`physical_20260918_165138_8479c8`](../runs/development/physical_20260918_165138_8479c8/report.json)。
-- E：[`physical_20260918_165143_c7698c`](../runs/development/physical_20260918_165143_c7698c/report.json)。
-- F：[`physical_20260918_165148_8310e6`](../runs/development/physical_20260918_165148_8310e6/report.json)。
+- D：`physical_20260918_165138_8479c8`（历史本地路径：`../runs/development/physical_20260918_165138_8479c8/report.json`；当前公开归档未包含）。
+- E：`physical_20260918_165143_c7698c`（历史本地路径：`../runs/development/physical_20260918_165143_c7698c/report.json`；当前公开归档未包含）。
+- F：`physical_20260918_165148_8310e6`（历史本地路径：`../runs/development/physical_20260918_165148_8310e6/report.json`；当前公开归档未包含）。
 
 各目录保存fixture、网络hash、事件及逐秒轨迹。诊断使用BlueSky的PerfBase和M600占位；尚未标定飞行动力、能耗、空域约束或真实通信协议。上述结果验证单载荷链，不等于D/F多任务协议验收，也不是R6方法比较结果。
 
@@ -56,9 +56,9 @@ E七组实际行程差值为 **+75、0、−22、+94、+277、+291、−189 s**�
 
 证据：
 
-- D：[名义交通诊断](../runs/site_diagnostics/D_20260918_163938_4fd08e/report.json)。
-- E：[限速配对诊断](../runs/site_diagnostics/E_20260918_163933_f75e65/report.json)。
-- F：[名义交通诊断](../runs/site_diagnostics/F_20260918_163941_5b8dd0/report.json)。
+- D：名义交通诊断（历史本地路径：`../runs/site_diagnostics/D_20260918_163938_4fd08e/report.json`；当前公开归档未包含）。
+- E：限速配对诊断（历史本地路径：`../runs/site_diagnostics/E_20260918_163933_f75e65/report.json`；当前公开归档未包含）。
+- F：名义交通诊断（历史本地路径：`../runs/site_diagnostics/F_20260918_163941_5b8dd0/report.json`；当前公开归档未包含）。
 
 当前ETA统计采样共同窗口250–600 s、间隔10 s，取固定路径上SUMO当前edge travel-time之和。停止车辆可能使瞬时估计显著增大，因此signature同时标注估计来源，不能把其CV误称为实测OD行程的CV。F也有较高估计波动；这三个场地不是只改变单一因素的因果对照。
 
@@ -84,12 +84,12 @@ OSM原始文件、下载时间、端点、查询及hash位于 `sites/sources/`�
 
 原R2–R5分配保持：R2=A，R3=H_A/A和H_B/B，R4=C，R5=A。新增 **R6_SITE=240**；可选 **R6_B2=120**。基础运输计划 **3,821**，可选 **440**；本轮筛选与诊断另立账本。Astra high原生预算不扩张，也没有本轮实验模型调用。
 
-新增场地身份进入环境和配对签名；R6种子独立为20271201–20271210。正式fixture缺失时规划ID明确标为planning-only。资产hash、车道/转向、兼容矩阵和240个R6单元的120对配对均通过 [一致性检查](../outputs/site_integration/verification.json)。
+新增场地身份进入环境和配对签名；R6种子独立为20271201–20271210。正式fixture缺失时规划ID明确标为planning-only。资产hash、车道/转向、兼容矩阵和240个R6单元的120对配对均通过 一致性检查（历史本地路径：`../outputs/site_integration/verification.json`；当前公开归档未包含）。
 
 ## 6. 尚未完成的验收
 
 地图资产本版已冻结，但所有场地 `formal_admission=false`：D仍需双任务单bay队列及保管权检查；E需开发期限/负载标定，确认正式900 s条件；F需真实执行层兼容性、双重分配防护、预约过期及下游释放验证。A/B/C仍需同口径signature重算与新语义fixture。原R0桥接、完整R1及原生适配器的待办不因新增地图自动完成。
 
-本轮设计审阅采纳了配对身份包含全部资产、逐任务参考阶段图、候选链与最优合法链区分、H_A/H_B原地理映射四项修正。正式方法结果未知；收益为零或负不能成为拒收地图或删seed的理由。
+场地配对身份包含全部资产；参考阶段图按任务定义，候选链与最优合法链分开记录，H_A/H_B保留原地理映射。正式方法结果未知；收益为零或负不能成为拒收地图或删seed的理由。
 
-详细事实表、章节契约及审查处置见 [修订审查记录](../outputs/researchwrite/six_sites_v0.2/revision_audit.md)。
+详细事实表、章节契约及审查处置见 修订审查记录（历史本地路径：`../outputs/researchwrite/six_sites_v0.2/revision_audit.md`；当前公开归档未包含）。

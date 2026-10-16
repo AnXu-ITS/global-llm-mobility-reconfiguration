@@ -1,12 +1,12 @@
-# HSCC+ICCPS 2027 新方向工作区
+# 异步地空服务监督
 
 候选题目：**Deadline-Aware Runtime Supervision for Ground–Air Service Reconfiguration**。
 
-当前状态：已实现首版协议内核，27 次历史回放、48 个协议用例和三组 SUMO/BlueSky 物理闭环开发对照已通过。完整 R0/R1 门尚未完成，尚无正式 R2–R5 结果。详情与限制见 [实现和验证记录](IMPLEMENTATION_STATUS.md)。新实验的 LLM 固定为 **本机 Codex / GPT-6 Astra / high**；本轮没有实验模型调用。
+当前状态：已实现首版协议内核，27 次历史回放、48 个协议用例和三组 SUMO/BlueSky 物理闭环开发对照已通过。后续 R1 v0.3 在声明有限模型内通过；R0 桥接及正式运输实验条件仍按协议验收，尚无正式 R2–R5 结果。详情与限制见 [实现和验证记录](IMPLEMENTATION_STATUS.md)。新实验的 LLM 固定为 **本机 Codex / GPT-6 Astra / high**；尚无原生模型实验结果。
 
 最新场地扩展：D/E/F 真实 OSM 地图已落地（莱比锡/巴塞罗那/柏林），各自单载荷闭环通过；正式场地验收仍待完成。当前采用 [六场地协议 v0.2](design/EXPERIMENT_PROTOCOL_v0.2.md)、[场地注册表](config/sites.v1.json)和[落地报告](design/SITES_D_E_F_IMPLEMENTATION_v0.2.md)。
 
-最新优先级：完整R1 → D → F → E → A/B/C统一签名和fixture → R6冻结。R1已增加状态检查和真实队列测试，但显式枚举触及100万状态，G1仍关闭；见 [验收证据与限制](design/R1_ACCEPTANCE_v0.2.md)及[执行顺序/论文两层结构](design/EXECUTION_PRIORITY_v0.1.md)。门检查入口为 `tools/check_execution_gates.py`，完整R1入口为 `tools/run_r1_full.py`。
+最新优先级：完整R1 → D → F → E → A/B/C统一签名和fixture → R6冻结。R1 v0.2 的显式枚举达到100万状态上限，v0.3改用有界SMT/BMC，在声明有限模型内通过；见 [v0.3验收范围](design/R1_ACCEPTANCE_v0.3.md)、[v0.2历史记录](design/R1_ACCEPTANCE_v0.2.md)及[开发验收依赖](design/EXECUTION_PRIORITY_v0.1.md)。门检查入口为 `tools/check_execution_gates.py`，完整R1入口为 `tools/run_r1_full.py`。
 
 - [当前实验协议 v0.2](design/EXPERIMENT_PROTOCOL_v0.2.md)：继承v0.1共同规则，新增六场地身份、R6及验收；[v0.1](design/EXPERIMENT_PROTOCOL_v0.1.md)为历史设计。
 - [模型调用契约](design/MODEL_INTERFACE_CODEX_ASTRA.md)：本机 ChatGPT 登录、独立请求、模型/档位、计时及准入。
@@ -32,6 +32,6 @@
 | `runs/primary/` | 冻结正式运行，追加式保存 |
 | `outputs/` | 新方向派生图表与数据 |
 
-旧平台位于 `../legacy/20260918/`，复用模块前从该目录复制所需源文件到新代码仓库并记录来源 SHA。不要把旧稿的重写/清理脚本接入新论文构建。
+旧平台位于 `../legacy/20260918/`；复用组件的来源 SHA 保存在 vendor 清单中。
 
-论文仓库为 `../manuscript_hscc2027/`，完整方案仍在根目录的转向计划书中。分析与归档证据在 `../provenance/hscc2027/`。
+实验设计见 `design/`，分析与归档来源见 `../provenance/hscc2027/`。
