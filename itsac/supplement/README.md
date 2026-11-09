@@ -1,7 +1,7 @@
 # Supplementary material
 
 **A Ground-Low-Altitude Mobility Manager for Service Reconfiguration under Disruptions**  
-An Xu, Chengbo Zhang and Yunfei Yin.
+An Xu, Ruixuan Xu and Yunfei Yin.
 
 [Main manuscript](../ITSAC_XU_AN.docx) · [Supplementary PDF](ITSAC_Supplement.pdf) · [LaTeX source](source/supplement.tex)
 
